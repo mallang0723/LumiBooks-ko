@@ -1,11 +1,11 @@
 {
-  "identifier": "lumi_books",
-  "version": "1.1.1",
-  "name": "LumiBooks",
-  "author": "AMousePad",
-  "github": "https://github.com/AMousePad/LumiBooks",
-  "homepage": "https://github.com/AMousePad/LumiBooks",
-  "description": "Memoria the librarian compresses old chat into chapters and arcs, splicing them back into your prompt where the messages used to be.",
+  "identifier": "lumi_books_ko",
+  "version": "1.1.1+ko",
+  "name": "LumiBooks (한국어)",
+  "author": "AMousePad (한국어판: mallang0723)",
+  "github": "https://github.com/mallang0723/LumiBooks-ko",
+  "homepage": "https://github.com/mallang0723/LumiBooks-ko",
+  "description": "사서 메모리아가 오래된 채팅을 챕터와 아크로 압축해, 원래 메시지가 있던 자리에 프롬프트로 다시 끼워 넣어요.",
   "permissions": [
     "world_books",
     "chats",

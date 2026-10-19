@@ -1,3 +1,21 @@
+## 한국어판 안내
+
+**LumiBooks (한국어)** 는 [AMousePad/LumiBooks](https://github.com/AMousePad/LumiBooks)의 화면 문구를 한국어로 옮긴 비공식 번역판이에요. 기능은 원작과 같고, 탭·설정·알림·튜토리얼·코덱스 안내서가 한국어로 표시돼요. 요약과 코덱스를 만드는 모델 프롬프트는 원작 그대로예요.
+
+- 원작: [LumiBooks](https://github.com/AMousePad/LumiBooks) by **AMousePad**
+- 한국어 번역: **mallang0723**
+- 라이선스: 원작과 같은 [GNU AGPL-3.0](https://github.com/mallang0723/LumiBooks-ko/blob/main/LICENSE)을 따라요. 이 번역판의 소스도 AGPL-3.0으로 공개돼요.
+
+**설치:** Lumiverse(1.2.5 이상)의 **사이드바 - 확장 기능** 탭에서 아래 주소를 추가하고, 권한을 허용한 뒤 활성화하세요.
+
+```txt
+https://github.com/mallang0723/LumiBooks-ko
+```
+
+원작과 한국어판은 확장 ID가 달라서(`lumi_books` / `lumi_books_ko`) 함께 설치할 수는 있지만, 같은 계정에서 **동시에 켜지 마세요.** 두 확장이 같은 채팅의 LumiBooks 월드북을 함께 관리하게 돼요. 챕터·아크 요약은 채팅의 월드북에 있어서 그대로 이어지지만, 설정·프로필·수업 진행도·코덱스 기록은 확장마다 따로 저장돼요. 원작에서 옮겨 올 때는 설정을 다시 맞추고, 코덱스는 원작에서 내보낸 뒤 한국어판에서 가져오세요.
+
+---
+
 <img src="image/README/lumibooks_logo.png" alt="LumiBooks" width="320"/>
 
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENCE)
