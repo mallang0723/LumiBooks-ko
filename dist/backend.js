@@ -463,34 +463,34 @@ function parseNumberSkeleton(tokens) {
 }
 
 // node_modules/@formatjs/icu-messageformat-parser/index.js
-var ErrorKind = /* @__PURE__ */ function(ErrorKind) {
-  ErrorKind[ErrorKind["EXPECT_ARGUMENT_CLOSING_BRACE"] = 1] = "EXPECT_ARGUMENT_CLOSING_BRACE";
-  ErrorKind[ErrorKind["EMPTY_ARGUMENT"] = 2] = "EMPTY_ARGUMENT";
-  ErrorKind[ErrorKind["MALFORMED_ARGUMENT"] = 3] = "MALFORMED_ARGUMENT";
-  ErrorKind[ErrorKind["EXPECT_ARGUMENT_TYPE"] = 4] = "EXPECT_ARGUMENT_TYPE";
-  ErrorKind[ErrorKind["INVALID_ARGUMENT_TYPE"] = 5] = "INVALID_ARGUMENT_TYPE";
-  ErrorKind[ErrorKind["EXPECT_ARGUMENT_STYLE"] = 6] = "EXPECT_ARGUMENT_STYLE";
-  ErrorKind[ErrorKind["INVALID_NUMBER_SKELETON"] = 7] = "INVALID_NUMBER_SKELETON";
-  ErrorKind[ErrorKind["INVALID_DATE_TIME_SKELETON"] = 8] = "INVALID_DATE_TIME_SKELETON";
-  ErrorKind[ErrorKind["EXPECT_NUMBER_SKELETON"] = 9] = "EXPECT_NUMBER_SKELETON";
-  ErrorKind[ErrorKind["EXPECT_DATE_TIME_SKELETON"] = 10] = "EXPECT_DATE_TIME_SKELETON";
-  ErrorKind[ErrorKind["UNCLOSED_QUOTE_IN_ARGUMENT_STYLE"] = 11] = "UNCLOSED_QUOTE_IN_ARGUMENT_STYLE";
-  ErrorKind[ErrorKind["EXPECT_SELECT_ARGUMENT_OPTIONS"] = 12] = "EXPECT_SELECT_ARGUMENT_OPTIONS";
-  ErrorKind[ErrorKind["EXPECT_PLURAL_ARGUMENT_OFFSET_VALUE"] = 13] = "EXPECT_PLURAL_ARGUMENT_OFFSET_VALUE";
-  ErrorKind[ErrorKind["INVALID_PLURAL_ARGUMENT_OFFSET_VALUE"] = 14] = "INVALID_PLURAL_ARGUMENT_OFFSET_VALUE";
-  ErrorKind[ErrorKind["EXPECT_SELECT_ARGUMENT_SELECTOR"] = 15] = "EXPECT_SELECT_ARGUMENT_SELECTOR";
-  ErrorKind[ErrorKind["EXPECT_PLURAL_ARGUMENT_SELECTOR"] = 16] = "EXPECT_PLURAL_ARGUMENT_SELECTOR";
-  ErrorKind[ErrorKind["EXPECT_SELECT_ARGUMENT_SELECTOR_FRAGMENT"] = 17] = "EXPECT_SELECT_ARGUMENT_SELECTOR_FRAGMENT";
-  ErrorKind[ErrorKind["EXPECT_PLURAL_ARGUMENT_SELECTOR_FRAGMENT"] = 18] = "EXPECT_PLURAL_ARGUMENT_SELECTOR_FRAGMENT";
-  ErrorKind[ErrorKind["INVALID_PLURAL_ARGUMENT_SELECTOR"] = 19] = "INVALID_PLURAL_ARGUMENT_SELECTOR";
-  ErrorKind[ErrorKind["DUPLICATE_PLURAL_ARGUMENT_SELECTOR"] = 20] = "DUPLICATE_PLURAL_ARGUMENT_SELECTOR";
-  ErrorKind[ErrorKind["DUPLICATE_SELECT_ARGUMENT_SELECTOR"] = 21] = "DUPLICATE_SELECT_ARGUMENT_SELECTOR";
-  ErrorKind[ErrorKind["MISSING_OTHER_CLAUSE"] = 22] = "MISSING_OTHER_CLAUSE";
-  ErrorKind[ErrorKind["INVALID_TAG"] = 23] = "INVALID_TAG";
-  ErrorKind[ErrorKind["INVALID_TAG_NAME"] = 25] = "INVALID_TAG_NAME";
-  ErrorKind[ErrorKind["UNMATCHED_CLOSING_TAG"] = 26] = "UNMATCHED_CLOSING_TAG";
-  ErrorKind[ErrorKind["UNCLOSED_TAG"] = 27] = "UNCLOSED_TAG";
-  return ErrorKind;
+var ErrorKind = /* @__PURE__ */ function(ErrorKind2) {
+  ErrorKind2[ErrorKind2["EXPECT_ARGUMENT_CLOSING_BRACE"] = 1] = "EXPECT_ARGUMENT_CLOSING_BRACE";
+  ErrorKind2[ErrorKind2["EMPTY_ARGUMENT"] = 2] = "EMPTY_ARGUMENT";
+  ErrorKind2[ErrorKind2["MALFORMED_ARGUMENT"] = 3] = "MALFORMED_ARGUMENT";
+  ErrorKind2[ErrorKind2["EXPECT_ARGUMENT_TYPE"] = 4] = "EXPECT_ARGUMENT_TYPE";
+  ErrorKind2[ErrorKind2["INVALID_ARGUMENT_TYPE"] = 5] = "INVALID_ARGUMENT_TYPE";
+  ErrorKind2[ErrorKind2["EXPECT_ARGUMENT_STYLE"] = 6] = "EXPECT_ARGUMENT_STYLE";
+  ErrorKind2[ErrorKind2["INVALID_NUMBER_SKELETON"] = 7] = "INVALID_NUMBER_SKELETON";
+  ErrorKind2[ErrorKind2["INVALID_DATE_TIME_SKELETON"] = 8] = "INVALID_DATE_TIME_SKELETON";
+  ErrorKind2[ErrorKind2["EXPECT_NUMBER_SKELETON"] = 9] = "EXPECT_NUMBER_SKELETON";
+  ErrorKind2[ErrorKind2["EXPECT_DATE_TIME_SKELETON"] = 10] = "EXPECT_DATE_TIME_SKELETON";
+  ErrorKind2[ErrorKind2["UNCLOSED_QUOTE_IN_ARGUMENT_STYLE"] = 11] = "UNCLOSED_QUOTE_IN_ARGUMENT_STYLE";
+  ErrorKind2[ErrorKind2["EXPECT_SELECT_ARGUMENT_OPTIONS"] = 12] = "EXPECT_SELECT_ARGUMENT_OPTIONS";
+  ErrorKind2[ErrorKind2["EXPECT_PLURAL_ARGUMENT_OFFSET_VALUE"] = 13] = "EXPECT_PLURAL_ARGUMENT_OFFSET_VALUE";
+  ErrorKind2[ErrorKind2["INVALID_PLURAL_ARGUMENT_OFFSET_VALUE"] = 14] = "INVALID_PLURAL_ARGUMENT_OFFSET_VALUE";
+  ErrorKind2[ErrorKind2["EXPECT_SELECT_ARGUMENT_SELECTOR"] = 15] = "EXPECT_SELECT_ARGUMENT_SELECTOR";
+  ErrorKind2[ErrorKind2["EXPECT_PLURAL_ARGUMENT_SELECTOR"] = 16] = "EXPECT_PLURAL_ARGUMENT_SELECTOR";
+  ErrorKind2[ErrorKind2["EXPECT_SELECT_ARGUMENT_SELECTOR_FRAGMENT"] = 17] = "EXPECT_SELECT_ARGUMENT_SELECTOR_FRAGMENT";
+  ErrorKind2[ErrorKind2["EXPECT_PLURAL_ARGUMENT_SELECTOR_FRAGMENT"] = 18] = "EXPECT_PLURAL_ARGUMENT_SELECTOR_FRAGMENT";
+  ErrorKind2[ErrorKind2["INVALID_PLURAL_ARGUMENT_SELECTOR"] = 19] = "INVALID_PLURAL_ARGUMENT_SELECTOR";
+  ErrorKind2[ErrorKind2["DUPLICATE_PLURAL_ARGUMENT_SELECTOR"] = 20] = "DUPLICATE_PLURAL_ARGUMENT_SELECTOR";
+  ErrorKind2[ErrorKind2["DUPLICATE_SELECT_ARGUMENT_SELECTOR"] = 21] = "DUPLICATE_SELECT_ARGUMENT_SELECTOR";
+  ErrorKind2[ErrorKind2["MISSING_OTHER_CLAUSE"] = 22] = "MISSING_OTHER_CLAUSE";
+  ErrorKind2[ErrorKind2["INVALID_TAG"] = 23] = "INVALID_TAG";
+  ErrorKind2[ErrorKind2["INVALID_TAG_NAME"] = 25] = "INVALID_TAG_NAME";
+  ErrorKind2[ErrorKind2["UNMATCHED_CLOSING_TAG"] = 26] = "UNMATCHED_CLOSING_TAG";
+  ErrorKind2[ErrorKind2["UNCLOSED_TAG"] = 27] = "UNCLOSED_TAG";
+  return ErrorKind2;
 }({});
 function isLiteralElement(el) {
   return el.type === 0;
@@ -1753,20 +1753,20 @@ function createLocation(start, end) {
 var hasNativeFromEntries = !!Object.fromEntries;
 var hasTrimStart = !!String.prototype.trimStart;
 var hasTrimEnd = !!String.prototype.trimEnd;
-var fromEntries = hasNativeFromEntries ? Object.fromEntries : function fromEntries(entries) {
+var fromEntries = hasNativeFromEntries ? Object.fromEntries : function fromEntries2(entries) {
   const obj = {};
   for (const [k, v] of entries)
     obj[k] = v;
   return obj;
 };
-var trimStart = hasTrimStart ? function trimStart(s) {
+var trimStart = hasTrimStart ? function trimStart2(s) {
   return s.trimStart();
-} : function trimStart(s) {
+} : function trimStart3(s) {
   return s.replace(SPACE_SEPARATOR_START_REGEX, "");
 };
-var trimEnd = hasTrimEnd ? function trimEnd(s) {
+var trimEnd = hasTrimEnd ? function trimEnd2(s) {
   return s.trimEnd();
-} : function trimEnd(s) {
+} : function trimEnd3(s) {
   return s.replace(SPACE_SEPARATOR_END_REGEX, "");
 };
 var IDENTIFIER_PREFIX_RE = createIdentifierPrefixRegex();
@@ -2159,10 +2159,10 @@ var Parser = class {
       case "plural":
       case "selectordinal":
       case "select": {
-        const typeEndPosition = this.clonePosition();
+        const typeEndPosition2 = this.clonePosition();
         this.bumpSpace();
         if (!this.bumpIf(","))
-          return this.error(12, createLocation(typeEndPosition, { ...typeEndPosition }));
+          return this.error(12, createLocation(typeEndPosition2, { ...typeEndPosition2 }));
         this.bumpSpace();
         let identifierAndLocation = this.parseIdentifierIfPossible();
         let pluralOffset = 0;
@@ -2595,10 +2595,10 @@ function formatToParts(els, locales, formatters, formats, values, currentPluralV
       continue;
     }
     if (isTagElement(el)) {
-      const { children, value } = el;
-      const formatFn = values[value];
+      const { children, value: value2 } = el;
+      const formatFn = values[value2];
       if (!isFormatXMLElementFn(formatFn))
-        throw new InvalidValueTypeError(value, "function", originalMessage);
+        throw new InvalidValueTypeError(value2, "function", originalMessage);
       let chunks = formatFn(formatToParts(children, locales, formatters, formats, values, currentPluralValue).map((p) => p.value));
       if (!Array.isArray(chunks))
         chunks = [chunks];
@@ -2625,8 +2625,8 @@ function formatToParts(els, locales, formatters, formats, values, currentPluralV
           throw new FormatError(`Intl.PluralRules is not available in this environment.
 Try polyfilling it using "@formatjs/intl-pluralrules"
 `, "MISSING_INTL_API", originalMessage);
-        const numericValue = typeof value === "bigint" ? Number(value) : value;
-        const rule = formatters.getPluralRules(locales, { type: el.pluralType }).select(numericValue - (el.offset || 0));
+        const numericValue2 = typeof value === "bigint" ? Number(value) : value;
+        const rule = formatters.getPluralRules(locales, { type: el.pluralType }).select(numericValue2 - (el.offset || 0));
         opt = (Object.prototype.hasOwnProperty.call(el.options, rule) ? el.options[rule] : undefined) || el.options.other;
       }
       if (!opt)
@@ -2693,8 +2693,8 @@ function createDefaultFormatters(cache = {
     })
   };
 }
-var IntlMessageFormat = class IntlMessageFormat {
-  constructor(message, locales = IntlMessageFormat.defaultLocale, overrideFormats, opts) {
+var IntlMessageFormat = class IntlMessageFormat2 {
+  constructor(message, locales = IntlMessageFormat2.defaultLocale, overrideFormats, opts) {
     this.formatterCache = {
       number: {},
       dateTime: {},
@@ -2719,13 +2719,13 @@ var IntlMessageFormat = class IntlMessageFormat {
     this.resolvedOptions = () => ({ locale: this.resolvedLocale?.toString() || Intl.NumberFormat.supportedLocalesOf(this.locales)[0] });
     this.getAst = () => this.ast;
     this.locales = locales;
-    this.resolvedLocale = IntlMessageFormat.resolveLocale(locales);
+    this.resolvedLocale = IntlMessageFormat2.resolveLocale(locales);
     if (typeof message === "string") {
       this.message = message;
-      if (!IntlMessageFormat.__parse)
+      if (!IntlMessageFormat2.__parse)
         throw new TypeError("IntlMessageFormat.__parse must be set to process `message` of type `string`");
       const { ...parseOpts } = opts || {};
-      this.ast = IntlMessageFormat.__parse(message, {
+      this.ast = IntlMessageFormat2.__parse(message, {
         ...parseOpts,
         locale: this.resolvedLocale
       });
@@ -2733,16 +2733,16 @@ var IntlMessageFormat = class IntlMessageFormat {
       this.ast = message;
     if (!Array.isArray(this.ast))
       throw new TypeError("A message must be provided as a String or AST.");
-    this.formats = mergeConfigs(IntlMessageFormat.formats, overrideFormats);
+    this.formats = mergeConfigs(IntlMessageFormat2.formats, overrideFormats);
     this.formatters = opts && opts.formatters || createDefaultFormatters(this.formatterCache);
   }
   static {
     this.memoizedDefaultLocale = null;
   }
   static get defaultLocale() {
-    if (!IntlMessageFormat.memoizedDefaultLocale)
-      IntlMessageFormat.memoizedDefaultLocale = new Intl.NumberFormat().resolvedOptions().locale;
-    return IntlMessageFormat.memoizedDefaultLocale;
+    if (!IntlMessageFormat2.memoizedDefaultLocale)
+      IntlMessageFormat2.memoizedDefaultLocale = new Intl.NumberFormat().resolvedOptions().locale;
+    return IntlMessageFormat2.memoizedDefaultLocale;
   }
   static {
     this.resolveLocale = (locales) => {
@@ -5793,6 +5793,2986 @@ Notes:
     assembledTranscript: "Assembled transcript"
   }
 };
+// src/locales/ko.json
+var ko_default = {
+  backend: {
+    binding: {
+      messages: {
+        selectConsecutiveSummariesWithoutCrossingAnotherSummary: "\uB2E4\uB978 \uC694\uC57D \uB2E8\uACC4\uB97C \uAC74\uB108\uB6F0\uC9C0 \uC54A\uACE0 \uC5F0\uC18D\uB41C \uC694\uC57D\uC744 \uC120\uD0DD\uD558\uC138\uC694"
+      }
+    },
+    codex: {
+      agent: {
+        messages: {
+          theAssembledCodexPromptIsKTokens: "\uCF54\uB371\uC2A4 \uD504\uB86C\uD504\uD2B8: ~{round}k \uD1A0\uD070, \uD55C\uB3C4: {round2}k. \uC870\uC815 > \uC5F0\uACB0 > \uCF54\uB371\uC2A4\uC5D0\uC11C \uCD5C\uB300 \uC785\uB825 \uD1A0\uD070\uC744 \uB298\uB9AC\uAC70\uB098, \uC870\uC815 > \uC124\uC815 > \uCF54\uB371\uC2A4\uC5D0\uC11C \uC708\uB3C4\uC6B0\xB7\uC81C\uACF5 \uCC55\uD130 \uC218\xB7\uC124\uC815 \uD55C\uB3C4\uB97C \uC904\uC774\uC138\uC694. \uCF54\uB371\uC2A4 > \uAC1C\uC694\uC5D0\uC11C \uAE30\uB85D\uC744 \uB3D9\uACB0\uD574\uB3C4 \uC785\uB825\uC774 \uC904\uC5B4\uC694."
+        },
+        resolveCodexConnection: {
+          codexConnectionHasNoModelSetPick: '\uCF54\uB371\uC2A4 \uC5F0\uACB0 "{id}"\uC5D0 \uBAA8\uB378\uC774 \uC124\uC815\uB418\uC9C0 \uC54A\uC558\uC5B4\uC694. \uC124\uC815\uC5D0\uC11C \uBAA8\uB378\uC744 \uACE0\uB974\uC138\uC694',
+          noConnectionAvailableForTheCodex: "\uCF54\uB371\uC2A4\uC5D0 \uC4F8 \uC218 \uC788\uB294 \uC5F0\uACB0\uC774 \uC5C6\uC5B4\uC694"
+        },
+        keptSuffix: {
+          memoriaKeptTheRecordSheFinishedAnd: " \uAE30\uB85D {length}\uAC1C\uB294 \uC800\uC7A5\uD588\uC5B4\uC694. \uB098\uBA38\uC9C0\uB294 \uB2E4\uC74C\uC5D0 \uB2E4\uC2DC \uC2DC\uB3C4\uD574\uC694."
+        },
+        runCodexAgentInner: {
+          round: `
+
+\u2550\u2550\u2550 {rounds}\uBC88\uC9F8 \uB77C\uC6B4\uB4DC \u2550\u2550\u2550
+`,
+          fullRewriteKChars: "\uC804\uCCB4 \uB2E4\uC2DC \uC4F0\uAE30, {toFixed}k\uC790",
+          codexWriteJson: `
+\u27A4 codex_write {f}.json ({label})`,
+          codexDone: `
+\u2726 codex_done{note}`,
+          codexSkip: `
+\u25CB codex_skip {choice, select, yes {{join}} other {(\uD30C\uC77C \uC5C6\uC74C)}}`,
+          unknownTool: `
+\u2717 \uC54C \uC218 \uC5C6\uB294 \uB3C4\uAD6C {name}`,
+          theCodexAgentReturnedAnEmptyResponse: "\uCF54\uB371\uC2A4 \uC5D0\uC774\uC804\uD2B8\uAC00 \uBE48 \uC751\uB2F5\uC744 \uBC18\uD658\uD588\uC5B4\uC694",
+          noJsonObjectFoundInTheReply: `
+\u2717 \uC751\uB2F5\uC5D0\uC11C JSON\uC744 \uCC3E\uC9C0 \uBABB\uD588\uC5B4\uC694. \uB2E4\uC2DC \uC2DC\uB3C4\uD558\uB294 \uC911...`,
+          memoriaCouldnTFinishTheCodexUpdate: "\uBAA8\uB378\uC774 \uC9C0\uC2DC\uB97C \uB530\uB974\uC9C0 \uBABB\uD588\uC5B4\uC694 :(.{keptSuffix}",
+          theCodexAgentNarratedInsteadOfCalling: "\uCF54\uB371\uC2A4 \uC5D0\uC774\uC804\uD2B8\uAC00 \uB3C4\uAD6C\uB97C \uD638\uCD9C\uD558\uC9C0 \uC54A\uC558\uC5B4\uC694. \uC5F0\uACB0\uC774 \uB3C4\uAD6C \uD638\uCD9C\uC744 \uC9C0\uC6D0\uD558\uB098\uC694?",
+          theCodexAgentRepliedWithoutAParsable: "\uCF54\uB371\uC2A4 \uC5D0\uC774\uC804\uD2B8\uAC00 \uC798\uBABB\uB41C JSON\uC744 \uBC18\uD658\uD588\uC5B4\uC694",
+          memoriaCouldnTFinishTheCodexUpdate2: "\uBAA8\uB378\uC774 \uB3C4\uC911\uC5D0 \uBA48\uCDB0\uC11C \uC4F0\uC9C0 \uBABB\uD55C \uD30C\uC77C: {join}.{keptSuffix}",
+          keptStillReferencedByUnchangedJson: `
+\u2933 {ref} \uC720\uC9C0: \uBC14\uB00C\uC9C0 \uC54A\uC740 {file}.json\uC5D0\uC11C \uC544\uC9C1 \uCC38\uC870\uD574\uC694`,
+          value: `
+\u2933 {r}`,
+          rejected: `
+\u2717 \uAC70\uBD80\uB428{choice, select, yes { {file}.json} other {}}: {errors0}`,
+          integrity: `
+\u2717 \uBB34\uACB0\uC131: {e}`,
+          memoriaCouldnTFinishTheCodexUpdate3: "\uBAA8\uB378\uC774 {rounds}\uBC88 \uC2DC\uB3C4\uD55C \uB4A4\uC5D0\uB3C4 \uC798\uBABB\uB41C JSON\uC744 \uBC18\uD658\uD588\uC5B4\uC694: {join}.{keptSuffix}",
+          memoriaCouldnTFinishTheCodexUpdate4: "\uBAA8\uB378\uC774 \uC798\uBABB\uB41C \uAE30\uB85D\uC744 \uBC18\uD658\uD588\uC5B4\uC694: {join}.{keptSuffix}",
+          memoriaCouldnTFinishTheCodexUpdate5: "\uBAA8\uB378\uC774 \uC4F0\uC9C0 \uC54A\uC740 \uD30C\uC77C: {join}.{keptSuffix}",
+          memoriaCouldnTFinishTheCodexUpdate6: "\uBAA8\uB378\uC774 \uC5C6\uB294 \uAC1C\uCCB4\uB97C \uCC38\uC870\uD588\uC5B4\uC694: {join}.{keptSuffix}",
+          tableMigrationLeftTiesOnTheRun: "\uAD00\uACC4 \uB9C8\uC774\uADF8\uB808\uC774\uC158\uC5D0 \uC2E4\uD328\uD588\uC5B4\uC694: {join}\uC5D0 ties\uAC00 \uB0A8\uC544 \uC788\uC5B4\uC694.",
+          inlineMigrationProducedNoTiesFromThe: "\uAD00\uACC4 \uB9C8\uC774\uADF8\uB808\uC774\uC158\uC5D0 \uC2E4\uD328\uD588\uC5B4\uC694: \uAD00\uACC4 \uD45C\uC5D0\uC11C ties\uB97C \uD558\uB098\uB3C4 \uB9CC\uB4E4\uC9C0 \uBABB\uD588\uC5B4\uC694.",
+          failedToSaveJson: "{key}.json\uC744 \uC800\uC7A5\uD558\uC9C0 \uBABB\uD588\uC5B4\uC694: {describeError}"
+        },
+        stream: {
+          set: "set {count}\uAC1C",
+          drop: "drop {count}\uAC1C",
+          seeds: "seeds",
+          empty: "\uBE44\uC5B4 \uC788\uC74C"
+        }
+      },
+      backup: {
+        parseCodexBackup: {
+          thatFileIsNotACodexBackup: "\uC774 \uD30C\uC77C\uC740 \uCF54\uB371\uC2A4 \uBC31\uC5C5\uC774 \uC544\uB2C8\uC5D0\uC694",
+          thisBackupWasWrittenByANewer: "\uC774 \uBC31\uC5C5\uC744 \uC5F4\uB824\uBA74 \uB354 \uC0C8\uB85C\uC6B4 LumiBooks(\uBC84\uC804 {version})\uAC00 \uD544\uC694\uD574\uC694",
+          theBackupHasNoCodexFilesIn: "\uBC31\uC5C5\uC5D0 \uCF54\uB371\uC2A4 \uD30C\uC77C\uC774 \uC5C6\uC5B4\uC694",
+          jsonInTheBackupIsNotValid: "{key}.json\uC774 \uC62C\uBC14\uB978 JSON\uC774 \uC544\uB2C8\uC5D0\uC694",
+          jsonInTheBackupIsInvalid: "\uBC31\uC5C5\uC758 {key}.json\uC774 \uC798\uBABB\uB410\uC5B4\uC694: {errors0}"
+        }
+      },
+      index: {
+        reportCodexFailure: {
+          memoriaCouldnTTheCodex: "\uCF54\uB371\uC2A4\uB97C {verb, select, tidy {\uC815\uB3C8} refresh {\uAC31\uC2E0} rebuild {\uC7AC\uAD6C\uCD95} other {\uC5C5\uB370\uC774\uD2B8}}\uD558\uC9C0 \uBABB\uD588\uC5B4\uC694: {shortErrorText}"
+        },
+        syncEntriesGuarded: {
+          memoriaCouldnTSyncTheCodexTo: "\uCF54\uB371\uC2A4\uB97C \uC6D4\uB4DC\uBD81\uC5D0 \uB3D9\uAE30\uD654\uD558\uC9C0 \uBABB\uD588\uC5B4\uC694: {shortErrorText}"
+        },
+        ensureCodexEntriesSynced: {
+          memoriaCouldnTSyncTheCodexTo: "\uCF54\uB371\uC2A4\uB97C \uC6D4\uB4DC\uBD81\uC5D0 \uB3D9\uAE30\uD654\uD558\uC9C0 \uBABB\uD588\uC5B4\uC694: {shortErrorText}"
+        },
+        dryRunCodex: {
+          theWindowHasNotFilledYetAutomation: "\uC708\uB3C4\uC6B0\uAC00 \uC544\uC9C1 \uCC28\uC9C0 \uC54A\uC558\uC5B4\uC694. \uC218\uB3D9\uC73C\uB85C \uC2E4\uD589\uD558\uBA74 \uAC74\uB108\uB6F8 \uC218 \uC788\uC5B4\uC694.",
+          theLagReserveStillHoldsTheseTurns: "\uC9C0\uC5F0 \uC870\uAC74\uC744 \uC544\uC9C1 \uCC44\uC6B0\uC9C0 \uBABB\uD588\uC5B4\uC694. \uC218\uB3D9\uC73C\uB85C \uC2E4\uD589\uD558\uBA74 \uAC74\uB108\uB6F8 \uC218 \uC788\uC5B4\uC694.",
+          chatHasNoMessages: "\uCC44\uD305\uC5D0 \uBA54\uC2DC\uC9C0\uAC00 \uC5C6\uC5B4\uC694",
+          theCodexHasReadEverythingSoThis: "\uCF54\uB371\uC2A4\uAC00 \uCD5C\uC2E0 \uC0C1\uD0DC\uC608\uC694. \uBBF8\uB9AC\uBCF4\uAE30\uB294 \uC774\uC804 \uBA54\uC2DC\uC9C0\uB97C \uC0AC\uC6A9\uD574\uC694.",
+          noConsumableWindowSendAMessageAnd: "\uCC98\uB9AC\uD560 \uBA54\uC2DC\uC9C0\uAC00 \uC5C6\uC5B4\uC694. \uBA54\uC2DC\uC9C0\uB97C \uBCF4\uB0B8 \uB4A4 \uB2E4\uC2DC \uC2DC\uB3C4\uD558\uC138\uC694.",
+          everyCodexRecordIsFrozenUnfreezeOne: "\uCF54\uB371\uC2A4 \uAE30\uB85D\uC774 \uBAA8\uB450 \uB3D9\uACB0\uB3FC \uC788\uC5B4\uC694. \uBBF8\uB9AC \uBCF4\uB824\uBA74 \uAE30\uB85D \uD558\uB098\uB97C \uB3D9\uACB0 \uD574\uC81C\uD558\uC138\uC694.",
+          connection: "\uC5F0\uACB0: {name} ({provider}/{model})",
+          transport: "\uC804\uC1A1 \uBC29\uC2DD: {choice, select, yes {\uB3C4\uAD6C \uD638\uCD9C} other {\uC5C4\uACA9\uD55C JSON}}",
+          updateDeliveryAndEveryRecordMustBe: "\uC5C5\uB370\uC774\uD2B8 \uC804\uB2EC: {choice, select, yes {\uAE30\uB85D\uBCC4} other {\uC77C\uAD04}}. \uC5C5\uB370\uC774\uD2B8\uB97C \uB9C8\uCE58\uB824\uBA74 \uAE30\uB85D {length}\uAC1C\uB97C \uBAA8\uB450 \uC4F0\uAC70\uB098 \uAC74\uB108\uB6F0\uC5B4\uC57C \uD574\uC694.",
+          preset: "\uD504\uB9AC\uC14B: {choice, select, yes {\uC0AC\uC6A9\uC790 \uC9C0\uC815: {displayName}} other {\uAE30\uBCF8 \uC81C\uACF5: \uAE30\uBCF8\uAC12}}{choice2, select, yes { ({value2, plural, other {\uD15C\uD50C\uB9BF {value}\uAC1C}} \uC218\uC815\uB428)} other {}}",
+          relationsMode: "\uAD00\uACC4 \uBAA8\uB4DC: {choice, select, yes {\uAD00\uACC4 \uD45C} other {\uC778\uB77C\uC778 ties}}{choice2, select, yes { (\uD615\uC2DD\uC774 \uBC14\uB00C\uC5B4\uC11C \uC774\uBC88 \uC2E4\uD589\uC5D0\uC11C \uB9C8\uC774\uADF8\uB808\uC774\uC158\uD574\uC694)} other {}}",
+          activeFiles: "\uD65C\uC131 \uD30C\uC77C: {join}",
+          frozenOmittedFromThePromptEntirely: "\uB3D9\uACB0\uB418\uC5B4 \uD504\uB86C\uD504\uD2B8\uC5D0\uC11C \uBE60\uC9C4 \uD30C\uC77C: {join}",
+          chunkMessage: "\uAD6C\uAC04: {chunkLabel} (\uBA54\uC2DC\uC9C0 {length}\uAC1C)",
+          reconcilePendingTheStoryWasEditedBehind: "\uC774\uC57C\uAE30 \uC218\uC815\uC774 \uAC10\uC9C0\uB410\uC5B4\uC694. \uC218\uC815 \uBC18\uC601 \uBA54\uBAA8\uB97C \uD3EC\uD568\uD588\uC5B4\uC694.",
+          unreadableFilesShownEmpty: "\uC77D\uC744 \uC218 \uC5C6\uC5B4 \uBE48 \uCC44\uB85C \uBCF4\uC5EC \uC900 \uD30C\uC77C: {join}",
+          locksLockedEntitWithLockedFieldsMasked: "\uC7A0\uAE08: \uAC1C\uCCB4 {length}\uAC1C, \uADF8\uC911 {length2}\uAC1C\uB294 \uC7A0\uAE34 \uD544\uB4DC\uB97C \uBAA8\uB378\uC5D0\uAC8C \uC228\uAE40",
+          storySoFarContextTokens: "\uC9C0\uAE08\uAE4C\uC9C0\uC758 \uC774\uC57C\uAE30 \uCEE8\uD14D\uC2A4\uD2B8: ~{length}\uD1A0\uD070",
+          activatedLoreReferenceTokens: "\uD65C\uC131\uD654\uB41C \uC124\uC815 \uCC38\uACE0 \uC790\uB8CC: ~{length}\uD1A0\uD070",
+          activatedLoreExceededTheLoreLimitTokens: "\uC124\uC815\uC774 \uC124\uC815 \uD55C\uB3C4({effectiveLoreLimitTokens}\uD1A0\uD070)\uB97C \uB118\uC5B4\uC11C \uC798\uB838\uC5B4\uC694",
+          thoroughMode: "\uAF3C\uAF3C \uBAA8\uB4DC: {choice, select, yes {\uCF1C\uC9D0, \uAC80\uC99D \uB77C\uC6B4\uB4DC \uCD94\uAC00} other {\uAEBC\uC9D0}}",
+          promptSizeTokensSystemTokensUserCodex: "\uD504\uB86C\uD504\uD2B8 \uD06C\uAE30: \uC2DC\uC2A4\uD15C ~{length}\uD1A0\uD070 + \uC0AC\uC6A9\uC790 ~{length2}\uD1A0\uD070 (\uCF54\uB371\uC2A4 \uCD5C\uB300 \uC785\uB825 {codexMaxInputTokens})",
+          wouldFail: "\uC2E4\uD328 \uC608\uC0C1: {message}",
+          samplerParametersBeingSentOnTheWire: "\uC0D8\uD50C\uB7EC \uB9E4\uAC1C\uBCC0\uC218: {stringify}"
+        },
+        chunkLabel: {
+          messagesOf: "\uC804\uCCB4 {length}\uAC1C \uC911 \uBA54\uC2DC\uC9C0 {firstIdx1}-{lastIdx1}"
+        },
+        runChunk: {
+          theRelationsFormatChangedUnfreezeSoMemoria: "\uAD00\uACC4 \uD615\uC2DD\uC774 \uBC14\uB00C\uC5C8\uC5B4\uC694. \uB9C8\uC774\uADF8\uB808\uC774\uC158\uD558\uB824\uBA74 {join} \uB3D9\uACB0\uC744 \uD574\uC81C\uD558\uC138\uC694.",
+          relationBetweenLockedEntriesCouldNotBe: "\uC7A0\uAE34 \uD56D\uBAA9 \uC0AC\uC774\uC758 \uAD00\uACC4 {stuck}\uAC1C\uB97C \uB2E4\uC2DC \uC4F0\uC9C0 \uBABB\uD574\uC11C \uC0AD\uC81C\uD574\uC694",
+          memoriaUpdatedTheCodexFile: "\uCF54\uB371\uC2A4\uB97C \uC5C5\uB370\uC774\uD2B8\uD588\uC5B4\uC694 (\uD30C\uC77C {length}\uAC1C)"
+        },
+        drain: {
+          memoriaIsUpdatingTheCodex: "\uCF54\uB371\uC2A4 \uC5C5\uB370\uC774\uD2B8 \uC911"
+        },
+        maybeRunCodex: {
+          automaticUpdate: "\uC790\uB3D9 \uC5C5\uB370\uC774\uD2B8",
+          memoriaClosesTheCodexForNow: "\uCF54\uB371\uC2A4 \uC5C5\uB370\uC774\uD2B8\uB97C \uCDE8\uC18C\uD588\uC5B4\uC694"
+        },
+        runCodexNow: {
+          memoriaIsAlreadyUpdatingTheCodex: "\uCF54\uB371\uC2A4 \uC5C5\uB370\uC774\uD2B8\uAC00 \uC774\uBBF8 \uC9C4\uD589 \uC911\uC774\uC5D0\uC694",
+          memoriaIsStillCarryingTheCodexInto: "\uCF54\uB371\uC2A4 \uBD84\uAE30 \uC0C1\uC18D\uC774 \uC9C4\uD589 \uC911\uC774\uC5D0\uC694. \uC7A0\uC2DC \uD6C4 \uB2E4\uC2DC \uC2DC\uB3C4\uD558\uC138\uC694.",
+          everyCodexRecordIsFrozenUnfreezeOne: "\uCF54\uB371\uC2A4 \uAE30\uB85D\uC774 \uBAA8\uB450 \uB3D9\uACB0\uB3FC \uC788\uC5B4\uC694. \uC5C5\uB370\uC774\uD2B8\uD558\uB824\uBA74 \uAE30\uB85D \uD558\uB098\uB97C \uB3D9\uACB0 \uD574\uC81C\uD558\uC138\uC694.",
+          theCodexIsAlreadyCaughtUp: "\uCF54\uB371\uC2A4\uAC00 \uCD5C\uC2E0 \uC0C1\uD0DC\uC608\uC694",
+          memoriaClosesTheCodexForNow: "\uCF54\uB371\uC2A4 \uC5C5\uB370\uC774\uD2B8\uB97C \uCDE8\uC18C\uD588\uC5B4\uC694",
+          fastCatchUpNeedsTheCodexModel: "\uBE60\uB978 \uB530\uB77C\uC7A1\uAE30\uB97C \uD558\uB824\uBA74 \uCF54\uB371\uC2A4 \uBAA8\uB378\uC758 \uCEE8\uD14D\uC2A4\uD2B8\uAC00 \uC774\uC57C\uAE30 \uBAA8\uB378 \uC774\uC0C1\uC774\uC5B4\uC57C \uD574\uC694. \uCD5C\uB300 \uCEE8\uD14D\uC2A4\uD2B8 \uD06C\uAE30\uB97C \uB298\uB9AC\uC138\uC694"
+        },
+        catchupCodex: {
+          memoriaIsCatchingUpTheCodex: "\uCF54\uB371\uC2A4 \uB530\uB77C\uC7A1\uB294 \uC911 ({choice, select, yes {\uCD08\uACE0\uC18D} other {\uBE60\uB984}})",
+          memoriaIsAlreadyWorkingOnTheCodex: "\uCF54\uB371\uC2A4 \uC791\uC5C5\uC774 \uC774\uBBF8 \uC9C4\uD589 \uC911\uC774\uC5D0\uC694"
+        },
+        maybeReconcileSweep: {
+          memoriaIsReconcilingTheCodexWithThe: "\uC774\uC57C\uAE30 \uC218\uC815\uC5D0 \uB9DE\uCDB0 \uCF54\uB371\uC2A4 \uC5C5\uB370\uC774\uD2B8 \uC911",
+          memoriaReconciledTheCodexWithTheEdited: "\uC774\uC57C\uAE30 \uC218\uC815\uC5D0 \uB9DE\uCDB0 \uCF54\uB371\uC2A4\uB97C \uC5C5\uB370\uC774\uD2B8\uD588\uC5B4\uC694 (\uD30C\uC77C {length}\uAC1C)",
+          memoriaCheckedTheCodexAgainstTheEdited: "\uC774\uC57C\uAE30 \uC218\uC815\uC5D0 \uB9DE\uCDB0 \uCF54\uB371\uC2A4\uB97C \uC5C5\uB370\uC774\uD2B8\uD588\uC5B4\uC694"
+        },
+        rebuildCodex: {
+          memoriaIsClearingTheCodexForA: "\uC7AC\uAD6C\uCD95\uC744 \uC704\uD574 \uCF54\uB371\uC2A4 \uBE44\uC6B0\uB294 \uC911",
+          memoriaIsAlreadyWorkingOnTheCodex: "\uCF54\uB371\uC2A4 \uC791\uC5C5\uC774 \uC774\uBBF8 \uC9C4\uD589 \uC911\uC774\uC5D0\uC694",
+          memoriaCouldnTReadTheCodexCursor: "\uCF54\uB371\uC2A4 \uC0C1\uD0DC\uC5D0 \uBB38\uC81C\uAC00 \uC788\uC5B4\uC11C \uC7AC\uAD6C\uCD95\uC744 \uC911\uB2E8\uD588\uC5B4\uC694: {shortErrorText}",
+          memoriaCouldnTClearCodexFileRun: "\uCF54\uB371\uC2A4 \uD30C\uC77C {length}\uAC1C\uB97C \uBE44\uC6B0\uC9C0 \uBABB\uD588\uC5B4\uC694. \uC7AC\uAD6C\uCD95\uC744 \uB2E4\uC2DC \uC2E4\uD589\uD558\uC138\uC694.",
+          memoriaCouldnTClearTheCodexLorebook: "\uCF54\uB371\uC2A4 \uC6D4\uB4DC\uBD81 \uD56D\uBAA9\uC744 \uBE44\uC6B0\uC9C0 \uBABB\uD588\uC5B4\uC694: {shortErrorText}"
+        },
+        runCodexTidy: {
+          memoriaIsTidyingTheCodex: "\uCF54\uB371\uC2A4 \uC815\uB3C8 \uC911",
+          memoriaIsAlreadyWorkingOnTheCodex: "\uCF54\uB371\uC2A4 \uC791\uC5C5\uC774 \uC774\uBBF8 \uC9C4\uD589 \uC911\uC774\uC5D0\uC694",
+          theRelationsFormatChangedRunUpdateNow: "\uAD00\uACC4 \uD615\uC2DD\uC774 \uBC14\uB00C\uC5C8\uC5B4\uC694. \uCF54\uB371\uC2A4\uB97C \uBA3C\uC800 \uC5C5\uB370\uC774\uD2B8\uD558\uC138\uC694",
+          nothingToTidyThoseRecordsAreEmpty: "\uC815\uB3C8\uD560 \uAC8C \uC5C6\uC5B4\uC694: \uAE30\uB85D\uC774 \uBE44\uC5B4 \uC788\uAC70\uB098, \uB3D9\uACB0\uB410\uAC70\uB098, \uC77D\uC744 \uC218 \uC5C6\uC5B4\uC694",
+          theSelectedRecordsAlreadyFitTokensLimit: "\uAE30\uB85D\uC774 \uC774\uBBF8 \uD55C\uB3C4({limit}\uD1A0\uD070) \uC548\uC5D0 \uB4E4\uC5B4\uC640\uC694",
+          tidyTokensLimitModelTargetCallsLeft: `
+\uC815\uB3C8: {tokens}\uD1A0\uD070, \uD55C\uB3C4 {limit}, \uBAA8\uB378 \uBAA9\uD45C {modelTarget}, \uB0A8\uC740 \uD638\uCD9C {remaining}\uD68C
+`,
+          aCodexFileCouldNotBeRead: "\uC815\uB3C8 \uD6C4 \uCF54\uB371\uC2A4 \uC0C1\uD0DC\uC5D0 \uBB38\uC81C\uAC00 \uC0DD\uACBC\uC5B4\uC694: {details}. \uC2E4\uD589 \uCDE8\uC18C\uD558\uBA74 \uC6D0\uB798\uB300\uB85C \uB3CC\uC544\uAC00\uC694.",
+          codexTidiedToTokensLimitInModel: "\uCF54\uB371\uC2A4\uB97C {size}\uD1A0\uD070\uC73C\uB85C \uC815\uB3C8\uD588\uC5B4\uC694 (\uD55C\uB3C4 {limit}, \uBAA8\uB378 \uD638\uCD9C {used}\uD68C)",
+          stoppedAfterModelCallsTokensStillAbove: "\uBAA8\uB378 \uD638\uCD9C {used}\uD68C \uD6C4 \uBA48\uCDC4\uC5B4\uC694: {size}\uD1A0\uD070\uC73C\uB85C \uC544\uC9C1 \uD55C\uB3C4 {limit}\uB97C \uB118\uC5B4\uC694. \uC218\uC815\uD55C \uB0B4\uC6A9\uC740 \uC800\uC7A5\uD588\uACE0, \uC2E4\uD589 \uCDE8\uC18C\uD558\uBA74 \uC6D0\uB798\uB300\uB85C \uB3CC\uC544\uAC00\uC694.",
+          tidyingStoppedCompletedEditsAreKeptUndo: "\uC815\uB3C8\uC744 \uCDE8\uC18C\uD588\uC5B4\uC694. \uC218\uC815\uD55C \uB0B4\uC6A9\uC740 \uC800\uC7A5\uD588\uACE0, \uC2E4\uD589 \uCDE8\uC18C\uD558\uBA74 \uC6D0\uB798\uB300\uB85C \uB3CC\uC544\uAC00\uC694."
+        },
+        refreshCodexFiles: {
+          memoriaIsCatchingUpReEnabledRecords: "\uB2E4\uC2DC \uCF20 \uAE30\uB85D \uB530\uB77C\uC7A1\uB294 \uC911",
+          memoriaIsAlreadyWorkingOnTheCodex: "\uCF54\uB371\uC2A4 \uC791\uC5C5\uC774 \uC774\uBBF8 \uC9C4\uD589 \uC911\uC774\uC5D0\uC694",
+          theRelationsFormatChangedRunUpdateNow: "\uAD00\uACC4 \uD615\uC2DD\uC774 \uBC14\uB00C\uC5C8\uC5B4\uC694. \uAE30\uB85D\uC744 \uB530\uB77C\uC7A1\uAE30 \uC804\uC5D0 \u300C\uC9C0\uAE08 \uC5C5\uB370\uC774\uD2B8\u300D\uB97C \uC2E4\uD589\uD558\uC138\uC694.",
+          noReEnabledRecordsAreWaitingFor: "\uB530\uB77C\uC7A1\uC744 \uAE30\uB85D\uC774 \uC5C6\uC5B4\uC694",
+          memoriaCaughtUpRecord: "\uAE30\uB85D {length}\uAC1C\uB97C \uB530\uB77C\uC7A1\uC558\uC5B4\uC694",
+          memoriaSetsTheCatchUpAside: "\uB530\uB77C\uC7A1\uAE30\uB97C \uCDE8\uC18C\uD588\uC5B4\uC694",
+          theCatchUpPassNeedsTheCodex: "\uB530\uB77C\uC7A1\uAE30\uB97C \uD558\uB824\uBA74 \uCF54\uB371\uC2A4 \uCEE8\uD14D\uC2A4\uD2B8\uAC00 \uC774\uC57C\uAE30 \uBAA8\uB378 \uC774\uC0C1\uC774\uC5B4\uC57C \uD574\uC694. \uCEE8\uD14D\uC2A4\uD2B8\uB97C \uB298\uB9AC\uAC70\uB098 \uB290\uB9B0 \uBAA8\uB4DC\uB85C \uC7AC\uAD6C\uCD95\uD558\uC138\uC694."
+        },
+        rebuildCodexFiles: {
+          memoriaIsRebuildingCodexRecords: "\uCF54\uB371\uC2A4 \uAE30\uB85D \uC7AC\uAD6C\uCD95 \uC911",
+          memoriaIsAlreadyWorkingOnTheCodex: "\uCF54\uB371\uC2A4 \uC791\uC5C5\uC774 \uC774\uBBF8 \uC9C4\uD589 \uC911\uC774\uC5D0\uC694",
+          theRelationsFormatChangedRunUpdateNow: "\uAD00\uACC4 \uD615\uC2DD\uC774 \uBC14\uB00C\uC5C8\uC5B4\uC694. \uAE30\uB85D\uC744 \uC7AC\uAD6C\uCD95\uD558\uAE30 \uC804\uC5D0 \u300C\uC9C0\uAE08 \uC5C5\uB370\uC774\uD2B8\u300D\uB97C \uC2E4\uD589\uD558\uC138\uC694.",
+          thoseRecordsAreFrozenUnfreezeThemFirst: "\uC774 \uAE30\uB85D\uB4E4\uC758 \uB3D9\uACB0\uC744 \uBA3C\uC800 \uD574\uC81C\uD558\uC138\uC694",
+          memoriaRebuiltRecordFromTheStory: "\uAE30\uB85D {length}\uAC1C\uB97C \uC7AC\uAD6C\uCD95\uD588\uC5B4\uC694",
+          memoriaSetsTheRebuildAside: "\uC7AC\uAD6C\uCD95\uC744 \uCDE8\uC18C\uD588\uC5B4\uC694",
+          theRebuildPassNeedsTheCodexModel: "\uC7AC\uAD6C\uCD95\uC744 \uD558\uB824\uBA74 \uCF54\uB371\uC2A4 \uCEE8\uD14D\uC2A4\uD2B8\uAC00 \uC774\uC57C\uAE30 \uBAA8\uB378 \uC774\uC0C1\uC774\uC5B4\uC57C \uD574\uC694. \uC5F0\uACB0 \uC124\uC815\uC5D0\uC11C \uB298\uB9AC\uC138\uC694."
+        }
+      },
+      schema: {
+        keywordArray: {
+          keptOfDroppedTheRestAsDuplicates: "{path}: {length2}\uAC1C \uC911 {length}\uAC1C\uB9CC \uB0A8\uAE30\uACE0 \uB098\uBA38\uC9C0\uB294 \uBC84\uB838\uC5B4\uC694 (\uC911\uBCF5, {keywordMaxWords}\uB2E8\uC5B4 \uCD08\uACFC, \uAE30\uB85D \uC790\uCCB4 \uC774\uB984\uACFC \uC774\uBBF8 \uC77C\uCE58, \uB610\uB294 \uD0A4\uC6CC\uB4DC \uD55C\uB3C4 {keywordLimit}\uAC1C \uCD08\uACFC)"
+        },
+        str: {
+          requiredNonEmptyString: "{path}: \uBE44\uC5B4 \uC788\uC9C0 \uC54A\uC740 \uBB38\uC790\uC5F4\uC774 \uD544\uC694\uD574\uC694",
+          expectedAString: "{path}: \uBB38\uC790\uC5F4\uC774\uC5B4\uC57C \uD574\uC694"
+        },
+        strArray: {
+          expectedAnArrayOfStrings: "{path}: \uBB38\uC790\uC5F4 \uBC30\uC5F4\uC774\uC5B4\uC57C \uD574\uC694",
+          expectedAString: "{path}[{i}]: \uBB38\uC790\uC5F4\uC774\uC5B4\uC57C \uD574\uC694"
+        },
+        objArray: {
+          expectedAnArray: "{path}: \uBC30\uC5F4\uC774\uC5B4\uC57C \uD574\uC694",
+          expectedAnObject: "{path}[{i}]: \uAC1D\uCCB4\uC5EC\uC57C \uD574\uC694"
+        },
+        asRecord: {
+          expectedAJsonObject: "{path}: JSON \uAC1D\uCCB4\uC5EC\uC57C \uD574\uC694"
+        },
+        keepExtras: {
+          useLowercase: '{path}.{k}: \uC18C\uBB38\uC790 "{lower}"\uB97C \uC4F0\uC138\uC694',
+          extraFieldsMustBePrimitiveStringNumber: "{path}.{k}: \uCD94\uAC00 \uD544\uB4DC\uB294 \uAE30\uBCF8\uD615(string, number, boolean, string[])\uC774\uC5B4\uC57C \uD574\uC694. \uD3C9\uD3C9\uD558\uAC8C \uD3BC\uCE58\uC138\uC694"
+        },
+        ridOf: {
+          ridExpectedAShortString: "{path}.rid: \uC9E7\uC740 \uBB38\uC790\uC5F4\uC774\uC5B4\uC57C \uD574\uC694"
+        },
+        validateEntityFile: {
+          idMustMatch: '{path}.id: "{id}"\uB294 {ns}:<lowercase_snake_case> \uD615\uC2DD\uC774\uC5B4\uC57C \uD574\uC694',
+          idBelongsInAnotherFileIdsHere: '{path}.id: "{id}"\uB294 \uB2E4\uB978 \uD30C\uC77C\uC5D0 \uB4E4\uC5B4\uAC00\uC57C \uD574\uC694. \uC774 \uD30C\uC77C\uC758 id\uB294 "{ns}:"\uB85C \uC2DC\uC791\uD574\uC57C \uD574\uC694',
+          idDuplicateId: '{path}.id: \uC911\uBCF5\uB41C id "{id}"',
+          statusThisFieldWasRemovedKeepDurable: "{path}.status: \uC774 \uD544\uB4DC\uB294 \uC5C6\uC5B4\uC84C\uC5B4\uC694 - \uC624\uB798 \uC720\uC9C0\uB418\uB294 \uC0C1\uD0DC\uB294 description\uC5D0 \uC4F0\uACE0, \uADF8 \uC7A5\uBA74\uC5D0\uC11C\uB9CC \uD574\uB2F9\uD558\uB294 \uC0C1\uD0DC\uB294 \uBC84\uB9AC\uC138\uC694",
+          tiesTheRelationsTableIsEnabledMove: "{path}.ties: \uAD00\uACC4 \uD45C\uAC00 \uCF1C\uC838 \uC788\uC5B4\uC694. \uC774 \uD56D\uBAA9\uB4E4\uC744 relations.json \uD589\uC73C\uB85C \uC62E\uAE30\uC138\uC694"
+        },
+        validateRelationsFile: {
+          relationsTheRelationsTableIsDisabledFor: "relations: \uC774 \uD504\uB85C\uD544\uC5D0\uC11C\uB294 \uAD00\uACC4 \uD45C\uAC00 \uAEBC\uC838 \uC788\uC5B4\uC694. \uC5F0\uACB0\uC740 \uAC1C\uCCB4 \uC2DC\uD2B8\uC758 ties\uB85C \uB0A8\uAE30\uC138\uC694",
+          aIsNotAValidEntityRef: '{path}.a: "{a}"\uB294 \uC62C\uBC14\uB978 \uAC1C\uCCB4 \uCC38\uC870\uAC00 \uC544\uB2C8\uC5D0\uC694',
+          bIsNotAValidEntityRef: '{path}.b: "{b}"\uB294 \uC62C\uBC14\uB978 \uAC1C\uCCB4 \uCC38\uC870\uAC00 \uC544\uB2C8\uC5D0\uC694',
+          aAndBAreTheSameEntity: "{path}: a\uC640 b\uAC00 \uAC19\uC740 \uAC1C\uCCB4\uC608\uC694",
+          membersAGroupNeedsAtLeast2: "{path}.members: \uADF8\uB8F9\uC5D0\uB294 \uC11C\uB85C \uB2E4\uB978 \uAD6C\uC131\uC6D0\uC774 2\uAC1C \uC774\uC0C1 \uC788\uC5B4\uC57C \uD574\uC694",
+          membersIsNotAValidEntityRef: '{path}.members: "{m}"\uB294 \uC62C\uBC14\uB978 \uAC1C\uCCB4 \uCC38\uC870\uAC00 \uC544\uB2C8\uC5D0\uC694',
+          rolesKeyIsNotAValidEntity: '{path}.roles: \uD0A4 "{k}"\uB294 \uC62C\uBC14\uB978 \uAC1C\uCCB4 \uCC38\uC870\uAC00 \uC544\uB2C8\uC5D0\uC694',
+          rolesExpectedAStringRole: '{path}.roles["{k}"]: \uC5ED\uD560\uC740 \uBB38\uC790\uC5F4\uC774\uC5B4\uC57C \uD574\uC694',
+          typeExpectedPairOrGroup: '{path}.type: "pair" \uB610\uB294 "group"\uC774\uC5B4\uC57C \uD574\uC694'
+        },
+        validateThreadsFile: {
+          statusExpectedOpenStalledResolvedAbandoned: "{path}.status: open | stalled | resolved | abandoned \uC911 \uD558\uB098\uC5EC\uC57C \uD574\uC694"
+        },
+        validateWorldFile: {
+          factsAtLeastOneFactRequiredDrop: "{path}.facts: fact\uAC00 \uD558\uB098 \uC774\uC0C1 \uC788\uC5B4\uC57C \uD574\uC694. \uC5C6\uC73C\uBA74 \uADF8 topic\uC744 \uBC84\uB9AC\uC138\uC694"
+        },
+        validateKnowledgeFile: {
+          appearsInBothKnownByAndHiddenFromWrite: '{path}: knownBy\uC640 hiddenFrom \uC591\uCABD\uC5D0 \uBAA8\uB450 \uC788\uC5B4\uC694: {join}. \uBE44\uBC00 \uADF8 \uC790\uCCB4\uB97C "fact"\uB85C \uC4F0\uACE0, \uADF8 \uBE44\uBC00\uC744 \uC544\uB294 \uCABD\uACFC \uBAA8\uB974\uB294 \uCABD\uC744 \uB098\uC5F4\uD558\uC138\uC694 - \uBAA8\uB978\uB2E4\uB294 \uC0AC\uC2E4\uC744 fact\uB85C \uC4F0\uBA74 \uC548 \uB3FC\uC694',
+          needsAtLeastOneOfKnownByHiddenFrom: "{path}: knownBy, hiddenFrom, falseBeliefs \uC911 \uD558\uB098 \uC774\uC0C1\uC774 \uD544\uC694\uD574\uC694 - \uBAA8\uB450\uAC00 \uC544\uB294 \uC0AC\uC2E4\uC740 world\uB098 timeline\uC5D0 \uB123\uC73C\uC138\uC694",
+          omittedDuplicateKnowledgeItem: "{path}: \uC911\uBCF5\uB41C \uC9C0\uC2DD \uD56D\uBAA9\uC744 \uBE90\uC5B4\uC694"
+        },
+        formatDangling: {
+          isNotDefinedInAnyEntityFile: '{path}: "{ref}"\uB294 \uC5B4\uB290 \uAC1C\uCCB4 \uD30C\uC77C\uC5D0\uB3C4 \uC815\uC758\uB418\uC9C0 \uC54A\uC558\uC5B4\uC694 - \uAC1C\uCCB4\uB97C \uCD94\uAC00\uD558\uAC70\uB098, \uC774 \uD589\uC744 \uBC84\uB9AC\uAC70\uB098 \uB300\uC0C1\uC744 \uBC14\uAFB8\uC138\uC694 (relations\uC5D0\uB294 \uAC1C\uCCB4 \uCC38\uC870\uB9CC \uB4E4\uC5B4\uAC00\uC694)',
+          isNotDefinedInAnyEntityFile2: '{path}: "{ref}"\uB294 \uC5B4\uB290 \uAC1C\uCCB4 \uD30C\uC77C\uC5D0\uB3C4 \uC815\uC758\uB418\uC9C0 \uC54A\uC558\uC5B4\uC694 - \uAC1C\uCCB4\uB97C \uCD94\uAC00\uD558\uAC70\uB098 \uC77C\uBC18 \uD14D\uC2A4\uD2B8\uB85C \uC4F0\uC138\uC694'
+        },
+        fix: {
+          wasNotAKnownEntityRecordedAs: '{path}: "{ref}"\uB294 \uC54C\uB824\uC9C4 \uAC1C\uCCB4\uAC00 \uC544\uB2C8\uB77C\uC11C "{plain}"\uB85C \uAE30\uB85D\uD588\uC5B4\uC694'
+        }
+      },
+      store: {
+        loadCursor: {
+          theCodexCursorIsUnreadable: "\uCF54\uB371\uC2A4 \uCEE4\uC11C \uBB38\uC81C: {error}"
+        },
+        loadCodex: {
+          unreadableOnDisk: "\uB514\uC2A4\uD06C\uC5D0\uC11C \uC77D\uC744 \uC218 \uC5C6\uC5B4\uC694: {error}"
+        },
+        copyCodexToEmptyChat: {
+          jsonIsUnreadableOnTheSourceChat: "\uC6D0\uBCF8 \uCC44\uD305\uC758 {key}.json\uC744 \uC77D\uC744 \uC218 \uC5C6\uC5B4\uC694: {error}"
+        },
+        readCodexFilesRaw: {
+          unreadableJsonTheFileExistsButCannot: "{key}.json\uC744 \uC77D\uC744 \uC218 \uC5C6\uC5B4\uC694: {error}. \uC800\uC7A5\uD558\uAE30 \uC804\uC5D0 \uACE0\uCE58\uAC70\uB098 \uC0AD\uC81C\uD558\uC138\uC694."
+        }
+      },
+      sync: {
+        doSync: {
+          codexSyncSkippedUnreadableOrInvalidFile: "\uCF54\uB371\uC2A4\uB97C \uB3D9\uAE30\uD654\uD558\uC9C0 \uBABB\uD588\uC5B4\uC694. \uC77D\uC744 \uC218 \uC5C6\uAC70\uB098 \uC798\uBABB\uB41C \uD30C\uC77C {length, plural, other {#\uAC1C}}: {join}",
+          outdatedCodexEntrCouldNotBeRemoved: "\uC624\uB798\uB41C \uCF54\uB371\uC2A4 \uD56D\uBAA9 {failedDeletes}\uAC1C\uB97C \uC81C\uAC70\uD558\uC9C0 \uBABB\uD588\uC5B4\uC694. \uACC4\uC18D \uC8FC\uC785\uB420 \uC218 \uC788\uC5B4\uC694."
+        },
+        doWipe: {
+          failedToDeleteCodexEntrTheyMay: "\uCF54\uB371\uC2A4 \uD56D\uBAA9 {failed}\uAC1C\uB97C \uC0AD\uC81C\uD558\uC9C0 \uBABB\uD588\uC5B4\uC694. \uACC4\uC18D \uC8FC\uC785\uB420 \uC218 \uC788\uC5B4\uC694."
+        }
+      },
+      tokens: {
+        countCodexText: {
+          invalidTokenCount: "\uC798\uBABB\uB41C \uD1A0\uD070 \uC218"
+        }
+      }
+    },
+    coverage: {
+      setHidden: {
+        couldNotUpdateVisibilityForMessagesRun: "\uBA54\uC2DC\uC9C0 {length}\uAC1C\uC758 \uD45C\uC2DC \uC0C1\uD0DC\uB97C \uC5C5\uB370\uC774\uD2B8\uD558\uC9C0 \uBABB\uD588\uC5B4\uC694. \u300C\uD45C\uC2DC \uC0C1\uD0DC \uC7AC\uB3D9\uAE30\uD654\u300D\uB97C \uB2E4\uC2DC \uC2E4\uD589\uD558\uC138\uC694."
+      }
+    },
+    fork: {
+      inheritedMessageIds: {
+        forkAncestryCouldNotBeResolved: "\uBD84\uAE30 \uACC4\uBCF4\uB97C \uD655\uC778\uD558\uC9C0 \uBABB\uD588\uC5B4\uC694",
+        forkAncestryIsIncomplete: "\uBD84\uAE30 \uACC4\uBCF4\uAC00 \uBD88\uC644\uC804\uD574\uC694"
+      },
+      requireForkShelf: {
+        forkInheritanceIsStillPendingRetryAfter: "\uBD84\uAE30 \uC0C1\uC18D\uC774 \uC544\uC9C1 \uB300\uAE30 \uC911\uC774\uC5D0\uC694. \uB05D\uB0A0 \uB54C\uAE4C\uC9C0 \uAE30\uB2E4\uB9B0 \uB4A4 \uB2E4\uC2DC \uC2DC\uB3C4\uD558\uC138\uC694."
+      },
+      doForkAdoption: {
+        memoriaCouldnTCarryTheShelfInto: "\uC694\uC57D \uBD84\uAE30 \uC0C1\uC18D\uC5D0 \uC2E4\uD328\uD588\uC5B4\uC694. \uB2E4\uC2DC \uC2DC\uB3C4\uD560\uAC8C\uC694: {shortErrorText}"
+      },
+      adoptForkCodex: {
+        memoriaCouldnTCarryTheCodexInto: "\uCF54\uB371\uC2A4 \uBD84\uAE30 \uC0C1\uC18D\uC5D0 \uC2E4\uD328\uD588\uC5B4\uC694. \uB2E4\uC2DC \uC2DC\uB3C4\uD560\uAC8C\uC694: {shortErrorText}"
+      },
+      markCodexAdopted: {
+        forkChatVanishedWhileRecordingCodexAdoption: "\uCF54\uB371\uC2A4 \uBD84\uAE30 \uC0C1\uC18D \uC911\uC5D0 \uCC44\uD305\uC774 \uC0AD\uC81C\uB410\uC5B4\uC694"
+      },
+      newBook: {
+        memoriaSShelfForThisChatChapters: "\uC774 \uCC44\uD305\uC758 LumiBooks \uCC55\uD130\uC640 \uC544\uD06C\uC608\uC694."
+      }
+    },
+    index: {
+      doPushState: {
+        lumiBooksStateRefreshFailed: "LumiBooks \uC0C1\uD0DC\uB97C \uC0C8\uB85C \uACE0\uCE58\uC9C0 \uBABB\uD588\uC5B4\uC694: {describeError}"
+      },
+      messages: {
+        summaryRepairFailed: "\uC694\uC57D\uC744 \uBCF5\uAD6C\uD558\uC9C0 \uBABB\uD588\uC5B4\uC694: {describeError}",
+        savedDiagnosticsCleared: "\uC800\uC7A5\uB41C \uC9C4\uB2E8 \uAE30\uB85D\uC744 \uC9C0\uC6E0\uC5B4\uC694.",
+        recallSettingSavedEntryOrBookUpdates: "\uC0C1\uAE30 \uC124\uC815\uC744 \uC800\uC7A5\uD588\uC9C0\uB9CC {failed}\uAC74\uC740 \uC5C5\uB370\uC774\uD2B8\uD558\uC9C0 \uBABB\uD588\uC5B4\uC694. \uB2E4\uC2DC \uC801\uC6A9\uD574\uC11C \uC7AC\uC2DC\uB3C4\uD558\uC138\uC694.",
+        invalidProfilePayload: "\uD504\uB85C\uD544 \uB370\uC774\uD130\uAC00 \uC62C\uBC14\uB974\uC9C0 \uC54A\uC544\uC694.",
+        profileNoLongerExists: "\uD504\uB85C\uD544 {id}\uC774(\uAC00) \uB354 \uC774\uC0C1 \uC5C6\uC5B4\uC694.",
+        memoriaKeepsAtLeastOneProfile: "\uD504\uB85C\uD544\uC774 \uD558\uB098\uB294 \uC788\uC5B4\uC57C \uD574\uC694",
+        memoriaIsAlreadyFilingAChapter: "\uCC55\uD130\uB97C \uB9CC\uB4DC\uB294 \uC911\uC774\uC5D0\uC694",
+        yourStoryNeedsMoreMessagesForMe: "\uD56D\uBAA9\uC744 \uB9CC\uB4E4 \uB9CC\uD07C \uBA54\uC2DC\uC9C0\uAC00 \uCDA9\uBD84\uD558\uC9C0 \uC54A\uC544\uC694",
+        memoriaIsAlreadyBindingAnArc: "\uC544\uD06C\uB97C \uB9CC\uB4DC\uB294 \uC911\uC774\uC5D0\uC694",
+        memoriaIsAlreadyPressingAVolume: "\uBCFC\uB968\uC744 \uB9CC\uB4DC\uB294 \uC911\uC774\uC5D0\uC694",
+        memoriaCanTFindThatEntry: "\uD56D\uBAA9\uC744 \uCC3E\uC744 \uC218 \uC5C6\uC5B4\uC694",
+        memoriaReleasedTheEntryToYourLorebook: "\uD56D\uBAA9\uC744 \uC6D4\uB4DC\uBD81\uC73C\uB85C \uD574\uC81C\uD588\uC5B4\uC694",
+        memoriaCanTFindThatEntryTo: "\uD56D\uBAA9\uC744 \uCC3E\uC744 \uC218 \uC5C6\uC5B4\uC694",
+        memoriaIsAlreadyBusyWithA: "{busyKind, select, chapter {\uCC55\uD130} arc {\uC544\uD06C} volume {\uBCFC\uB968} series {\uC2DC\uB9AC\uC988} saga {\uC0AC\uAC00} library {\uB77C\uC774\uBE0C\uB7EC\uB9AC} universe {\uC720\uB2C8\uBC84\uC2A4} codex {\uCF54\uB371\uC2A4} other {{busyKind}}} \uC791\uC5C5\uC774 \uC9C4\uD589 \uC911\uC774\uC5D0\uC694",
+        memoriaCanTRegenerateInheritedChapters: "\uC0C1\uC18D\uBC1B\uC740 \uCC55\uD130\uB294 \uC7AC\uC0DD\uC131\uD560 \uC218 \uC5C6\uC5B4\uC694",
+        memoriaCanTRegenerateAGhostChapter: "\uC720\uB839 \uCC55\uD130\uB294 \uBA3C\uC800 \uC815\uB9AC\uD55C \uB4A4\uC5D0 \uC7AC\uC0DD\uC131\uD558\uC138\uC694",
+        memoriaHasNoArcSourcesToRegenerate: "\uC774 \uBCFC\uB968\uC744 \uC7AC\uC0DD\uC131\uD560 \uC6D0\uBCF8 \uC544\uD06C\uAC00 \uC5C6\uC5B4\uC694",
+        memoriaHasNoChapterSourcesToRegenerate: "\uC774 \uC544\uD06C\uB97C \uC7AC\uC0DD\uC131\uD560 \uC6D0\uBCF8 \uCC55\uD130\uAC00 \uC5C6\uC5B4\uC694",
+        memoriaHasNoMessagesToRegenerateThis: "\uC774 \uCC55\uD130\uB97C \uC7AC\uC0DD\uC131\uD560 \uC6D0\uBCF8 \uBA54\uC2DC\uC9C0\uAC00 \uC5C6\uC5B4\uC694",
+        theseMessagesAreBoundIntoReleaseOr: "\uC774 \uBA54\uC2DC\uC9C0\uB4E4\uC740 {blockerLabel}\uC5D0 \uBB36\uC5EC \uC788\uC5B4\uC694, \uBA3C\uC800 \uD574\uC81C\uD558\uAC70\uB098 \uC0AD\uC81C\uD558\uC138\uC694",
+        dryRunFailed: "\uBAA8\uC758 \uC2E4\uD589\uC5D0 \uC2E4\uD328\uD588\uC5B4\uC694: {text}",
+        memoriaIsNotInTheMiddleOf: "\uCDE8\uC18C\uD560 \uC791\uC5C5\uC774 \uC5C6\uC5B4\uC694",
+        summaryRecallSavedEntriesUpdated: "\uC694\uC57D \uC0C1\uAE30 \uC124\uC815\uC744 \uC800\uC7A5\uD588\uC5B4\uC694. \uD56D\uBAA9 {updated}\uAC1C\uB97C \uC5C5\uB370\uC774\uD2B8\uD588\uC5B4\uC694.",
+        waitForTheCurrentTaskToFinish: "\uC694\uC57D\uC744 \uAC00\uC838\uC624\uAE30 \uC804\uC5D0 \uD604\uC7AC \uC791\uC5C5\uC774 \uB05D\uB0A0 \uB54C\uAE4C\uC9C0 \uAE30\uB2E4\uB9AC\uC138\uC694",
+        importingSummaries: "\uC694\uC57D \uAC00\uC838\uC624\uB294 \uC911",
+        memoriaFoundNoUsablePresetsInThat: "\uC774 \uD30C\uC77C\uC5D0\uB294 \uC4F8 \uC218 \uC788\uB294 \uD504\uB9AC\uC14B\uC774 \uC5C6\uC5B4\uC694",
+        memoriaImportedPreset: "\uD504\uB9AC\uC14B {length}\uAC1C\uB97C \uAC00\uC838\uC654\uC5B4\uC694",
+        invalidPresetPayload: "\uD504\uB9AC\uC14B \uB370\uC774\uD130\uAC00 \uC62C\uBC14\uB974\uC9C0 \uC54A\uC544\uC694.",
+        memoriaIsBusyWaitForHerTo: "\uD604\uC7AC \uC791\uC5C5\uC774 \uB05D\uB0A0 \uB54C\uAE4C\uC9C0 \uAE30\uB2E4\uB9AC\uC138\uC694",
+        memoriaSeededInheritedMemorBeforeTheGreeting: "\uCCAB \uC778\uC0AC \uC55E\uC5D0 \uC0C1\uC18D \uAE30\uC5B5 {count}\uAC1C\uB97C \uCD94\uAC00\uD588\uC5B4\uC694",
+        memoriaRebuiltOntoInheritedMemorAndIs: "\uC0C1\uC18D \uAE30\uC5B5 {count}\uAC1C\uB97C \uCD94\uAC00\uD588\uC5B4\uC694. \uC774 \uCC44\uD305\uC744 \uB2E4\uC2DC \uC694\uC57D\uD558\uB294 \uC911\uC774\uC5D0\uC694.",
+        memoriaWillLeaveMessageUntouched: "\uBA54\uC2DC\uC9C0 {length}\uAC1C\uB97C \uC555\uCD95\uC5D0\uC11C \uC81C\uC678\uD588\uC5B4\uC694",
+        memoriaWillCompressMessageAgain: "\uBA54\uC2DC\uC9C0 {length}\uAC1C\uC758 \uC555\uCD95\uC744 \uD5C8\uC6A9\uD588\uC5B4\uC694",
+        memoriaTeachesTheCodexBeforeSheOpens: "\uBA54\uBAA8\uB9AC\uC544\uB294 \uCF54\uB371\uC2A4\uB97C \uC5F4\uAE30 \uC804\uC5D0 \uBA3C\uC800 \uAC00\uB974\uCCD0 \uC918\uC694. \uC218\uC5C5\uBD80\uD130 \uB4E4\uC5B4 \uC8FC\uC138\uC694",
+        enableTheCodexInTuningFirst: "\uBA3C\uC800 \uC870\uC815 \uD0ED\uC5D0\uC11C \uCF54\uB371\uC2A4\uB97C \uCF1C\uC138\uC694",
+        acceptingCurrentCodexRecords: "\uD604\uC7AC \uCF54\uB371\uC2A4 \uAE30\uB85D\uC744 \uC2B9\uC778\uD558\uB294 \uC911",
+        clearStaleTags: "\uC624\uB798\uB41C \uD0DC\uADF8 \uC815\uB9AC",
+        memoriaIsUpdatingTheCodexRestoreAgain: "\uCF54\uB371\uC2A4\uB97C \uC5C5\uB370\uC774\uD2B8\uD558\uB294 \uC911\uC774\uC5D0\uC694. \uB05D\uB09C \uB4A4\uC5D0 \uBCF5\uC6D0\uD558\uC138\uC694.",
+        memoriaCouldnTRestoreThatBackup: "\uBC31\uC5C5\uC744 \uBCF5\uC6D0\uD558\uC9C0 \uBABB\uD588\uC5B4\uC694: {error}",
+        memoriaCouldnTSyncTheCodexTo: "\uCF54\uB371\uC2A4\uB97C \uC6D4\uB4DC\uBD81\uC5D0 \uB3D9\uAE30\uD654\uD558\uC9C0 \uBABB\uD588\uC5B4\uC694: {shortErrorText}",
+        memoriaRestoredCodexFile: "\uCF54\uB371\uC2A4 \uD30C\uC77C {length}\uAC1C\uB97C \uBCF5\uC6D0\uD588\uC5B4\uC694",
+        memoriaIsUpdatingTheCodexAbortThat: "\uBA3C\uC800 \uCF54\uB371\uC2A4 \uC5C5\uB370\uC774\uD2B8\uB97C \uCDE8\uC18C\uD558\uC138\uC694",
+        memoriaCouldnTCarryThatCodexOver: "\uCF54\uB371\uC2A4\uB97C \uBCF5\uC0AC\uD558\uC9C0 \uBABB\uD588\uC5B4\uC694: {shortErrorText}",
+        memoriaCarriedTheCodexOverSheWill: "\uCF54\uB371\uC2A4\uB97C \uBCF5\uC0AC\uD588\uC5B4\uC694. \uC774 \uCC44\uD305\uC758 \uCC98\uC74C\uBD80\uD130 \uC0C9\uC778\uC744 \uC2DC\uC791\uD574\uC694.",
+        memoriaHasNoCodexSnapshotToUndo: "\uBCF5\uC6D0\uD560 \uCF54\uB371\uC2A4 \uC2A4\uB0C5\uC20F\uC774 \uC5C6\uC5B4\uC694",
+        memoriaCouldnTUndo: "\uC2E4\uD589 \uCDE8\uC18C\uD558\uC9C0 \uBABB\uD588\uC5B4\uC694: {error}",
+        memoriaRolledTheCodexBack: "\uCF54\uB371\uC2A4\uB97C \uBCF5\uC6D0\uD588\uC5B4\uC694",
+        unknownCodexFile: '\uC54C \uC218 \uC5C6\uB294 \uCF54\uB371\uC2A4 \uD30C\uC77C "{file}"\uC774\uC5D0\uC694.',
+        memoriaIsUpdatingTheCodexSaveAgain: "\uCF54\uB371\uC2A4\uB97C \uC5C5\uB370\uC774\uD2B8\uD558\uB294 \uC911\uC774\uC5D0\uC694. \uB05D\uB09C \uB4A4\uC5D0 \uC800\uC7A5\uD558\uC138\uC694.",
+        thatIsNotValidJson: "\uC62C\uBC14\uB978 JSON\uC774 \uC544\uB2C8\uC5D0\uC694: {describeError}",
+        validationFailed: "\uAC80\uC99D\uC5D0 \uC2E4\uD328\uD588\uC5B4\uC694: {errors0}{extra}",
+        savedButCouldNotBeReadSo: "\uC800\uC7A5\uD588\uC9C0\uB9CC {names}\uC744(\uB97C) \uC77D\uC9C0 \uBABB\uD588\uC5B4\uC694. \uD30C\uC77C \uAC04 \uAC80\uC0AC\uB294 \uAC74\uB108\uB6F0\uC5C8\uC5B4\uC694.",
+        savedWithDanglingReferenceToFixIn: "\uC800\uC7A5\uD588\uC5B4\uC694. \uB04A\uC5B4\uC9C4 \uCC38\uC870\uAC00 {length}\uAC1C \uC788\uC5B4\uC694",
+        memoriaSavedJson: "{file}.json\uC744 \uC800\uC7A5\uD588\uC5B4\uC694",
+        memoriaIsClearingTheCodex: "\uCF54\uB371\uC2A4\uB97C \uBE44\uC6B0\uB294 \uC911",
+        memoriaCouldnTClearCodexFileTry: "\uCF54\uB371\uC2A4 \uD30C\uC77C {length}\uAC1C\uB97C \uBE44\uC6B0\uC9C0 \uBABB\uD588\uC5B4\uC694. \uB2E4\uC2DC \uC2DC\uB3C4\uD558\uC138\uC694.",
+        memoriaCouldnTClearTheCodexLorebook: "\uCF54\uB371\uC2A4 \uC6D4\uB4DC\uBD81 \uD56D\uBAA9\uC744 \uBE44\uC6B0\uC9C0 \uBABB\uD588\uC5B4\uC694: {shortErrorText}",
+        memoriaClearedTheCodexForThisChat: "\uCF54\uB371\uC2A4\uB97C \uBE44\uC6E0\uC5B4\uC694",
+        rebuildFiles: "\uD30C\uC77C \uC7AC\uAD6C\uCD95",
+        memoriaClearedEntrFromTheShelf: "\uD56D\uBAA9 {removed}\uAC1C\uB97C \uBE44\uC6E0\uC5B4\uC694",
+        theShelfIsAlreadyEmpty: "\uCC45\uC7A5\uC774 \uBE44\uC5B4 \uC788\uC5B4\uC694",
+        memoriaClearedEntrAndIsReSummarizing: "\uD56D\uBAA9 {removed}\uAC1C\uB97C \uBE44\uC6E0\uC5B4\uC694. \uC774 \uCC44\uD305\uC744 \uB2E4\uC2DC \uC694\uC57D\uD558\uB294 \uC911\uC774\uC5D0\uC694."
+      },
+      handleExternalEntryDeletion: {
+        memoriaUnhidMessageAfterAnExternalLorebook: "\uC6D4\uB4DC\uBD81\uC774 \uBC14\uB00C\uC5B4\uC11C \uBA54\uC2DC\uC9C0 {unhidden}\uAC1C\uC758 \uC228\uAE40\uC744 \uD574\uC81C\uD588\uC5B4\uC694"
+      },
+      msg: {
+        memoriaHasNoChaptersLeftToRetry: "\uC544\uD06C\uB97C \uB2E4\uC2DC \uC2DC\uB3C4\uD560 \uCC55\uD130\uAC00 \uB0A8\uC544 \uC788\uC9C0 \uC54A\uC544\uC694"
+      },
+      retryLastFailure: {
+        nothingToRetryYetMemoriaWillCatch: "\uB2E4\uC2DC \uC2DC\uB3C4\uD560 \uC791\uC5C5\uC774 \uC5C6\uC5B4\uC694. \uB2E4\uC74C \uBA54\uC2DC\uC9C0\uB97C \uAE30\uB2E4\uB9AC\uB294 \uC911\uC774\uC5D0\uC694."
+      },
+      syncProfileSettings: {
+        profileSavedButCodexInjectionSettingsCould: "\uD504\uB85C\uD544\uC744 \uC800\uC7A5\uD588\uC5B4\uC694. \uCC44\uD305 {length}\uAC1C\uC5D0\uC11C \uCF54\uB371\uC2A4 \uC8FC\uC785 \uB3D9\uAE30\uD654\uC5D0 \uC2E4\uD328\uD588\uC5B4\uC694: {join}. \uC624\uB958\uB97C \uACE0\uCE5C \uB4A4 \uC124\uC815\uC744 \uB2E4\uC2DC \uC801\uC6A9\uD558\uC138\uC694.",
+        profileSavedButCodexInjectionSettingsCould2: "\uD504\uB85C\uD544\uC744 \uC800\uC7A5\uD588\uC5B4\uC694. \uCF54\uB371\uC2A4 \uC8FC\uC785 \uB3D9\uAE30\uD654\uC5D0 \uC2E4\uD328\uD588\uC5B4\uC694: {describeError}"
+      },
+      next: {
+        newProfile: "\uC0C8 \uD504\uB85C\uD544"
+      },
+      blockerLabel: {
+        aVolume: "\uBCFC\uB968",
+        anArc: "\uC544\uD06C",
+        anotherEntry: "\uB2E4\uB978 \uD56D\uBAA9"
+      },
+      text: {
+        memoriaSShelfIsAlreadyAlignedNya: "\uBA54\uC2DC\uC9C0 \uD45C\uC2DC \uC0C1\uD0DC\uAC00 \uC774\uBBF8 \uCD5C\uC2E0\uC774\uC5D0\uC694",
+        memoriaResyncedMessageHiddenUnhidden: "\uBA54\uC2DC\uC9C0 {total}\uAC1C\uB97C \uC7AC\uB3D9\uAE30\uD654\uD588\uC5B4\uC694 (\uC228\uAE40 {hidden}\uAC1C, \uC228\uAE40 \uD574\uC81C {unhidden}\uAC1C)",
+        thisChatAlreadyHasMemoriesUseRebuild: "\uC774 \uCC44\uD305\uC5D0\uB294 \uC774\uBBF8 \uC694\uC57D\uC774 \uC788\uC5B4\uC694. \uC7AC\uAD6C\uCD95\uC744 \uC0AC\uC6A9\uD558\uC138\uC694.",
+        thatChatHasNoMemoriesToInherit: "\uC6D0\uBCF8 \uCC44\uD305\uC5D0 \uC0C1\uC18D\uD560 \uC694\uC57D\uC774 \uC5C6\uC5B4\uC694",
+        memoriaIsAlreadyRebasingThisChat: "\uB9AC\uBCA0\uC774\uC2A4\uD558\uB294 \uC911\uC774\uC5D0\uC694",
+        memoriaCanTRebaseAChatOnto: "\uB9AC\uBCA0\uC774\uC2A4\uD560 \uC6D0\uBCF8\uC73C\uB85C \uB2E4\uB978 \uCC44\uD305\uC744 \uACE0\uB974\uC138\uC694",
+        memoriaIsAlreadyRebuildingThisChat: "\uC7AC\uAD6C\uCD95\uD558\uB294 \uC911\uC774\uC5D0\uC694",
+        memoriaCanTRebuildAChatOnto: "\uC7AC\uAD6C\uCD95\uD560 \uC6D0\uBCF8\uC73C\uB85C \uB2E4\uB978 \uCC44\uD305\uC744 \uACE0\uB974\uC138\uC694",
+        thisChatAlreadyHasACodexWipe: "\uBA3C\uC800 \uC774 \uCC44\uD305\uC758 \uCF54\uB371\uC2A4\uB97C \uBE44\uC6B0\uC138\uC694",
+        thatChatHasNoCodexToCarry: "\uC6D0\uBCF8 \uCC44\uD305\uC5D0 \uBCF5\uC0AC\uD560 \uCF54\uB371\uC2A4\uAC00 \uC5C6\uC5B4\uC694",
+        memoriaCanTCarryACodexOnto: "\uCF54\uB371\uC2A4\uB97C \uBCF5\uC0AC\uD574 \uC62C \uB2E4\uB978 \uCC44\uD305\uC744 \uACE0\uB974\uC138\uC694",
+        thisChatHasNoInheritedMemoriesTo: "\uBD84\uB9AC\uD560 \uC0C1\uC18D \uAE30\uC5B5\uC774 \uC5C6\uC5B4\uC694",
+        memoriaDetachedInheritedMemor: "\uC0C1\uC18D \uAE30\uC5B5 {removed}\uAC1C\uB97C \uBD84\uB9AC\uD588\uC5B4\uC694"
+      },
+      extra: {
+        more: " (\uC678 {length1}\uAC1C)"
+      }
+    },
+    injection: {
+      label: {
+        msgs: "{tierName} \uBA54\uC2DC\uC9C0 {firstIdx1}-{lastIdx1}"
+      },
+      buildInjection: {
+        memoriaCouldnTReadTheChatAnd: "\uCC44\uD305\uC744 \uC77D\uC9C0 \uBABB\uD588\uC5B4\uC694. \uC694\uC57D \uC8FC\uC785\uC744 \uAC74\uB108\uB6F0\uC5C8\uC5B4\uC694.",
+        memoriaCouldnTFindTheChatHistory: "\uD504\uB86C\uD504\uD2B8\uC5D0\uC11C \uCC44\uD305 \uAE30\uB85D\uC744 \uCC3E\uC9C0 \uBABB\uD588\uC5B4\uC694. \uC694\uC57D \uC8FC\uC785\uC744 \uAC74\uB108\uB6F0\uC5C8\uC5B4\uC694."
+      }
+    },
+    lessons: {
+      loadFromDisk: {
+        memoriaCouldnTReadHerLessonRegister: "\uBA54\uBAA8\uB9AC\uC544\uAC00 \uC218\uC5C5 \uAE30\uB85D\uBD80\uB97C \uC77D\uC9C0 \uBABB\uD574\uC11C \uBCF4\uAD00\uD568 \uBD09\uC778\uC744 \uD480\uC5C8\uC5B4\uC694: {describeError}"
+      },
+      mutateLessons: {
+        memoriaCouldnTReadHerLessonRegister: "\uBA54\uBAA8\uB9AC\uC544\uAC00 \uC218\uC5C5 \uAE30\uB85D\uBD80\uB97C \uC77D\uC9C0 \uBABB\uD574\uC11C \uC774 \uBCC0\uACBD \uC0AC\uD56D\uC740 \uC544\uC9C1 \uB514\uC2A4\uD06C\uC5D0 \uC800\uC7A5\uB418\uC9C0 \uC54A\uC558\uC5B4\uC694"
+      }
+    },
+    memoria: {
+      firePhrases: {
+        memoriaStirsTheInkpotNyaa: "\uCC55\uD130 \uC0DD\uC131 \uC911\u2026",
+        memoriaIsShelvingThisSceneHushA: "\uCC55\uD130 \uC0DD\uC131 \uC911\u2026",
+        memoriaFlicksHerTailAndStartsWriting: "\uCC55\uD130 \uC0DD\uC131 \uC911\u2026",
+        memoriaOpensAFreshPageForYou: "\uCC55\uD130 \uC0DD\uC131 \uC911\u2026",
+        memoriaPadsOffToCompressThisIn: "\uCC55\uD130 \uC0DD\uC131 \uC911\u2026"
+      },
+      retryPhrases: {
+        memoriaTrippedOnAQuillTryingAgain: "\uB2E4\uC2DC \uC2DC\uB3C4\uD558\uB294 \uC911\u2026",
+        memoriaSInkSmudgedOneMoreTry: "\uB2E4\uC2DC \uC2DC\uB3C4\uD558\uB294 \uC911\u2026",
+        memoriaReshufflesTheIndexCardsRetrying: "\uB2E4\uC2DC \uC2DC\uB3C4\uD558\uB294 \uC911\u2026"
+      },
+      successPhrases: {
+        memoriaSlidTheChapterOntoYourShelf: "\uCC55\uD130\uB97C \uB9CC\uB4E4\uC5C8\uC5B4\uC694",
+        memoriaFiledItNeatlyBetweenTheOthers: "\uCC55\uD130\uB97C \uB9CC\uB4E4\uC5C8\uC5B4\uC694",
+        memoriaStampedTheSpineAllYours: "\uCC55\uD130\uB97C \uB9CC\uB4E4\uC5C8\uC5B4\uC694",
+        memoriaPurrsThePageIsDone: "\uCC55\uD130\uB97C \uB9CC\uB4E4\uC5C8\uC5B4\uC694",
+        memoriaTapsTheChapterIntoPlace: "\uCC55\uD130\uB97C \uB9CC\uB4E4\uC5C8\uC5B4\uC694"
+      },
+      arcFirePhrases: {
+        memoriaGathersTheChaptersForAnArc: "\uC544\uD06C \uC0DD\uC131 \uC911\u2026",
+        memoriaIsBindingSeveralChaptersTogether: "\uC544\uD06C \uC0DD\uC131 \uC911\u2026"
+      },
+      arcSuccessPhrases: {
+        memoriaBoundTheArcAndPressedIt: "\uC544\uD06C\uB97C \uB9CC\uB4E4\uC5C8\uC5B4\uC694",
+        memoriaStitchedTheSpineOfANew: "\uC544\uD06C\uB97C \uB9CC\uB4E4\uC5C8\uC5B4\uC694"
+      },
+      volumeFirePhrases: {
+        memoriaIsPressingAWholeVolumeTogether: "\uBCFC\uB968 \uC0DD\uC131 \uC911\u2026"
+      },
+      volumeSuccessPhrases: {
+        memoriaEmbossedTheSpineOfANew: "\uBCFC\uB968\uC744 \uB9CC\uB4E4\uC5C8\uC5B4\uC694"
+      },
+      pickPhrase: {
+        memoriaNyaa: "\uC644\uB8CC"
+      }
+    },
+    pipeline: {
+      changedSources: {
+        summarySourcesChangedDiscardThisResultAnd: "\uC694\uC57D\uC758 \uC6D0\uBCF8\uC774 \uBC14\uB00C\uC5C8\uC5B4\uC694. \uC774 \uACB0\uACFC\uB294 \uBC84\uB9AC\uACE0 \uB2E4\uC2DC \uC0DD\uC131\uD558\uC138\uC694."
+      },
+      registerPipelineCallbacks: {
+        busyStatus: "\uC791\uC5C5 \uC0C1\uD0DC",
+        streamViewer: "\uC2A4\uD2B8\uB9BC \uBDF0\uC5B4"
+      },
+      busyPhrases: {
+        memoriaIsFilingAChapter: "\uCC55\uD130 \uC0DD\uC131 \uC911",
+        memoriaIsWritingAChapter: "\uCC55\uD130 \uC791\uC131 \uC911",
+        memoriaIsBindingAnArc: "\uC544\uD06C \uC0DD\uC131 \uC911",
+        memoriaIsPressingAVolume: "\uBCFC\uB968 \uC0DD\uC131 \uC911",
+        memoriaIsBindingASeries: "\uC2DC\uB9AC\uC988 \uC0DD\uC131 \uC911",
+        memoriaIsBindingASaga: "\uC0AC\uAC00 \uC0DD\uC131 \uC911",
+        memoriaIsBindingALibrary: "\uB77C\uC774\uBE0C\uB7EC\uB9AC \uC0DD\uC131 \uC911",
+        memoriaIsBindingAUniverse: "\uC720\uB2C8\uBC84\uC2A4 \uC0DD\uC131 \uC911",
+        memoriaIsUpdatingTheCodex: "\uCF54\uB371\uC2A4 \uC5C5\uB370\uC774\uD2B8 \uC911"
+      },
+      formatBusyLabel: {
+        memoriaIsThinkingT: "\uCD94\uB860 \uC911 (~{thinkTokens}t, {t})",
+        tWrittenTThought: "{writing} (\uCD9C\uB825 ~{tokens}t, \uCD94\uB860 ~{thinkTokens}t, {t})"
+      },
+      capStreamPart: {
+        earlierOutputTrimmed: `[...\uC55E\uBD80\uBD84 \uCD9C\uB825 \uC0DD\uB7B5...]
+{slice}`
+      },
+      noun: {
+        bindTheArc: "\uC544\uD06C\uB97C \uC0DD\uC131",
+        pressTheVolume: "\uBCFC\uB968\uC744 \uC0DD\uC131",
+        fileTheChapter: "\uCC55\uD130\uB97C \uC0DD\uC131"
+      },
+      failToast: {
+        memoriaCouldnT: "{noun}\uD558\uC9C0 \uBABB\uD588\uC5B4\uC694: {shortErrorText}"
+      },
+      createChapterAuto: {
+        memoriaIsFilingAChapter: "\uCC55\uD130 \uC0DD\uC131 \uC911"
+      },
+      createChapterFromRange: {
+        memoriaIsFilingAChapter: "\uCC55\uD130 \uC0DD\uC131 \uC911"
+      },
+      runChapter: {
+        memoriaSetsThePenDown: "\uC694\uC57D\uC744 \uCDE8\uC18C\uD588\uC5B4\uC694"
+      },
+      commitChapter: {
+        extraContextModeWasTurnedOffWhile: "\uC720\uB839 \uCC55\uD130\uB97C \uB9CC\uB4DC\uB294 \uB3D9\uC548 \uCD94\uAC00 \uCEE8\uD14D\uC2A4\uD2B8 \uBAA8\uB4DC\uAC00 \uAEBC\uC84C\uC5B4\uC694",
+        thoseMessagesAreAlreadyStagedAsA: "\uC774 \uBA54\uC2DC\uC9C0\uB4E4\uC5D0\uB294 \uC720\uB839 \uCC55\uD130\uAC00 \uC788\uC5B4\uC694. \uC790\uB3D9\uC73C\uB85C \uC815\uB9AC\uB420 \uAC70\uC608\uC694.",
+        allMessagesInThisWindowWereJust: "\uC774 \uBA54\uC2DC\uC9C0\uB4E4\uC740 \uC774\uBBF8 \uB2E4\uB978 \uCC55\uD130\uAC00 \uC694\uC57D\uD588\uC5B4\uC694"
+      },
+      title: {
+        chapterMsgs: "\uCC55\uD130 - \uBA54\uC2DC\uC9C0 {firstIdx1}-{lastIdx1}"
+      },
+      baseComment: {
+        chapterMsgs: "\uCC55\uD130 - \uBA54\uC2DC\uC9C0 {firstIdx1}-{lastIdx1}",
+        arcMsgs: "\uC544\uD06C - \uBA54\uC2DC\uC9C0 {firstIdx1}-{lastIdx1}",
+        volumeMsgs: "\uBCFC\uB968 - \uBA54\uC2DC\uC9C0 {firstIdx1}-{lastIdx1}"
+      },
+      createArcFromChapters: {
+        memoriaIsBindingAnArc: "\uC544\uD06C \uC0DD\uC131 \uC911"
+      },
+      runArc: {
+        memoriaSetsThePenDown: "\uC694\uC57D\uC744 \uCDE8\uC18C\uD588\uC5B4\uC694"
+      },
+      commitArc: {
+        allSourceChaptersWereAlreadyBoundBy: "\uC6D0\uBCF8 \uCC55\uD130\uAC00 \uC774\uBBF8 \uBB36\uC600\uAC70\uB098 \uC0AD\uC81C\uB410\uC5B4\uC694",
+        theArcSavedButChapterCouldnT: "\uC544\uD06C\uB97C \uC800\uC7A5\uD588\uC9C0\uB9CC \uCC55\uD130 {length}\uAC1C\uB97C \uB300\uCCB4\uB428\uC73C\uB85C \uD45C\uC2DC\uD558\uC9C0 \uBABB\uD588\uC5B4\uC694"
+      },
+      arcTitle: {
+        inheritedArc: "\uC0C1\uC18D \uC544\uD06C"
+      },
+      comment: {
+        arc: "{choice, select, yes {[Root] } other {}}\uC544\uD06C #{sceneNumber} - {baseComment}"
+      },
+      createHigherFromEntries: {
+        memoriaIsBindingA: "{kind, select, chapter {\uCC55\uD130} arc {\uC544\uD06C} volume {\uBCFC\uB968} series {\uC2DC\uB9AC\uC988} saga {\uC0AC\uAC00} library {\uB77C\uC774\uBE0C\uB7EC\uB9AC} universe {\uC720\uB2C8\uBC84\uC2A4} codex {\uCF54\uB371\uC2A4} other {{kind}}} \uC0DD\uC131 \uC911"
+      },
+      runVolume: {
+        memoriaSetsThePenDown: "\uC694\uC57D\uC744 \uCDE8\uC18C\uD588\uC5B4\uC694"
+      },
+      commitVolume: {
+        allSourceArcsWereAlreadyBoundBy: "\uC6D0\uBCF8 \uC544\uD06C\uAC00 \uC774\uBBF8 \uBB36\uC600\uAC70\uB098 \uC0AD\uC81C\uB410\uC5B4\uC694",
+        theVolumeSavedButArcCouldnT: "\uBCFC\uB968\uC744 \uC800\uC7A5\uD588\uC9C0\uB9CC \uC544\uD06C {length}\uAC1C\uB97C \uB300\uCCB4\uB428\uC73C\uB85C \uD45C\uC2DC\uD558\uC9C0 \uBABB\uD588\uC5B4\uC694"
+      },
+      volumeTitle: {
+        inheritedVolume: "\uC0C1\uC18D \uBCFC\uB968"
+      },
+      dryRunChapter: {
+        chatHasNoMessages: "\uCC44\uD305\uC5D0 \uBA54\uC2DC\uC9C0\uAC00 \uC5C6\uC5B4\uC694",
+        noWindowAvailableLowerTheLagOr: "\uC0AC\uC6A9\uD560 \uC218 \uC788\uB294 \uC708\uB3C4\uC6B0\uAC00 \uC5C6\uC5B4\uC694. \uC9C0\uC5F0\uC774\uB098 \uC708\uB3C4\uC6B0 \uAE30\uC900\uAC12\uC744 \uB0AE\uCD94\uC138\uC694."
+      },
+      dryRunArc: {
+        noChaptersToBindYet: "\uBB36\uC744 \uCC55\uD130\uAC00 \uC5C6\uC5B4\uC694"
+      },
+      dryRunVolume: {
+        noArcsToPressYet: "\uD569\uCE60 \uC544\uD06C\uAC00 \uC5C6\uC5B4\uC694"
+      },
+      promoteGhostChapters: {
+        memoriaShelvedGhostChapter: "\uC720\uB839 \uCC55\uD130 {length}\uAC1C\uB97C \uC815\uB9AC\uD588\uC5B4\uC694"
+      },
+      deriveTitle: {
+        msgs: "{trim} (\uBA54\uC2DC\uC9C0 {firstMsg}-{lastMsg})",
+        msgs2: "{trimmed}{choice, select, yes {...} other {}} (\uBA54\uC2DC\uC9C0 {firstMsg}-{lastMsg})",
+        compressedMsgs: "\uC555\uCD95\uB428 - \uBA54\uC2DC\uC9C0 {firstMsg}-{lastMsg}"
+      },
+      preview: {
+        chapterMsgs: "\uCC55\uD130 - \uBA54\uC2DC\uC9C0 {firstIdx1}-{lastIdx1}",
+        msgs: "{indexOf} - \uBA54\uC2DC\uC9C0 {firstIdx1}-{lastIdx1}"
+      }
+    },
+    presets: {
+      builtinChapterPresets: {
+        summary: "\uC694\uC57D",
+        summarize: "\uC694\uC57D\uD558\uAE30",
+        synopsis: "\uC2DC\uB189\uC2DC\uC2A4",
+        minimal: "\uCD5C\uC18C"
+      },
+      builtinArcPresets: {
+        arc: "\uC544\uD06C"
+      },
+      builtinVolumePresets: {
+        volume: "\uBCFC\uB968"
+      },
+      builtinCodexPresets: {
+        default: "\uAE30\uBCF8"
+      }
+    },
+    promptBreakdown: {
+      loadPromptBreakdown: {
+        thePromptPanelRequiresALumiverseUpdate: "\uD504\uB86C\uD504\uD2B8 \uD328\uB110\uC744 \uC4F0\uB824\uBA74 Lumiverse\uB97C \uC5C5\uB370\uC774\uD2B8\uD558\uC138\uC694. Spindle\uC758 prompt-breakdown API\uAC00 \uD544\uC694\uD574\uC694.",
+        dryRunReturnedNoBreakdown: "\uBAA8\uC758 \uC2E4\uD589 \uACB0\uACFC\uC5D0 \uD504\uB86C\uD504\uD2B8 \uAD6C\uC131 \uC815\uBCF4\uAC00 \uC5C6\uC5B4\uC694."
+      }
+    },
+    rebase: {
+      retireEntries: {
+        someOldSummariesCouldNotBeRemoved: "\uC624\uB798\uB41C \uC694\uC57D \uC77C\uBD80\uB97C \uC81C\uAC70\uD558\uAC70\uB098 \uBE44\uD65C\uC131\uD654\uD558\uC9C0 \uBABB\uD588\uC5B4\uC694. \uB2E4\uC2DC \uC2DC\uB3C4\uD558\uAE30 \uC804\uC5D0 \uCC45 \uD0ED\uC744 \uC0C8\uB85C \uACE0\uCE58\uC138\uC694."
+      }
+    },
+    runtime: {
+      debug: {
+        lmb: "[lmb:{slice}] {join}"
+      }
+    },
+    shelfActions: {
+      editSummaryEntry: {
+        thisSummaryIsNoLongerAvailableTo: "\uC774 \uC694\uC57D\uC740 \uB354 \uC774\uC0C1 \uC5C6\uC5B4\uC694. \uCC45 \uD0ED\uC744 \uC0C8\uB85C \uACE0\uCE58\uC138\uC694."
+      },
+      clearSummaryShelf: {
+        removedSummariesButCouldNotBeDeleted: "\uC694\uC57D {removed}\uAC1C\uB97C \uC81C\uAC70\uD588\uC9C0\uB9CC {length}\uAC1C\uB294 \uC0AD\uC81C\uD558\uC9C0 \uBABB\uD588\uC5B4\uC694. \uC7AC\uAD6C\uCD95\uD558\uAE30 \uC804\uC5D0 \uBE44\uC6B0\uAE30\uB97C \uB2E4\uC2DC \uC2DC\uB3C4\uD558\uC138\uC694."
+      },
+      removeSummaryEntry: {
+        aGhostChapterMustBeShelvedBefore: "\uC720\uB839 \uCC55\uD130\uB294 \uBA3C\uC800 \uC815\uB9AC\uD55C \uB4A4\uC5D0 \uD574\uC81C\uD558\uC138\uC694"
+      }
+    },
+    storage: {
+      flipped: {
+        directives: "{hasName, select, yes {{name}} other {\uD504\uB85C\uD544}} \uC9C0\uCE68"
+      }
+    },
+    summarizer: {
+      resolveConnection: {
+        connectionHasNoModelSetPickOne: '\uC5F0\uACB0 "{id}"\uC5D0 \uBAA8\uB378\uC774 \uC124\uC815\uB418\uC9C0 \uC54A\uC558\uC5B4\uC694, \uC124\uC815\uC5D0\uC11C \uBAA8\uB378\uC744 \uACE0\uB974\uC138\uC694'
+      },
+      messages: {
+        abortedByUser: "\uCDE8\uC18C\uB428"
+      },
+      assertRunning: {
+        noTokenWithinSTheProviderMay: "{firstTokenTimeoutMs1000}\uCD08 \uC548\uC5D0 \uD1A0\uD070\uC774 \uC624\uC9C0 \uC54A\uC558\uC5B4\uC694, \uD504\uB85C\uBC14\uC774\uB354\uAC00 \uB290\uB9AC\uAC70\uB098 \uC5F0\uACB0\uB418\uC9C0 \uC54A\uB294 \uAC83 \uAC19\uC544\uC694",
+        theResponseDidNotFinishWithinS: "{overallDeadlineMs1000}\uCD08 \uC548\uC5D0 \uC751\uB2F5\uC774 \uB05D\uB098\uC9C0 \uC54A\uC558\uC5B4\uC694"
+      },
+      consumeGenerationStream: {
+        theStreamEndedBeforeCompleting: "\uC2A4\uD2B8\uB9BC\uC774 \uC644\uB8CC\uB418\uAE30 \uC804\uC5D0 \uB05D\uB0AC\uC5B4\uC694"
+      },
+      resolveMacrosWithDiagnostics: {
+        macroOffsetLength: "\uB9E4\uD06C\uB85C: {message} (\uC624\uD504\uC14B {offset}, \uAE38\uC774 {length})",
+        macrosResolveFailed: "macros.resolve \uC2E4\uD328: {describeError}"
+      },
+      assembleChapterPrompt: {
+        noConnectionAvailableForMemoria: "\uC694\uC57D\uC5D0 \uC4F8 \uC5F0\uACB0\uC774 \uC5C6\uC5B4\uC694",
+        chapterPresetMissing: "\uCC55\uD130 \uD504\uB9AC\uC14B\uC774 \uC5C6\uC5B4\uC694",
+        emptyTranscript: "\uB300\uD654 \uAE30\uB85D\uC774 \uBE44\uC5B4 \uC788\uC5B4\uC694",
+        outgoingRegexAppliedScriptS: "\uBC1C\uC2E0 \uC815\uADDC\uC2DD: \uC2A4\uD06C\uB9BD\uD2B8 {length}\uAC1C"
+      },
+      diagnostics: {
+        connection: "\uC5F0\uACB0: {name} ({provider}/{model})",
+        windowMessageS: "\uC708\uB3C4\uC6B0: \uBA54\uC2DC\uC9C0 {length}\uAC1C",
+        transcriptTokensModelTokenizer: "\uB300\uD654 \uAE30\uB85D: {transcriptTokens} \uD1A0\uD070 (\uBAA8\uB378 \uD1A0\uD06C\uB098\uC774\uC800 \uAE30\uC900)",
+        targetTokens: "\uBAA9\uD45C \uD1A0\uD070: {targetTokens} ({choice, select, yes {\uACE0\uC815 \uC608\uC0B0, \uC785\uB825\uC758 ~{chapterTargetUnitTokens}%} other {\uC785\uB825\uC758 {chapterTargetPercent}%}})",
+        targetWordsShownToModel: "\uBAA9\uD45C \uB2E8\uC5B4 \uC218: {value}",
+        previousMemoriesIncluded: "\uC774\uC804 \uC694\uC57D: {length}",
+        opener: "\uC2DC\uC791 \uBB38\uAD6C: {opener}",
+        presetKey: "\uD504\uB9AC\uC14B \uD0A4: {chapterPresetKey}",
+        samplerParametersBeingSentOnTheWire: "\uC0D8\uD50C\uB7EC \uB9E4\uAC1C\uBCC0\uC218: {stringify}",
+        sourceChapters: "\uC6D0\uBCF8 \uCC55\uD130: {length}",
+        concatenatedChapterBodyTokensModelTokenizer: "\uC6D0\uBCF8 \uCC55\uD130: {bodyTokens} \uD1A0\uD070 (\uBAA8\uB378 \uD1A0\uD06C\uB098\uC774\uC800 \uAE30\uC900)",
+        targetTokens2: "\uBAA9\uD45C \uD1A0\uD070: {targetTokens} ({choice, select, yes {\uACE0\uC815 \uC608\uC0B0, \uC785\uB825\uC758 ~{arcTargetUnitTokens}%} other {\uC785\uB825\uC758 {arcTargetPercent}%}})",
+        presetKey2: "\uD504\uB9AC\uC14B \uD0A4: {arcPresetKey}",
+        sourceArcs: "\uC6D0\uBCF8 \uC544\uD06C: {length}",
+        concatenatedArcBodyTokensModelTokenizer: "\uC6D0\uBCF8 \uC544\uD06C: {bodyTokens} \uD1A0\uD070 (\uBAA8\uB378 \uD1A0\uD06C\uB098\uC774\uC800 \uAE30\uC900)",
+        targetTokens3: "\uBAA9\uD45C \uD1A0\uD070: {targetTokens} ({choice, select, yes {\uACE0\uC815 \uC608\uC0B0, \uC785\uB825\uC758 ~{volumeTargetUnitTokens}%} other {\uC785\uB825\uC758 {volumeTargetPercent}%}})",
+        presetKey3: "\uD504\uB9AC\uC14B \uD0A4: {volumePresetKey}"
+      },
+      assembleArcPrompt: {
+        noConnectionAvailableForMemoria: "\uC694\uC57D\uC5D0 \uC4F8 \uC5F0\uACB0\uC774 \uC5C6\uC5B4\uC694",
+        arcPresetMissing: "\uC544\uD06C \uD504\uB9AC\uC14B\uC774 \uC5C6\uC5B4\uC694",
+        outgoingRegexAppliedScriptS: "\uBC1C\uC2E0 \uC815\uADDC\uC2DD: \uC2A4\uD06C\uB9BD\uD2B8 {length}\uAC1C"
+      },
+      assembleVolumePrompt: {
+        noConnectionAvailableForMemoria: "\uC694\uC57D\uC5D0 \uC4F8 \uC5F0\uACB0\uC774 \uC5C6\uC5B4\uC694",
+        volumePresetMissing: "\uBCFC\uB968 \uD504\uB9AC\uC14B\uC774 \uC5C6\uC5B4\uC694",
+        outgoingRegexAppliedScriptS: "\uBC1C\uC2E0 \uC815\uADDC\uC2DD: \uC2A4\uD06C\uB9BD\uD2B8 {length}\uAC1C"
+      },
+      summarizeVolume: {
+        noConnectionAvailableForMemoria: "\uC694\uC57D\uC5D0 \uC4F8 \uC5F0\uACB0\uC774 \uC5C6\uC5B4\uC694",
+        volumePresetMissing: "\uBCFC\uB968 \uD504\uB9AC\uC14B\uC774 \uC5C6\uC5B4\uC694",
+        emptyModelOutput: "\uBAA8\uB378 \uCD9C\uB825\uC774 \uBE44\uC5B4 \uC788\uC5B4\uC694",
+        theVolumeSummaryCameBackEmpty: "\uBAA8\uB378\uC774 \uBE48 \uBCFC\uB968 \uC694\uC57D\uC744 \uBC18\uD658\uD588\uC5B4\uC694"
+      },
+      summarizeChapter: {
+        noConnectionAvailableForMemoria: "\uC694\uC57D\uC5D0 \uC4F8 \uC5F0\uACB0\uC774 \uC5C6\uC5B4\uC694",
+        chapterPresetMissing: "\uCC55\uD130 \uD504\uB9AC\uC14B\uC774 \uC5C6\uC5B4\uC694",
+        emptyTranscript: "\uB300\uD654 \uAE30\uB85D\uC774 \uBE44\uC5B4 \uC788\uC5B4\uC694",
+        emptyModelOutput: "\uBAA8\uB378 \uCD9C\uB825\uC774 \uBE44\uC5B4 \uC788\uC5B4\uC694",
+        theSummaryCameBackEmpty: "\uBAA8\uB378\uC774 \uBE48 \uC694\uC57D\uC744 \uBC18\uD658\uD588\uC5B4\uC694"
+      },
+      summarizeArc: {
+        noConnectionAvailableForMemoria: "\uC694\uC57D\uC5D0 \uC4F8 \uC5F0\uACB0\uC774 \uC5C6\uC5B4\uC694",
+        arcPresetMissing: "\uC544\uD06C \uD504\uB9AC\uC14B\uC774 \uC5C6\uC5B4\uC694",
+        emptyModelOutput: "\uBAA8\uB378 \uCD9C\uB825\uC774 \uBE44\uC5B4 \uC788\uC5B4\uC694",
+        theArcSummaryCameBackEmpty: "\uBAA8\uB378\uC774 \uBE48 \uC544\uD06C \uC694\uC57D\uC744 \uBC18\uD658\uD588\uC5B4\uC694"
+      },
+      parseSummaryJson: {
+        theModelSJsonHadNoContent: "\uBAA8\uB378\uC774 \uBC18\uD658\uD55C JSON\uC5D0 content \uD544\uB4DC\uAC00 \uC5C6\uC5B4\uC694",
+        theModelDidnTReturnValidJson: "\uBAA8\uB378\uC774 \uC62C\uBC14\uB978 JSON\uC744 \uBC18\uD658\uD558\uC9C0 \uC54A\uC558\uC5B4\uC694"
+      }
+    },
+    summaryBackup: {
+      summaryLorebook: {
+        lumiBooksSummariesImportThroughBooksToRestore: "LumiBooks \uC694\uC57D\uC774\uC5D0\uC694. \uCC45 \uD0ED\uC5D0\uC11C \uAC00\uC838\uC624\uBA74 \uBA54\uC2DC\uC9C0 \uBC94\uC704\uB97C \uBCF5\uC6D0\uD558\uAC70\uB098 \uC0C1\uC18D \uAE30\uC5B5\uC73C\uB85C \uC4F8 \uC218 \uC788\uC5B4\uC694.",
+        summary: "\uC694\uC57D {i1}"
+      },
+      exportSummaryLorebook: {
+        thereAreNoActiveSummariesToExport: "\uB0B4\uBCF4\uB0BC \uD65C\uC131 \uC694\uC57D\uC774 \uC5C6\uC5B4\uC694",
+        fetchingRawChatMessages: "\uC6D0\uBCF8 \uCC44\uD305 \uBA54\uC2DC\uC9C0\uB97C \uBD88\uB7EC\uC624\uB294 \uC911\u2026",
+        lumiBooksSummaries: "LumiBooks \uC694\uC57D - {slice}"
+      },
+      hashes: {
+        hashingRawMessages: "\uC6D0\uBCF8 \uBA54\uC2DC\uC9C0 \uD574\uC2DC \uACC4\uC0B0 \uC911\u2026 {done} / {length}"
+      },
+      parseSummaryLorebook: {
+        chooseALorebookJsonFileWithEntries: "\uD56D\uBAA9\uC774 \uB4E4\uC5B4 \uC788\uB294 \uC6D4\uB4DC\uBD81 JSON \uD30C\uC77C\uC744 \uACE0\uB974\uC138\uC694",
+        theLorebookHasNoEntries: "\uC6D4\uB4DC\uBD81\uC5D0 \uD56D\uBAA9\uC774 \uC5C6\uC5B4\uC694",
+        theLorebookHasMoreThan10000: "\uC6D4\uB4DC\uBD81 \uD56D\uBAA9\uC774 10,000\uAC1C\uB97C \uB118\uC5B4\uC694",
+        invalidLorebookEntry: "\uC6D4\uB4DC\uBD81 \uD56D\uBAA9\uC774 \uC62C\uBC14\uB974\uC9C0 \uC54A\uC544\uC694",
+        everyLorebookEntryNeedsTextContent: "\uC6D4\uB4DC\uBD81 \uD56D\uBAA9\uC5D0\uB294 \uD14D\uC2A4\uD2B8 \uB0B4\uC6A9\uC774 \uC788\uC5B4\uC57C \uD574\uC694",
+        invalidSummaryCoverageIndices: "\uC694\uC57D \uBC94\uC704 \uC778\uB371\uC2A4\uAC00 \uC62C\uBC14\uB974\uC9C0 \uC54A\uC544\uC694",
+        importedSummary: "\uAC00\uC838\uC628 \uC694\uC57D",
+        theLorebookHasNoEnabledSummaries: "\uC6D4\uB4DC\uBD81\uC5D0 \uD65C\uC131\uD654\uB41C \uC694\uC57D\uC774 \uC5C6\uC5B4\uC694"
+      },
+      readSummaryImport: {
+        theSummaryCoverageDoesNotMatchIts: "\uC694\uC57D \uBC94\uC704\uAC00 \uC9C0\uBB38\uACFC \uC77C\uCE58\uD558\uC9C0 \uC54A\uC544\uC694"
+      },
+      commitImportedSummaries: {
+        invalidDestinationCoverage: "\uB300\uC0C1 \uBC94\uC704\uAC00 \uC62C\uBC14\uB974\uC9C0 \uC54A\uC544\uC694",
+        thisImportContainsOverlappingSummaryCoverageResolve: "\uC694\uC57D \uBC94\uC704\uAC00 \uACB9\uCCD0\uC694. \uAC00\uC838\uC624\uAE30 \uC804\uC5D0 \uACE0\uCE58\uC138\uC694.",
+        someOfTheseMessagesAlreadyHaveSummaries: "\uC77C\uBD80 \uBA54\uC2DC\uC9C0\uC5D0 \uC774\uBBF8 \uC694\uC57D\uC774 \uC788\uC5B4\uC694. \uAC00\uC838\uC624\uAE30 \uC804\uC5D0 \uCC45 \uD0ED\uC5D0\uC11C \uD574\uC81C\uD558\uC138\uC694.",
+        theChatChangedWhilePreparingTheImport: "\uAC00\uC838\uC624\uB294 \uB3D9\uC548 \uCC44\uD305\uC774 \uBC14\uB00C\uC5C8\uC5B4\uC694. \uD30C\uC77C\uC744 \uB2E4\uC2DC \uACE0\uB974\uC138\uC694.",
+        importFailedAndSomeImportedSummariesCould: "\uAC00\uC838\uC624\uAE30\uC5D0 \uC2E4\uD328\uD588\uC5B4\uC694. \uAC00\uC838\uC628 \uC694\uC57D \uC77C\uBD80\uB97C \uC81C\uAC70\uD558\uC9C0 \uBABB\uD588\uC73C\uB2C8 \uB2E4\uC2DC \uC2DC\uB3C4\uD558\uAE30 \uC804\uC5D0 \uCC45 \uD0ED\uC744 \uD655\uC778\uD558\uC138\uC694."
+      }
+    },
+    summaryMatching: {
+      parseFingerprint: {
+        invalidSummaryMessageFingerprint: "\uC694\uC57D \uBA54\uC2DC\uC9C0 \uC9C0\uBB38\uC774 \uC62C\uBC14\uB974\uC9C0 \uC54A\uC544\uC694",
+        theSummaryMessageFingerprintIsDamaged: "\uC694\uC57D \uBA54\uC2DC\uC9C0 \uC9C0\uBB38\uC774 \uC190\uC0C1\uB410\uC5B4\uC694"
+      }
+    },
+    summaryTransfer: {
+      runSummaryTransfer: {
+        thisImportIsNoLongerAvailableChoose: "\uC774 \uAC00\uC838\uC624\uAE30\uB294 \uB354 \uC774\uC0C1 \uC4F8 \uC218 \uC5C6\uC5B4\uC694. \uD30C\uC77C\uC744 \uB2E4\uC2DC \uACE0\uB974\uC138\uC694.",
+        importCancelled: "\uAC00\uC838\uC624\uAE30\uB97C \uCDE8\uC18C\uD588\uC5B4\uC694",
+        readingSummaries: "\uC694\uC57D\uC744 \uC77D\uB294 \uC911\u2026",
+        preparingSummaryExport: "\uC694\uC57D \uB0B4\uBCF4\uB0B4\uAE30\uB97C \uC900\uBE44\uD558\uB294 \uC911\u2026",
+        readingRawChatMessages: "\uC6D0\uBCF8 \uCC44\uD305 \uBA54\uC2DC\uC9C0\uB97C \uC77D\uB294 \uC911\u2026",
+        summaryExportReady: "\uC694\uC57D \uB0B4\uBCF4\uB0B4\uAE30 \uC900\uBE44 \uC644\uB8CC",
+        enterAWholeMessageNumberFrom0: "0\uBD80\uD130 {length} \uC0AC\uC774\uC758 \uC815\uC218 \uBA54\uC2DC\uC9C0 \uBC88\uD638\uB97C \uC785\uB825\uD558\uC138\uC694.",
+        importedSummaries: "\uC694\uC57D\uC744 \uAC00\uC838\uC654\uC5B4\uC694",
+        automaticMatchingWasIncompleteOrAmbiguousUp: "\uC790\uB3D9 \uB9E4\uCE6D\uC774 \uBD88\uC644\uC804\uD558\uAC70\uB098 \uBAA8\uD638\uD574\uC694. \uC5B4\uB290 \uBA54\uC2DC\uC9C0\uAE4C\uC9C0 \uC694\uC57D \uBC94\uC704\uB85C \uD560\uAE4C\uC694?",
+        theContentOfThisChatIsDifferent: "\uC774 \uCC44\uD305\uC740 \uAC00\uC838\uC628 \uC694\uC57D\uC758 \uC6D0\uBCF8\uACFC \uB2EC\uB77C\uC694. \uBA54\uC2DC\uC9C0 \uB9E4\uCE6D\uC744 \uC2DC\uB3C4\uD560\uAE4C\uC694?",
+        someOfTheseMessagesAlreadyHaveSummaries: "\uC77C\uBD80 \uBA54\uC2DC\uC9C0\uC5D0 \uC774\uBBF8 \uC694\uC57D\uC774 \uC788\uC5B4\uC694. \uAC00\uC838\uC624\uAE30 \uC804\uC5D0 \uCC45 \uD0ED\uC5D0\uC11C \uD574\uC81C\uD558\uC138\uC694.",
+        theChatChangedWhilePreparingTheImport: "\uAC00\uC838\uC624\uB294 \uB3D9\uC548 \uCC44\uD305\uC774 \uBC14\uB00C\uC5C8\uC5B4\uC694. \uC5B4\uB290 \uBA54\uC2DC\uC9C0\uAE4C\uC9C0 \uC694\uC57D \uBC94\uC704\uB85C \uD560\uAE4C\uC694?",
+        savingImportedSummaries: "\uAC00\uC838\uC628 \uC694\uC57D\uC744 \uC800\uC7A5\uD558\uB294 \uC911\u2026",
+        importedSummaries2: "\uC694\uC57D {length}\uAC1C\uB97C {choice, select, yes {\uBA54\uC2DC\uC9C0 {size}\uAC1C \uBC94\uC704\uB85C} other {\uB8E8\uD2B8 \uAE30\uC5B5\uC73C\uB85C}} \uAC00\uC838\uC654\uC5B4\uC694"
+      },
+      manual: {
+        upUntilWhichMessageShouldTheseSummaries: "\uC5B4\uB290 \uBA54\uC2DC\uC9C0\uAE4C\uC9C0 \uC694\uC57D \uBC94\uC704\uB85C \uD560\uAE4C\uC694?"
+      },
+      computed: {
+        comparingRawMessages: "\uC6D0\uBCF8 \uBA54\uC2DC\uC9C0 \uBE44\uAD50 \uC911\u2026 {done} / {length}"
+      }
+    },
+    worldBook: {
+      doEnsureBookForChat: {
+        chatNotFoundForUser: "\uC0AC\uC6A9\uC790\uC758 \uCC44\uD305 {chatId}\uC744(\uB97C) \uCC3E\uC744 \uC218 \uC5C6\uC5B4\uC694",
+        memoriaReLinkedThisChatSNotebook: "\uC694\uC57D \uC6D4\uB4DC\uBD81 \uC5F0\uACB0\uC744 \uBCF5\uAD6C\uD588\uC5B4\uC694. \uD6C4\uBCF4 {candidates}\uAC1C\uB97C \uCC3E\uC558\uC73C\uB2C8 \uC911\uBCF5\uB41C \uC694\uC57D \uC6D4\uB4DC\uBD81\uC774 \uC788\uB294\uC9C0 \uD655\uC778\uD558\uC138\uC694.",
+        memoriaReLinkedThisChatSNotebook2: "\uC694\uC57D \uC6D4\uB4DC\uBD81 \uC5F0\uACB0\uC744 \uBCF5\uAD6C\uD588\uC5B4\uC694",
+        memoriaCouldnTFindThisChatS: "\uC774\uC804 \uC694\uC57D \uC6D4\uB4DC\uBD81\uC744 \uCC3E\uC9C0 \uBABB\uD574\uC11C \uC0C8\uB85C \uB9CC\uB4E4\uC5C8\uC5B4\uC694. \uC608\uC804 \uCC55\uD130\uB294 \uB2E4\uB978 \uC6D4\uB4DC\uBD81\uC5D0 \uC788\uC744 \uC218 \uC788\uC5B4\uC694."
+      },
+      book: {
+        memoriaSShelfForThisChatChapters: "\uC774 \uCC44\uD305\uC758 LumiBooks \uCC55\uD130\uC640 \uC544\uD06C\uC608\uC694.",
+        managedByLumiBooksThisBookMirrorsThe: "LumiBooks\uAC00 \uAD00\uB9AC\uD558\uB294 \uC6D4\uB4DC\uBD81\uC774\uC5D0\uC694. \uCF54\uB371\uC2A4\uAC00 \uC5C5\uB370\uC774\uD2B8\uB418\uBA74 \uC774 \uC6D4\uB4DC\uBD81 \uD56D\uBAA9\uC744 \uB36E\uC5B4\uC368\uC694. \uAE30\uB85D\uC740 LumiBooks > \uCF54\uB371\uC2A4\uC5D0\uC11C \uD3B8\uC9D1\uD558\uC138\uC694."
+      },
+      bindBookToChat: {
+        theChatIsNoLongerAvailableIts: "\uCC44\uD305\uC774 \uB354 \uC774\uC0C1 \uC5C6\uC5B4\uC694. \uC694\uC57D \uC6D4\uB4DC\uBD81\uC744 \uC5F0\uACB0\uD558\uC9C0 \uBABB\uD588\uC5B4\uC694."
+      },
+      bindCodexBookToChat: {
+        theChatIsNoLongerAvailableIts: "\uCC44\uD305\uC774 \uB354 \uC774\uC0C1 \uC5C6\uC5B4\uC694. \uCF54\uB371\uC2A4 \uC6D4\uB4DC\uBD81\uC744 \uC5F0\uACB0\uD558\uC9C0 \uBABB\uD588\uC5B4\uC694."
+      },
+      doEnsureCodexBookForChat: {
+        chatNotFoundForUser: "\uC0AC\uC6A9\uC790\uC758 \uCC44\uD305 {chatId}\uC744(\uB97C) \uCC3E\uC744 \uC218 \uC5C6\uC5B4\uC694"
+      }
+    }
+  },
+  codexTidy: {
+    resolveTidyTarget: {
+      enterAPositiveTokenLimitOrA: "0\uBCF4\uB2E4 \uD070 \uD1A0\uD070 \uD55C\uB3C4\uB098 0~100 \uC0AC\uC774\uC758 \uBE44\uC728\uC744 \uC785\uB825\uD558\uC138\uC694.",
+      theTargetMustBeAtLeastOne: "\uBAA9\uD45C\uB294 \uD1A0\uD070 \uD558\uB098 \uC774\uC0C1\uC774\uC5B4\uC57C \uD574\uC694."
+    }
+  },
+  prompts: {
+    codex: {
+      registry: {
+        codexTemplates: {
+          entitySheetsRelationsTableOn: "\uAC1C\uCCB4 \uC2DC\uD2B8 (\uAD00\uACC4 \uD45C \uCF2C)",
+          describesCharactersJsonLocationsJsonAndThings: "\uAD00\uACC4 \uD45C\uB97C \uCF30\uC744 \uB54C\uC758 \uAC1C\uCCB4 \uC2A4\uD0A4\uB9C8\uC608\uC694. \uAD00\uACC4\uB294 relations.json\uC5D0 \uB4E4\uC5B4\uAC00\uC694. {schemaHowtoTail}",
+          theEntityFilesActiveThisRunE: "\uC774\uBC88 \uC2E4\uD589\uC5D0\uC11C \uD65C\uC131\uD654\uB41C \uAC1C\uCCB4 \uD30C\uC77C (\uC608: characters.json / locations.json)",
+          entitySheetsRelationsTableOff: "\uAC1C\uCCB4 \uC2DC\uD2B8 (\uAD00\uACC4 \uD45C \uB054)",
+          describesTheEntityFilesWhenTheRelations: '\uAD00\uACC4 \uD45C\uB97C \uAED0\uC744 \uB54C\uC758 \uAC1C\uCCB4 \uC2A4\uD0A4\uB9C8\uC608\uC694. \uAD00\uACC4\uB294 \uC2DC\uD2B8\uC758 "ties"\uC5D0 \uB4E4\uC5B4\uAC00\uC694. {schemaHowtoTail}',
+          theEntityFilesActiveThisRun: "\uC774\uBC88 \uC2E4\uD589\uC5D0\uC11C \uD65C\uC131\uD654\uB41C \uAC1C\uCCB4 \uD30C\uC77C",
+          relationsTable: "\uAD00\uACC4 \uD45C",
+          describesRelationsJsonAndTheCoverageRules: "relations.json\uC758 \uC2A4\uD0A4\uB9C8\uC640 \uD3EC\uAD04 \uADDC\uCE59\uC774\uC5D0\uC694. \uAD00\uACC4 \uD45C\uAC00 \uCF1C\uC838 \uC788\uACE0 \uB3D9\uACB0\uB418\uC9C0 \uC54A\uC558\uC744 \uB54C \uBCF4\uB0B4\uC694. {schemaHowtoTail}",
+          timeline: "\uD0C0\uC784\uB77C\uC778",
+          describesTimelineJsonIncludingTheAppendOnly: "timeline.json\uC758 \uC2A4\uD0A4\uB9C8\uC608\uC694. \uC77C\uBC18 \uC5C5\uB370\uC774\uD2B8\uC5D0\uC11C\uB294 \uC0AC\uAC74\uC744 \uB367\uBD99\uC774\uAE30\uB9CC \uD560 \uC218 \uC788\uACE0, \uC571\uC774 \uC774\uB97C \uAC15\uC81C\uD574\uC694. {schemaHowtoTail}",
+          threads: "\uC2A4\uB808\uB4DC",
+          describesThreadsJsonResolvedThreadsAreArchived: "threads.json\uC758 \uC2A4\uD0A4\uB9C8\uC608\uC694. \uD574\uACB0\uB41C \uC2A4\uB808\uB4DC\uB294 \uBCF4\uAD00\uB418\uC5B4 \uC5D0\uC774\uC804\uD2B8\uC5D0\uAC8C \uBCF4\uC774\uC9C0 \uC54A\uC73C\uB2C8, \uB2E4\uC2DC \uCD94\uAC00\uD558\uC9C0 \uB9D0\uB77C\uACE0 \uC54C\uB824 \uC918\uC694. {schemaHowtoTail}",
+          worldRules: "\uC138\uACC4 \uADDC\uCE59",
+          describesWorldJson: "world.json\uC744 \uC124\uBA85\uD574\uC694. {schemaHowtoTail}",
+          secrets: "\uBE44\uBC00",
+          describesKnowledgeJsonTheValidatorRejectsItems: "knowledge.json\uC758 \uC2A4\uD0A4\uB9C8\uC608\uC694. \uAC80\uC99D\uC744 \uD1B5\uACFC\uD558\uB824\uBA74 \uD56D\uBAA9\uC5D0 knownBy, hiddenFrom, falseBeliefs \uC911 \uD558\uB098\uAC00 \uC788\uC5B4\uC57C \uD574\uC694. {schemaHowtoTail}",
+          retrievalKeywords: "\uAC80\uC0C9 \uD0A4\uC6CC\uB4DC",
+          theRulesForTheKeywordsListsOn: "\uAC1C\uCCB4\xB7\uC124\uC815\xB7\uBE44\uBC00\uC758 \uD0A4\uC6CC\uB4DC \uADDC\uCE59\uC774\uC5D0\uC694. \uD0A4\uC6CC\uB4DC \uBAA8\uB4DC\uC5D0\uC11C\uB294 \uD0A4\uC6CC\uB4DC\uAC00 \uC0C1\uAE30\uB97C \uACB0\uC815\uD558\uACE0, \uBCA1\uD130 \uC0C1\uAE30\uB3C4 \uBCF4\uC644\uD574\uC694. \uB108\uBB34 \uC801\uC73C\uBA74 \uAE30\uB85D\uC744 \uB193\uCE58\uACE0, \uB108\uBB34 \uB113\uC73C\uBA74 \uC9C0\uB098\uCE58\uAC8C \uC790\uC8FC \uD65C\uC131\uD654\uB420 \uC218 \uC788\uC5B4\uC694. \uC571\uC740 \uD0A4\uC6CC\uB4DC\uB97C \uCD5C\uB300 12\uAC1C, \uD0A4\uC6CC\uB4DC\uB2F9 \uCD5C\uB300 \uB450 \uB2E8\uC5B4\uAE4C\uC9C0 \uC720\uC9C0\uD574\uC694.",
+          patchRulesSetDropContent: "\uD328\uCE58 \uADDC\uCE59 (set / drop / content)",
+          theSharedExplanationOfSetDropSeeds: "\uC544\uB798 \uB450 \uD504\uB85C\uD1A0\uCF5C\uC774 \uD568\uAED8 \uC4F0\uB294 set, drop, seeds, content \uD328\uCE58 \uADDC\uCE59\uC774\uC5D0\uC694. \uC571\uC758 \uBCD1\uD569 \uB3D9\uC791\uACFC \uC5B4\uAE0B\uB098\uC9C0 \uC54A\uAC8C \uC720\uC9C0\uD558\uC138\uC694.",
+          protocolToolCalls: "\uD504\uB85C\uD1A0\uCF5C (\uB3C4\uAD6C \uD638\uCD9C)",
+          sentWhenTheProfileUsesToolCalls: "\uC77C\uAD04 \uC5C5\uB370\uC774\uD2B8\uC6A9 \uB3C4\uAD6C \uD638\uCD9C \uD504\uB85C\uD1A0\uCF5C\uC774\uC5D0\uC694. \uB3C4\uAD6C \uC774\uB984 codex_write, codex_skip, codex_done\uACFC, \uD65C\uC131 \uAE30\uB85D\uC744 \uC4F0\uAC70\uB098 \uAC74\uB108\uB6F0\uC5B4\uC57C \uD55C\uB2E4\uB294 \uC694\uAD6C \uC0AC\uD56D\uC740 \uC720\uC9C0\uD558\uC138\uC694. \uC790\uCCB4 \uCD94\uB860 \uAE30\uB2A5\uC774 \uC5C6\uB294 \uBAA8\uB378\uC744 \uC704\uD55C <think>\uB3C4 \uC815\uC758\uD574\uC694.",
+          thePatchRulesTemplateAbove: "\uC704\uC758 \uD328\uCE58 \uADDC\uCE59 \uD15C\uD50C\uB9BF",
+          protocolToolCallsOneFileAtA: "\uD504\uB85C\uD1A0\uCF5C (\uB3C4\uAD6C \uD638\uCD9C, \uD55C \uBC88\uC5D0 \uD30C\uC77C \uD558\uB098)",
+          sentWhenTheProfileUsesToolCalls2: "\uAE30\uB85D\uBCC4 \uC5C5\uB370\uC774\uD2B8\uC6A9 \uB3C4\uAD6C \uD638\uCD9C \uD504\uB85C\uD1A0\uCF5C\uC774\uC5D0\uC694. \uC77C\uAD04 \uC5C5\uB370\uC774\uD2B8\uC640 \uAC19\uC740 \uB3C4\uAD6C, \uAC19\uC740 \uC4F0\uAE30\xB7\uAC74\uB108\uB6F0\uAE30 \uC694\uAD6C \uC0AC\uD56D\uC744 \uC368\uC694. \uC751\uB2F5\uC774 \uC791\uC544\uC11C \uCD9C\uB825\uC774 \uC798\uB9B4 \uC704\uD5D8\uC774 \uC904\uC5B4\uC694.",
+          protocolJsonMode: "\uD504\uB85C\uD1A0\uCF5C (JSON \uBAA8\uB4DC)",
+          sentWhenTheProfileWritesStrictJson: '\uC77C\uAD04 \uC5C5\uB370\uC774\uD2B8\uC6A9 JSON \uD504\uB85C\uD1A0\uCF5C\uC774\uC5D0\uC694. "writes" \uBC30\uC5F4, "skip" \uBAA9\uB85D, "done" \uD50C\uB798\uADF8\uC640, \uD65C\uC131 \uAE30\uB85D\uC744 \uC4F0\uAC70\uB098 \uAC74\uB108\uB6F0\uC5B4\uC57C \uD55C\uB2E4\uB294 \uC694\uAD6C \uC0AC\uD56D\uC740 \uC720\uC9C0\uD558\uC138\uC694.',
+          protocolJsonModeOneFileAtA: "\uD504\uB85C\uD1A0\uCF5C (JSON \uBAA8\uB4DC, \uD55C \uBC88\uC5D0 \uD30C\uC77C \uD558\uB098)",
+          sentWhenTheProfileWritesStrictJson2: "\uAE30\uB85D\uBCC4 \uC5C5\uB370\uC774\uD2B8\uC6A9 JSON \uD504\uB85C\uD1A0\uCF5C\uC774\uC5D0\uC694. \uC77C\uAD04 \uC5C5\uB370\uC774\uD2B8\uC640 \uAC19\uC740 \uC751\uB2F5 \uAD6C\uC870, \uAC19\uC740 \uC4F0\uAE30\xB7\uAC74\uB108\uB6F0\uAE30 \uC694\uAD6C \uC0AC\uD56D\uC744 \uC368\uC694. \uC751\uB2F5\uC774 \uC791\uC544\uC11C \uCD9C\uB825\uC774 \uC798\uB9B4 \uC704\uD5D8\uC774 \uC904\uC5B4\uC694.",
+          taskClosingBlock: "\uC791\uC5C5 \uB9C8\uBB34\uB9AC \uBE14\uB85D",
+          theClosingBlockOfEveryNormalUpdate: "\uC5C5\uB370\uC774\uD2B8\xB7\uB530\uB77C\uC7A1\uAE30 \uD504\uB86C\uD504\uD2B8\uC5D0\uC11C \uC2A4\uD1A0\uB9AC \uBCF8\uBB38 \uB4A4\uC5D0 \uBD99\uB294 \uB9C8\uBB34\uB9AC\uC608\uC694. \uC791\uC5C5\uC758 \uC138 \uD328\uC2A4\uC640 \uCD94\uB860 \uC9C0\uCE68\uC744 \uB2E4\uC2DC \uC54C\uB824\uC694.",
+          verificationNudge: "\uAC80\uC99D \uC7AC\uC694\uCCAD",
+          sentAsAnExtraRoundAfterA: "\uAF3C\uAF3C \uBAA8\uB4DC\uC5D0\uC11C \uC5C5\uB370\uC774\uD2B8\uAC00 \uC131\uACF5\uD55C \uB4A4 \uD55C \uBC88 \uB354 \uB3C4\uB294 \uB77C\uC6B4\uB4DC\uC608\uC694. \uC571\uC774 \uC120\uD0DD\uB41C \uD504\uB85C\uD1A0\uCF5C\uC758 \uB9C8\uBB34\uB9AC \uC9C0\uC2DC\uB97C \uB367\uBD99\uC5EC\uC694.",
+          tidyPass: "\uC815\uB3C8 \uD328\uC2A4",
+          theInstructionBlockForTidyUpThe: "\uC815\uB3C8 \uC9C0\uCE68\uC774\uC5D0\uC694. \uC571\uC774 \uB300\uC0C1 \uD30C\uC77C, \uC7A0\uAE08, \uD604\uC7AC \uAE30\uB85D, \uB9C8\uBB34\uB9AC \uC9C0\uC2DC\uB97C \uB367\uBD99\uC5EC\uC694.",
+          refreshPass: "\uC0C8\uB85C \uACE0\uCE68 \uD328\uC2A4",
+          sentWhenReEnabledRecordsCatchUp: "\uB2E4\uC2DC \uCF20 \uAE30\uB85D\uC744 \uB530\uB77C\uC7A1\uAC8C \uD558\uB294 \uC9C0\uCE68\uC774\uC5D0\uC694. \uD30C\uC77C \uC804\uCCB4\uB97C \uB2E4\uC2DC \uC368\uC57C \uD574\uC694.",
+          theFilesBeingRefreshed: "\uC0C8\uB85C \uACE0\uCE58\uB294 \uD30C\uC77C",
+          itOrTheyToMatchTheTarget: '\uB300\uC0C1 \uAC1C\uC218\uC5D0 \uB9DE\uCD98 "it" \uB610\uB294 "they"',
+          itLagsOrTheyLagToMatch: '\uB300\uC0C1 \uAC1C\uC218\uC5D0 \uB9DE\uCD98 "it lags" \uB610\uB294 "they lag"',
+          howTheStoryInputIsArrangedE: "\uC2A4\uD1A0\uB9AC \uC785\uB825 \uD615\uC2DD (\uC608: \uC694\uC57D\uACFC \uC6D0\uBCF8 \uBA54\uC2DC\uC9C0)",
+          rebuildPass: "\uC7AC\uAD6C\uCD95 \uD328\uC2A4",
+          sentWhenACategorySRebuildButton: "\uCE74\uD14C\uACE0\uB9AC \uC7AC\uAD6C\uCD95 \uC9C0\uCE68\uC774\uC5D0\uC694. \uC7A0\uAE34 \uD589\uC744 \uBE7C\uBA74 \uB300\uC0C1\uC774 \uBE44\uC5B4 \uC788\uB294 \uAC83\uC73C\uB85C \uBCF4\uC5EC\uC694. \uD30C\uC77C \uC804\uCCB4\uB97C \uB2E4\uC2DC \uC368\uC57C \uD574\uC694. \uC131\uACF5\uD558\uBA74 \uD30C\uC77C\uC744 \uAD50\uCCB4\uD558\uACE0, \uCEE4\uC11C\uB294 \uADF8\uB300\uB85C \uB46C\uC694.",
+          theFilesBeingRebuilt: "\uC7AC\uAD6C\uCD95\uD558\uB294 \uD30C\uC77C",
+          howTheStoryInputIsArranged: "\uC2A4\uD1A0\uB9AC \uC785\uB825\uC774 \uAD6C\uC131\uB41C \uBC29\uC2DD",
+          reconcileSweep: "\uB300\uC870 \uC810\uAC80",
+          sentWhenMessagesWereDeletedBehindThe: "\uBA54\uC2DC\uC9C0\uAC00 \uC0AD\uC81C\uB41C \uB4A4 \uC0C8 \uBA54\uC2DC\uC9C0\uAC00 \uB0A8\uC544 \uC788\uC9C0 \uC54A\uC744 \uB54C \uBCF4\uB0B4\uC694. \uAE30\uC874 \uB0B4\uC6A9\uC744 \uB0A8\uC740 \uC2A4\uD1A0\uB9AC\uC640 \uB300\uC870\uD574 \uD655\uC778\uD574\uC694.",
+          fastCatchUp: "\uBE60\uB978 \uB530\uB77C\uC7A1\uAE30",
+          thePreambleForEachFastCatchUp: "\uC6D0\uBCF8 \uBA54\uC2DC\uC9C0 \uB300\uC2E0 \uCC55\uD130 \uC694\uC57D\uC744 \uC4F0\uB294 \uBE60\uB978 \uB530\uB77C\uC7A1\uAE30 \uBC30\uCE58\uC758 \uB3C4\uC785\uBD80\uC608\uC694.",
+          theMessageRangeThisBatchCovers: "\uC774\uBC88 \uBC30\uCE58\uAC00 \uB2E4\uB8E8\uB294 \uBA54\uC2DC\uC9C0 \uBC94\uC704",
+          ultraCatchUp: "\uCD08\uACE0\uC18D \uB530\uB77C\uC7A1\uAE30",
+          thePreambleForTheSinglePassUltra: "\uCD08\uACE0\uC18D \uB530\uB77C\uC7A1\uAE30\uC758 \uB3C4\uC785\uBD80\uC608\uC694. \uC815\uB9AC\uB41C \uC694\uC57D\uACFC \uCD5C\uADFC \uC6D0\uBCF8 \uBA54\uC2DC\uC9C0\uB97C \uD55C \uBC88\uC5D0 \uD6D1\uC5B4\uC694.",
+          theMessageRangeCovered: "\uB2E4\uB8E8\uB294 \uBA54\uC2DC\uC9C0 \uBC94\uC704",
+          partialViewGuard: "\uBD80\uBD84 \uC2DC\uC57C \uACBD\uACE0",
+          prependedToEveryNormalUpdateTheAgent: "\uC5D0\uC774\uC804\uD2B8\uC5D0\uAC8C \uC2A4\uD1A0\uB9AC\uC758 \uC77C\uBD80\uB9CC \uBCF4\uACE0 \uC788\uB2E4\uACE0 \uC54C\uB824\uC694. \uADF8 \uBC94\uC704\uC5D0 \uC5C6\uB294 \uC815\uBCF4\uB97C \uADFC\uAC70\uB85C \uBC14\uAFB8\uC9C0 \uC54A\uAC8C \uD574\uC694.",
+          reconcileWarning: "\uB300\uC870 \uACBD\uACE0",
+          prependedWhenEditsOrDeletionsWereDetected: "\uCF54\uB371\uC2A4 \uCEE4\uC11C \uC774\uC804 \uBA54\uC2DC\uC9C0\uAC00 \uC218\uC815\xB7\uC0AD\uC81C\uB418\uBA74 \uAE30\uC874 \uAE30\uB85D\uC744 \uAC80\uD1A0 \uB300\uC0C1\uC73C\uB85C \uD45C\uC2DC\uD574\uC694.",
+          migrationToRelationsTable: "\uAD00\uACC4 \uD45C\uB85C \uC804\uD658",
+          prependedOnTheFirstRunAfterThe: "\uAD00\uACC4 \uD45C\uB97C \uCF20 \uB4A4 \uBCF4\uB0B4\uC694. \uC804\uD658 \uC9C0\uC2DC\uB294 \uC720\uC9C0\uD558\uC138\uC694. \uC571\uC774 \uACB0\uACFC\uB97C \uD655\uC778\uD574\uC694.",
+          migrationToInlineTies: "\uC778\uB77C\uC778 ties\uB85C \uC804\uD658",
+          prependedOnTheFirstRunAfterThe2: "\uAD00\uACC4 \uD45C\uB97C \uB048 \uB4A4 \uBCF4\uB0B4\uC694.",
+          repairWarning: "\uBCF5\uAD6C \uACBD\uACE0",
+          prependedWhenFilesOnDiskWereUnreadable: "\uC77D\uC744 \uC218 \uC5C6\uB294 \uD30C\uC77C\uC744 \uBE48 \uD30C\uC77C\uB85C \uBCF4\uC5EC \uC904 \uB54C \uBCF4\uB0B4\uC694.",
+          theUnreadableFiles: "\uC77D\uC744 \uC218 \uC5C6\uB294 \uD30C\uC77C",
+          lockedEntities: "\uC7A0\uAE34 \uAC1C\uCCB4",
+          prependedWhenEntitiesAreLockedTheApp: "\uC7A0\uAE34 \uAC1C\uCCB4\uB97C \uC54C\uB824\uC694. \uC571\uB3C4 \uC774 \uAC1C\uCCB4\uC758 \uBCC0\uACBD\uC744 \uAC70\uBD80\uD574\uC694.",
+          theLockedEntityIds: "\uC7A0\uAE34 \uAC1C\uCCB4 id",
+          lockedFields: "\uC7A0\uAE34 \uD544\uB4DC",
+          prependedWhenIndividualFieldsAreLockedOn: '\uC7A0\uAE34 \uD544\uB4DC\uB97C \uC54C\uB824\uC694. \uC5D0\uC774\uC804\uD2B8\uC5D0\uAC8C\uB294 \uAC12 \uB300\uC2E0 "Locked, do not edit"\uAC00 \uBCF4\uC5EC\uC694. \uC4F0\uAE30 \uB54C \uC571\uC774 \uADF8 \uAC12\uC744 \uB418\uB3CC\uB824 \uB193\uC544\uC694.',
+          theEntitiesCarryingLockedFields: "\uC7A0\uAE34 \uD544\uB4DC\uAC00 \uC788\uB294 \uAC1C\uCCB4"
+        },
+        schemaHowtoTail: "JSON \uAD6C\uC870\uB97C \uAC80\uC99D\uAE30\uC640 \uB9DE\uAC8C \uC720\uC9C0\uD558\uC138\uC694. \uADF8\uB807\uC9C0 \uC54A\uC73C\uBA74 \uC4F0\uAE30\uAC00 \uC2E4\uD328\uD574\uC694. \uC548\uB0B4 \uBB38\uAD6C\uB294 \uBC14\uAFD4 \uC368\uB3C4 \uB3FC\uC694."
+      }
+    }
+  },
+  shared: {
+    tierNames: {
+      chapter: "\uCC55\uD130",
+      arc: "\uC544\uD06C",
+      volume: "\uBCFC\uB968",
+      series: "\uC2DC\uB9AC\uC988",
+      saga: "\uC0AC\uAC00",
+      library: "\uB77C\uC774\uBE0C\uB7EC\uB9AC",
+      universe: "\uC720\uB2C8\uBC84\uC2A4"
+    },
+    defaultSettings: {
+      default: "\uAE30\uBCF8"
+    },
+    normalizeSettings: {
+      default: "\uAE30\uBCF8"
+    },
+    base: {
+      untitled: "\uC81C\uBAA9 \uC5C6\uC74C"
+    },
+    codexBookNameFor: {
+      codexDoNotEdit: "{worldBookNamePrefix} \uCF54\uB371\uC2A4 [\uC218\uC815 \uAE08\uC9C0] - {suffix}"
+    },
+    lessonGradeLabel: {
+      gilded: "\uAE08\uC7A5",
+      silver: "\uC740\uC7A5",
+      bronze: "\uB3D9\uC7A5",
+      apprentice: "\uACAC\uC2B5"
+    },
+    summaryKindTag: "{kind, select, chapter {\uCC55\uD130} arc {\uC544\uD06C} volume {\uBCFC\uB968} series {\uC2DC\uB9AC\uC988} saga {\uC0AC\uAC00} library {\uB77C\uC774\uBE0C\uB7EC\uB9AC} universe {\uC720\uB2C8\uBC84\uC2A4} codex {\uCF54\uB371\uC2A4} other {{kind}}}"
+  },
+  ui: {
+    activationControl: {
+      activationControl: {
+        always: "\uD56D\uC0C1",
+        keywords: "\uD0A4\uC6CC\uB4DC",
+        vectorKeywords: "\uBCA1\uD130 + \uD0A4\uC6CC\uB4DC"
+      },
+      vectorSetupHint: {
+        vectorRecallNeedsATestedEmbeddingConnection: "Lumiverse\uC5D0\uC11C \uD14C\uC2A4\uD2B8\uB97C \uD1B5\uACFC\uD55C \uC784\uBCA0\uB529 \uC5F0\uACB0\uACFC \uC6D4\uB4DC\uBD81 \uBCA1\uD130\uD654\uAC00 \uD544\uC694\uD574\uC694. \uC0C9\uC778\uC740 \uC124\uC815\uB41C \uD504\uB85C\uBC14\uC774\uB354\uB85C \uBC31\uADF8\uB77C\uC6B4\uB4DC\uC5D0\uC11C \uC9C4\uD589\uB3FC\uC694. \uC900\uBE44\uB418\uAE30 \uC804\uC774\uB098 \uAC80\uC0C9\uC5D0 \uC2E4\uD328\uD558\uBA74 \uD0A4\uC6CC\uB4DC\uB85C \uB300\uC2E0\uD574\uC694."
+      }
+    },
+    app: {
+      tab: {
+        lumiBooks: "LumiBooks",
+        books: "\uCC45",
+        memoriaFilesYourChatIntoChaptersAnd: "\uCC44\uD305\uC744 \uCC55\uD130\uC640 \uC544\uD06C\uB85C \uC694\uC57D\uD574\uC694.",
+        lumiBooks2: "lumi books \uB8E8\uBBF8\uBD81\uC2A4"
+      },
+      send: {
+        preparingSummaryExport: "\uC694\uC57D \uB0B4\uBCF4\uB0B4\uAE30 \uC900\uBE44 \uC911\u2026",
+        checkingSummaryCoverage: "\uC694\uC57D \uBC94\uC704 \uD655\uC778 \uC911\u2026"
+      },
+      showLoadNotice: {
+        retry: "\uB2E4\uC2DC \uC2DC\uB3C4"
+      },
+      requestState: {
+        loadingLumiBooks: "LumiBooks \uBD88\uB7EC\uC624\uB294 \uC911\u2026",
+        lumiBooksHasnTRespondedYouCanRetry: "LumiBooks\uAC00 \uC751\uB2F5\uD558\uC9C0 \uC54A\uC544\uC694. \uB2E4\uC2DC \uBD88\uB7EC\uC640 \uBCF4\uC138\uC694.",
+        couldNotLoadLumiBooks: "LumiBooks\uB97C \uBD88\uB7EC\uC624\uC9C0 \uBABB\uD588\uC5B4\uC694: {string}"
+      },
+      doRender: {
+        lumiBooksCouldnTDisplayThisViewRetry: "\uC774 \uD654\uBA74\uC744 \uD45C\uC2DC\uD558\uC9C0 \uBABB\uD588\uC5B4\uC694. \uB2E4\uC2DC \uC2DC\uB3C4\uD574 \uC0C8\uB85C \uBD88\uB7EC\uC624\uC138\uC694."
+      },
+      unsub: {
+        loadingLumiBooks: "LumiBooks \uBD88\uB7EC\uC624\uB294 \uC911\u2026",
+        thisChatIsTakingLongerToLoad: "\uD3C9\uC18C\uBCF4\uB2E4 \uC624\uB798 \uAC78\uB9AC\uACE0 \uC788\uC5B4\uC694. \uAE30\uB2E4\uB9AC\uAC70\uB098 \uB2E4\uC2DC \uC2DC\uB3C4\uD558\uC138\uC694."
+      }
+    },
+    codexExtraFields: {
+      applyExtraFields: {
+        mustBeAValidNumber: "{key}\uC5D0\uB294 \uC62C\uBC14\uB978 \uC22B\uC790\uB97C \uC785\uB825\uD558\uC138\uC694."
+      }
+    },
+    components: {
+      multiSelect: {
+        nothingToPick: "\uC120\uD0DD\uC9C0 \uC5C6\uC74C"
+      },
+      searchField: {
+        value: "\xD7",
+        clearSearch: "\uAC80\uC0C9\uC5B4 \uC9C0\uC6B0\uAE30"
+      },
+      relativeTime: {
+        justNow: "\uBC29\uAE08 \uC804",
+        mAgo: "{m}\uBD84 \uC804",
+        hAgo: "{h}\uC2DC\uAC04 \uC804",
+        dAgo: "{floor}\uC77C \uC804"
+      },
+      formatTokens: {
+        thousands: "{value}k"
+      }
+    },
+    continuity: {
+      sec: {
+        continuityRoot: "\uC5F0\uC18D\uC131 (\uB8E8\uD2B8)"
+      }
+    },
+    lessons: {
+      contentBooks: {
+        courseBooks: {
+          theLibrarianSPrimer: "\uC0AC\uC11C \uC785\uBB38\uC11C",
+          whyMemoriaExists: "\uBA54\uBAA8\uB9AC\uC544\uB294 \uC65C \uC788\uC744\uAE4C",
+          goodMorningWhyDoIExistAs: "\uC88B\uC740 \uC544\uCE68\uC774\uC5D0\uC694!! \uC81C\uAC00 \uC65C \uC874\uC7AC\uD558\uB0D0\uACE0\uC694? \uB864\uD50C\uB808\uC774\uB97C \uD558\uB2E4 \uBCF4\uBA74 \uCC44\uD305\uC774 \uB108\uBB34 \uAE38\uC5B4\uC838\uC11C \uBAA8\uB378\uC758 \uCEE8\uD14D\uC2A4\uD2B8\uC5D0 \uB2E4 \uB4E4\uC5B4\uAC00\uC9C0 \uC54A\uAC8C \uB3FC\uC694. \uC624\uB798\uB41C \uBA54\uC2DC\uC9C0\uB294 \uC798\uB824 \uB098\uAC00\uACE0, \uBAA8\uB378\uC740 \uAE08\uC138 \uC911\uC694\uD55C \uC815\uBCF4\uB97C \uC78A\uC5B4\uBC84\uB9AC\uC8E0. \uC774\uAC78 \uC5B4\uB5BB\uAC8C \uD574\uACB0\uD560\uAE4C\uC694?",
+          beholdMeITakeYourOlderMessages: "\uBCF4\uB77C, \uC774 \uBAB8\uC744! \uD750\uD765. \uC800\uB294 \uC624\uB798\uB41C \uBA54\uC2DC\uC9C0\uB97C \uB369\uC5B4\uB9AC\uC9F8 \uCC55\uD130\uB77C\uB294 \uC694\uC57D\uC73C\uB85C \uC555\uCD95\uD574\uC694. \uC694\uC57D\uC774 \uB108\uBB34 \uB9CE\uC544\uC9C0\uBA74 \uADF8\uAC78 \uB2E4\uC2DC \uC544\uD06C\uB85C, \uADF8\uB2E4\uC74C\uC5D4 \uBCFC\uB968\uC73C\uB85C \uC555\uCD95\uD558\uACE0\uC694. \uAC01 \uC694\uC57D\uC740 \uC6D0\uB798 \uBA54\uC2DC\uC9C0\uAC00 \uC788\uB358 \uBC14\uB85C \uADF8 \uC790\uB9AC\uC5D0 \uC8FC\uC785\uB418\uB2C8\uAE4C, \uCC44\uD305 \uAE30\uB85D\uC758 \uD0C0\uC784\uB77C\uC778\uC774 \uADF8\uB300\uB85C \uC720\uC9C0\uB3FC\uC694!",
+          compactedMessagesAreHiddenSoYourLlm: "\uC555\uCD95\uB41C \uBA54\uC2DC\uC9C0\uB294 \uC228\uACA8\uC838\uC11C, LLM\uC740 \uADF8 \uB300\uC2E0 \uC81C \uC555\uCD95 \uC694\uC57D\uC744 \uC77D\uC5B4\uC694. \uADF8\uB9AC\uACE0 \uCC55\uD130\uB97C \uC0AD\uC81C\uD558\uBA74 \uADF8 \uCC55\uD130\uAC00 \uC228\uACBC\uB358 \uBA54\uC2DC\uC9C0\uAC00 \uB2E4\uC2DC \uBCF4\uC774\uAC8C \uB3FC\uC694.",
+          afterICompactMessagesOfRange1: "1-18\uBC88 \uBA54\uC2DC\uC9C0\uB97C \uCC55\uD130\uB85C \uC555\uCD95\uD558\uACE0 \uB098\uBA74, LLM \uBAA8\uB378\uC740 \uADF8 \uAD6C\uAC04\uC5D0\uC11C \uBB34\uC5C7\uC744 \uBCF4\uAC8C \uB420\uAE4C\uC694?",
+          bothTheSummaryAndTheOriginalMessages: "\uC694\uC57D\uACFC \uC6D0\uB798 \uBA54\uC2DC\uC9C0 \uB458 \uB2E4",
+          nothingItSForgotten: "\uC544\uBB34\uAC83\uB3C4\uC694, \uC78A\uD600\uC84C\uC5B4\uC694!",
+          theChapterSummariesThereInstead: "\uADF8 \uC790\uB9AC\uC5D0 \uB300\uC2E0 \uB4E4\uC5B4\uAC04 \uCC55\uD130 \uC694\uC57D",
+          aLorebookEntryInTheWorldInfo: "\uD504\uB86C\uD504\uD2B8\uC758 \uC6D4\uB4DC \uC778\uD3EC \uC601\uC5ED\uC5D0 \uB4E4\uC5B4\uAC04 \uC6D4\uB4DC\uBD81 \uD56D\uBAA9",
+          theSummariesReplaceTheMessagesInPlace: "\uC694\uC57D\uC774 \uBA54\uC2DC\uC9C0\uB97C \uADF8 \uC790\uB9AC\uC5D0\uC11C \uB300\uCCB4\uD574\uC694 :)",
+          theFirstFiling: "\uCCAB \uC815\uB9AC",
+          thisIsAPracticeChatIMade: "\uC774\uAC74 \uC624\uB85C\uC9C0 \uAC00\uB974\uCCD0 \uB4DC\uB9AC\uB824\uACE0 \uC81C\uAC00 \uB9CC\uB4E0 \uC5F0\uC2B5\uC6A9 \uCC44\uD305\uC774\uC5D0\uC694 \uD83D\uDE3E. \uAC15\uC870\uB41C \uC774 \uBC84\uD2BC\uB4E4\uC774 \uC81C \uBE60\uB978 \uC791\uC5C5\uC774\uC5D0\uC694.",
+          thisPracticeStoryHasPlentyOfOld: "\uC774 \uC5F0\uC2B5\uC6A9 \uC774\uC57C\uAE30\uC5D0\uB294 \uC694\uC57D\uC73C\uB85C \uC555\uCD95\uD560 \uC624\uB798\uB41C \uBA54\uC2DC\uC9C0\uAC00 \uB109\uB109\uD788 \uC788\uC5B4\uC694. \u300C\uCC55\uD130 \uC815\uB9AC\u300D \uBC84\uD2BC\uC744 \uB204\uB974\uACE0 \uC5B4\uB5BB\uAC8C \uB418\uB294\uC9C0 \uC9C0\uCF1C\uBCF4\uC138\uC694.",
+          boomTheStoryIsNowMoreCompact: "\uCF85\uD83D\uDCA3. \uC774\uC57C\uAE30\uAC00 \uD55C\uACB0 \uC555\uCD95\uB410\uACE0, \uC0C8 \uC694\uC57D \uCC55\uD130\uAC00 \uC81C \uCC45\uC7A5\uC5D0 \uAF42\uD614\uC5B4\uC694. \uC774 \uC0C9 \uB9C9\uB300 \uBAA8\uC591\uB3C4 \uBC14\uB00C\uC5C8\uC8E0. \uADF8 \uBA54\uC2DC\uC9C0\uB4E4\uC774 \uC774\uC81C \uC694\uC57D\uC73C\uB85C \uC874\uC7AC\uD558\uB2C8\uAE4C\uC694.",
+          importantThereSAutomationTooNowYou: '\uC911\uC694\uD574\uC694! \uC790\uB3D9\uD654\uB3C4 \uC788\uC5B4\uC694! \uC774\uC81C \uC544\uC8FC\uC544\uC8FC \uC911\uC694\uD55C \uC9C8\uBB38\uC774 \uB5A0\uC624\uB974\uACA0\uC8E0: \uBA54\uBAA8\uB9AC\uC544\uB294 \uC5B8\uC81C \uC54C\uC544\uC11C \uC694\uC57D\uD558\uB0D0\uACE0\uC694?? \uADF8 \uC544\uC8FC \uC911\uC694\uD55C \uC9C8\uBB38\uC5D0 \uC81C\uAC00 \uCE5C\uD788 \uB2F5\uD574 \uB4DC\uB9AC\uC8E0! \uADF8\uAC74 \uB531 \uB450(2\uFE0F\u20E3) \uAC00\uC9C0 \uC124\uC815\uC5D0 \uB2EC\uB824 \uC788\uC5B4\uC694. \uC0DD\uAC01\uD574 \uBCF4\uC138\uC694: \uC555\uCD95\uD558\uC9C0 \uC54A\uC740 \uBA54\uC2DC\uC9C0\uB294 \uD06C\uC9C0\uB9CC \uC790\uC138\uD55C \uC815\uBCF4\uB97C \uB2F4\uACE0 \uC788\uC73C\uB2C8, \uBC14\uB85C \uC555\uCD95\uD558\uACE0 \uC2F6\uC9C4 \uC54A\uC796\uC544\uC694? \uADF8\uB798\uC11C \uCCAB \uBC88\uC9F8 \uC124\uC815\uC774 \uC81C\uAC00 "\uC9C0\uC5F0"\uC774\uB77C\uACE0 \uBD80\uB974\uB294 \uAC70\uC608\uC694. \uAE30\uBCF8\uAC12\uC740 65\uC608\uC694. \uD56D\uC0C1 \uC555\uCD95\uD558\uC9C0 \uC54A\uACE0 \uB0A8\uACA8 \uB450\uB294 \uAC00\uC7A5 \uCD5C\uADFC \uBA54\uC2DC\uC9C0 \uC218\uC8E0! \uD83D\uDDFF',
+          theSecondSettingIsTheWindowWe: '\uB450 \uBC88\uC9F8 \uC124\uC815\uC740 "\uC708\uB3C4\uC6B0" \uD83E\uDE9F\uC608\uC694. \uBA54\uC2DC\uC9C0\uB97C \uD558\uB098\uD558\uB098 \uB530\uB85C \uC694\uC57D\uD558\uACE0 \uC2F6\uC9C4 \uC54A\uC796\uC544\uC694. \uB300\uC2E0 \uD55C 18\uAC1C\uCBE4\uC744 \uCC55\uD130 \uD558\uB098\uB85C \uC694\uC57D\uD558\uACE0 \uC2F6\uACA0\uC8E0! \uB9C8\uCE68 \uAE30\uBCF8\uAC12\uC774 18\uC774\uB124\uC694, \uC774\uB7F0 \uC6B0\uC5F0\uC774! \uC9C0\uC5F0 \uB4A4\uB85C \uC624\uB798\uB41C \uBA54\uC2DC\uC9C0\uAC00 18\uAC1C \uC313\uC774\uBA74 \uC774 \uB450 "\uBC30\uC9C0"\uAC00 \uB458 \uB2E4 "\uC900\uBE44\uB428"\uC73C\uB85C \uBC14\uB00C\uACE0, \uC800\uB294 \uCC55\uD130 \uC694\uC57D\uC744 \uC2DC\uC791\uD574\uC694!',
+          theDefaultValuesAreMadeFor200k: "\uAE30\uBCF8\uAC12\uC740 200k \uCEE8\uD14D\uC2A4\uD2B8 \uCC44\uD305\uC5D0 \uB9DE\uCDB0\uC838 \uC788\uC5B4\uC694. \uCEE8\uD14D\uC2A4\uD2B8 \uD06C\uAE30\uC640 \uBA54\uC2DC\uC9C0 \uAE38\uC774\uC5D0 \uB530\uB77C \uC9C0\uC5F0\uACFC \uC708\uB3C4\uC6B0\uB97C \uC785\uB9DB\uB300\uB85C \uC870\uC808\uD558\uC138\uC694. \uADF8\uB798\uB3C4 \uCEE8\uD14D\uC2A4\uD2B8\uB294 200k\uB85C \uB450\uAE30\uB97C \uCD94\uCC9C\uD574\uC694. LLM\uC774 \uC7A5\uBB38 \uCEE8\uD14D\uC2A4\uD2B8\uC758 \uC2E0\uC774 \uB41C 2028\uB144\uC5D0 \uC0B4\uACE0 \uC788\uB294 \uAC8C \uC544\uB2C8\uB77C\uBA74\uC694(\uC544\uB9C8\uB3C4).",
+          fileAllFilesChaptersUntilTheLag: "\u300C\uBAA8\uB450 \uC815\uB9AC\u300D\uB294 \uC9C0\uC5F0\uC5D0 \uB2FF\uC744 \uB54C\uAE4C\uC9C0 \uCC55\uD130\uB97C \uC815\uB9AC\uD574\uC694. \u300C\uC544\uD06C \uBB36\uAE30\u300D\uB294 \uC81C\uC77C \uC624\uB798\uB41C \uCC55\uD130\uB4E4\uC744 \uAC00\uC838\uB2E4 \uC544\uD06C\uB77C\uB294 \uB354 \uC791\uC740 \uC694\uC57D \uD558\uB098\uB85C \uC555\uCD95\uD574\uC694. \uCC98\uB9AC\uD560 \uC791\uC5C5\uC774 \uB0A8\uC544 \uC788\uC73C\uBA74 \uC5EC\uAE30\uC5D0 \uC5BC\uB9C8\uB098 \uB0A8\uC558\uB294\uC9C0 \uC54C\uB824 \uC8FC\uB294 \uC791\uC740 \uBC30\uC9C0\uAC00 \uB5A0\uC694.",
+          everythingIFileIsStoredInA: "\uC81C\uAC00 \uC815\uB9AC\uD55C \uAC74 \uC804\uBD80 \uC774 \uCC44\uD305\uB9CC\uC744 \uC704\uD574 \uB9CC\uB4E0, \uCC44\uD305 \uC774\uB984\uC744 \uB534 \uC6D4\uB4DC\uBD81\uC5D0 \uC800\uC7A5\uB3FC\uC694. \uCC55\uD130\uAC00 \uCC98\uC74C \uC815\uB9AC\uB420 \uB54C \uB098\uD0C0\uB098\uC694.",
+          normallyYouNeverNeedTheseButtonsWith: "\uC790\uB3D9\uD654\uB97C \uCF1C \uB450\uBA74 \uBCF4\uD1B5 \uC774 \uBC84\uD2BC\uB4E4\uC740 \uC4F8 \uC77C\uC774 \uC5C6\uC5B4\uC694. \uBA54\uC2DC\uC9C0\uAC00 \uC62C \uB54C\uB9C8\uB2E4 \uC81C\uAC00 \uB2E4 \uC54C\uC544\uC11C \uD558\uAC70\uB4E0\uC694. \uBC84\uD2BC\uC774 \uC548 \uB20C\uB9AC\uBA74 \uC544\uB798 \uC791\uC740 \uAE00\uC528\uAC00 \uC774\uC720\uB97C \uC54C\uB824 \uC918\uC694. \uBCF4\uD1B5\uC740 \uC81C\uAC00 \uBC14\uC058\uAC70\uB098, \uC800\uB97C \uAEBC \uBC84\uB838\uAC70\uB098\uC694 >:(",
+          "70OldMessagesLag65Window18": "\uC624\uB798\uB41C \uBA54\uC2DC\uC9C0 70\uAC1C \xB7 \uC9C0\uC5F0 65 \xB7 \uC708\uB3C4\uC6B0 18",
+          thesePillsSayLagReadyButWindow: "\uBC30\uC9C0\uC5D0\uB294 \u300C\uC9C0\uC5F0 \uCDA9\uC871\u300D, \u300C\uC708\uB3C4\uC6B0 \uB300\uAE30\u300D\uC774\uB77C\uACE0 \uB5A0 \uC788\uB294\uB370 \uC800\uB294 \uC815\uB9AC\uB97C \uC548 \uD558\uACE0 \uC788\uC5B4\uC694. \uC65C\uC77C\uAE4C\uC694?",
+          theLagHasNotFilledUpYet: "\uC9C0\uC5F0\uC774 \uC544\uC9C1 \uB2E4 \uCC28\uC9C0 \uC54A\uC558\uC5B4\uC694",
+          theChatHasNoLorebookYet: "\uCC44\uD305\uC5D0 \uC544\uC9C1 \uC6D4\uB4DC\uBD81\uC774 \uC5C6\uC5B4\uC694",
+          "70MessagesMinusThe65ProtectedBy": "\uBA54\uC2DC\uC9C0 70\uAC1C\uC5D0\uC11C \uC9C0\uC5F0\uC774 \uC9C0\uD0A4\uB294 65\uAC1C\uB97C \uBE7C\uBA74 5\uAC1C\uBFD0\uC778\uB370, \uCC55\uD130 \uD558\uB098\uC5D0\uB294 18\uAC1C\uAC00 \uD544\uC694\uD574\uC694",
+          aChapterCanOnlyBeFiledAfter: "\uCC55\uD130\uB294 \uC544\uD06C\uAC00 \uC0DD\uAE34 \uB4A4\uC5D0\uB9CC \uC815\uB9AC\uD560 \uC218 \uC788\uC5B4\uC694",
+          theWindowOnlyCountsMessagesOlderThan: "\uC708\uB3C4\uC6B0\uB294 \uC9C0\uC5F0\uBCF4\uB2E4 \uC624\uB798\uB41C \uBA54\uC2DC\uC9C0\uB9CC \uC138\uC694. 70 \uBE7C\uAE30 65\uB294 5, 18\uC5D0 \uBABB \uBBF8\uCE58\uC8E0. \uC774\uB7F4 \uB54C \uC815\uB9AC\uB97C \uB204\uB974\uBA74 \uC774\uC57C\uAE30\uC5D0 \uBA54\uC2DC\uC9C0\uAC00 \uB354 \uD544\uC694\uD558\uB2E4\uACE0 \uC54C\uB824 \uB4DC\uB824\uC694~",
+          theDesk: "\uCC45\uC0C1",
+          thisColoredBarIsTheSpineA: "\uC774 \uC0C9 \uB9C9\uB300\uAC00 \uCC45\uB4F1\uC774\uC5D0\uC694. \uCC44\uD305 \uC804\uCCB4\uC758 \uC9C0\uB3C4\uC8E0. \uBE14\uB85D \uD558\uB098\uD558\uB098\uAC00 \uC774\uC57C\uAE30\uC758 \uD55C \uAD6C\uAC04\uC774\uACE0, \uD504\uB86C\uD504\uD2B8\uB97C \uC5BC\uB9C8\uB098 \uCC28\uC9C0\uD558\uB294\uC9C0\uC5D0 \uB530\uB77C \uD06C\uAE30\uAC00 \uC815\uD574\uC838\uC694. \uB9E8 \uC55E\uC758 \uC5F0\uD55C \uBE14\uB85D\uC740 \uCF54\uB371\uC2A4\uC778\uB370, \uADF8\uAC74 \uC81C \uB450 \uBC88\uC9F8 \uACFC\uC815\uC774\uC5D0\uC694(\uC9C4\uC9DC \uBA4B\uC838\uC694).",
+          clickAnyColoredBlockAndILl: "\uC0C9 \uBE14\uB85D\uC744 \uC544\uBB34\uAC70\uB098 \uB204\uB974\uBA74 \uCC45\uC7A5\uC5D0 \uC788\uB294 \uADF8 \uCC55\uD130\uB098 \uC544\uD06C\uB85C \uBC14\uB85C \uB370\uB824\uB2E4 \uB4DC\uB824\uC694 \uD83D\uDC30. \uC5B4\uB5A4 \uC7A5\uBA74\uC744 \uC81C\uAC00 \uBB50\uB77C\uACE0 \uC37C\uB294\uC9C0 \uD655\uC778\uD560 \uB54C \uD3B8\uD574\uC694.",
+          theListUnderItShowsTheSame: "\uADF8 \uC544\uB798 \uBAA9\uB85D\uC740 \uAC19\uC740 \uADF8\uB9BC\uC744 \uC22B\uC790\uB85C \uBCF4\uC5EC \uC918\uC694. \uC81C \uBCFC\uB968, \uC544\uD06C, \uCC55\uD130\uAC00 \uCC28\uC9C0\uD558\uB294 \uC591, \uADF8\uB9AC\uACE0 \uC544\uC9C1 \uC190\uB300\uC9C0 \uC54A\uC740 \uCD5C\uADFC \uBA54\uC2DC\uC9C0\uAE4C\uC9C0\uC694.",
+          theseTilesAreTheQuickSummaryFiled: "\uC774 \uD0C0\uC77C\uB4E4\uC740 \uD55C\uB208\uC5D0 \uBCF4\uB294 \uC694\uC57D\uC774\uC5D0\uC694. \u300C\uC815\uB9AC\uB428\u300D\uC740 \uCC44\uD305\uC744 \uC5BC\uB9C8\uB098 \uC555\uCD95\uD588\uB294\uC9C0, \u300C\uCD5C\uADFC \uAD6C\uAC04\u300D\uB294 \uC544\uC9C1 \uC555\uCD95\uD558\uC9C0 \uC54A\uC740 \uCD5C\uADFC \uBD80\uBD84\uC774\uC5D0\uC694. \u300C\uCC45\uC7A5\u300D\uC740 \uC81C\uAC00 \uB9CC\uB4E0 \uAC78 \uC804\uBD80 \uC138\uACE0\uC694. \u300C\uCF54\uB371\uC2A4\u300D \uD0C0\uC77C\uC740 \uC81C \uB450 \uBC88\uC9F8 \uACFC\uC815 \uBAAB\uC774\uC5D0\uC694 \uD83E\uDD77.",
+          thePromptPanelShowsThePromptBreakdown: "\u300C\uD504\uB86C\uD504\uD2B8\u300D \uD328\uB110\uC740 \uB9C8\uC9C0\uB9C9 \uC0DD\uC131 \uB54C \uBCF4\uB0B8 \uD504\uB86C\uD504\uD2B8 \uAD6C\uC131\uC744 \uADF8\uB8F9\uBCC4\uB85C \uB098\uB220 \uBCF4\uC5EC \uC918\uC694. \u300C\uC2DC\uBBAC\uB808\uC774\uC158\u300D\uC740 \uB2E4\uC74C \uD504\uB86C\uD504\uD2B8\uB97C \uC2DC\uBBAC\uB808\uC774\uC158\uD574\uC694(\uB180\uB78D\uAC8C\uB3C4\uC694). \uD504\uB86C\uD504\uD2B8\uAC00 \uBAA8\uB378 \uD55C\uB3C4\uC758 90%\uB97C \uB118\uC73C\uBA74 \uC5EC\uAE30\uC11C \uACBD\uACE0\uD574 \uB4DC\uB824\uC694. 100%\uB97C \uB118\uC73C\uBA74 \uB098\uC05C \uC77C\uC774 \uC0DD\uACA8\uC694... \uBBFF\uC73C\uC138\uC694 \uD83E\uDD1E",
+          iWroteTooMuchThePreviousStep: "\uC55E \uB2E8\uACC4\uC5D0\uC11C \uB108\uBB34 \uB9CE\uC774 \uC368\uC11C \uC5EC\uAE30\uC11C \uC774\uC5B4 \uAC08\uAC8C\uC694. 100%\uC5D0 \uAC00\uAE4C\uC6CC\uC9C0\uBA74 \uC9C0\uC5F0\uC744 \uB0AE\uCD94\uC138\uC694! \uC544\uBB34\uD2BC. \uC81C\uAC00 \uAE00\uC744 \uC4F0\uB294 \uB3D9\uC548\uC5D4 \uC774\uB7F0 \uC904\uC774 \uB098\uD0C0\uB098\uC694. \uD639\uC2DC \uC5FF\uBCF4\uAE30\uB97C \uC88B\uC544\uD558\uB294 \uC74C\uD749\uD55C \uBD84\uC774\uB77C\uBA74 \uD83D\uDC7E, \u300C\uBCF4\uAE30\u300D\uB85C \uC81C \uC6D0\uBCF8 \uCD9C\uB825\uC744 \uC0DD\uAC01\uAE4C\uC9C0 \uD3EC\uD568\uD574 \uC2E4\uC2DC\uAC04\uC73C\uB85C \uC77D\uC744 \uC218 \uC788\uC5B4\uC694.",
+          ifIFailEvenAfterRetryingThis: "\uC7AC\uC2DC\uB3C4\uD574\uB3C4 \uC2E4\uD328\uD558\uBA74 \uC774 \uBE68\uAC04 \uC0C1\uC790\uC5D0 \uC624\uB958\uAC00 \uB5A0\uC694. \uAF2D \uC77D\uC5B4 \uC8FC\uC138\uC694.",
+          arc154Msgs08kTokens: "\uC544\uD06C 1 \xB7 \uBA54\uC2DC\uC9C0 54\uAC1C \u2192 0.8k \uD1A0\uD070",
+          lookAtTheSpineTheArcBlock: "\uCC45\uB4F1\uC744 \uBCF4\uC138\uC694. \uB9E8 \uC67C\uCABD \uC544\uD06C \uBE14\uB85D\uC740 \uBA54\uC2DC\uC9C0 54\uAC1C\uB97C \uB2F4\uACE0 \uC788\uB294\uB370\uB3C4 \uC587\uC740 \uC870\uAC01\uC73C\uB85C \uADF8\uB824\uC9C0\uACE0, \uB05D\uC758 \uBBF8\uC555\uCD95 \uAF2C\uB9AC\uAC00 \uB9C9\uB300 \uB300\uBD80\uBD84\uC744 \uCC28\uC9C0\uD574\uC694. \uC65C\uC77C\uAE4C\uC694?",
+          witnessThePowerOfLumibooks: "LumiBooks\uC758 \uD798\uC744 \uB611\uB611\uD788 \uBCF4\uC544\uB77C",
+          newerStoryIsAlwaysDrawnBigger: "\uC0C8 \uC774\uC57C\uAE30\uC77C\uC218\uB85D \uD56D\uC0C1 \uD06C\uAC8C \uADF8\uB824\uC838\uC694",
+          theArcLostMostOfItsMessages: "\uC544\uD06C\uAC00 \uBA54\uC2DC\uC9C0\uB97C \uB300\uBD80\uBD84 \uC783\uC5B4\uBC84\uB838\uC5B4\uC694",
+          theBarShowsTimePassingNotSize: "\uB9C9\uB300\uB294 \uD06C\uAE30\uAC00 \uC544\uB2C8\uB77C \uC2DC\uAC04\uC758 \uD750\uB984\uC744 \uBCF4\uC5EC \uC918\uC694",
+          theSpineIsACostMapThin: "\uCC45\uB4F1\uC740 \uBE44\uC6A9 \uC9C0\uB3C4\uC608\uC694. \uC587\uC740 \uBE14\uB85D\uC740 \uC81C \uB05D\uB0B4\uC8FC\uB294 \uC555\uCD95 \uAE30\uC220\uC774 \uC77C\uD558\uACE0 \uC788\uB2E4\uB294 \uB73B\uC774\uACE0, \uB450\uAEBC\uC6B4 \uBE14\uB85D\uC740 \uBBF8\uC555\uCD95 \uBA54\uC2DC\uC9C0\uC608\uC694.",
+          compressionIsRunningYetYourPromptIs: "\uC555\uCD95\uC740 \uB3CC\uC544\uAC00\uACE0 \uC788\uB294\uB370 \uD504\uB86C\uD504\uD2B8\uB294 \uC5EC\uC804\uD788 \uAC70\uB300\uD574\uC694. \uC5EC\uAE30\uC11C \uC5B4\uB5A4 \uC22B\uC790\uAC00 \uADF8 \uC774\uC720\uB97C \uC124\uBA85\uD560\uAE4C\uC694?",
+          theTailRecentMessagesAreUncompressedUntil: "\u300C\uCD5C\uADFC \uAD6C\uAC04\u300D, \uCD5C\uADFC \uBA54\uC2DC\uC9C0\uB294 \uC9C0\uC5F0+\uC708\uB3C4\uC6B0\uB97C \uC9C0\uB098\uAE30 \uC804\uAE4C\uC9C0 \uC555\uCD95\uB418\uC9C0 \uC54A\uC544\uC694",
+          theFiledTileFilingGrowsThePrompt: "\u300C\uC815\uB9AC\uB428\u300D \uD0C0\uC77C, \uC815\uB9AC\uD560\uC218\uB85D \uD504\uB86C\uD504\uD2B8\uAC00 \uCEE4\uC838\uC694",
+          theShelfTileTooManyChapters: "\u300C\uCC45\uC7A5\u300D \uD0C0\uC77C, \uCC55\uD130\uAC00 \uB108\uBB34 \uB9CE\uC544\uC694",
+          theCodexTileEvenThoughYouDon: "\u300C\uCF54\uB371\uC2A4\u300D \uD0C0\uC77C, \uC544\uC9C1 \uADF8\uAC8C \uBB54\uC9C0\uB3C4 \uBAA8\uB974\uC9C0\uB9CC\uC694 \uD83E\uDD25",
+          theUncompressedTailIsUsuallyTheFat: "\uBCF4\uD1B5 \uD504\uB86C\uD504\uD2B8\uC5D0\uC11C \uC81C\uC77C \uB6B1\uB6B1\uD55C \uBD80\uBD84\uC740 \uBBF8\uC555\uCD95 \uAF2C\uB9AC\uC608\uC694. \uCEE8\uD14D\uC2A4\uD2B8\uC5D0 \uC548 \uB4E4\uC5B4\uAC00\uBA74 \uC9C0\uC5F0\uC744 \uB0AE\uCDB0\uC11C \uC81C\uAC00 \uD604\uC7AC\uC5D0 \uB354 \uAC00\uAE4C\uC6B4 \uACF3\uAE4C\uC9C0 \uC815\uB9AC\uD558\uAC8C \uD558\uC138\uC694.",
+          theShelf: "\uCC45\uC7A5",
+          everythingIFileEndsUpOnMy: "\uC81C\uAC00 \uC815\uB9AC\uD55C \uAC74 \uC804\uBD80 \uC81C \uCC45\uC7A5\uC5D0 \uAF42\uD600\uC694. \uAD6C\uACBD\uD558\uB7EC \uAC00 \uBD10\uC694. \u300C\uCC45\u300D \uD0ED\uC744 \uB204\uB974\uC138\uC694.",
+          myShelf: "\uC81C \uCC45\uC7A5\uC774\uC5D0\uC694.",
+          witnessMyShelfEverythingIVeFiled: "\uC81C \uCC45\uC7A5\uC744 \uB611\uB611\uD788 \uBCF4\uC138\uC694 \uD83D\uDE08. \uC774 \uCC44\uD305\uC5D0\uC11C \uC81C\uAC00 \uC815\uB9AC\uD55C \uAC74 \uC804\uBD80 \uC5EC\uAE30 \uBCFC\uB968, \uC544\uD06C, \uCC55\uD130\uBCC4\uB85C \uB098\uB258\uC5B4 \uC788\uC5B4\uC694.",
+          entriesOpenWithAClickTapThe: "\uD56D\uBAA9\uC740 \uB204\uB974\uBA74 \uC5F4\uB824\uC694. \u300C\uACBD\uBE44\uB300\uC7A5\uC758 \uC2EC\uBB38\u300D \uCC55\uD130\uB97C \uB20C\uB7EC \uBCF4\uC138\uC694.",
+          thereSTheWholeRecord: "\uAE30\uB85D \uC804\uCCB4\uAC00 \uC5EC\uAE30 \uC788\uC5B4\uC694.",
+          youLlSeeItsSizeBeforeAnd: "\uC555\uCD95 \uC804\uD6C4\uC758 \uD06C\uAE30, \uC81C \uC9E7\uC740 \uBA54\uBAA8, \uADF8\uB9AC\uACE0 \uBC84\uD2BC \uB124 \uAC1C\uAC00 \uBCF4\uC77C \uAC70\uC608\uC694. \u300C\uD3B8\uC9D1\u300D\uC740 \uAE00\uC744 \uACE0\uCCD0 \uC368\uC694. \u300C\uC7AC\uC0DD\uC131\u300D\uC740 \uC694\uC57D\uC744 \uBC84\uB9AC\uACE0 \uAC19\uC740 \uBA54\uC2DC\uC9C0\uB85C \uB2E4\uC2DC \uC368\uC694. \u300C\uD574\uC81C\u300D\uB294 \uC81C\uAC00 \uB354\uB294 \uAD00\uB9AC\uD558\uC9C0 \uC54A\uB294 \uC77C\uBC18 \uC6D4\uB4DC\uBD81 \uD56D\uBAA9\uC73C\uB85C \uBC14\uAFD4\uC694. \u300C\uC0AD\uC81C\u300D\uB294 \uC9C0\uC6CC\uC694. \uC9C0\uB8E8\uD55C \uAC83\uB4E4\uC774\uC8E0 \uD83D\uDCA4",
+          fadedEntriesMeansAnArcOrVolume: "\uD750\uB9BF\uD55C \uD56D\uBAA9\uC740 \uC544\uD06C\uB098 \uBCFC\uB968\uC774 \uB300\uC2E0\uD558\uAC8C \uB410\uB2E4\uB294 \uB73B\uC774\uC5D0\uC694. \uCC55\uD130\uAC00 \uBA54\uC2DC\uC9C0\uB97C \uB300\uC2E0\uD558\uB294 \uAC83\uCC98\uB7FC\uC694. \uC544\uD06C\uB97C \uC0AD\uC81C\uD558\uBA74 \uADF8 \uCC55\uD130\uB4E4\uC774 \uB2E4\uC2DC \uB098\uD0C0\uB098\uC694.",
+          importantTheGhostTagMarksAChapter: "\uD83D\uDEA9\uC911\uC694\uD83D\uDEA9 \u300C\uC720\uB839\u300D \uD0DC\uADF8\uB294 \uC81C\uAC00 \uCF54\uB371\uC2A4\uC6A9\uC73C\uB85C \uBBF8\uB9AC \uC900\uBE44\uD574 \uB454 \uCC55\uD130\uB97C \uD45C\uC2DC\uD574\uC694. \uD558\uC9C0\uB9CC \uC9C0\uC5F0\uC744 \uC9C0\uB098\uAE30 \uC804\uAE4C\uC9C0\uB294 \uC2E4\uC81C\uB85C \uC8FC\uC785\uD558\uC9C0\uB3C4, \uC694\uC57D\uC5D0 \uC4F0\uC9C0\uB3C4 \uC54A\uC544\uC694. \uC790\uC138\uD55C \uAC74 \uCF54\uB371\uC2A4 \uACFC\uC815\uC5D0\uC11C \uC124\uBA85\uD574\uC694. \uC774\uAC70 \uB514\uC2A4\uCF54\uB4DC\uC5D0\uC11C \uBB3C\uC5B4\uBCF4\uBA74 \uC8FD\uC5EC \uBC84\uB9B4 \uAC70\uC608\uC694.",
+          youDeleteAnArcThatWasMade: "\uCC55\uD130 3\uAC1C\uB85C \uB9CC\uB4E0 \uC544\uD06C\uB97C \uC0AD\uC81C\uD558\uBA74 \uC5B4\uB5BB\uAC8C \uB420\uAE4C\uC694?",
+          the3ChaptersUnhideAndInjectAgain: "\uCC55\uD130 3\uAC1C\uAC00 \uB2E4\uC2DC \uB098\uD0C0\uB098 \uC8FC\uC785\uB418\uACE0, \uBA54\uC2DC\uC9C0\uB294 \uACC4\uC18D \uC228\uACA8\uC9C4 \uCC44\uB85C \uC788\uC5B4\uC694",
+          theChaptersAndAllTheirMessagesReturn: "\uCC55\uD130\uC640 \uADF8 \uBA54\uC2DC\uC9C0 \uC804\uBD80\uAC00 \uD504\uB86C\uD504\uD2B8\uB85C \uB3CC\uC544\uC640\uC694",
+          the3ChaptersAreDeletedAlongWith: "\uCC55\uD130 3\uAC1C\uB3C4 \uC544\uD06C\uC640 \uD568\uAED8 \uC0AD\uC81C\uB3FC\uC694",
+          prolixTakesAShit: "Prolix\uAC00 \uB625\uC744 \uC2F8\uC694",
+          deletingATierHandsTheJobBack: "\uD55C \uB2E8\uACC4\uB97C \uC0AD\uC81C\uD558\uBA74 \uADF8 \uC77C\uC774 \uBC14\uB85C \uC544\uB798 \uB2E8\uACC4\uB85C \uB118\uC5B4\uAC00\uC694. \uBA54\uC2DC\uC9C0 \uC790\uCCB4\uB294 \uC544\uBB34\uAC83\uB3C4 \uB36E\uACE0 \uC788\uC9C0 \uC54A\uC744 \uB54C\uB9CC \uB3CC\uC544\uC640\uC694.",
+          halfTheChaptersHereAreFadedAnd: "\uC5EC\uAE30 \uCC55\uD130 \uC808\uBC18\uC774 \uD750\uB9BF\uD558\uACE0 superseded(\uB300\uCCB4\uB428) \uD45C\uC2DC\uAC00 \uBD99\uC5B4 \uC788\uC5B4\uC694. \uBB54\uAC00 \uACE0\uC7A5 \uB0AC\uC744\uAE4C\uC694?",
+          noAnArcReplacedThemTheyStay: "\uC544\uB2C8\uC694, \uC544\uD06C\uAC00 \uB300\uC2E0\uD558\uAC8C \uB41C \uAC70\uC608\uC694. \uADF8 \uC7A5\uBA74\uC740 \uC544\uD06C\uAC00 \uB9E1\uACE0, \uCC55\uD130\uB294 \uADF8\uB300\uB85C \uBCF4\uAD00\uB3FC\uC694",
+          yesTheyFailedToSave: "\uB124, \uC800\uC7A5\uC5D0 \uC2E4\uD328\uD588\uC5B4\uC694",
+          yesTheirMessagesWereDeleted: "\uB124, \uBA54\uC2DC\uC9C0\uAC00 \uC0AD\uC81C\uB410\uC5B4\uC694",
+          theyWereAccidentallyExcluded: "\uC2E4\uC218\uB85C \uC81C\uC678\uB410\uC5B4\uC694",
+          supersededIsNormalHousekeepingAfterAnArc: "\uB300\uCCB4\uB428\uC740 \uC544\uD06C\uB97C \uBB36\uC740 \uB4A4\uC758 \uD3C9\uBC94\uD55C \uC815\uB9AC \uC815\uB3C8\uC774\uC5D0\uC694. \uC544\uD06C\uB97C \uC0AD\uC81C\uD558\uBA74 \uADF8 \uCC55\uD130\uB4E4\uC774 \uB2E4\uC2DC \uAE68\uC5B4\uB098\uC694.",
+          whichOfTheseButtonsActuallyCallsThe: "\uC774 \uBC84\uD2BC \uC911 \uC2E4\uC81C\uB85C AI \uBAA8\uB378\uC744 \uD638\uCD9C\uD558\uB294 \uAC74 \uBB34\uC5C7\uC77C\uAE4C\uC694?",
+          regenerate: "\uC7AC\uC0DD\uC131",
+          delete: "\uC0AD\uC81C",
+          release: "\uD574\uC81C",
+          exclude: "\uC81C\uC678",
+          value: "\uD83D\uDC0C",
+          composeManualControl: "\uB9CC\uB4E4\uAE30, \uC218\uB3D9 \uC870\uC791",
+          anywayManualControlsNext: "\uC544\uBB34\uD2BC. \uB2E4\uC74C\uC740 \uC218\uB3D9 \uC870\uC791\uC774\uC5D0\uC694!",
+          ready: "\uC900\uBE44\uB410\uB098\uC694?",
+          theComposeTabIsManualModeFilter: "\u300C\uB9CC\uB4E4\uAE30\u300D \uD0ED\uC740 \uC218\uB3D9 \uBAA8\uB4DC\uC608\uC694. \uBA54\uC2DC\uC9C0\uB97C \uD544\uD130\uB9C1\uD558\uAC70\uB098 \uAC80\uC0C9\uD558\uACE0, \uCCB4\uD06C\uBC15\uC2A4\uB97C \uACE0\uB974\uACE0, Shift+\uD074\uB9AD(\uD3F0\uC5D0\uC11C\uB294 \uAE38\uAC8C \uB204\uB974\uAE30)\uC73C\uB85C \uD55C \uAD6C\uAC04\uC744 \uD1B5\uC9F8\uB85C \uC7A1\uC73C\uC138\uC694. \u2713\uB294 \uC774\uBBF8 \uC815\uB9AC\uB428, \u2298\uB294 \uC81C\uC678\uB428\uC774\uB77C\uB294 \uB73B\uC774\uC5D0\uC694.",
+          compressFilesWhatYouSelectedIntoA: "\u300C\uC555\uCD95\u300D\uC740 \uC120\uD0DD\uD55C \uAC78 \uCC55\uD130\uB85C \uC815\uB9AC\uD574\uC694. \uC640, \uB9D0\uB3C4 \uC548 \uB3FC!",
+          excludeProtectsMessagesFromMeCompletelyPerfect: "\u300C\uC81C\uC678\u300D\uB294 \uBA54\uC2DC\uC9C0\uB97C \uC800\uD55C\uD14C\uC11C \uC644\uC804\uD788 \uBCF4\uD638\uD574\uC694. OOC \uBA54\uBAA8\uB098 \uD1A0\uC528 \uD558\uB098 \uBC14\uB00C\uBA74 \uC548 \uB418\uB294 \uC9C0\uC2DC\uBB38\uC5D0 \uB531\uC774\uC5D0\uC694.",
+          furtherDownYouCanPickChaptersTo: "\uB354 \uC544\uB798\uC5D0\uC11C\uB294 \uC544\uD06C\uB85C \uBB36\uC744 \uCC55\uD130\uC640 \uBCFC\uB968\uC73C\uB85C \uD569\uCE60 \uC544\uD06C\uB97C \uACE0\uB97C \uC218 \uC788\uC5B4\uC694. \uBCFC\uB968\uC774 \uAC00\uC7A5 \uAC15\uD55C \uC555\uCD95\uC774\uC5D0\uC694. \uADF8\uBCF4\uB2E4 \uB354 \uD544\uC694\uD558\uB2E4\uACE0\uC694? \uC544\uB9C8 \uC544\uB2D0\uAC78\uC694.",
+          whenIsExcludeTheRightToolInstead: "\u300C\uC0AD\uC81C\u300D \uB300\uC2E0 \u300C\uC81C\uC678\u300D\uB97C \uC368\uC57C \uD560 \uB54C\uB294 \uC5B8\uC81C\uC77C\uAE4C\uC694?",
+          whenAMessageMustStayInThe: "\uBA54\uC2DC\uC9C0\uAC00 \uD1A0\uC528 \uD558\uB098 \uC548 \uBC14\uB00C\uACE0 \uD504\uB86C\uD504\uD2B8\uC5D0 \uB0A8\uC544\uC57C \uD558\uACE0, \uC808\uB300 \uC694\uC57D\uB418\uBA74 \uC548 \uB420 \uB54C",
+          whenYouWantAMessageGoneFrom: "\uCC44\uD305\uC5D0\uC11C \uBA54\uC2DC\uC9C0\uB97C \uC5C6\uC560\uACE0 \uC2F6\uC744 \uB54C",
+          whenAChapterCameOutBadly: "\uCC55\uD130\uAC00 \uC798\uBABB \uB098\uC654\uC744 \uB54C",
+          whenYouWishToDeceiveYourEnemy: "\uC801\uC744 \uC18D\uC774\uB824\uBA74 \uBA3C\uC800 \uB098 \uC790\uC2E0\uBD80\uD130 \uC18D\uC5EC\uC57C \uD560 \uB54C \uD83D\uDC09",
+          excludeKeepsTheMessageFromCompressionDelete: "\u300C\uC81C\uC678\u300D\uB294 \uBA54\uC2DC\uC9C0\uB97C \uC555\uCD95\uC5D0\uC11C \uBE7C \uB450\uACE0, \u300C\uC0AD\uC81C\u300D\uB294 \uCC44\uD305\uC5D0\uC11C \uC9C0\uC6CC\uC694.",
+          continuityAndRepair: "\uC5F0\uC18D\uC131\uACFC \uBCF5\uAD6C",
+          oneMoreIPromiseTapAdvanced: "\uC9C4\uC9DC \uD558\uB098\uB9CC \uB354, \uC57D\uC18D\uD574\uC694! \u300C\uACE0\uAE09\u300D\uC744 \uB204\uB974\uC138\uC694.",
+          theContinuityDesk: "\uC5F0\uC18D\uC131 \uCC45\uC0C1\uC774\uC5D0\uC694.",
+          continuityLetsANewChatInheritAn: "\uC5F0\uC18D\uC131 \uAE30\uB2A5\uC73C\uB85C \uC0C8 \uCC44\uD305\uC774 \uC61B \uCC44\uD305\uC758 \uAE30\uC5B5\uC744 \uBB3C\uB824\uBC1B\uC744 \uC218 \uC788\uC5B4\uC694. \u300C\uB9AC\uBCA0\uC774\uC2A4\u300D\uB294 \uB2E4\uB978 \uCC44\uD305\uC758 \uCC55\uD130\uC640 \uC544\uD06C\uB97C \uB3D9\uACB0\uB41C \uD504\uB864\uB85C\uADF8\uB85C \uBCF5\uC0AC\uD574 \uC640\uC694. [Root] \uD45C\uC2DC\uAC00 \uBD99\uACE0, \uCCAB \uBA54\uC2DC\uC9C0 \uC55E\uC5D0 \uC8FC\uC785\uB3FC\uC694.",
+          rebuildFromDeletesThisChatSOwn: "\u300C\uB2E4\uB978 \uCC44\uD305\uC5D0\uC11C \uC7AC\uAD6C\uCD95...\u300D\uC740 \uBA3C\uC800 \uC774 \uCC44\uD305 \uC790\uCCB4\uC758 \uAE30\uC5B5\uC744 \uC9C0\uC6B4 \uB2E4\uC74C, \uBB3C\uB824\uBC1B\uC740 \uAE30\uC5B5 \uC704\uC5D0\uC11C \uCC98\uC74C\uBD80\uD130 \uB2E4\uC2DC \uC2DC\uC791\uD574\uC694. \u300C\uB8E8\uD2B8 \uBD84\uB9AC\u300D\uB294 \uBB3C\uB824\uBC1B\uC740 \uAE30\uC5B5\uC744 \uB2E4\uC2DC \uB5BC\uC5B4 \uB0B4\uACE0\uC694. \uADF8\uB9AC\uACE0 \uCC44\uD305\uC744 \uBD84\uAE30\uD558\uBA74 \uC0C8 \uBD84\uAE30\uB3C4 \uC774\uAC78 \uBB3C\uB824\uBC1B\uC544\uC694.",
+          maintenanceFixesThingsWhenTheShelfAnd: "\u300C\uAD00\uB9AC\u300D\uB294 \uCC45\uC7A5\uACFC \uCC44\uD305\uC774 \uC11C\uB85C \uC548 \uB9DE\uC744 \uB54C \uBC14\uB85C\uC7A1\uC544\uC694. \u300C\uD45C\uC2DC \uC0C1\uD0DC \uC7AC\uB3D9\uAE30\uD654\u300D\uB294 \uCC55\uD130\uAC00 \uB354\uB294 \uC5C6\uB294 \uBA54\uC2DC\uC9C0\uB97C \uB2E4\uC2DC \uBCF4\uC774\uAC8C \uD558\uACE0, \uB098\uBA38\uC9C0\uB294 \uC81C\uB300\uB85C \uB2E4\uC2DC \uC228\uACA8\uC694. \u300C\uCC45 \uC7AC\uAD6C\uCD95\u300D\uC740 \uC81C \uC791\uC5C5\uC744 \uBE44\uC6B0\uACE0 \uCC44\uD305 \uC804\uCCB4\uB97C \uB2E4\uC2DC \uC694\uC57D\uD574\uC694. \u300C\uCC45 \uBE44\uC6B0\uAE30\u300D\uB294 \uADF8\uB0E5 \uBE44\uC6B0\uAE30\uB9CC \uD574\uC694.",
+          someRepairsIHandleMyselfDeleteOne: "\uC5B4\uB5A4 \uBCF5\uAD6C\uB294 \uC81C\uAC00 \uC54C\uC544\uC11C \uD574\uC694. \uC6D4\uB4DC\uBD81 \uD328\uB110\uC5D0\uC11C \uC81C \uD56D\uBAA9\uC744 \uD558\uB098 \uC9C0\uC6B0\uBA74 \uC81C\uAC00 \uC54C\uC544\uCC44\uACE0, \uADF8 \uBA54\uC2DC\uC9C0\uB4E4\uC744 \uB2E4\uC2DC \uBCF4\uC774\uAC8C \uD55C \uB2E4\uC74C \uC54C\uB9BC\uC73C\uB85C \uC54C\uB824 \uB4DC\uB824\uC694. \uCC44\uD305\uC758 \uC6D4\uB4DC\uBD81 \uC5F0\uACB0\uC774 \uB04A\uC5B4\uC9C0\uBA74 \uB2E4\uC2DC \uC774\uC5B4 \uBCF4\uAE30\uB3C4 \uD558\uACE0\uC694. \uADF8\uB7EC\uB2C8\uAE4C \uC800\uD55C\uD14C \uAC1C\uAE30\uC9C0 \uB9C8\uC138\uC694 >:)",
+          youStartASequelChatItsShelf: "\uC18D\uD3B8 \uCC44\uD305\uC744 \uC2DC\uC791\uD588\uC5B4\uC694. \uCC45\uC7A5\uC740 \uBE44\uC5B4 \uC788\uACE0, \uC61B \uCC44\uD305\uC744 \uC6D0\uBCF8\uC73C\uB85C \uACE8\uB790\uC5B4\uC694. \uB9AC\uBCA0\uC774\uC2A4\uC77C\uAE4C\uC694, \uC7AC\uAD6C\uCD95\uC77C\uAE4C\uC694?",
+          rebaseDuh: "\uB9AC\uBCA0\uC774\uC2A4\uC8E0, \uB2F9\uC5F0\uD788?",
+          rebuildItIsAlwaysTheSaferOption: "\uC7AC\uAD6C\uCD95, \uC5B8\uC81C\uB098 \uB354 \uC548\uC804\uD55C \uC120\uD0DD\uC774\uC5D0\uC694",
+          neitherCopyTheEntriesOverByHand: "\uB458 \uB2E4 \uC544\uB2C8\uC5D0\uC694, \uB300\uC790\uC5F0\uCC98\uB7FC \uD56D\uBAA9\uC744 \uC190\uC73C\uB85C \uD558\uB098\uD558\uB098 \uC62E\uACA8\uC694",
+          detachFirstThenRebuild: "\uBA3C\uC800 \uBD84\uB9AC\uD558\uACE0, \uADF8\uB2E4\uC74C \uC7AC\uAD6C\uCD95",
+          rebaseIsForFreshChatsRebuildIs: "\uB9AC\uBCA0\uC774\uC2A4\uB294 \uC0C8 \uCC44\uD305\uC6A9\uC774\uC5D0\uC694. \uC7AC\uAD6C\uCD95\uC740 \uC774\uBBF8 \uC790\uAE30 \uAE30\uC5B5\uC774 \uC788\uC5B4\uC11C \uADF8\uAC78 \uAC08\uC544 \uB07C\uC6CC\uC57C \uD558\uB294 \uCC44\uD305\uC6A9\uC774\uACE0\uC694.",
+          tuningThePress: "\uC778\uC1C4\uAE30 \uC870\uC815",
+          okThisIsActuallyTheLastPart: "\uC88B\uC544\uC694, \uC774\uBC88\uC5D4 \uC9C4\uC9DC\uC9C4\uC9DC \uB9C8\uC9C0\uB9C9 \uD30C\uD2B8\uC608\uC694. \u300C\uC870\uC815\u300D \uD0ED\uC744 \uB204\uB974\uC138\uC694.",
+          myDials: "\uC81C \uB2E4\uC774\uC5BC\uB4E4\uC774\uC5D0\uC694.",
+          everythingIDoIsControlledByA: "\uC81C\uAC00 \uD558\uB294 \uBAA8\uB4E0 \uC77C\uC740 \uD504\uB85C\uD544\uB85C \uC870\uC815\uB418\uACE0, \uD65C\uC131 \uD504\uB85C\uD544\uC740 \uBAA8\uB4E0 \uCC44\uD305\uC5D0 \uD55C\uAEBC\uBC88\uC5D0 \uC801\uC6A9\uB3FC\uC694. \u300C\uD655\uC7A5\u300D \uCCB4\uD06C\uBC15\uC2A4\uAC00 \uC81C \uB9C8\uC2A4\uD130 \uC2A4\uC704\uCE58\uC608\uC694. \uB044\uBA74 \uC5B4\uB514\uC11C\uB4E0 \uC544\uBB34\uAC83\uB3C4 \uC548 \uD574\uC694.",
+          rightBelowSitsMyWritingDeskWhich: "\uBC14\uB85C \uC544\uB798\uAC00 \uC81C \uAE00\uC4F0\uAE30 \uCC45\uC0C1\uC774\uC5D0\uC694. \uC5B4\uB5A4 AI \uC5F0\uACB0\uB85C \uC4F8\uC9C0, \uADF8\uB9AC\uACE0 \uC0D8\uD50C\uB7EC \uC124\uC815\uC774 \uC5EC\uAE30 \uC788\uC5B4\uC694. \uBE44\uC6CC \uB454 \uC0D8\uD50C\uB7EC \uCE78\uC740 \uC81C \uC694\uC57D \uAE30\uBCF8\uAC12\uC744 \uB530\uB974\uB294\uB370, \uC628\uB3C4 0.4\uB3C4 \uADF8\uC911 \uD558\uB098\uC608\uC694. \uB9E8 \uC704\uC758 \uD070 \uD1A0\uAE00\uC740 \uCF54\uB371\uC2A4 \uC804\uC6A9 \uC5F0\uACB0\uACFC \uC0D8\uD50C\uB7EC\uB85C \uC804\uD658\uD574\uC694. \uADF8\uAC74 \uC81C \uB450 \uBC88\uC9F8 \uACFC\uC815 \uC774\uC57C\uAE30\uC608\uC694.",
+          nextRoomTapSettings: "\uB2E4\uC74C \uBC29\uC774\uC5D0\uC694. \u300C\uC124\uC815\u300D\uC744 \uB204\uB974\uC138\uC694.",
+          thePressRoom: "\uC778\uC1C4\uC2E4\uC774\uC5D0\uC694.",
+          thisIsThatWindowThingITold: "\uC544\uAE4C \uB9D0\uD55C \uADF8 \uC708\uB3C4\uC6B0\uAC00 \uC774\uAC70\uC608\uC694! \uC5EC\uAE30\uC11C \uBC14\uAFC0 \uC218 \uC788\uC5B4\uC694.",
+          arcsCanBuildAutomaticallyAfterEnoughChapters: "\uBA54\uC2DC\uC9C0\uAC00 \uCDA9\uBD84\uD788 \uC313\uC774\uBA74 \uCC55\uD130\uAC00 \uB9CC\uB4E4\uC5B4\uC9C0\uB294 \uAC83\uCC98\uB7FC, \uCC55\uD130\uAC00 \uCDA9\uBD84\uD788 \uC313\uC774\uBA74 \uC544\uD06C\uB3C4 \uC790\uB3D9\uC73C\uB85C \uB9CC\uB4E4\uC5B4\uC9C8 \uC218 \uC788\uC5B4\uC694.",
+          andThisIsTheAutomationSettingI: "\uADF8\uB9AC\uACE0 \uC774\uAC8C \uC544\uAE4C \uB9D0\uD55C \uADF8 \uC790\uB3D9\uD654 \uC124\uC815\uC774\uC5D0\uC694! \uCF54\uB371\uC2A4\uC5D0\uB294 \uB530\uB85C \uC788\uC9C0\uB9CC, \uADF8\uAC74 \uB354 \uC9E7\uC740 \uC81C \uB450 \uBC88\uC9F8 \uACFC\uC815\uC5D0\uC11C \uBC30\uC6CC \uC8FC\uC138\uC694.",
+          contextIsJustHowManyPreviousChapters: "\u300C\uCEE8\uD14D\uC2A4\uD2B8\u300D\uB294 \uB9E4\uBC88, \uC74C, \uB9E5\uB77D \uC0BC\uC544 \uC774\uC804 \uCC55\uD130\uB97C \uBA87 \uAC1C \uC77D\uC744\uC9C0\uC608\uC694. \uB098\uBA38\uC9C0\uB294 \uC9C0\uB8E8\uD55C \uAC83\uB4E4\uC774\uACE0\uC694...",
+          windowTokens18: "\uC708\uB3C4\uC6B0 \xB7 \uD1A0\uD070 \xB7 18",
+          youSwitchTheWindowUnitFromMessages: "\uC708\uB3C4\uC6B0 \uB2E8\uC704\uB97C \uBA54\uC2DC\uC9C0\uC5D0\uC11C \uD1A0\uD070\uC73C\uB85C \uBC14\uAFB8\uACE0 \uAC12\uC740 18\uB85C \uADF8\uB300\uB85C \uB480\uC5B4\uC694. \uBC29\uAE08 \uC800\uD55C\uD14C \uBB58 \uC2DC\uD0A8 \uAC78\uAE4C\uC694?",
+          chaptersOfAbout18MessagesSameAs: "\uC804\uCC98\uB7FC \uBA54\uC2DC\uC9C0 18\uAC1C\uCBE4 \uB418\uB294 \uCC55\uD130",
+          idk: "\uBAB0\uB77C\uC694",
+          youAskedMeToConvert18Messages: "\uBA54\uC2DC\uC9C0 18\uAC1C\uB97C \uD1A0\uD070\uC73C\uB85C \uD658\uC0B0\uD574 \uB2EC\uB77C\uACE0 \uD588\uC5B4\uC694",
+          chaptersWillAutomaticallyFileAfterOnly18: "\uC774\uC57C\uAE30\uAC00 \uACA8\uC6B0 ~18\uD1A0\uD070, \uADF8\uB7EC\uB2C8\uAE4C \uBB38\uC7A5 \uD558\uB098\uCBE4 \uC313\uC77C \uB54C\uB9C8\uB2E4 \uCC55\uD130\uAC00 \uC790\uB3D9\uC73C\uB85C \uC815\uB9AC\uB3FC\uC694. \uC774\uB7F0.",
+          theUnitChangesWhatTheNumberMeans: "\uB2E8\uC704\uAC00 \uBC14\uB00C\uBA74 \uC22B\uC790\uC758 \uB73B\uB3C4 \uBC14\uB00C\uC5B4\uC694. \uD1A0\uD070\uC740 \uC791\uC740 \uB2E8\uC5B4 \uC870\uAC01\uC774\uB77C \uBA54\uC2DC\uC9C0 \uD558\uB098\uAC00 \uC218\uBC31 \uAC1C\uB098 \uB418\uB2C8\uAE4C, \uD1A0\uD070 \uC708\uB3C4\uC6B0\uC5D0\uB294 \uC218\uCC9C \uB2E8\uC704 \uAC12\uC744 \uB123\uC5B4\uC57C \uD574\uC694",
+          lag10Messages: "\uC9C0\uC5F0 \xB7 \uBA54\uC2DC\uC9C0 10\uAC1C",
+          youLowerTheLagFrom65Down: "\uC9C0\uC5F0\uC744 65\uC5D0\uC11C 10\uC73C\uB85C \uB0AE\uCDC4\uC5B4\uC694. \uBB34\uC5C7\uC774 \uB2EC\uB77C\uC9C8\uAE4C\uC694?",
+          iStartSummarizingMuchCloserToThe: "\uD604\uC7AC\uC5D0 \uD6E8\uC52C \uAC00\uAE4C\uC6B4 \uACF3\uBD80\uD130 \uC694\uC57D\uD558\uAE30 \uC2DC\uC791\uD574\uC694. \uAC00\uC7A5 \uCD5C\uADFC \uBA54\uC2DC\uC9C0 10\uAC1C\uB9CC \uC190\uB300\uC9C0 \uC54A\uACE0 \uB0A8\uC544\uC694",
+          chaptersGetBigger: "\uCC55\uD130\uAC00 \uCEE4\uC838\uC694",
+          nothingUntilTheWindowAlsoChanges: "\uC708\uB3C4\uC6B0\uB3C4 \uBC14\uAFB8\uAE30 \uC804\uAE4C\uC9C4 \uC544\uBB34 \uBCC0\uD654 \uC5C6\uC5B4\uC694",
+          iGoBackAndReSummarizeOld: "\uB3CC\uC544\uAC00\uC11C \uC61B \uCC55\uD130\uB97C \uB2E4\uC2DC \uC694\uC57D\uD574\uC694",
+          aSmallLagSavesMoreSpaceBut: "\uC9C0\uC5F0\uC774 \uC791\uC73C\uBA74 \uACF5\uAC04\uC740 \uB354 \uC544\uB07C\uC9C0\uB9CC \uCD5C\uADFC \uC7A5\uBA74\uC744 \uB354 \uC77C\uCC0D \uC694\uC57D\uD574\uC694. \uD658\uAC01 \uC5C6\uC774 \uC88B\uC740 \uAE00\uC774 \uB098\uC62C \uB9CC\uD07C\uB9CC \uB109\uB109\uD558\uAC8C \uB450\uC138\uC694.",
+          window40TargetPercent4: "\uC708\uB3C4\uC6B0 \xB7 40 \xB7 \uBAA9\uD45C \uBE44\uC728 \xB7 4",
+          youSetTheWindowTo40And: "\uC708\uB3C4\uC6B0\uB97C 40\uC73C\uB85C, \uBAA9\uD45C \uBE44\uC728\uC744 4%\uB85C \uC124\uC815\uD588\uC5B4\uC694(\uAE30\uBCF8\uAC12\uC740 18\uACFC 15%). \uCC55\uD130\uB294 \uC5B4\uB5BB\uAC8C \uB420\uAE4C\uC694?",
+          chaptersBecomeSmallerAndTheyCover40: "\uCC55\uD130\uAC00 \uB354 \uC791\uC544\uC9C0\uACE0, \uAC01\uAC01 \uBA54\uC2DC\uC9C0 40\uAC1C\uB97C \uB2F4\uC544\uC694.",
+          chaptersBecomeSmallerAndMoreFrequent: "\uCC55\uD130\uAC00 \uB354 \uC791\uACE0 \uB354 \uC790\uC8FC \uB9CC\uB4E4\uC5B4\uC838\uC694",
+          theSameTheRatioOnlyAffectsArcs: "\uADF8\uB300\uB85C\uC608\uC694, \uBE44\uC728\uC740 \uC544\uD06C\uC5D0\uB9CC \uC601\uD5A5\uC744 \uC918\uC694",
+          unchangedUntilTheLagChangesToo: "\uC9C0\uC5F0\uB3C4 \uBC14\uAFB8\uAE30 \uC804\uAE4C\uC9C4 \uADF8\uB300\uB85C\uC608\uC694",
+          theWindowIsWhatGoesInThe: "\uC708\uB3C4\uC6B0\uB294 \uB4E4\uC5B4\uAC00\uB294 \uC591, \uBE44\uC728\uC740 \uB098\uC624\uB294 \uC591\uC774\uC5D0\uC694. 4%\uB294 \uB108\uC5B4\uBB34 \uACFC\uACA9\uD55C \uC555\uCD95\uC774\uC9C0\uB9CC, \uACB0\uAD6D \uC120\uD0DD\uC740 \uC790\uC720\uC608\uC694!",
+          andTheLastPartOfTheSettings: "\uADF8\uB9AC\uACE0 \uC124\uC815\uC758 \uB9C8\uC9C0\uB9C9 \uBD80\uBD84, \u300C\uD504\uB86C\uD504\uD2B8\u300D\uB97C \uB204\uB974\uC138\uC694.",
+          myInstructions: "\uC81C \uC9C0\uC2DC\uBB38\uC774\uC5D0\uC694.",
+          thePromptsPaneHoldsMyInstructionsFour: "\u300C\uD504\uB86C\uD504\uD2B8\u300D \uCC3D\uC5D0\uB294 \uC81C \uC9C0\uC2DC\uBB38\uC774 \uC788\uC5B4\uC694. \uAE30\uBCF8 \uCC55\uD130 \uC2A4\uD0C0\uC77C \uB124 \uAC00\uC9C0 \uC911\uC5D0 \uACE0\uB974\uAC70\uB098, \uD558\uB098\uB97C \uBCF5\uC81C\uD574\uC11C \uACE0\uCE58\uAC70\uB098, \uC608\uC804 STMB \uD504\uB9AC\uC14B\uC744 \uAC00\uC838\uC62C \uC218\uB3C4 \uC788\uC5B4\uC694. \u300C\uBAA8\uC758 \uC2E4\uD589\u300D\uC740 \uD1A0\uD070\uC744 \uD55C \uAC1C\uB3C4 \uC4F0\uC9C0 \uC54A\uACE0 \uC81C\uAC00 \uBCF4\uB0BC \uCD5C\uC885 \uD504\uB86C\uD504\uD2B8\uB97C \uADF8\uB300\uB85C \uBCF4\uC5EC \uC918\uC694.",
+          memoriaCouldnTFileTheChapterThe: "\uCC55\uD130\uB97C \uC0DD\uC131\uD558\uC9C0 \uBABB\uD588\uC5B4\uC694: \uBAA8\uB378\uC774 \uC62C\uBC14\uB978 JSON\uC744 \uBC18\uD658\uD558\uC9C0 \uC54A\uC558\uC5B4\uC694",
+          everyOneOfMyChaptersFailsLike: "\uC7AC\uC2DC\uB3C4\uD574\uB3C4 \uC81C \uCC55\uD130\uAC00 \uB9E4\uBC88 \uC774\uB807\uAC8C \uC2E4\uD328\uD574\uC694. \uAC00\uC7A5 \uADF8\uB7F4\uB4EF\uD55C \uD574\uACB0\uCC45\uC740?",
+          giveMeAStrongerModelOrA: "\uC800\uD55C\uD14C \uB354 \uAC15\uD55C \uBAA8\uB378\uC774\uB098 \uB2E4\uB978 \uC5F0\uACB0 \uC8FC\uAE30",
+          raiseTheLag: "\uC9C0\uC5F0 \uC62C\uB9AC\uAE30",
+          turnOffMessageHiding: "\uBA54\uC2DC\uC9C0 \uC228\uAE30\uAE30 \uB044\uAE30",
+          lowerTheRetryCount: "\uC7AC\uC2DC\uB3C4 \uD69F\uC218 \uC904\uC774\uAE30",
+          retriesCannotFixAModelThatKeeps: "\uACC4\uC18D \uAE68\uC9C4 JSON\uC744 \uC4F0\uB294 \uBAA8\uB378\uC740 \uC7AC\uC2DC\uB3C4\uB85C \uBABB \uACE0\uCCD0\uC694. \uCEE4\uC2A4\uD140 \uD504\uB86C\uD504\uD2B8\uB098 \uC815\uADDC\uC2DD \uC2A4\uD06C\uB9BD\uD2B8\uAC00 \uC81C \uCD9C\uB825\uC744 \uB9DD\uAC00\uB728\uB9AC\uACE0 \uC788\uC9C0 \uC54A\uC740\uC9C0\uB3C4 \uD655\uC778\uD558\uC138\uC694.",
+          finalFuckingLee: "\uB4DC\uB514\uC5B4 \uC874\uB098 \uB9C8\uC9C0\uB9C9",
+          practiceIsOverThisIsYourReal: "\uC5F0\uC2B5\uC740 \uB05D\uB0AC\uC5B4\uC694. \uC774\uAC74 \uC9C4\uC9DC\uC9C4\uC9DC UI\uC608\uC694.",
+          ifYourChatAlreadyHasEnoughStory: "\uCC44\uD305\uC5D0 \uC774\uC57C\uAE30\uAC00 \uCDA9\uBD84\uD788 \uC313\uC600\uB2E4\uBA74 \uC774\uBC88\uC5D4 \uC9C4\uC9DC\uB85C \u300C\uCC55\uD130 \uC815\uB9AC\u300D\uB97C \uB204\uB974\uACE0 \uC81C\uAC00 \uC77C\uD558\uB294 \uAC78 \uC9C0\uCF1C\uBCF4\uC138\uC694. \uC544\uC9C1\uC774\uB77C\uBA74 \uAC74\uB108\uB6F0\uC138\uC694. \uCDA9\uBD84\uD788 \uC313\uC774\uBA74 \uC81C\uAC00 \uC54C\uC544\uC11C \uC2DC\uC791\uD560\uAC8C\uC694.",
+          aRealChapterFiledByYourOwn: "\uC9C1\uC811 \uC815\uB9AC\uD55C \uC9C4\uC9DC \uCC55\uD130\uC608\uC694!",
+          myAutomationSwitchLivesInTuningTap: "\uC81C \uC790\uB3D9\uD654 \uC2A4\uC704\uCE58\uB294 \u300C\uC870\uC815\u300D\uC5D0 \uC788\uC5B4\uC694. \u300C\uC870\uC815\u300D \uD0ED\uC744 \uB204\uB974\uACE0 \u300C\uC124\uC815\u300D\uC744 \uB204\uB974\uC138\uC694.",
+          thereSTheSwitch: "\uC2A4\uC704\uCE58\uAC00 \uC5EC\uAE30 \uC788\uC5B4\uC694.",
+          turnRunAutomationOnAndILl: "\u300C\uC790\uB3D9\uD654 \uC0AC\uC6A9\u300D\uC744 \uCF1C \uC8FC\uC138\uC694. \uC774\uC81C\uBD80\uD130\uB294 \uBA54\uC2DC\uC9C0\uAC00 \uC62C \uB54C\uB9C8\uB2E4 \uC81C\uAC00 \uC54C\uC544\uC11C \uC815\uB9AC\uD560\uAC8C\uC694.",
+          automationIsOnILlTakeIt: "\uC790\uB3D9\uD654\uAC00 \uCF1C\uC84C\uC5B4\uC694. \uC774\uC81C\uBD80\uD134 \uC800\uD55C\uD14C \uB9E1\uAE30\uC138\uC694!",
+          wellDoneMousepadHasLetMeKnow: "\uC798\uD588\uC5B4\uC694! Mousepad\uAC00 \uADF8\uB7EC\uB294\uB370, \uC5EC\uAE30\uAE4C\uC9C0 \uD574\uB0B8 \uAC8C \uC815\uB9D0 \uC790\uB791\uC2A4\uB7FD\uB2E4\uACE0 \uC804\uD574 \uB2EC\uB77C\uACE0 \uC800\uD55C\uD14C \uC804\uD574 \uB2EC\uB798\uC694 \uD83C\uDFC6. \uC11C\uBA85\uD558\uACE0 \uC878\uC5C5\uC7A5\uC744 \uBC1B\uC544 \uAC00\uC138\uC694! \uB354 \uC9E7\uC740 \uCF54\uB371\uC2A4 \uACFC\uC815\uC740 \uAD81\uAE08\uD560 \uB54C \uC5B8\uC81C\uB4E0 \uAE30\uB2E4\uB9AC\uACE0 \uC788\uC5B4\uC694 :)"
+        }
+      },
+      contentCodex: {
+        courseCodex: {
+          theArchivistSCodex: "\uAE30\uB85D\uAD00\uC758 \uCF54\uB371\uC2A4",
+          whyAStoryBible: "\uC2A4\uD1A0\uB9AC \uBC14\uC774\uBE14\uC774 \uC65C \uD544\uC694\uD560\uAE4C",
+          summaryChaptersAreAGoodOutlineBut: "\uC694\uC57D \uCC55\uD130\uB294 \uD6CC\uB96D\uD55C \uAC1C\uC694\uC608\uC694. \uD558\uC9C0\uB9CC \uC774\uC57C\uAE30\uB97C \uCDA9\uBD84\uD788 \uC555\uCD95\uD558\uB2E4 \uBCF4\uBA74 \uBE44\uBC00, \uC7A5\uC18C\uC758 \uC138\uBD80 \uC0AC\uD56D, \uD2B9\uC815 \uC0AC\uBB3C\uC5D0 \uB300\uD55C \uC815\uBCF4 \uAC19\uC740 \uB0B4\uC6A9\uC744 \uC783\uAE30 \uC2DC\uC791\uD574\uC694. \uADF8\uB7EC\uB2C8 \uC555\uCD95\uD558\uB294 \uB3D9\uC548 \uC774\uC57C\uAE30\uC758 \uC911\uC694\uD55C \uBD80\uBD84\uC740 \uC5B4\uB5BB\uAC8C\uB4E0 \uB530\uB85C \uAE30\uB85D\uD574 \uB46C\uC57C \uD574\uC694.",
+          beholdTheKnowledgeCodexLetSWalk: "\uC9DC\uC794! \uC774\uAC83\uC774 \uBC14\uB85C \uC9C0\uC2DD \uCF54\uB371\uC2A4\uC608\uC694 \uD83D\uDE0E. \uC791\uC740 \uC0B4\uC778 \uBBF8\uC2A4\uD130\uB9AC\uB85C \uB9CC\uB4E0 \uC5F0\uC2B5\uC6A9 \uCF54\uB371\uC2A4\uB97C \uD568\uAED8 \uB458\uB7EC\uBCF4\uBA70 \uC54C\uC544\uBD10\uC694. \uC704\uCABD\uC758 \uCF54\uB371\uC2A4 \uD0ED\uC744 \uB204\uB974\uC138\uC694.",
+          thereItIs: "\uC5EC\uAE30 \uC788\uB124\uC694.",
+          eightRecordsMakeTheCodexCharactersLocations: "\uCF54\uB371\uC2A4\uB294 \uAE30\uB85D \uC5EC\uB35F \uAC00\uC9C0\uB85C \uC774\uB904\uC838\uC694: \uCE90\uB9AD\uD130, \uC7A5\uC18C, \uC0AC\uBB3C, \uAD00\uACC4, \uD0C0\uC784\uB77C\uC778, \uC2A4\uD1A0\uB9AC \uC2A4\uB808\uB4DC, \uC138\uACC4 \uADDC\uCE59, \uBE44\uBC00. \uC791\uC740 \uC5D0\uC774\uC804\uD2B8\uAC00 \uC815\uD574\uC9C4 \uC8FC\uAE30\uB85C \uC0C8 \uBA54\uC2DC\uC9C0\uB97C \uC77D\uACE0 \uC774\uAC78 \uC804\uBD80 \uC5C5\uB370\uC774\uD2B8\uD574\uC694 \uD83D\uDCAA. \uAC01 \uAE30\uB85D\uC740 \uC6D4\uB4DC\uBD81 \uD56D\uBAA9\uC774 \uB3FC\uC694. \uD0C0\uC784\uB77C\uC778\uACFC \uC2A4\uB808\uB4DC\uB294 \uD56D\uC0C1 \uC8FC\uC785\uB418\uACE0, \uB098\uBA38\uC9C0\uB294 \uAE30\uBCF8\uC801\uC73C\uB85C \uD0A4\uC6CC\uB4DC\uB97C \uC368\uC694. \uC870\uC815 \u2192 \uC124\uC815 \u2192 \uCF54\uB371\uC2A4\uC5D0\uC11C \uD56D\uC0C1 \uB610\uB294 \uBCA1\uD130 + \uD0A4\uC6CC\uB4DC\uB97C \uACE8\uB77C \uC0C1\uAE30 \uBC29\uC2DD\uC744 \uBC14\uAFC0 \uC218 \uC788\uC5B4\uC694. \uBCA1\uD130 \uC0C1\uAE30\uB97C \uC4F0\uB824\uBA74 Lumiverse\uC5D0\uC11C \uC784\uBCA0\uB529\uC744 \uC124\uC815\uD574 \uB46C\uC57C \uD574\uC694.",
+          yourCharacterCardSaysEliasHasA: "\uCE90\uB9AD\uD130 \uCE74\uB4DC\uC5D0\uB294 \uC5D8\uB9AC\uC544\uC2A4\uC5D0\uAC8C \uD749\uD130\uAC00 \uC788\uB2E4\uACE0 \uC801\uD600 \uC788\uC5B4\uC694. \uADF8\uB7F0\uB370 \uC774\uC57C\uAE30\uC5D0\uC120 \uD55C \uBC88\uB3C4 \uB098\uC624\uC9C0 \uC54A\uC558\uACE0, \uCF54\uB371\uC2A4\uC5D0\uB3C4 \uAE30\uB85D\uB418\uC9C0 \uC54A\uC558\uC5B4\uC694. \uBC84\uADF8\uC77C\uAE4C\uC694?",
+          noTheCodexOnlyRecordsWhatThe: "\uC544\uB2C8\uC694. \uCF54\uB371\uC2A4\uB294 \uC774\uC57C\uAE30 \uC18D\uC5D0\uC11C \uC5B8\uAE09\uB41C \uAC83\uB9CC \uAE30\uB85D\uD574\uC694",
+          yesTheCodexShouldCopyEverythingFrom: "\uB124, \uCF54\uB371\uC2A4\uB294 \uCE74\uB4DC \uB0B4\uC6A9\uC744 \uC804\uBD80 \uC62E\uACA8 \uC640\uC57C \uD574\uC694",
+          theCardHasToBeImportedInto: "\uCE74\uB4DC\uB97C \uBA3C\uC800 \uCF54\uB371\uC2A4\uB85C \uAC00\uC838\uC640\uC57C \uD574\uC694",
+          theCodexOnlyTracksCharactersYouAdd: "\uCF54\uB371\uC2A4\uB294 \uC9C1\uC811 \uCD94\uAC00\uD55C \uCE90\uB9AD\uD130\uB9CC \uCD94\uC801\uD574\uC694",
+          iReadYourLoreAsReferenceFor: "\uCE74\uB4DC\uC5D0 \uC801\uD78C \uC124\uC815\uC740 \uC774\uB984\uACFC \uCCA0\uC790\uB97C \uD655\uC778\uD558\uB294 \uCC38\uACE0 \uC790\uB8CC\uB85C \uC77D\uC9C0\uB9CC, \uADF8\uB300\uB85C \uC62E\uACA8 \uC801\uC73C\uBA74 \uC815\uBCF4\uAC00 \uC911\uBCF5\uB420 \uBFD0\uC774\uC5D0\uC694.",
+          readingTheCodex: "\uCF54\uB371\uC2A4 \uC77D\uB294 \uBC95",
+          theLineUpTopIsMyLedger: "\uB9E8 \uC704\uC758 \uC904\uC740 \uC81C \uC7A5\uBD80\uC608\uC694. \uCF54\uB371\uC2A4\uAC00 \uC788\uB294\uC9C0, \uC81C\uAC00 \uC544\uC9C1 \uC548 \uC77D\uC740 \uC0C8 \uBA54\uC2DC\uC9C0\uAC00 \uBA87 \uAC1C\uC778\uC9C0, \uB9C8\uC9C0\uB9C9\uC73C\uB85C \uC5B8\uC81C \uC2E4\uD589\uB410\uB294\uC9C0 \uC54C\uB824 \uC918\uC694.",
+          theseAreTheEverydayActionsUpdateNow: "\uC774\uAC74 \uD3C9\uC18C\uC5D0 \uC4F0\uB294 \uB3D9\uC791\uB4E4\uC774\uC5D0\uC694. \uC9C0\uAE08 \uC5C5\uB370\uC774\uD2B8\uB97C \uB204\uB974\uBA74 \uC81C\uAC00 \uCD5C\uC2E0 \uBA54\uC2DC\uC9C0\uAE4C\uC9C0 \uC804\uBD80 \uC77D\uACE0, \uC815\uB3C8\uC740 \uCF54\uB371\uC2A4\uB97C \uB354 \uC791\uAC8C \uC904\uC774\uACE0, \uC2E4\uD589 \uCDE8\uC18C\uB294 \uC81C \uB9C8\uC9C0\uB9C9 \uBCC0\uACBD\uC744 \uB418\uB3CC\uB824\uC694. \uC7AC\uAD6C\uCD95\uACFC \uBE44\uC6B0\uAE30\uB294 \uAC00\uC838\uC624\uAE30\xB7\uB0B4\uBCF4\uB0B4\uAE30\uC640 \uD568\uAED8 \uAD00\uB9AC \uD0ED\uC5D0 \uC788\uC5B4\uC694.",
+          everyTileIsOneRecordItsCount: "\uD0C0\uC77C \uD558\uB098\uAC00 \uAE30\uB85D \uD558\uB098\uC608\uC694. \uAC1C\uC218\uC640 \uD1A0\uD070 \uC0AC\uC6A9\uB7C9\uB3C4 \uD568\uAED8 \uBCF4\uC5EC \uC918\uC694. \uC774 \uD0C0\uC77C\uB4E4\uC740 \uBC84\uD2BC\uC774\uAE30\uB3C4 \uD574\uC694. \uAD00\uACC4 \uD0C0\uC77C\uC744 \uD55C \uBC88 \uB20C\uB7EC \uBCF4\uC138\uC694.",
+          dashedMeansNotInjectedButStillUpdated: "\uC810\uC120\uC740 \uC8FC\uC785\uC740 \uC548 \uB418\uC9C0\uB9CC \uC5C5\uB370\uC774\uD2B8\uB294 \uACC4\uC18D\uB41C\uB2E4\uB294 \uB73B\uC774\uC5D0\uC694. \uD55C \uBC88 \uB354 \uB204\uB974\uBA74 \uC5C5\uB370\uC774\uD2B8\uAC00 \uC644\uC804\uD788 \uB3D9\uACB0\uB418\uACE0, \uC138 \uBC88\uC9F8\uB85C \uB204\uB974\uBA74 \uB2E4\uC2DC \uCF1C\uC838\uC694. \uC6D0\uD558\uBA74 \uB354 \uB20C\uB7EC \uBD10\uB3C4 \uB3FC\uC694.\uD83D\uDDB1\uFE0F\uD83D\uDDB1\uFE0F\uD83D\uDDB1\uFE0F\uD83D\uDDB1\uFE0F",
+          youFrozeRelations40MessagesAgoAnd: "\uAD00\uACC4\uB97C \uB3D9\uACB0\uD55C \uC9C0 \uBA54\uC2DC\uC9C0 40\uAC1C\uAC00 \uC9C0\uB0AC\uACE0, \uC774\uC81C \u201C\uC624\uB798\uB428\u201D\uC774\uB77C\uACE0 \uB5A0\uC694. \uB2E4\uC2DC \uCF1C\uBA74 \uC5B4\uB5BB\uAC8C \uB420\uAE4C\uC694?",
+          itSMarkedAsNeedingACatch: "\uB530\uB77C\uC7A1\uAE30\uAC00 \uD544\uC694\uD558\uB2E4\uACE0 \uD45C\uC2DC\uB3FC\uC694. \uC694\uC57D\uACFC \uCD5C\uADFC \uBA54\uC2DC\uC9C0\uB85C \uD55C \uBC88 \uC0C8\uB85C \uACE0\uCE58\uBA74 \uD574\uACB0\uB3FC\uC694",
+          theGapFillsInAutomaticallyOnThe: "\uB2E4\uC74C \uC77C\uBC18 \uC5C5\uB370\uC774\uD2B8 \uB54C \uBE48 \uAD6C\uAC04\uC774 \uC790\uB3D9\uC73C\uB85C \uCC44\uC6CC\uC838\uC694",
+          nothingCanRecoverTheMissedEventsExcept: "\uC804\uCCB4 \uC7AC\uAD6C\uCD95 \uB9D0\uACE0\uB294 \uB193\uCE5C \uC0AC\uAC74\uC744 \uB418\uC0B4\uB9B4 \uBC29\uBC95\uC774 \uC5C6\uC5B4\uC694",
+          tidyItTidyingReReadsTheMissed: "\uC815\uB3C8\uD558\uBA74 \uB3FC\uC694. \uC815\uB3C8\uC774 \uB193\uCE5C \uBA54\uC2DC\uC9C0\uB97C \uB2E4\uC2DC \uC77D\uC5B4\uC694",
+          myReadingPositionIsAlreadyPastThose: "\uC81C \uC77D\uAE30 \uC704\uCE58\uB294 \uC774\uBBF8 \uADF8 \uBA54\uC2DC\uC9C0\uB4E4\uC744 \uC9C0\uB098\uCCE4\uC73C\uB2C8 \uC77C\uBC18 \uC5C5\uB370\uC774\uD2B8\uB85C\uB294 \uD574\uACB0\uB418\uC9C0 \uC54A\uC544\uC694. \uAC1C\uC694\uC5D0\uC11C \uB2E4\uC2DC \uCF20 \uAE30\uB85D\uC744 \uD55C \uBC88\uC5D0 \uB530\uB77C\uC7A1\uC744 \uC218 \uC788\uC5B4\uC694.",
+          rebuildCodexAndWipeCodexBothErase: "\uCF54\uB371\uC2A4 \uC7AC\uAD6C\uCD95\uACFC \uCF54\uB371\uC2A4 \uBE44\uC6B0\uAE30\uB294 \uB458 \uB2E4 \uBAA8\uB4E0 \uAC78 \uC9C0\uC6CC\uC694. \uADF8 \uB4A4\uC5D0 \uC2E4\uC81C\uB85C \uBB50\uAC00 \uB2E4\uB97C\uAE4C\uC694?",
+          wipeHelpsLumiAgentWipeHerAss: "\uBE44\uC6B0\uAE30\uB294 LumiAgent\uAC00 \uC5C9\uB369\uC774 \uB2E6\uB294 \uAC78 \uB3C4\uC640\uC918\uC694.",
+          rebuildKeepsYourEntriesAndOnlyRewrites: "\uC7AC\uAD6C\uCD95\uC740 \uD56D\uBAA9\uC744 \uADF8\uB300\uB85C \uB450\uACE0 \uC624\uB798\uB41C \uAC83\uB9CC \uB2E4\uC2DC \uC368\uC694",
+          wipeAlsoDeletesYourChaptersAndArcs: "\uBE44\uC6B0\uAE30\uB294 \uCC55\uD130\uC640 \uC544\uD06C\uAE4C\uC9C0 \uC9C0\uC6CC\uC694",
+          rebuildKeepsYourTileSettingsAndRemakes: "\uC7AC\uAD6C\uCD95\uC740 \uD0C0\uC77C \uC124\uC815\uC744 \uC720\uC9C0\uD55C \uCC44 \uCF54\uB371\uC2A4\uB97C \uCC98\uC74C\uBD80\uD130 \uB2E4\uC2DC \uB9CC\uB4E4\uACE0, \uBE44\uC6B0\uAE30\uB294 \uC804\uBD80 \uC5C6\uC560 \uBC84\uB824\uC694.",
+          bothEraseTheRecordsAndMyReading: "\uB458 \uB2E4 \uAE30\uB85D\uACFC \uC81C \uC77D\uAE30 \uC704\uCE58\uB97C \uC9C0\uC6CC\uC694. \uCC28\uC774\uB294 \uB2E4\uC2DC \uC77D\uAE30\uAC00 \uC5B8\uC81C \uC77C\uC5B4\uB098\uB294\uC9C0, \uADF8\uB9AC\uACE0 \uD0C0\uC77C \uC2A4\uC704\uCE58\uAC00 \uB0A8\uC544 \uC788\uB294\uC9C0\uC608\uC694.",
+          theRecordsHandsOn: "\uAE30\uB85D \uC9C1\uC811 \uB9CC\uC838 \uBCF4\uAE30",
+          tapEntitiesAndBehold: "\uAC1C\uCCB4\uB97C \uB204\uB974\uBA74, \uC9DC\uC794...",
+          thePeoplePlacesAndThings: "\uC0AC\uB78C, \uC7A5\uC18C, \uC0AC\uBB3C\uC774\uC5D0\uC694! \uD83C\uDF0E",
+          everyChipIsAnEntityClickOne: '"\uCE69" \uD558\uB098\uD558\uB098\uAC00 \uAC1C\uCCB4\uC608\uC694. \uD558\uB098\uB97C \uB204\uB974\uBA74 \uC2DC\uD2B8\uAC00 \uC5F4\uB824\uC694. \uB9C8\uC74C\uAECF \uB458\uB7EC\uBCF4\uC138\uC694.',
+          iAddAndUpdateAllOfThese: "\uC774\uAC74 \uC804\uBD80 \uC774\uC57C\uAE30\uAC00 \uC9C4\uD589\uB418\uB294 \uB3D9\uC548 \uC81C\uAC00 \uC54C\uC544\uC11C \uCD94\uAC00\uD558\uACE0 \uC5C5\uB370\uC774\uD2B8\uD574\uC694. \uC9C1\uC811 \uD560 \uD544\uC694\uB294 \uC804\uD600 \uC5C6\uC5B4\uC694! \uADF8\uB798\uB3C4 \uC81C\uAC00 \uC774\uC0C1\uD55C \uAC78 \uC801\uC5C8\uC744 \uB550 \uACE0\uCE60 \uC218 \uC788\uACE0, \uC9C0\uAE08 \uC778\uD130\uD398\uC774\uC2A4\uB97C \uC775\uD788\uAE30\uC5D0\uB3C4 \uC88B\uC740 \uBC29\uBC95\uC774\uC5D0\uC694. \uD574 \uBCF4\uC138\uC694: + \uCE90\uB9AD\uD130 \uCE69\uC744 \uB204\uB974\uACE0 \uC774\uB984\uC744 \uC785\uB825\uD55C \uB2E4\uC74C(Mousepad \uC5B4\uB54C\uC694?), \uC2DC\uD2B8\uC5D0\uC11C \uC800\uC7A5\uC744 \uB204\uB974\uC138\uC694.",
+          savedYourEditsAreCanonNowI: "\uC800\uC7A5\uD588\uC5B4\uC694. \uC774\uC81C \uC218\uC815\uD55C \uB0B4\uC6A9\uC740 \uC815\uC124\uC774\uC5D0\uC694. \uC800\uB294 \uADF8\uAC78 \uC0AC\uC2E4\uB85C \uC77D\uACE0 \uADF8 \uC704\uC5D0 \uC313\uC544 \uAC00\uC694.",
+          charElias: "char:elias",
+          theStoryHasMovedOnEliasIsn: '\uC774\uC57C\uAE30\uAC00 \uC9C4\uD589\uB3FC\uC11C \uC5D8\uB9AC\uC544\uC2A4\uB294 \uB354 \uC774\uC0C1 \uC228\uC5B4 \uC788\uC9C0 \uC54A\uC740\uB370, \uC2DC\uD2B8\uC5D0\uB294 \uC544\uC9C1 "\uBB34\uB450\uC9C8 \uACF5\uBC29 \uB2E4\uB77D\uC5D0 \uC228\uC5B4 \uC788\uC74C"\uC774\uB77C\uACE0 \uC801\uD600 \uC788\uC5B4\uC694. \uBB34\uC2A8 \uC77C\uC77C\uAE4C\uC694?',
+          theAgentHasnTReadThatFar: "\uC5D0\uC774\uC804\uD2B8\uAC00 \uC544\uC9C1 \uAC70\uAE30\uAE4C\uC9C0 \uC77D\uC9C0 \uC54A\uC558\uC5B4\uC694. \uC54C\uC544\uC11C \uB530\uB77C\uC7A1\uC744 \uAC70\uC608\uC694.",
+          theCodexIsBrokenDeleteTheExtension: "\uCF54\uB371\uC2A4\uAC00 \uACE0\uC7A5 \uB0AC\uC5B4\uC694. \uD655\uC7A5 \uD504\uB85C\uADF8\uB7A8\uC744 \uC9C0\uC6B0\uC138\uC694",
+          sheetsNeverChangeOnceWritten: "\uC2DC\uD2B8\uB294 \uD55C \uBC88 \uC4F0\uC774\uBA74 \uBC14\uB00C\uC9C0 \uC54A\uC544\uC694",
+          youHaveToDeleteEliasAndRe: "\uC5D8\uB9AC\uC544\uC2A4\uB97C \uC9C0\uC6E0\uB2E4\uAC00 \uB2E4\uC2DC \uCD94\uAC00\uD574\uC57C \uD574\uC694",
+          theCodexUpdatesOnAScheduleSo: "\uCF54\uB371\uC2A4\uB294 \uC815\uD574\uC9C4 \uC8FC\uAE30\uB85C \uC5C5\uB370\uC774\uD2B8\uB418\uB2C8 \uC774\uC57C\uAE30\uBCF4\uB2E4 \uBA54\uC2DC\uC9C0 \uBA87 \uAC1C\uB9CC\uD07C \uB4A4\uCC98\uC9C8 \uC218 \uC788\uC5B4\uC694. \uC9C1\uC811 \uC218\uC815\uD574\uB3C4 \uC548\uC804\uD558\uACE0, \uC81C\uAC00 \uC4F4 \uAC83\uCC98\uB7FC \uB2E4\uB904\uC838\uC694.",
+          charCaptain: "char:captain",
+          considerTheCaptainLetSSayThat: "\uACBD\uBE44\uB300\uC7A5\uC744 \uBCFC\uAE4C\uC694. \uCE90\uB9AD\uD130 \uCE74\uB4DC\uAC00 \uADF8\uB97C \uC798 \uBB18\uC0AC\uD558\uACE0 \uC788\uB2E4\uACE0 \uCCD0\uC694. \uADF8\uB7EC\uBA74 \uCF54\uB371\uC2A4\uC5D0\uAE4C\uC9C0 \uB458 \uD544\uC694\uB294 \uC5C6\uACA0\uC8E0. 1\uBC88 \uB204\uB974\uB2C8 \u201C\uC7A0\uAE40\u201D\uC774\uB77C\uACE0 \uB728\uB294 \uAC70 \uBCF4\uC774\uC8E0? \uADF8\uAC74 \uC548 \uB3FC\uC694! \uC81C\uAC00 \uC2DC\uD2B8\uC5D0 \uC4F0\uC9C0\uB294 \uC54A\uC9C0\uB9CC, \uC9C0\uAE08\uB3C4 \uD504\uB86C\uD504\uD2B8\uC5D0\uB294 \uB4E4\uC5B4\uAC00\uAC70\uB4E0\uC694 :(. \uBC84\uD2BC\uC744 \uD55C \uBC88 \uB354 \uB204\uB974\uC138\uC694.",
+          greatHeIsNoLongerUpdatedOr: "\uC88B\uC544\uC694, \uC774\uC81C \uADF8\uB294 \uC5C5\uB370\uC774\uD2B8\uB418\uC9C0\uB3C4, \uD504\uB86C\uD504\uD2B8\uC5D0 \uC8FC\uC785\uB418\uC9C0\uB3C4 \uC54A\uC544\uC694! \uD56D\uBAA9\uC774\uB098 \uD56D\uBAA9\uC758 \uD558\uC704 \uC139\uC158\uC5D0\uB3C4 \uC774\uB807\uAC8C \uD560 \uC218 \uC788\uC5B4\uC694!",
+          letSExploreTheWorldWideWeb: "\uC6D4\uB4DC \uC640\uC774\uB4DC \uC6F9\uC744 \uD0D0\uD5D8\uD574 \uBD10\uC694. \uAD00\uACC4\uB97C \uB204\uB974\uC138\uC694.",
+          thisIsTheListView: "\uC774\uAC74 \uBAA9\uB85D \uBCF4\uAE30\uC608\uC694.",
+          iCreateTheseAndKeepTheseUpdated: "\uC774\uAC83\uB4E4\uB3C4 \uC81C\uAC00 \uC54C\uC544\uC11C \uB9CC\uB4E4\uACE0 \uC5C5\uB370\uC774\uD2B8\uD558\uC9C0\uB9CC, \uC5ED\uC2DC \uC9C1\uC811 \uACE0\uCE60 \uC218\uB3C4 \uC788\uC5B4\uC694. \uD544\uB4DC\uB97C \uBCFC \uC218 \uC788\uAC8C \uD55C\uBC88 \uD574 \uBD10\uC694. + \uAD00\uACC4\uB97C \uB204\uB974\uACE0 \uC0C8 \uCE90\uB9AD\uD130\uB97C \uB204\uAD70\uAC00\uC640 \uC5F0\uACB0\uD558\uC138\uC694. \uC2DC\uC791\xB7\uB300\uC0C1 \uCE78\uC740 \uC785\uB825\uD558\uB294 \uB3D9\uC548 id\uB97C \uCD94\uCC9C\uD574 \uC918\uC694. \u2018\uBE5A\uC9D0\u2019 \uAC19\uC740 \uC885\uB958\uC640 \uC9E7\uC740 \uC0C1\uD0DC\uB97C \uC801\uC740 \uB4A4 \uC800\uC7A5\uD558\uC138\uC694.",
+          recorded: "\uAE30\uB85D\uD588\uC5B4\uC694!",
+          youJustAddedARelationByHand: "\uBC29\uAE08 \uAD00\uACC4\uB97C \uC9C1\uC811 \uCD94\uAC00\uD588\uC5B4\uC694. \uB2E4\uC74C \uCC28\uB840\uC5D0 \uC81C \uC5D0\uC774\uC804\uD2B8\uAC00 \uADF8\uAC78 \uB36E\uC5B4\uC4F0\uAC70\uB098 \uC9C0\uC6B8\uAE4C\uC694?",
+          noYourEditsBecomePartOfThe: "\uC544\uB2C8\uC694. \uC218\uC815\uD55C \uB0B4\uC6A9\uC740 \uAE30\uB85D\uC758 \uC77C\uBD80\uAC00 \uB418\uACE0, \uC5D0\uC774\uC804\uD2B8\uB294 \uADF8 \uC704\uC5D0 \uC313\uC544 \uAC00\uBA70 \uC774\uC57C\uAE30\uC640 \uC5B4\uAE0B\uB098\uB294 \uBD80\uBD84\uB9CC \uB2E4\uC2DC \uC368\uC694",
+          yesTheAgentRewritesEverythingFromScratch: "\uB124, \uC5D0\uC774\uC804\uD2B8\uB294 \uB9E4\uBC88 \uC804\uBD80 \uCC98\uC74C\uBD80\uD130 \uB2E4\uC2DC \uC368\uC694",
+          yesUnlessYouFreezeTheRelationsTile: "\uB124, \uAD00\uACC4 \uD0C0\uC77C\uC744 \uBA3C\uC800 \uB3D9\uACB0\uD558\uC9C0 \uC54A\uC73C\uBA74\uC694",
+          handEditsOnlySurviveWhileTheRelations: "\uC9C1\uC811 \uC218\uC815\uD55C \uB0B4\uC6A9\uC740 \uAD00\uACC4 \uD45C\uAC00 \uAEBC\uC838 \uC788\uC744 \uB54C\uB9CC \uB0A8\uC544\uC694",
+          theAgentAlwaysStartsFromTheCurrent: "\uC5D0\uC774\uC804\uD2B8\uB294 \uD56D\uC0C1 \uD604\uC7AC \uAE30\uB85D\uC5D0\uC11C \uCD9C\uBC1C\uD558\uB2C8, \uACE0\uCE5C \uB0B4\uC6A9\uC740 \uC5D0\uC774\uC804\uD2B8\uAC00 \uC9C0\uD0A4\uB294 \uC815\uC124\uC774 \uB3FC\uC694. \uB3D9\uACB0\uC740 \uC5C5\uB370\uC774\uD2B8\uB97C \uC544\uC608 \uBA48\uCD9C \uB54C\uB9CC \uC368\uC694.",
+          tapGraph: "\uADF8\uB798\uD504\uB97C \uB204\uB974\uC138\uC694.",
+          thereSYourWebARealStory: "\uC774\uAC8C \uAD00\uACC4\uB9DD\uC774\uC5D0\uC694. \uC2E4\uC81C \uC774\uC57C\uAE30\uB77C\uBA74 \uD6E8\uC52C \uBCF5\uC7A1\uD574 \uBCF4\uC77C \uAC70\uC608\uC694.",
+          thisIsTheWebForThisSmall: "\uC774 \uC791\uC740 \uB370\uBAA8\uC758 \uAD00\uACC4\uB9DD\uC774\uC5D0\uC694. \uC120\uC744 \uB204\uB974\uBA74 \uADF8\uB798\uD504 \uC544\uB798\uC5D0 \uAD00\uACC4 \uC124\uBA85\uC774 \uB098\uC624\uACE0, \uB9C8\uB984\uBAA8\uB97C \uB204\uB974\uBA74 \uADF8 \uAC1C\uCCB4\uC758 \uC2DC\uD2B8\uAC00 \uC5F4\uB9AC\uACE0, \uB178\uB4DC\uB294 \uC790\uC720\uB86D\uAC8C \uB04C\uC5B4\uC11C \uC62E\uAE38 \uC218 \uC788\uC5B4\uC694. \uB098\uBA38\uC9C0 \uD328\uB110\uC5D0\uB294 \uBC14\uC774\uBE14\uC758 \uB098\uBA38\uC9C0 \uB0B4\uC6A9\uC774 \uC788\uC5B4\uC694: \uD0C0\uC784\uB77C\uC778\uC740 \uB0A0\uC9DC\uAC00 \uBD99\uC740 \uC0AC\uAC74\uC744, \uC2A4\uB808\uB4DC\uB294 \uC9C4\uD589 \uC911\uC778 \uC904\uAC70\uB9AC\uB97C, \uC124\uC815\uC740 \uC138\uACC4 \uADDC\uCE59\uC744, \uBE44\uBC00\uC740 \uB204\uAC00 \uBB34\uC5C7\uC744 \uC544\uB294\uC9C0\uB97C \uB2F4\uC544\uC694. \uC5B8\uC81C\uB4E0 \uB458\uB7EC\uBCF4\uC138\uC694.",
+          theAgentAndItsDials: "\uC5D0\uC774\uC804\uD2B8\uC640 \uB2E4\uC774\uC5BC",
+          lastStopMyRulesOpenTheTuning: "\uB9C8\uC9C0\uB9C9 \uC815\uAC70\uC7A5, \uC81C \uADDC\uCE59\uC774\uC5D0\uC694. \uC870\uC815 \uD0ED\uC744 \uC5F4\uACE0, \uC124\uC815 \uD328\uB110\uC5D0\uC11C \uCF54\uB371\uC2A4 \uCABD\uC73C\uB85C \uAC00\uC138\uC694.",
+          myDials: "\uC81C \uB2E4\uC774\uC5BC\uC774\uC5D0\uC694.",
+          myCodexSettingsLiveHereByDefault: "\uC81C \uCF54\uB371\uC2A4 \uC124\uC815\uC740 \uC5EC\uAE30 \uC788\uC5B4\uC694. \uAE30\uBCF8\uAC12\uC73C\uB85C\uB294 \uBA54\uC2DC\uC9C0 6\uAC1C\uB9CC\uD07C \uC9C0\uC5F0\uC744 \uB450\uACE0, \uC5C5\uB370\uC774\uD2B8\uB9C8\uB2E4 20\uAC1C\uC529 \uC77D\uC5B4\uC694.",
+          codexLag65: "\uCF54\uB371\uC2A4 \uC9C0\uC5F0 \xB7 65",
+          youRaiseTheCodexLagFrom6: "\uCF54\uB371\uC2A4 \uC9C0\uC5F0\uC744 \uCC55\uD130 \uC9C0\uC5F0\uACFC \uB611\uAC19\uC774 6\uC5D0\uC11C 65\uB85C \uC62C\uB838\uC5B4\uC694. \uBB50\uAC00 \uB2EC\uB77C\uC9C8\uAE4C\uC694?",
+          theBibleAlwaysRuns65MessagesBehind: "\uBC14\uC774\uBE14\uC774 \uD56D\uC0C1 \uBA54\uC2DC\uC9C0 ~65\uAC1C\uB9CC\uD07C \uB4A4\uCC98\uC838\uC694. \uC6D0\uD558\uB294 \uAC83\uBCF4\uB2E4 \uB108\uBB34 \uB2A6\uC744 \uC218\uB3C4 \uC788\uC5B4\uC694!",
+          nothingTheLagOnlyAffectsChapters: "\uC544\uBB34\uAC83\uB3C4\uC694. \uC9C0\uC5F0\uC740 \uCC55\uD130\uC5D0\uB9CC \uC601\uD5A5\uC744 \uC918\uC694",
+          theCodexGetsCheaperWithNoDownside: "\uCF54\uB371\uC2A4\uAC00 \uB2E8\uC810 \uC5C6\uC774 \uC800\uB834\uD574\uC838\uC694",
+          theAgentRunsMoreOften: "\uC5D0\uC774\uC804\uD2B8\uAC00 \uB354 \uC790\uC8FC \uC2E4\uD589\uB3FC\uC694",
+          chaptersActAsReplacementsOfOldMessages: "\uCC55\uD130\uB294 \uC624\uB798\uB41C \uBA54\uC2DC\uC9C0\uB97C \uB300\uC2E0\uD558\uB294 \uBC18\uBA74, \uCF54\uB371\uC2A4\uB294 \uCC44\uD305 \uC18D \uC9C4\uC2E4\uC744 \uCC0D\uC740 \uC2A4\uB0C5\uC20F\uC774\uC5D0\uC694. \uD604\uC7AC\uC5D0 \uAC00\uAE5D\uAC8C \uC720\uC9C0\uD558\uB294 \uD3B8\uC774 \uC88B\uC744 \uC218 \uC788\uC5B4\uC694.",
+          twoMoreThingsRelationsTableOffMoves: "\uB450 \uAC00\uC9C0 \uB354\uC694. \uAD00\uACC4 \uD45C\uB97C \uB044\uBA74 \uC5F0\uACB0\uC774 \uAC01 \uC2DC\uD2B8\uC5D0 \uC9E7\uC740 \uBA54\uBAA8\uB85C \uC62E\uACA8\uC838\uC11C, \uC57D\uD55C \uBAA8\uB378\uB3C4 \uB2E4\uB8E8\uAE30 \uC26C\uC6CC\uC838\uC694. \uCD94\uAC00 \uCEE8\uD14D\uC2A4\uD2B8 \uBAA8\uB4DC\uB97C \uCF1C\uBA74 \uC81C\uAC00 \uCC55\uD130\uB97C \uC720\uB839\uC73C\uB85C \uBBF8\uB9AC \uC368 \uB450\uACE0 \uC791\uC740 \uCEE8\uD14D\uC2A4\uD2B8 \uC870\uAC01\uC73C\uB85C \uD65C\uC6A9\uD574\uC694. \uC81C \uC804\uC6A9 \uBAA8\uB378 \uC5F0\uACB0\uACFC \uC0D8\uD50C\uB7EC\uB294 \uC5F0\uACB0 \uD328\uB110\uC758 \uCF54\uB371\uC2A4 \uD1A0\uAE00 \uB4A4\uC5D0 \uC788\uACE0, \uB3C4\uAD6C\uB97C \uC9C0\uC6D0\uD558\uB294 \uD504\uB85C\uBC14\uC774\uB354\uB97C \uC704\uD55C \uB3C4\uAD6C \uD638\uCD9C \uC0AC\uC6A9\uB3C4 \uAC70\uAE30 \uC788\uC5B4\uC694.",
+          oneMoreThingEditAnyRecordWhenever: "\uD558\uB098 \uB354! \uAE30\uB85D\uC740 \uC5B8\uC81C\uB4E0 \uB9C8\uC74C\uB300\uB85C \uACE0\uCCD0\uB3C4 \uB3FC\uC694. \uADF8\uB9AC\uACE0 \uCF54\uB371\uC2A4\uC5D0 \uAE30\uB85D\uB41C \uC61B \uBA54\uC2DC\uC9C0\uB97C \uC218\uC815\uD558\uAC70\uB098 \uC9C0\uC6B0\uBA74, \uB2E4\uC74C \uC2E4\uD589 \uB54C \uC81C\uAC00 \uC54C\uC544\uCC28\uB9AC\uACE0 \uB418\uAC10\uC544\uC11C \uCF54\uB371\uC2A4\uB97C \uBC14\uB85C\uC7A1\uC544\uC694.",
+          memoriaCouldnTUpdateTheCodexThe: "\uCF54\uB371\uC2A4\uB97C \uC5C5\uB370\uC774\uD2B8\uD558\uC9C0 \uBABB\uD588\uC5B4\uC694: \uCF54\uB371\uC2A4 \uC5D0\uC774\uC804\uD2B8\uAC00 \uB3C4\uAD6C\uB97C \uD638\uCD9C\uD558\uC9C0 \uC54A\uC558\uC5B4\uC694.",
+          everyCodexRunFailsWithThisWhat: "\uCF54\uB371\uC2A4\uB97C \uC2E4\uD589\uD560 \uB54C\uB9C8\uB2E4 \uC774 \uC624\uB958\uAC00 \uB098\uC694. \uAC00\uC7A5 \uADF8\uB7F4\uB4EF\uD55C \uC6D0\uC778\uC740 \uBB58\uAE4C\uC694?",
+          theCodexModelCannotMakeToolCalls: "\uCF54\uB371\uC2A4 \uBAA8\uB378\uC774 \uB3C4\uAD6C \uD638\uCD9C\uC744 \uBABB \uD574\uC694. \uCF54\uB371\uC2A4 \uC5F0\uACB0\uC5D0\uC11C \uB3C4\uAD6C \uD638\uCD9C\uC774 \uB418\uB294 \uBAA8\uB378\uC744 \uACE0\uB974\uC138\uC694",
+          theChatIsTooLong: "\uCC44\uD305\uC774 \uB108\uBB34 \uAE38\uC5B4\uC694",
+          aCodexFileIsCorrupted: "\uCF54\uB371\uC2A4 \uD30C\uC77C\uC774 \uC190\uC0C1\uB410\uC5B4\uC694",
+          theRelationsTableIsOff: "\uAD00\uACC4 \uD45C\uAC00 \uAEBC\uC838 \uC788\uC5B4\uC694",
+          withUseToolCallsOnTheAgent: "\uB3C4\uAD6C \uD638\uCD9C \uC0AC\uC6A9\uC744 \uCF1C\uBA74 \uC5D0\uC774\uC804\uD2B8\uAC00 \uB3C4\uAD6C \uD638\uCD9C\uB85C \uAE30\uB85D\uC744 \uC4F0\uB294\uB370, \uC0B0\uBB38\uB9CC \uC4F8 \uC218 \uC788\uB294 \uBAA8\uB378\uC740 \uADF8 \uBC29\uC2DD\uC73C\uB85C \uCF54\uB371\uC2A4\uB97C \uAD00\uB9AC\uD560 \uC218 \uC5C6\uC5B4\uC694. \uB2E4\uC2DC \uB044\uBA74(\uC5F0\uACB0 \uD328\uB110, \uCF54\uB371\uC2A4 \uD1A0\uAE00) JSON \uBAA8\uB4DC\uB85C \uB3CC\uC544\uAC00\uB294\uB370, \uC774\uAC74 \uBAA8\uB4E0 \uC5F0\uACB0\uC5D0\uC11C \uC791\uB3D9\uD574\uC694.",
+          withExtraContextModeOnAChapter: "\uCD94\uAC00 \uCEE8\uD14D\uC2A4\uD2B8 \uBAA8\uB4DC\uB97C \uCF30\uB354\uB2C8 \uCC45\uC7A5\uC5D0 \u201C\uC720\uB839\u201D \uD0DC\uADF8\uAC00 \uBD99\uC740 \uCC55\uD130\uAC00 \uBCF4\uC774\uACE0, \uD504\uB86C\uD504\uD2B8\uC5D0\uB294 \uB4E4\uC5B4\uAC00\uC9C0 \uC54A\uC544\uC694. \uBB54\uAC00 \uC798\uBABB\uB41C \uAC78\uAE4C\uC694?",
+          noItSAChapterWrittenEarly: "\uC544\uB2C8\uC694. \uCF54\uB371\uC2A4\uC5D0 \uBA39\uC774\uB824\uACE0 \uBBF8\uB9AC \uC368 \uB454 \uCC55\uD130\uB77C\uC11C, \uC694\uC57D \uC9C0\uC5F0\uC744 \uC9C0\uB098\uAE30 \uC804\uC5D0\uB294 \uC4F0\uC774\uC9C0 \uC54A\uC544\uC694!",
+          pleaseReadThisOneCarefullyOrMousepad: "\uC774\uAC74 \uAF2D!! \uAF3C\uAF3C\uD788!! \uC77D\uC5B4 \uC8FC\uC138\uC694. \uC548 \uADF8\uB7EC\uBA74 Mousepad\uAC00 \uD654\uB0BC \uAC70\uC608\uC694",
+          yesItSCorruptedDeleteItAnd: "\uB124, \uC190\uC0C1\uB410\uC5B4\uC694. \uC9C0\uC6B0\uACE0 \uC7AC\uB3D9\uAE30\uD654\uD558\uC138\uC694",
+          itSADraftWaitingForYour: "\uC2B9\uC778\uC744 \uAE30\uB2E4\uB9AC\uB294 \uCD08\uC548\uC774\uC5D0\uC694",
+          ghostsGiveTheCodexContextEarlyAnd: "\uC720\uB839\uC740 \uCF54\uB371\uC2A4\uC5D0 \uCEE8\uD14D\uC2A4\uD2B8\uB97C \uC77C\uCC0D \uAC74\uB124\uC8FC\uACE0, \uB098\uC911\uC5D0 \uACB0\uAD6D \uC9C4\uC9DC \uC694\uC57D\uC73C\uB85C \uBC14\uB00C\uC5B4\uC694. ",
+          openingCeremony: "\uAC1C\uAD00\uC2DD",
+          practiceIsOverThisIsYourReal: "\uC5F0\uC2B5\uC740 \uB05D\uB0AC\uC5B4\uC694. \uC774\uC81C\uBD80\uD130\uB294 \uC9C4\uC9DC \uAE30\uB85D \uBCF4\uAD00\uC18C\uC608\uC694. \uC9C1\uC811 \uCF54\uB371\uC2A4 \uD328\uB110\uB85C \uAC00 \uBCF4\uC138\uC694: \uC870\uC815 \uD0ED, \uC124\uC815, \uADF8\uB9AC\uACE0 \uCF54\uB371\uC2A4 \uCABD\uC774\uC5D0\uC694.",
+          alreadyThereGood: "\uBC8C\uC368 \uC640 \uC788\uB124\uC694. \uC88B\uC544\uC694.",
+          flipEnableCodexOnTheDefaultSettings: "\uCF54\uB371\uC2A4 \uC0AC\uC6A9\uC744 \uCF1C\uC138\uC694. \uC544\uB798 \uAE30\uBCF8 \uC124\uC815\uC740 \uB300\uBD80\uBD84\uC758 \uCC44\uD305\uC5D0 \uC798 \uB9DE\uC544\uC694.",
+          enabledFromNowOnIKeepYour: "\uCF1C\uC84C\uC5B4\uC694! \uC774\uC81C\uBD80\uD130 \uBA54\uC2DC\uC9C0\uB9C8\uB2E4 \uC2A4\uD1A0\uB9AC \uBC14\uC774\uBE14\uC744 \uCD5C\uC2E0 \uC0C1\uD0DC\uB85C \uC720\uC9C0\uD560\uAC8C\uC694.",
+          homeHasAnUpdateCodexButtonNow: "\uC774\uC81C \uD648\uC5D0 \uCF54\uB371\uC2A4 \uC5C5\uB370\uC774\uD2B8 \uBC84\uD2BC\uC774 \uC0DD\uACBC\uC5B4\uC694. \uCC3E\uC73C\uB7EC \uAC00 \uBD10\uC694. \uD648\uC744 \uB204\uB974\uC138\uC694.",
+          pressItAndILlReadThis: "\uB204\uB974\uBA74 \uBC14\uB85C \uC774 \uCC44\uD305\uC744 \uC77D\uC744\uAC8C\uC694. \uAC74\uB108\uB6F0\uBA74 \uB098\uC911\uC5D0 \uD560\uAC8C\uC694!",
+          readingWatchTheBusyRowOnHome: "\uC77D\uB294 \uC911! \uC81C\uAC00 \uC0DD\uAC01\uD558\uB294 \uBAA8\uC2B5\uC774 \uAD81\uAE08\uD558\uBA74 \uD648\uC758 \uC791\uC5C5 \uC0C1\uD0DC \uC904\uC744 \uBCF4\uC138\uC694.",
+          thatSAllGoForthAndMake: "\uC774\uAC8C \uB2E4\uC608\uC694. \uC774\uC81C \uAC00\uC11C \uBA4B\uC9C4 \uC774\uC57C\uAE30\uB97C \uB9CC\uB4E4\uC5B4 \uBD10\uC694!\u2728"
+        }
+      },
+      diagrams: {
+        diagramRot: {
+          theContextWindow: "\uCEE8\uD14D\uC2A4\uD2B8 \uC708\uB3C4\uC6B0"
+        },
+        caption: {
+          newTurnsPushInTheOldestGet: "\uC0C8 \uD134\uC774 \uBC00\uB824 \uB4E4\uC5B4\uC624\uBA74 \uAC00\uC7A5 \uC624\uB798\uB41C \uD134\uC740 \uC798\uB824 \uB098\uAC00\uC694",
+          thePlotSurvivesTheStructuredFactsThin: "\uC904\uAC70\uB9AC\uB294 \uB0A8\uC9C0\uB9CC, \uAD6C\uC870\uD654\uB41C \uC0AC\uC2E4\uC740 \uC810\uC810 \uD750\uB824\uC838\uC694"
+        },
+        diagramFold: {
+          yourChatHistory: "\uCC44\uD305 \uAE30\uB85D"
+        },
+        states: {
+          oldMessagesPileUp: "\uC624\uB798\uB41C \uBA54\uC2DC\uC9C0\uAC00 \uC313\uC774\uACE0\u2026",
+          ch1: "\uCC55\uD130 1",
+          theOldestFoldIntoAChapterIn: "\u2026\uAC00\uC7A5 \uC624\uB798\uB41C \uBA54\uC2DC\uC9C0\uAC00 \uC81C\uC790\uB9AC\uC5D0\uC11C \uCC55\uD130\uB85C \uC811\uD788\uACE0\u2026",
+          ch2: "\uCC55\uD130 2",
+          thenTheNextWindowFolds: "\u2026\uC774\uC5B4\uC11C \uB2E4\uC74C \uC708\uB3C4\uC6B0\uAC00 \uC811\uD788\uACE0\u2026",
+          arc1: "\uC544\uD06C 1",
+          andChaptersBindIntoASingleArc: "\u2026\uCC55\uD130\uB4E4\uC740 \uD558\uB098\uC758 \uC544\uD06C\uB85C \uBB36\uC5EC\uC694."
+        },
+        diagramUnfold: {
+          theShelf: "\uCC45\uC7A5"
+        },
+        filed: {
+          ch3: "\uCC55\uD130 3",
+          aChapterCoversMessages3754They: "\uCC55\uD130 \uD558\uB098\uAC00 \uBA54\uC2DC\uC9C0 37-54\uB97C \uB36E\uACE0, \uADF8 \uBA54\uC2DC\uC9C0\uB4E4\uC740 \uC228\uACA8\uC9C4 \uCC44 \uB530\uB77C\uAC00\uC694"
+        },
+        deleted: {
+          deleteItAndTheMessagesComeRight: "\uCC55\uD130\uB97C \uC9C0\uC6B0\uBA74 \uBA54\uC2DC\uC9C0\uAC00 \uBC14\uB85C \uB3CC\uC544\uC640\uC694"
+        },
+        fadeChips: {
+          eliasMaraLovesHerHidesIt: "\uC5D8\uB9AC\uC544\uC2A4 \u2192 \uB9C8\uB77C: \uC0AC\uB791\uD558\uC9C0\uB9CC \uC228\uAE40",
+          captainWronglyBelievesBandits: "\uACBD\uBE44\uB300\uC7A5\uC758 \uC624\uD574: \uC0B0\uC801 \uC18C\uD589",
+          day12SheSawTheFall: "12\uC77C\uC9F8: \uADF8\uB140\uAC00 \uCD94\uB77D\uC744 \uBAA9\uACA9\uD568",
+          openThreadTheReceipt: "\uBBF8\uD574\uACB0 \uC2A4\uB808\uB4DC: \uC601\uC218\uC99D"
+        },
+        diagramFade: {
+          oneSummaryCompressedAgainAndAgain: "\uC694\uC57D \uD558\uB098\uB97C \uC555\uCD95\uD558\uACE0 \uB610 \uC555\uCD95\uD558\uBA74",
+          arc: "\uC544\uD06C",
+          volume: "\uBCFC\uB968",
+          withACodex: "\uCF54\uB371\uC2A4\uAC00 \uC788\uC73C\uBA74",
+          theCodexTracksThemExplicitlyOutsideThe: "\uCF54\uB371\uC2A4\uAC00 \uC694\uC57D \uBC14\uAE65\uC5D0\uC11C \uC774\uAC83\uB4E4\uC744 \uB530\uB85C \uBA85\uC2DC\uD574 \uCD94\uC801\uD574\uC694"
+        },
+        tier: {
+          chapter: "\uCC55\uD130"
+        },
+        reset: {
+          chapter: "\uCC55\uD130",
+          thePlotSurvivesTheStructuredFactsThin: "\uC904\uAC70\uB9AC\uB294 \uB0A8\uC9C0\uB9CC, \uAD6C\uC870\uD654\uB41C \uC0AC\uC2E4\uC740 \uC810\uC810 \uD750\uB824\uC838\uC694"
+        }
+      },
+      diploma: {
+        gradeRemark: {
+          notAPageOutOfPlaceMy: "\uD55C \uC7A5\uB3C4 \uD750\uD2B8\uB7EC\uC9D0\uC774 \uC5C6\uC5B4\uC694. \uC81C\uAC00 \uC81C\uC77C \uC544\uB07C\uB294 \uB3C5\uC790\uC608\uC694, \uB0D0\uC544.",
+          nearlyFlawlessFilingTheShelfApproves: "\uAC70\uC758 \uD760\uC7A1\uC744 \uB370 \uC5C6\uB294 \uC815\uB9AC\uC608\uC694. \uCC45\uC7A5\uB3C4 \uC778\uC815\uD588\uC5B4\uC694.",
+          aSolidApprenticeshipTheStacksWillTeach: "\uD0C4\uD0C4\uD55C \uACAC\uC2B5 \uACFC\uC815\uC774\uC5C8\uC5B4\uC694. \uB098\uBA38\uC9C0\uB294 \uC11C\uAC00\uAC00 \uAC00\uB974\uCCD0 \uC904 \uAC70\uC608\uC694.",
+          theLibraryForgivesRetakeASectionWhenever: "\uB3C4\uC11C\uAD00\uC740 \uB108\uADF8\uB7EC\uC6CC\uC694. \uC6D0\uD560 \uB54C \uC5B8\uC81C\uB4E0 \uB2E8\uC6D0\uC744 \uB2E4\uC2DC \uB4E4\uC5B4\uC694."
+        },
+        renderRegister: {
+          signTheRegister: "\uBA85\uBD80\uC5D0 \uC11C\uBA85\uD558\uAE30",
+          theNameGoesOnYourDiploma: "\uC774 \uC774\uB984\uC774 \uC878\uC5C5\uC7A5\uC5D0 \uB4E4\uC5B4\uAC00\uC694."
+        },
+        input: {
+          reader: "\uB3C5\uC790"
+        },
+        sign: {
+          sign: "\uC11C\uBA85",
+          reader: "\uB3C5\uC790"
+        },
+        renderDiploma: {
+          lumibooksAcademy: "LUMIBOOKS \uC544\uCE74\uB370\uBBF8",
+          certifiesThat: "\uC544\uB798\uC758 \uB3C5\uC790\uAC00",
+          hasReadTheStacksAndUnderstoodThem: "\uC11C\uAC00\uB97C \uC77D\uACE0 \uADF8 \uB0B4\uC6A9\uC744 \uC774\uD574\uD588\uC74C\uC744 \uC99D\uBA85\uD569\uB2C8\uB2E4",
+          ofGoldStamps: "\uAE08 \uB3C4\uC7A5 {total}\uAC1C \uC911 {gold}\uAC1C \xB7 {toLocaleDateString}",
+          saveAsImage: "\uC774\uBBF8\uC9C0\uB85C \uC800\uC7A5",
+          prefersReducedMotionReduce: "(prefers-reduced-motion: reduce)"
+        },
+        makeConfetti: {
+          value: "\u25C6"
+        },
+        downloadDiploma: {
+          lUMIBOO: "L U M I B O O K S   \uC544 \uCE74 \uB370 \uBBF8",
+          certifiesThat: "\uC544\uB798\uC758 \uB3C5\uC790\uAC00",
+          hasReadTheStacksAndUnderstoodThem: "\uC11C\uAC00\uB97C \uC77D\uACE0 \uADF8 \uB0B4\uC6A9\uC744 \uC774\uD574\uD588\uC74C\uC744 \uC99D\uBA85\uD569\uB2C8\uB2E4",
+          ofGoldStamps: "\uAE08 \uB3C4\uC7A5 {total}\uAC1C \uC911 {gold}\uAC1C \xB7 {toLocaleDateString}",
+          memoriaLibrarian: "\u2014 \uC0AC\uC11C \uBA54\uBAA8\uB9AC\uC544"
+        }
+      },
+      engine: {
+        buildStage: {
+          exam: "{title} \xB7 \uC2DC\uD5D8",
+          value: "\u2715",
+          leaveTheExamAnUnfinishedExamIs: "\uC2DC\uD5D8 \uB098\uAC00\uAE30. \uB05D\uB0B4\uC9C0 \uC54A\uC740 \uC2DC\uD5D8\uC740 \uC800\uC7A5\uB418\uC9C0 \uC54A\uC544\uC694",
+          leaveAnytimeYourDiplomaAndPreviousGrade: "\uC5B8\uC81C\uB4E0 \uB098\uAC00\uB3C4 \uB3FC\uC694. \uC878\uC5C5\uC7A5\uACFC \uC774\uC804 \uC131\uC801\uC740 \uADF8\uB300\uB85C \uB0A8\uC544\uC694",
+          leaveTheLessonProgressIsSaved: "\uC218\uC5C5 \uB098\uAC00\uAE30. \uC9C4\uD589 \uC0C1\uD669\uC740 \uC800\uC7A5\uB3FC\uC694",
+          leaveTheLesson: "\uC218\uC5C5 \uB098\uAC00\uAE30",
+          collapseTheDialogue: "\uB300\uD654\uCC3D \uC811\uAE30"
+        },
+        renderRail: {
+          questionOf: "\uBB38\uC81C {examIdx1} / {length}"
+        },
+        table: {
+          ix: "IX",
+          iv: "IV"
+        },
+        makeSandboxSend: {
+          memoriaSavedJson: "\uBA54\uBAA8\uB9AC\uC544\uAC00 {file}.json\uC744 \uC800\uC7A5\uD588\uC5B4\uC694"
+        },
+        runDoScript: {
+          memoriaIsFilingAChapter1s: "\uBA54\uBAA8\uB9AC\uC544\uAC00 \uCC55\uD130\uB97C \uC815\uB9AC\uD558\uB294 \uC911 (1\uCD08)",
+          memoriaOpensAFreshPageForYou: "\uBA54\uBAA8\uB9AC\uC544\uAC00 \uC0C8 \uD398\uC774\uC9C0\uB97C \uD3BC\uCCD0 \uB4DC\uB824\uC694, \uB0E5",
+          memoriaSlidTheChapterOntoYourShelf: "\uBA54\uBAA8\uB9AC\uC544\uAC00 \uCC55\uD130\uB97C \uCC45\uC7A5\uC5D0 \uC3D9 \uAF42\uC558\uC5B4\uC694, \uB0D0\uC544~",
+          memoriaSavedJson: "\uBA54\uBAA8\uB9AC\uC544\uAC00 {file}.json\uC744 \uC800\uC7A5\uD588\uC5B4\uC694"
+        },
+        renderDemoFor: {
+          noChatIsOpenRightNowSkip: "\uC9C0\uAE08\uC740 \uC5F4\uB9B0 \uCC44\uD305\uC774 \uC5C6\uC5B4\uC694. \uC774 \uB2E8\uACC4\uB294 \uAC74\uB108\uB6F0\uC138\uC694."
+        },
+        renderCover: {
+          value: "\u25C6 \u25C7 \u25C6"
+        },
+        positionSpotlight: {
+          value: "\u25C6 {chip}"
+        },
+        renderStep: {
+          signTheRegister: "\uBA85\uBD80\uC5D0 \uC11C\uBA85\uD558\uAE30"
+        },
+        renderSheet: {
+          rightWhereWeNeedToBe: "\uB531 \uC640\uC57C \uD560 \uACF3\uC5D0 \uC654\uC5B4\uC694.",
+          back: "\uC774\uC804",
+          skip: "\uAC74\uB108\uB6F0\uAE30",
+          yourMove: "\uC774\uC81C \uC9C1\uC811 \uD574 \uBCFC \uCC28\uB840\u2026",
+          next: "\uB2E4\uC74C",
+          working: "\uC791\uC5C5 \uC911\u2026"
+        },
+        renderQuiz: {
+          alreadyStampedGoldFromTheExamOr: "\uC2DC\uD5D8\uC774\uB098 \uC774\uC804 \uD68C\uCC28\uC5D0\uC11C \uC774\uBBF8 \uAE08 \uB3C4\uC7A5\uC744 \uBC1B\uC558\uC5B4\uC694.",
+          answeredOnAnEarlierPass: "\uC774\uC804 \uD68C\uCC28\uC5D0\uC11C \uC774\uBBF8 \uB2F5\uD588\uC5B4\uC694.",
+          back: "\uC774\uC804",
+          next: "\uB2E4\uC74C",
+          filed: "\uC815\uB9AC \uC644\uB8CC! \u25C6",
+          notQuite: "\uC544\uC27D\uC9C0\uB9CC \uC544\uB2C8\uC5D0\uC694.",
+          continue: "\uACC4\uC18D",
+          skipMarkForRevisit: "\uAC74\uB108\uB6F0\uACE0 \uB098\uC911\uC5D0 \uB2E4\uC2DC \uBCF4\uAE30",
+          holdToPeekAtThePane: "\uB204\uB974\uACE0 \uC788\uC73C\uBA74 \uD328\uB110\uC744 \uC5FF\uBCFC \uC218 \uC788\uC5B4\uC694"
+        },
+        finishExam: {
+          ofThePassedTopicsStayStampedWhile: "{length}\uBB38\uC81C \uC911 {correct}\uBB38\uC81C \uC815\uB2F5! \uD1B5\uACFC\uD55C \uC8FC\uC81C\uB294 \uB3C4\uC7A5\uC774 \uADF8\uB300\uB85C \uB0A8\uACE0, \uB098\uBA38\uC9C0\uB97C \uD568\uAED8 \uC9DA\uC5B4 \uBD10\uC694"
+        },
+        renderStepExamPass: {
+          signTheRegister: "\uBA85\uBD80\uC5D0 \uC11C\uBA85\uD558\uAE30"
+        },
+        data: {
+          reader: "\uB3C5\uC790"
+        },
+        renderDiplomaPhase: {
+          enterTheArchive: "\uC11C\uACE0\uB85C \uB4E4\uC5B4\uAC00\uAE30",
+          openTheCodex: "\uCF54\uB371\uC2A4 \uC5F4\uAE30",
+          close: "\uB2EB\uAE30",
+          yourDiplomaAsFiledInTheAcademy: "\uC544\uCE74\uB370\uBBF8\uC5D0 \uBCF4\uAD00\uB41C \uC878\uC5C5\uC7A5\uC774\uC5D0\uC694.",
+          signedStampedAndShelvedCongratulationsNyaa: "\uC11C\uBA85\uD558\uACE0, \uB3C4\uC7A5 \uCC0D\uACE0, \uCC45\uC7A5\uC5D0 \uAF42\uC558\uC5B4\uC694. \uCD95\uD558\uD574\uC694, \uB0D0\uC544."
+        }
+      },
+      fixture: {
+        lines: {
+          theRainHadNotLetUpSince: "\uBD81\uCABD \uAE38\uC5D0\uC11C \uACF5\uC791\uC758 \uB9C8\uCC28\uAC00 \uD145 \uBE48 \uCC44 \uBC1C\uACAC\uB41C \uB4A4\uB85C, \uBE44\uB294 \uADF8\uCE60 \uC904\uC744 \uBAB0\uB790\uB2E4.",
+          eliasPressedTheSilverLocketIntoHis: "\uC5D8\uB9AC\uC544\uC2A4\uB294 \uAC78\uC1E0\uAC00 \uC0B4\uC744 \uD30C\uACE0\uB4E4 \uB54C\uAE4C\uC9C0 \uC740 \uB85C\uCF13 \uBAA9\uAC78\uC774\uB97C \uC190\uBC14\uB2E5\uC5D0 \uAF49 \uB20C\uB7EC \uC950\uC5C8\uB2E4.",
+          youWereThereMaraSaidQuietlyNot: '"\uADF8\uB54C \uAC70\uAE30 \uC788\uC5C8\uC796\uC544\uC694." \uB9C8\uB77C\uAC00 \uBC14\uB290\uC9C8\uAC10\uC5D0\uC11C \uB208\uB3C4 \uB5BC\uC9C0 \uC54A\uC740 \uCC44 \uC870\uC6A9\uD788 \uB9D0\uD588\uB2E4.',
+          theCaptainSMenWentDoorTo: "\uB3D9\uC774 \uD2B8\uAE30\uB3C4 \uC804\uC5D0 \uACBD\uBE44\uB300\uC7A5\uC758 \uBD80\uD558\uB4E4\uC774 \uB80C \uAC70\uB9AC\uB97C \uB530\uB77C \uC9D1\uC9D1\uB9C8\uB2E4 \uBB38\uC744 \uB450\uB4DC\uB838\uB2E4.",
+          iKeepMyVoiceLevelAndAsk: "\uB098\uB294 \uBAA9\uC18C\uB9AC\uB97C \uCC28\uBD84\uD558\uAC8C \uAC00\uB77C\uC549\uD78C \uCC44, \uC804\uB2F9\uD3EC \uC8FC\uC778\uC774 \uC785\uC744 \uB2E4\uBB34\uB294 \uB300\uAC00\uB85C \uBB34\uC5C7\uC744 \uC6D0\uD588\uB294\uC9C0 \uBB3B\uB294\uB2E4.",
+          ashfordManorStoodDarkExceptForA: "\uC560\uC2DC\uD37C\uB4DC \uC800\uD0DD\uC740 \uC11C\uC7AC \uCC3D\uAC00\uC758 \uB4F1\uBD88 \uD558\uB098\uB97C \uBE7C\uBA74 \uC628\uD1B5 \uC5B4\uB460\uC5D0 \uC7A0\uACA8 \uC788\uC5C8\uB2E4.",
+          banditsTheCaptainRepeatedWritingItDown: '"\uC0B0\uC801\uC774\uB77C." \uACBD\uBE44\uB300\uC7A5\uC740 \uADF8 \uB9D0\uC744 \uB418\uB1CC\uBA70, \uC815\uB9D0 \uADF8\uB807\uAC8C \uBBFF\uAE30\uB77C\uB3C4 \uD558\uB294 \uB4EF \uBC1B\uC544 \uC801\uC5C8\uB2E4.',
+          maraFoldedTheReceiptIntoTheHem: "\uB9C8\uB77C\uB294 \uC601\uC218\uC99D\uC744 \uC811\uC5B4 \uC18C\uB9F7\uB2E8 \uC548\uC5D0 \uBC00\uC5B4 \uB123\uACE0\uB294 \uC544\uBB34 \uB9D0\uB3C4 \uD558\uC9C0 \uC54A\uC558\uB2E4.",
+          theBellsRangForTheDukeAt: "\uC815\uC624\uC5D0 \uACF5\uC791\uC744 \uC704\uD55C \uC870\uC885\uC774 \uC6B8\uB838\uACE0, \uB3C4\uC2DC \uC0AC\uB78C \uC808\uBC18\uC774 \uBE4C\uB824 \uC785\uC740 \uAC80\uC740 \uC637 \uCC28\uB9BC\uC774\uC5C8\uB2E4.",
+          eliasSleptInTheLoftAboveThe: "\uC5D8\uB9AC\uC544\uC2A4\uB294 \uBB34\uB450\uC9C8 \uACF5\uBC29 \uC704 \uB2E4\uB77D\uC5D0\uC11C \uC7A0\uB4E4\uC5C8\uACE0, \uAFC8\uC18D\uC5D0\uC11C \uC11C\uC7AC \uBB38\uC744 \uBCF4\uC558\uB2E4.",
+          ifTheyFindTheLocketTheyFind: '"\uADF8 \uB85C\uCF13 \uBAA9\uAC78\uC774\uAC00 \uBC1C\uACAC\uB418\uBA74, \uADF8\uB2E4\uC74C\uC740 \uB2F9\uC2E0\uC774\uC5D0\uC694." \uB2E4\uB9AC \uC704\uC5D0\uC11C \uADF8\uB140\uAC00 \uC18D\uC0AD\uC600\uB2E4.',
+          theFerrymanSScarCaughtTheLight: "\uB0B4\uAC00 \uAC74\uB128 \uB3D9\uC804\uC744 \uBC1B\uC744 \uB54C, \uBC43\uC0AC\uACF5\uC758 \uD749\uD130\uAC00 \uBE5B\uC744 \uBC1B\uC544 \uBC88\uB729\uC600\uB2E4."
+        },
+        makeMeta: {
+          msgs: "{title} (\uBA54\uC2DC\uC9C0 {first1}-{last1})"
+        },
+        tag: {
+          vol: "\uBCFC\uB968",
+          arc: "\uC544\uD06C"
+        },
+        comment: {
+          msgs: "#{n} - {title} (\uBA54\uC2DC\uC9C0 {first1}-{last1})",
+          msgs2: "{tag} #{n} - {title} (\uBA54\uC2DC\uC9C0 {first1}-{last1})"
+        },
+        ch: {
+          theDukeFalls: "\uACF5\uC791\uC758 \uC8FD\uC74C",
+          "1stSummaryChapterContaining18PriorTurns": `1st Summary Chapter Containing 18 Prior Turns
+
+3\uC77C\uC9F8. \uC560\uC2DC\uD37C\uB4DC \uACF5\uC791\uC774 \uC11C\uC7AC\uC5D0\uC11C \uC2DC\uC2E0\uC73C\uB85C \uBC1C\uACAC\uB41C\uB2E4. \uACF5\uC791\uC758 \uC2DC\uC885 \uC5D8\uB9AC\uC544\uC2A4\uB294 \uC740 \uB85C\uCF13 \uBAA9\uAC78\uC774\uB97C \uC9C0\uB2CC \uCC44 \uD558\uC778\uC6A9 \uACC4\uB2E8\uC73C\uB85C \uB2EC\uC544\uB09C\uB2E4. \uB9C8\uB77C\uB294 \uC18C\uB9F7\uBD80\uB9AC\uC5D0 \uD53C\uB97C \uBB3B\uD78C \uADF8\uAC00 \uB9C8\uB2F9\uC744 \uAC00\uB85C\uC9C0\uB974\uB294 \uBAA8\uC2B5\uC744 \uBCF4\uC9C0\uB9CC \uC544\uBB34 \uB9D0\uB3C4 \uD558\uC9C0 \uC54A\uB294\uB2E4. \uD574 \uC9C8 \uBB34\uB835 \uB3C4\uC2DC \uACBD\uBE44\uB300\uAC00 \uC800\uD0DD\uC744 \uBD09\uC1C4\uD55C\uB2E4.`,
+          neatlyFiledOneNefariousNightOnThe: "\uD749\uD749\uD55C \uBC24 \uD558\uB098, \uCC45\uC7A5\uC5D0 \uBC18\uB4EF\uD558\uAC8C \uAF42\uC544 \uB480\uC5B4\uC694.",
+          aSeamstressSSilence: "\uC7AC\uBD09\uC0AC\uC758 \uCE68\uBB35",
+          "2ndSummaryChapterContaining18PriorTurns": `2nd Summary Chapter Containing 18 Prior Turns
+
+5\uC77C\uC9F8. \uACBD\uBE44\uB300\uC7A5\uC774 \uC800\uD0DD \uD558\uC778\uB4E4\uC744 \uC2EC\uBB38\uD55C\uB2E4. \uB9C8\uB77C\uB294 \uBD81\uCABD \uAE38\uC5D0\uC11C \uC0B0\uC801\uC744 \uBD24\uB2E4\uACE0 \uC8FC\uC7A5\uD558\uACE0 \uC2EC\uBB38\uC5D0\uC11C \uD480\uB824\uB09C\uB2E4. \uC5D8\uB9AC\uC544\uC2A4\uB294 \uBB34\uB450\uC9C8 \uACF5\uBC29 \uB2E4\uB77D\uC5D0 \uC228\uC5B4 \uC9C0\uB0B4\uBA70, \uC804\uB2F9\uD3EC \uC8FC\uC778\uC5D0\uAC8C \uB3C8\uC744 \uC8FC\uACE0 \uB85C\uCF13 \uBAA9\uAC78\uC774\uB97C \uB9E1\uAE34\uB2E4. \uB9C8\uB77C\uB294 \uC804\uB2F9\uD3EC \uC601\uC218\uC99D\uC744 \uC18C\uB9E4 \uC548\uC5D0 \uAFF0\uB9E4 \uC228\uACA8 \uB454\uB2E4.`,
+          secretsStitchedIntoASleeveSoTidy: "\uC18C\uB9E4\uC5D0 \uAFF0\uB9E4 \uB123\uC740 \uBE44\uBC00\uC774\uB77C\uB2C8, \uCC38 \uAE54\uB054\uD558\uB124\uC694 \uB0E5.",
+          thePawnbrokerSReceipt: "\uC804\uB2F9\uD3EC \uC601\uC218\uC99D",
+          "3rdSummaryChapterContaining18PriorTurns": `3rd Summary Chapter Containing 18 Prior Turns
+
+8\uC77C\uC9F8. \uC804\uB2F9\uD3EC \uC8FC\uC778\uC774 \uC785\uB9C9\uC74C \uAC12\uC744 \uC62C\uB9B0\uB2E4. \uC5D8\uB9AC\uC544\uC2A4\uC640 \uB9C8\uB77C\uB294 \uB2E4\uB9AC\uC5D0\uC11C \uB9CC\uB098 \uB3C4\uB9DD\uCE60\uC9C0\uB97C \uB450\uACE0 \uB2E4\uD230\uB2E4. \uACBD\uBE44\uB300\uC7A5\uC740 \uACF5\uC791\uC758 \uC7A5\uB840\uC2DD\uC5D0\uC11C \uC0B0\uC801 \uC18C\uD589\uC124\uC744 \uACF5\uD45C\uD558\uB294 \uD55C\uD3B8, \uB4A4\uB85C\uB294 \uD558\uC778 \uC2EC\uBB38\uC744 \uC870\uC6A9\uD788 \uB2E4\uC2DC \uC2DC\uC791\uD55C\uB2E4.`,
+          priceyPromisesPressedBetweenThePages: "\uAC12\uBE44\uC2FC \uC57D\uC18D\uC744 \uCC45\uC7A5 \uC0AC\uC774\uC5D0 \uAFB9 \uB20C\uB7EC \uB07C\uC6CC \uB480\uC5B4\uC694.",
+          theCaptainAsksQuestions: "\uACBD\uBE44\uB300\uC7A5\uC758 \uC2EC\uBB38",
+          "4thSummaryChapterContaining18PriorTurns": `4th Summary Chapter Containing 18 Prior Turns
+
+11\uC77C\uC9F8. \uACBD\uBE44\uB300\uC7A5\uC774 \uC81C\uBCF4\uB97C \uBC1B\uACE0 \uBB34\uB450\uC9C8 \uACF5\uBC29 \uAC70\uB9AC\uB97C \uC218\uC0C9\uD55C\uB2E4. \uC5D8\uB9AC\uC544\uC2A4\uB294 \uC9C0\uBD95\uC744 \uD0C0\uACE0 \uB2EC\uC544\uB098\uC9C0\uB9CC, \uC800\uD0DD \uBB38\uC7A5\uC774 \uC0C8\uACA8\uC9C4 \uC7A5\uAC11 \uD55C \uC9DD\uC744 \uB5A8\uC5B4\uB728\uB9B0\uB2E4. \uB9C8\uB77C\uB294 \uD53C \uBB3B\uC740 \uBC14\uB290\uC9C8\uAC10\uC744 \uD0DC\uC6B0\uACE0, \uC560\uB3C4\uD558\uB7EC \uB3C4\uC2DC\uB97C \uB5A0\uB098\uACA0\uB2E4\uACE0 \uACBD\uBE44\uB300\uC7A5\uC5D0\uAC8C \uB9D0\uD55C\uB2E4.`,
+          curiousCaptainsCollectSuchClumsyClues: "\uD638\uAE30\uC2EC \uB9CE\uC740 \uACBD\uBE44\uB300\uC7A5\uB2D8\uC740 \uD5C8\uC220\uD55C \uB2E8\uC11C\uB3C4 \uCC38 \uC798 \uC90D\uB124\uC694.",
+          locketAtTheBridge: "\uB2E4\uB9AC \uC704\uC758 \uB85C\uCF13 \uBAA9\uAC78\uC774",
+          "5thSummaryChapterContaining18PriorTurns": `5th Summary Chapter Containing 18 Prior Turns
+
+14\uC77C\uC9F8. \uC804\uB2F9\uD3EC \uC8FC\uC778\uC774 \uB85C\uCF13 \uBAA9\uAC78\uC774\uC758 \uC0DD\uAE40\uC0C8\uB97C \uACBD\uBE44\uB300\uC7A5\uC5D0\uAC8C \uD314\uC544\uB118\uAE34\uB2E4. \uC5D8\uB9AC\uC544\uC2A4\uB294 \uACBD\uBE44\uB300\uAC00 \uB4E4\uC774\uB2E5\uCE58\uAE30 \uBA87 \uBD84 \uC804, \uB0A8\uC740 \uD488\uC0AF\uC744 \uD0C8\uD0C8 \uD138\uC5B4 \uBAA9\uAC78\uC774\uB97C \uB418\uCC3E\uB294\uB2E4. \uB2E4\uB9AC \uC704\uC5D0\uC11C \uB9C8\uB77C\uB294 \uC5D8\uB9AC\uC544\uC2A4\uC5D0\uAC8C 3\uC77C\uC9F8\uC5D0 \uBAA8\uB4E0 \uAC83\uC744 \uBD24\uB2E4\uACE0, \uADF8\uB9AC\uACE0 \uC790\uAE30 \uB098\uB984\uC758 \uBCF4\uD5D8\uC73C\uB85C \uC601\uC218\uC99D\uC744 \uAC04\uC9C1\uD574 \uC654\uB2E4\uACE0 \uD138\uC5B4\uB193\uB294\uB2E4.`,
+          bridgesBearTheBestAndBoldestBargains: "\uB2E4\uB9AC \uC704\uC5D0\uC120 \uC5B8\uC81C\uB098 \uC81C\uC77C \uB300\uB2F4\uD55C \uAC70\uB798\uAC00 \uC624\uAC00\uC8E0.",
+          rooftopConfessions: "\uC9C0\uBD95 \uC704\uC758 \uACE0\uBC31",
+          "6thSummaryChapterContaining18PriorTurns": `6th Summary Chapter Containing 18 Prior Turns
+
+16\uC77C\uC9F8. \uC5D8\uB9AC\uC544\uC2A4\uB294 \uACC4\uD68D\uD55C \uC0B4\uC778\uC774 \uC544\uB2C8\uC5C8\uB2E4\uACE0 \uACE0\uBC31\uD55C\uB2E4. \uB9C8\uB77C\uC758 \uC5B4\uBA38\uB2C8\uAC00 \uC608\uC804\uC5D0 \uC804\uB2F9 \uC7A1\uD614\uB358 \uB85C\uCF13 \uBAA9\uAC78\uC774\uB97C \uC81C\uC790\uB9AC\uC5D0 \uB3CC\uB824\uB193\uB2E4\uAC00 \uACF5\uC791\uC5D0\uAC8C \uB4E4\uCF30\uB358 \uAC83\uC774\uB2E4. \uB450 \uC0AC\uB78C\uC740 \uBC43\uC0AC\uACF5\uC5D0\uAC8C \uB204\uBA85\uC744 \uC50C\uC6B0\uAE30\uB85C \uD558\uC9C0\uB9CC, \uB9C8\uB77C\uAC00 \uADF8\uC758 \uD749\uD130\uB97C \uC54C\uC544\uBCF4\uACE0\uB294 \uACC4\uD68D\uC744 \uC811\uB294\uB2E4.`,
+          ghostlyGossipGlidesInBeforeTheGlue: "\uD480\uC774 \uB9C8\uB974\uAE30\uB3C4 \uC804\uC5D0 \uC720\uB839 \uAC19\uC740 \uC18C\uBB38\uC774 \uC2A4\uB974\uB974 \uB07C\uC5B4\uB4E4\uC5C8\uC5B4\uC694."
+        },
+        arc1: {
+          theMurderAtAshfordManor: "\uC560\uC2DC\uD37C\uB4DC \uC800\uD0DD \uC0B4\uC778 \uC0AC\uAC74",
+          "1stSummaryArcContaining3PriorChapters": `1st Summary ARC Containing 3 Prior Chapters and 54 Prior Turns
+
+3-8\uC77C\uC9F8. \uACF5\uC791\uC774 \uC8FD\uACE0, \uC5D8\uB9AC\uC544\uC2A4\uB294 \uC740 \uB85C\uCF13 \uBAA9\uAC78\uC774\uB97C \uB4E4\uACE0 \uB2EC\uC544\uB098\uBA70, \uB9C8\uB77C\uB294 \uC548\uC804 \uB300\uC2E0 \uCE68\uBB35\uC744 \uD0DD\uD55C\uB2E4. \uACBD\uBE44\uB300\uC7A5\uC740 \uAC89\uC73C\uB85C\uB294 \uC0B0\uC801 \uD0D3\uC744 \uD558\uBA74\uC11C\uB3C4 \uC18D\uC73C\uB85C\uB294 \uD558\uC778\uB4E4\uC744 \uC758\uC2EC\uD55C\uB2E4. \uC804\uB2F9\uD3EC \uC8FC\uC778\uC740 \uBAA8\uB4E0 \uBE44\uBC00\uC774 \uB9DE\uBB3C\uB824 \uB3C4\uB294 \uACBD\uCCA9\uC774 \uB41C\uB2E4.`,
+          anArcOfAlibisBoundAndBeautifully: "\uC54C\uB9AC\uBC14\uC774\uB85C \uC5EE\uC740 \uC544\uD06C, \uC608\uC058\uAC8C \uBB36\uC5B4\uC11C \uCC45\uC7A5\uC5D0 \uAF42\uC544 \uB480\uC5B4\uC694."
+        },
+        files: {
+          elias: "\uC5D8\uB9AC\uC544\uC2A4",
+          theDukeSFormerValetFugitive: "\uACF5\uC791\uC758 \uC804 \uC2DC\uC885, \uB3C4\uB9DD\uC790",
+          hidingInTheTanneryLoft: "\uBB34\uB450\uC9C8 \uACF5\uBC29 \uB2E4\uB77D\uC5D0 \uC228\uC5B4 \uC788\uC74C",
+          quickOverRooftops: "\uC9C0\uBD95 \uC704\uC5D0\uC11C \uB0A0\uB835\uD568",
+          keepTheLocket: "\uB85C\uCF13 \uBAA9\uAC78\uC774 \uC9C0\uD0A4\uAE30",
+          keepMaraOutOfIt: "\uB9C8\uB77C\uB97C \uB04C\uC5B4\uB4E4\uC774\uC9C0 \uC54A\uAE30",
+          killedTheDukeOnDay3: "3\uC77C\uC9F8\uC5D0 \uACF5\uC791\uC744 \uC8FD\uC784",
+          mara: "\uB9C8\uB77C",
+          seamstressAtAshfordManor: "\uC560\uC2DC\uD37C\uB4DC \uC800\uD0DD\uC758 \uC7AC\uBD09\uC0AC",
+          publiclyMourningPrivatelyBargaining: "\uAC89\uC73C\uB85C\uB294 \uC560\uB3C4, \uC18D\uC73C\uB85C\uB294 \uD765\uC815 \uC911",
+          leverageOverElias: "\uC5D8\uB9AC\uC544\uC2A4\uC758 \uC57D\uC810 \uC950\uAE30",
+          leaveTheCity: "\uB3C4\uC2DC \uB5A0\uB098\uAE30",
+          theCaptain: "\uACBD\uBE44\uB300\uC7A5",
+          leadsTheCityWatch: "\uB3C4\uC2DC \uACBD\uBE44\uB300\uB97C \uC774\uB04E",
+          publiclyBacksTheBanditTheory: "\uACF5\uAC1C\uC801\uC73C\uB85C\uB294 \uC0B0\uC801 \uC18C\uD589\uC124\uC744 \uC9C0\uC9C0\uD568",
+          reopenTheStaffInterviewsQuietly: "\uD558\uC778 \uC2EC\uBB38\uC744 \uC870\uC6A9\uD788 \uB2E4\uC2DC \uC2DC\uC791\uD558\uAE30",
+          ashfordManor: "\uC560\uC2DC\uD37C\uB4DC \uC800\uD0DD",
+          theDukeSSeatSealedByThe: "\uACF5\uC791\uC758 \uBCF8\uAC00. \uACBD\uBE44\uB300\uAC00 \uBD09\uC1C4\uD588\uACE0, \uC11C\uC7AC \uB4F1\uBD88 \uD558\uB098\uB9CC \uCF1C\uC838 \uC788\uC74C",
+          theBridge: "\uB2E4\uB9AC",
+          whereEliasAndMaraTradeTruths: "\uC5D8\uB9AC\uC544\uC2A4\uC640 \uB9C8\uB77C\uAC00 \uC9C4\uC2E4\uC744 \uC8FC\uACE0\uBC1B\uB294 \uACF3",
+          theSilverLocket: "\uC740 \uB85C\uCF13 \uBAA9\uAC78\uC774",
+          backInEliasSCoat: "\uB2E4\uC2DC \uC5D8\uB9AC\uC544\uC2A4\uC758 \uC678\uD22C \uC548\uC5D0 \uC788\uC74C",
+          tiesEliasToTheStudyOnDay: "3\uC77C\uC9F8 \uC5D8\uB9AC\uC544\uC2A4\uAC00 \uC11C\uC7AC\uC5D0 \uC788\uC5C8\uB2E4\uB294 \uC99D\uAC70",
+          trustsHerWithHisLifeNotHis: "\uBAA9\uC228\uC740 \uB9E1\uACA8\uB3C4 \uC18D\uC0AC\uC815\uC740 \uD138\uC5B4\uB193\uC9C0 \uC54A\uC74C",
+          day3SheSawHimFlee: "3\uC77C\uC9F8: \uADF8\uAC00 \uB2EC\uC544\uB098\uB294 \uAC83\uC744 \uB9C8\uB77C\uAC00 \uBD04",
+          day14SheRevealedSheKeptThe: "14\uC77C\uC9F8: \uB9C8\uB77C\uAC00 \uC601\uC218\uC99D\uC744 \uAC16\uACE0 \uC788\uB2E4\uACE0 \uD138\uC5B4\uB193\uC74C",
+          carriesItEverywhereBoughtItBackTwice: "\uC5B4\uB514\uB4E0 \uC9C0\uB2C8\uACE0 \uB2E4\uB2D8, \uB450 \uBC88\uC774\uB098 \uB418\uCC3E\uC544 \uC634",
+          doubtsHerBanditStoryLacksProof: "\uB9C8\uB77C\uC758 \uC0B0\uC801 \uC774\uC57C\uAE30\uB97C \uC758\uC2EC\uD558\uC9C0\uB9CC \uC99D\uAC70\uAC00 \uC5C6\uC74C",
+          silenceAboutTheMurderUneasySinceThe: "\uC0B4\uC778\uC5D0 \uB300\uD55C \uCE68\uBB35, \uB2E4\uB9AC\uC5D0\uC11C\uC758 \uC77C \uC774\uD6C4\uB85C \uBD88\uC548\uD568",
+          day3: "3\uC77C\uC9F8",
+          theDukeOfAshfordIsKilledIn: "\uC560\uC2DC\uD37C\uB4DC \uACF5\uC791\uC774 \uC11C\uC7AC\uC5D0\uC11C \uC0B4\uD574\uB428",
+          eliasFleesWithTheLocket: "\uC5D8\uB9AC\uC544\uC2A4\uAC00 \uB85C\uCF13 \uBAA9\uAC78\uC774\uB97C \uB4E4\uACE0 \uB2EC\uC544\uB0A8",
+          day5: "5\uC77C\uC9F8",
+          maraTellsTheCaptainSheSawBandits: "\uB9C8\uB77C\uAC00 \uACBD\uBE44\uB300\uC7A5\uC5D0\uAC8C \uC0B0\uC801\uC744 \uBD24\uB2E4\uACE0 \uB9D0\uD568",
+          day8: "8\uC77C\uC9F8",
+          thePawnbrokerRaisesHisPriceForSilence: "\uC804\uB2F9\uD3EC \uC8FC\uC778\uC774 \uC785\uB9C9\uC74C \uAC12\uC744 \uC62C\uB9BC",
+          eliasRunsOutOfMoney: "\uC5D8\uB9AC\uC544\uC2A4\uC758 \uB3C8\uC774 \uBC14\uB2E5\uB0A8",
+          day11: "11\uC77C\uC9F8",
+          eliasEscapesTheTannerySearchDropsA: "\uC5D8\uB9AC\uC544\uC2A4\uAC00 \uBB34\uB450\uC9C8 \uACF5\uBC29 \uC218\uC0C9\uC744 \uD53C\uD574 \uB2EC\uC544\uB098\uB2E4 \uBB38\uC7A5\uC774 \uC0C8\uACA8\uC9C4 \uC7A5\uAC11\uC744 \uB5A8\uC5B4\uB728\uB9BC",
+          day14: "14\uC77C\uC9F8",
+          maraRevealsSheKeptThePawnbrokerS: "\uB9C8\uB77C\uAC00 \uC804\uB2F9\uD3EC \uC601\uC218\uC99D\uC744 \uAC16\uACE0 \uC788\uC5C8\uB2E4\uACE0 \uBC1D\uD798",
+          theDukeSMurder: "\uACF5\uC791 \uC0B4\uD574 \uC0AC\uAC74",
+          theCaptainSBanditTheoryIsPublic: "\uACBD\uBE44\uB300\uC7A5\uC740 \uC0B0\uC801 \uC18C\uD589\uC124\uC744 \uAC89\uC73C\uB85C \uB0B4\uC138\uC6CC \uB450\uACE0, \uB4A4\uC5D0\uC11C\uB294 \uD558\uC778 \uC2EC\uBB38\uC744 \uB2E4\uC2DC \uD558\uACE0 \uC788\uB2E4.",
+          aCrestedGloveIsInTheWatch: "\uBB38\uC7A5\uC774 \uC0C8\uACA8\uC9C4 \uC7A5\uAC11\uC774 \uACBD\uBE44\uB300 \uC99D\uAC70\uD568\uC5D0 \uC788\uC74C",
+          thePawnbrokerKeptAReceipt: "\uC804\uB2F9\uD3EC \uC8FC\uC778\uC774 \uC601\uC218\uC99D\uC744 \uB0A8\uACA8 \uB460",
+          leavingTheCity: "\uB3C4\uC2DC\uB97C \uB5A0\uB098\uB294 \uC77C",
+          maraWantsOutBeforeTheInterviewsResume: "\uB9C8\uB77C\uB294 \uC2EC\uBB38\uC774 \uB2E4\uC2DC \uC2DC\uC791\uB418\uAE30 \uC804\uC5D0 \uB5A0\uB098\uACE0 \uC2F6\uC5B4 \uD558\uC9C0\uB9CC, \uC5D8\uB9AC\uC544\uC2A4\uB294 \uB85C\uCF13 \uBAA9\uAC78\uC774\uB97C \uB450\uACE0 \uAC08 \uC218 \uC5C6\uB2E4.",
+          unexplainedScarOnTheFerrymanSHand: "\uBC43\uC0AC\uACF5 \uC190\uC5D0 \uB09C \uC815\uCCB4 \uBAA8\uB97C \uD749\uD130",
+          theCityWatch: "\uB3C4\uC2DC \uACBD\uBE44\uB300",
+          answersToTheMagistrateNotTheCrown: "\uC655\uC2E4\uC774 \uC544\uB2C8\uB77C \uCE58\uC548\uD310\uC0AC\uC758 \uC9C0\uD718\uB97C \uBC1B\uC74C",
+          funeralCustomBarsArrestsDuringMourningBells: "\uC7A5\uB840 \uAD00\uC2B5\uC0C1 \uC870\uC885\uC774 \uC6B8\uB9AC\uB294 \uB3D9\uC548\uC5D0\uB294 \uCCB4\uD3EC\uD560 \uC218 \uC5C6\uC74C",
+          mourningCustoms: "\uC560\uB3C4 \uAD00\uC2B5",
+          halfBlackWornForAWeekBy: "\uACE0\uC778\uC5D0\uAC8C \uACE0\uC6A9\uB410\uB358 \uC0AC\uB78C\uC740 \uBAA8\uB450 \uC77C\uC8FC\uC77C \uB3D9\uC548 \uBC18\uCBE4 \uAC80\uC740 \uC0C1\uBCF5\uC744 \uC785\uC74C",
+          eliasKilledTheDuke: "\uC5D8\uB9AC\uC544\uC2A4\uAC00 \uACF5\uC791\uC744 \uC8FD\uC600\uB2E4",
+          banditsDidIt: "\uC0B0\uC801\uC758 \uC18C\uD589\uC774\uB2E4",
+          maraKeepsThePawnbrokerSReceiptSewn: "\uB9C8\uB77C\uAC00 \uC804\uB2F9\uD3EC \uC601\uC218\uC99D\uC744 \uC18C\uB9E4\uC5D0 \uAFF0\uB9E4 \uC228\uACA8 \uB450\uACE0 \uC788\uB2E4",
+          herLeverageIfEliasRunsAlone: "\uC5D8\uB9AC\uC544\uC2A4\uAC00 \uD63C\uC790 \uB2EC\uC544\uB0A0 \uB54C\uB97C \uB300\uBE44\uD55C \uB9C8\uB77C\uC758 \uBCF4\uD5D8",
+          human: "\uC778\uAC04",
+          careful: "\uC2E0\uC911\uD568",
+          sentimental: "\uAC10\uC0C1\uC801",
+          observant: "\uB208\uC370\uBBF8\uAC00 \uC88B\uC74C",
+          steady: "\uCE68\uCC29\uD568",
+          estate: "\uC800\uD0DD",
+          landmark: "\uB79C\uB4DC\uB9C8\uD06C",
+          heirloom: "\uAC00\uBCF4",
+          bond: "\uC720\uB300",
+          owns: "\uC18C\uC720",
+          suspects: "\uC758\uC2EC",
+          pact: "\uBC00\uC57D"
+        },
+        profile: {
+          default: "\uAE30\uBCF8"
+        },
+        buildFixture: {
+          theAshfordCase: "\uC560\uC2DC\uD37C\uB4DC \uC0AC\uAC74",
+          elias: "\uC5D8\uB9AC\uC544\uC2A4",
+          lumiBooksTheAshfordCase: "LumiBooks - \uC560\uC2DC\uD37C\uB4DC \uC0AC\uAC74",
+          storyteller: "\uC774\uC57C\uAE30\uAFBC",
+          memoriaIsWritingAChapter13kt: "\uBA54\uBAA8\uB9AC\uC544\uAC00 \uCC55\uD130\uB97C \uC4F0\uB294 \uC911 (~1.3kt \uC791\uC131, ~0.8kt \uC0DD\uAC01, 24\uCD08)",
+          noTokenWithin60sTheProviderMay: "60\uCD08 \uB3D9\uC548 \uD1A0\uD070\uC774 \uC624\uC9C0 \uC54A\uC558\uC5B4\uC694. \uD504\uB85C\uBC14\uC774\uB354\uAC00 \uB290\uB9AC\uAC70\uB098 \uC5F0\uACB0\uD560 \uC218 \uC5C6\uB294 \uC0C1\uD0DC\uC77C \uC218 \uC788\uC5B4\uC694",
+          theAshfordCaseVol1: "\uC560\uC2DC\uD37C\uB4DC \uC0AC\uAC74 1\uAD8C"
+        },
+        fixtureBusyFiling: {
+          memoriaIsFilingAChapter2s: "\uBA54\uBAA8\uB9AC\uC544\uAC00 \uCC55\uD130\uB97C \uC815\uB9AC\uD558\uB294 \uC911 (2\uCD08)"
+        }
+      },
+      seal: {
+        memoriaSprite: {
+          memoria: "\uBA54\uBAA8\uB9AC\uC544"
+        },
+        runeButton: {
+          value: "\u25C6 \u25C7 \u25C6 \u25C7 \u25C6 \u25C7 \u25C6 \u25C7"
+        },
+        renderSealPanel: {
+          lessonsFromMemoria: "\uBA54\uBAA8\uB9AC\uC544\uC758 \uC218\uC5C5",
+          welcomeTutorial: "\uD658\uC601 \uD29C\uD1A0\uB9AC\uC5BC",
+          hiUserIMTeachingATutorial: "\uC548\uB155\uD558\uC138\uC694! \uC81C\uAC00 LumiBooks \uD29C\uD1A0\uB9AC\uC5BC \uC218\uC5C5\uC744 \uD558\uAC70\uB4E0\uC694, \uAF2D \uB4E4\uC73C\uB7EC \uC640\uC57C \uD574\uC694 (\u02F6\u1D54 \u1D55 \u1D54\u02F6)",
+          resumeTheLesson: "\uC218\uC5C5 \uC774\uC5B4 \uD558\uAE30",
+          takeLessonFromMemoria: "\uBA54\uBAA8\uB9AC\uC544\uC5D0\uAC8C \uC218\uC5C5 \uB4E3\uAE30",
+          sitTheExam: "\uC2DC\uD5D8 \uBCF4\uAE30",
+          tenQuestionsFromTheCourse9Of: "\uACFC\uC815\uC5D0\uC11C \uB098\uC624\uB294 \uC5F4 \uBB38\uC81C\uC608\uC694. 10\uBB38\uC81C \uC911 9\uBB38\uC81C\uB97C \uB9DE\uD788\uBA74 \uC878\uC5C5\uC774\uC5D0\uC694.",
+          skipForNow: "\uB098\uC911\uC5D0 \uD558\uAE30",
+          progressSavedAtSection: "{sec}\uB2E8\uC6D0\uC5D0\uC11C \uC9C4\uD589 \uC0C1\uD669\uC744 \uC800\uC7A5\uD588\uC5B4\uC694."
+        },
+        renderGrumpySkip: {
+          hmphFine: "\uD765. \uC54C\uACA0\uC5B4\uC694.",
+          skipIfYouMustButYouHad: "\uAF2D \uAC74\uB108\uB6F0\uACA0\uB2E4\uBA74 \uADF8\uB7EC\uC138\uC694. \uB300\uC2E0 \uC81C \uC218\uC5C5\uB3C4 \uC548 \uB4E3\uACE0 \uC800\uB97C \uB9CC\uB4E0 \uBD84\uD55C\uD14C \uB3C4\uC640 \uB2EC\uB77C\uACE0 \uCC3E\uC544\uAC00\uAE30\uB9CC \uD574 \uBD10\uC694 (\xAC`\u2038\xB4\xAC) \uD648\uC5D0 \uC548\uB0B4\uB97C \uB0A8\uACA8 \uB458\uAC8C\uC694.",
+          fineTeachMe: "\uC54C\uC558\uC5B4\uC694, \uAC00\uB974\uCCD0 \uC8FC\uC138\uC694",
+          skipAnyway: "\uADF8\uB798\uB3C4 \uAC74\uB108\uB6F0\uAE30"
+        },
+        updateSealBusy: {
+          abort: "\uC911\uB2E8",
+          lastAttemptFailed: "\uB9C8\uC9C0\uB9C9 {kind, select, chapter {\uCC55\uD130} arc {\uC544\uD06C} volume {\uBCFC\uB968} series {\uC2DC\uB9AC\uC988} saga {\uC0AC\uAC00} library {\uB77C\uC774\uBE0C\uB7EC\uB9AC} universe {\uC720\uB2C8\uBC84\uC2A4} codex {\uCF54\uB371\uC2A4} other {{kind}}} \uC2DC\uB3C4\uAC00 \uC2E4\uD328\uD588\uC5B4\uC694",
+          retry: "\uB2E4\uC2DC \uC2DC\uB3C4"
+        },
+        previewTiles: {
+          characters: "\uCE90\uB9AD\uD130",
+          "240Tokens": "~240 \uD1A0\uD070",
+          locations: "\uC7A5\uC18C",
+          "90Tokens": "~90 \uD1A0\uD070",
+          things: "\uC0AC\uBB3C",
+          "50Tokens": "~50 \uD1A0\uD070",
+          relations: "\uAD00\uACC4",
+          "170Tokens": "~170 \uD1A0\uD070",
+          timeline: "\uD0C0\uC784\uB77C\uC778",
+          "160Tokens": "~160 \uD1A0\uD070",
+          threads: "\uC2A4\uB808\uB4DC",
+          "120Tokens": "~120 \uD1A0\uD070",
+          lore: "\uC124\uC815",
+          "110Tokens": "~110 \uD1A0\uD070",
+          secrets: "\uBE44\uBC00"
+        },
+        renderCodexTabLock: {
+          example: "\uC608\uC2DC",
+          theKnowledgeCodex: "\uC9C0\uC2DD \uCF54\uB371\uC2A4",
+          aStoryBibleAnAgentKeepsFor: "\uC5D0\uC774\uC804\uD2B8\uAC00 \uB300\uC2E0 \uAD00\uB9AC\uD574 \uC8FC\uB294 \uC2A4\uD1A0\uB9AC \uBC14\uC774\uBE14\uC774\uC5D0\uC694: \uCE90\uB9AD\uD130, \uAD00\uACC4, \uD0C0\uC784\uB77C\uC778, \uC2A4\uB808\uB4DC, \uBE44\uBC00. \uC774 \uBAA8\uB4C8\uC744 \uC4F0\uB824\uBA74 \uBA3C\uC800 \uC218\uC5C5\uC744 \uB4E4\uC73C\uC138\uC694."
+        },
+        renderCodexPaneLock: {
+          sealedUntilTheLesson: "\uC218\uC5C5 \uC804\uAE4C\uC9C0 \uBD09\uC778\uB428",
+          theCodexSettingsUnlockWhenYouFinish: "\u300C\uAE30\uB85D\uAD00\uC758 \uCF54\uB371\uC2A4\u300D \uC218\uC5C5\uC744 \uB9C8\uCE58\uBA74 \uCF54\uB371\uC2A4 \uC124\uC815\uC774 \uD480\uB824\uC694. \uB9C8\uC9C0\uB9C9 \uB2E8\uACC4\uAC00 \uBC14\uB85C \uC774 \uD328\uB110\uC744 \uCF1C\uB294 \uAC70\uC608\uC694."
+        },
+        codexSealCard: {
+          takeALessonFromMemoria: "\uBA54\uBAA8\uB9AC\uC544\uC5D0\uAC8C \uC218\uC5C5 \uB4E3\uAE30",
+          skipForNow: "\uB098\uC911\uC5D0 \uD558\uAE30"
+        },
+        renderCodexGrumpySkip: {
+          hmphFine: "\uD765. \uC54C\uACA0\uC5B4\uC694.",
+          skipIfYouMustTheCodexUnlocks: "\uAF2D \uAC74\uB108\uB6F0\uACA0\uB2E4\uBA74 \uADF8\uB7EC\uC138\uC694 (\xAC`\u2038\xB4\xAC) \uCF54\uB371\uC2A4 \uC7A0\uAE08\uC740 \uD480\uB9AC\uC9C0\uB9CC, \uC870\uC815 \uD0ED\uC5D0\uC11C \uCF1C\uAE30 \uC804\uAE4C\uC9C0 \uC5D0\uC774\uC804\uD2B8\uB294 \uAEBC\uC838 \uC788\uC5B4\uC694. \uD648\uC5D0 \uC548\uB0B4\uB97C \uB0A8\uACA8 \uB458\uAC8C\uC694.",
+          fineTeachMe: "\uC54C\uC558\uC5B4\uC694, \uAC00\uB974\uCCD0 \uC8FC\uC138\uC694",
+          skipAnyway: "\uADF8\uB798\uB3C4 \uAC74\uB108\uB6F0\uAE30"
+        }
+      }
+    },
+    modals: {
+      booksWarning: {
+        thisChatHasNoFiledChaptersYet: "\uC815\uB9AC\uB41C \uCC55\uD130\uAC00 \uC5C6\uC5B4\uC694. \uBE60\uB978 \uBAA8\uB4DC\uB3C4 \uC6D0\uBCF8 \uBA54\uC2DC\uC9C0\uB97C \uC77D\uAC8C \uB3FC\uC694. \uBA3C\uC800 \uD648 > \uBAA8\uB450 \uC815\uB9AC\uB97C \uC2E4\uD589\uD558\uC138\uC694.",
+        theUnfiledTailOfThisChatIs: "\uC815\uB9AC\uB418\uC9C0 \uC54A\uC740 \uBA54\uC2DC\uC9C0\uAC00 \uB9CE\uC544\uC694. \uB9C8\uC9C0\uB9C9 \uD328\uC2A4\uB294 \uC774 \uBA54\uC2DC\uC9C0\uB4E4\uC744 \uC6D0\uBCF8 \uADF8\uB300\uB85C \uC77D\uC5B4\uC694. \uBA3C\uC800 \uD648 > \uBAA8\uB450 \uC815\uB9AC\uB97C \uC2E4\uD589\uD558\uC138\uC694."
+      },
+      requestCodexUpdate: {
+        messageAreWaitingAboutPassesAtThe: "\uBC00\uB9B0 \uBA54\uC2DC\uC9C0 {codexBacklog0}{codexBacklog02, plural, other {\uAC1C}} (\uC57D {codexBacklogPasses}\uD68C \uD328\uC2A4). \uB530\uB77C\uC7A1\uAE30 \uBAA8\uB4DC\uB97C \uC120\uD0DD\uD558\uC138\uC694."
+      },
+      requestCodexRebuild: {
+        rebuildTheCodex: "\uCF54\uB371\uC2A4 \uC7AC\uAD6C\uCD95",
+        memoriaWillEraseTheStoryBibleAnd: "\uCF54\uB371\uC2A4\uB97C \uBE44\uC6B0\uACE0 \uBA54\uC2DC\uC9C0 {total}\uAC1C\uB97C \uB2E4\uC2DC \uC77D\uC5B4\uC694 (\uB290\uB9B0 \uD328\uC2A4 \uC57D {passes}\uD68C). \uC7AC\uAD6C\uCD95 \uBAA8\uB4DC\uB97C \uC120\uD0DD\uD558\uC138\uC694."
+      },
+      requestCodexTidy: {
+        tidyCodexToATargetSize: "\uCF54\uB371\uC2A4\uB97C \uBAA9\uD45C \uD06C\uAE30\uB85C \uC815\uB3C8",
+        currentSelectedContentTokensFrozenFilesAre: "\uC120\uD0DD\uB428: {choice, select, yes {~} other {}}{toLocaleString}\uD1A0\uD070. \uB3D9\uACB0\uB41C \uD30C\uC77C\uC740 \uBE7C\uACE0, \uC7A0\uAE34 \uB0B4\uC6A9\uC740 \uC720\uC9C0\uD574\uC694.",
+        targetUnit: "\uBAA9\uD45C \uB2E8\uC704",
+        percentageToKeep: "\uB0A8\uAE38 \uBE44\uC728",
+        tokens: "\uD1A0\uD070",
+        memoriaAims10BelowYourLimitChecks: "\uD55C\uB3C4\uBCF4\uB2E4 10% \uB0AE\uAC8C \uC7A1\uACE0, \uC218\uC815\uC744 \uD3EC\uD568\uD574 \uBAA8\uB378\uC744 \uCD5C\uB300 \uC5EC\uC12F \uBC88 \uD638\uCD9C\uD574\uC694. \uBE44\uC728\uC740 \uB0A8\uAE38 \uC591\uC744 \uC815\uD574\uC694: 50%\uBA74 45%\uB97C \uBAA9\uD45C\uB85C \uD574\uC694. \uC2E4\uD589 \uCDE8\uC18C\uD558\uBA74 \uC6D0\uB798 \uCF54\uB371\uC2A4\uB85C \uB3CC\uC544\uAC00\uC694. \uC7A0\uAE08\uC774\uB098 \uBAA8\uB378 \uCD9C\uB825 \uB54C\uBB38\uC5D0 \uD55C\uB3C4\uAE4C\uC9C0 \uC904\uC774\uC9C0 \uBABB\uD560 \uC218\uB3C4 \uC788\uC5B4\uC694.",
+        theTokenizerIsUnavailableForThisModel: " \uD1A0\uD06C\uB098\uC774\uC800\uB97C \uC4F8 \uC218 \uC5C6\uC5B4 \uD06C\uAE30\uB294 \uCD94\uC815\uCE58\uC608\uC694.",
+        cancel: "\uCDE8\uC18C"
+      },
+      start: {
+        startTidy: "\uC815\uB3C8 \uC2DC\uC791"
+      },
+      refresh: {
+        keepThisPercentage: "\uB0A8\uAE38 \uBE44\uC728",
+        maximumTokens: "\uCD5C\uB300 \uD1A0\uD070",
+        chooseATargetBelowTheCurrentSize: "\uD604\uC7AC \uD06C\uAE30\uBCF4\uB2E4 \uC791\uC740 \uBAA9\uD45C\uB97C \uC120\uD0DD\uD558\uC138\uC694.",
+        yourLimitTokensModelTargetWithMargin: "\uD55C\uB3C4: {toLocaleString}\uD1A0\uD070. \uBAA8\uB378 \uBAA9\uD45C: {toLocaleString2}\uD1A0\uD070.",
+        enterAValidTarget: "\uC62C\uBC14\uB978 \uBAA9\uD45C\uB97C \uC785\uB825\uD558\uC138\uC694."
+      },
+      showCodexCatchupModal: {
+        theCodexIsFarBehind: "\uCF54\uB371\uC2A4 \uBC00\uB9B0 \uC791\uC5C5",
+        value: "\xD7",
+        close: "\uB2EB\uAE30",
+        automationIsOnSoFastAndUltra: "\uC790\uB3D9\uD654\uAC00 \uCF1C\uC838 \uC788\uC73C\uBA74 \uBE60\uB978 \uBAA8\uB4DC\uB294 \uCC55\uD130\uC640 \uC544\uD06C\uBD80\uD130 \uAC31\uC2E0\uD574\uC694.",
+        fastAndUltraFastNeedTheCodex: "\uBE60\uB978 \uBAA8\uB4DC\uB97C \uC4F0\uB824\uBA74 \uCF54\uB371\uC2A4 \uCEE8\uD14D\uC2A4\uD2B8\uAC00 \uC2A4\uD1A0\uB9AC \uBAA8\uB378\uC758 \uCEE8\uD14D\uC2A4\uD2B8 \uC774\uC0C1\uC774\uC5B4\uC57C \uD574\uC694.",
+        value2: "\u26A0 {booksWarning}",
+        slow: "\uB290\uB9BC",
+        notRecommendedReplaysEveryRawMessageWindow: "\uC6D0\uBCF8 \uBA54\uC2DC\uC9C0\uB97C \uC708\uB3C4\uC6B0 \uB2E8\uC704\uB85C \uC77D\uC5B4\uC694. \uBA87 \uC2DC\uAC04 \uAC78\uB9B4 \uC218 \uC788\uC5B4\uC694.",
+        fast: "\uBE60\uB984",
+        replayTheFiledSummariesThenOneRaw: "\uC815\uB9AC\uB41C \uC694\uC57D\uC744 \uC77D\uC740 \uB4A4 \uB0A8\uC740 \uC6D0\uBCF8 \uBA54\uC2DC\uC9C0\uB97C \uC77D\uC5B4\uC694",
+        ultraFast: "\uCD08\uACE0\uC18D",
+        oneSinglePassOverTheFiledSummaries: "\uC815\uB9AC\uB41C \uC694\uC57D\uACFC \uB0A8\uC740 \uC6D0\uBCF8 \uBA54\uC2DC\uC9C0\uB97C \uD55C \uBC88\uC5D0 \uC77D\uC5B4\uC694"
+      },
+      paragraphs: {
+        ultraFastReadsTheStorySCurrent: "\uC694\uC57D\uACFC \uB0A8\uC740 \uC6D0\uBCF8 \uBA54\uC2DC\uC9C0\uB97C \uD568\uAED8 \uC77D\uC5B4\uC694. \uAC00\uC7A5 \uBE60\uB974\uC9C0\uB9CC \uAC00\uC7A5 \uB35C \uC790\uC138\uD574\uC694.",
+        fastReplaysYourFiledChapterSummariesPass: "\uCC55\uD130 \uC694\uC57D\uC744 \uBB36\uC74C\uC73C\uB85C \uC77D\uC740 \uB4A4 \uB0A8\uC740 \uC6D0\uBCF8 \uBA54\uC2DC\uC9C0\uB97C \uC77D\uC5B4\uC694. \uB290\uB9BC \uBAA8\uB4DC\uBCF4\uB2E4 \uBE68\uB77C\uC694.",
+        slowReplaysEveryRawMessageWindowBy: "\uC6D0\uBCF8 \uBA54\uC2DC\uC9C0\uB97C \uC708\uB3C4\uC6B0 \uB2E8\uC704\uB85C \uC77D\uC5B4\uC694. \uAC00\uC7A5 \uC790\uC138\uD558\uC9C0\uB9CC \uAE34 \uCC44\uD305\uC740 \uBA87 \uC2DC\uAC04 \uAC78\uB9B4 \uC218 \uC788\uC5B4\uC694.",
+        theCodexAgentAskedYourModelTo: "\uBAA8\uB378\uC774 \uB3C4\uAD6C \uD638\uCD9C \uB300\uC2E0 \uD14D\uC2A4\uD2B8\uB97C \uB3CC\uB824\uC92C\uC5B4\uC694. \uBAA8\uB378\uC774\uB098 \uD504\uB85C\uBC14\uC774\uB354\uAC00 \uB3C4\uAD6C \uD638\uCD9C\uC744 \uC9C0\uC6D0\uD558\uC9C0 \uC54A\uC744 \uC218 \uC788\uC5B4\uC694.",
+        memoriaCanSwitchTheCodexToJson: "JSON \uBAA8\uB4DC\uB294 \uD14D\uC2A4\uD2B8 \uC751\uB2F5\uC744 \uC4F0\uBBC0\uB85C \uB3C4\uAD6C \uC9C0\uC6D0\uC774 \uD544\uC694 \uC5C6\uC5B4\uC694. \uC751\uB2F5\uC744 \uAC80\uC99D\uD558\uC9C0\uB9CC \uB3C4\uAD6C \uD638\uCD9C\uBCF4\uB2E4 \uB35C \uC548\uC815\uC801\uC77C \uC218 \uC788\uC5B4\uC694.",
+        youCanChangeThisAnytimeUnderTuning: "\uC870\uC815 > \uC5F0\uACB0 > \uCF54\uB371\uC2A4\uC5D0\uC11C \u300C\uB3C4\uAD6C \uD638\uCD9C \uC0AC\uC6A9\u300D\uC744 \uBC14\uAFB8\uAC70\uB098, \uB3C4\uAD6C\uB97C \uC9C0\uC6D0\uD558\uB294 \uC5F0\uACB0\uC744 \uC120\uD0DD\uD558\uC138\uC694."
+      },
+      showCodexToolsHintModal: {
+        toolCallsArenTGettingThrough: "\uB3C4\uAD6C \uD638\uCD9C\uC774 \uB3CC\uC544\uC624\uC9C0 \uC54A\uC74C",
+        value: "\xD7",
+        close: "\uB2EB\uAE30",
+        donTShowThisAgain: "\uB2E4\uC2DC \uD45C\uC2DC\uD558\uC9C0 \uC54A\uAE30",
+        keepToolCalls: "\uB3C4\uAD6C \uD638\uCD9C \uC720\uC9C0",
+        switchToJsonMode: "JSON \uBAA8\uB4DC\uB85C \uC804\uD658"
+      },
+      openEditModal: {
+        label: "\uB77C\uBCA8",
+        content: "\uB0B4\uC6A9",
+        cancel: "\uCDE8\uC18C",
+        save: "\uC800\uC7A5"
+      },
+      labelInput: {
+        label: "\uB77C\uBCA8"
+      },
+      r: {
+        delete: "\uC0AD\uC81C",
+        cancel: "\uCDE8\uC18C"
+      },
+      showDryRunModal: {
+        dryRun: "\uBAA8\uC758 \uC2E4\uD589: {choice, select, yes {\uC544\uD06C} other {{choice2, select, yes {\uBCFC\uB968} other {{choice3, select, yes {\uCF54\uB371\uC2A4} other {\uCC55\uD130}}}}}}",
+        value: "\xD7",
+        closeDryRun: "\uBAA8\uC758 \uC2E4\uD589 \uB2EB\uAE30",
+        diagnostics: "\uC9C4\uB2E8",
+        copyJson: "JSON \uBCF5\uC0AC",
+        copied: "\uBCF5\uC0AC\uB428",
+        copyFailed: "\uBCF5\uC0AC \uC2E4\uD328"
+      },
+      promptForString: {
+        cancel: "\uCDE8\uC18C",
+        ok: "\uD655\uC778"
+      }
+    },
+    promptBreakdown: {
+      timer: {
+        promptBreakdownTimedOutTryRefreshingThe: "\uD504\uB86C\uD504\uD2B8 \uBD84\uC11D \uC2DC\uAC04\uC774 \uCD08\uACFC\uB410\uC5B4\uC694. \uD328\uB110\uC744 \uC0C8\uB85C \uACE0\uCCD0 \uBCF4\uC138\uC694."
+      },
+      clearPromptRequests: {
+        promptPanelClosed: "\uD504\uB86C\uD504\uD2B8 \uD328\uB110\uC774 \uB2EB\uD614\uC5B4\uC694."
+      }
+    },
+    summaryTransfer: {
+      draw: {
+        summaryTransferInProgress: "\uC694\uC57D \uAC00\uC838\uC624\uAE30/\uB0B4\uBCF4\uB0B4\uAE30 \uC9C4\uD589 \uC911\u2026",
+        continueSummaryImportExport: "\uC694\uC57D \uAC00\uC838\uC624\uAE30/\uB0B4\uBCF4\uB0B4\uAE30 \uACC4\uC18D",
+        summaryImportExport: "\uC694\uC57D \uAC00\uC838\uC624\uAE30 / \uB0B4\uBCF4\uB0B4\uAE30",
+        attemptMatching: "\uC790\uB3D9 \uB9E4\uCE6D \uC2DC\uB3C4",
+        letMeSpecify: "\uC9C1\uC811 \uC9C0\uC815",
+        upUntilWhichMessageShouldTheseSummaries: "\uC694\uC57D\uC774 \uC5B4\uB290 \uBA54\uC2DC\uC9C0\uAE4C\uC9C0 \uB2E4\uB8E8\uB098\uC694?",
+        thisChatHasMessagesCountFrom1: "\uC774 \uCC44\uD305\uC5D0\uB294 \uBA54\uC2DC\uC9C0\uAC00 {messageCount0}\uAC1C \uC788\uC5B4\uC694. 0\uC744 \uC785\uB825\uD558\uBA74 \uBB3C\uB824\uBC1B\uC740 \uAE30\uC5B5\uC73C\uB85C \uAC00\uC838\uC640\uC694. \uADF8 \uBC16\uC758 \uAC12\uC774\uBA74 \uC694\uC57D \uBCF8\uBB38\uC740 \uADF8\uB300\uB85C \uB450\uACE0, \uBA54\uC2DC\uC9C0 1\u2013N\uC744 \uB2E4\uB8E8\uB294 \uD56D\uBAA9 \uD558\uB098\uB85C \uD569\uCCD0\uC694.",
+        importSummaries: "\uC694\uC57D \uAC00\uC838\uC624\uAE30",
+        dismiss: "\uB2EB\uAE30",
+        cancelImport: "\uAC00\uC838\uC624\uAE30 \uCDE8\uC18C",
+        hide: "\uC228\uAE30\uAE30"
+      },
+      choose: {
+        processingSummaryImport: "\uC694\uC57D \uAC00\uC838\uC624\uAE30 \uCC98\uB9AC \uC911\u2026"
+      }
+    },
+    tabMeta: {
+      appTabs: {
+        home: "\uD648",
+        books: "\uCC45",
+        codex: "\uCF54\uB371\uC2A4",
+        tuning: "\uC870\uC815",
+        info: "\uC815\uBCF4"
+      }
+    },
+    tabs: {
+      aboutTab: {
+        hero: {
+          memoria: "\uBA54\uBAA8\uB9AC\uC544"
+        },
+        renderAboutTab: {
+          memoriaTheLumiBooksLibrarian: "LumiBooks\uC758 \uC0AC\uC11C, \uBA54\uBAA8\uB9AC\uC544",
+          nyandereCatgirlInAMaidUniformBlack: "\uC774\uC57C\uAE30 \uB54C\uBB38\uC5D0 \uBAA8\uB378\uB3C4, \uC9C0\uAC11\uB3C4 \uD130\uC9C0\uC9C0 \uC54A\uAC8C \uC9C0\uCF1C \uC8FC\uB294 \uB0E5\uB370\uB808 \uACE0\uC591\uC774 \uC18C\uB140.",
+          builtOnLumiverseSpindleWithPromptsAnd: "SillyTavern Memory Books\uC5D0\uC11C \uC601\uAC10\uC744 \uBC1B\uC558\uC5B4\uC694."
+        },
+        ack: {
+          acknowledgements: "\uAC10\uC0AC\uC758 \uB9D0"
+        },
+        sec: {
+          memoriaSAcademy: "\uBA54\uBAA8\uB9AC\uC544 \uC544\uCE74\uB370\uBBF8",
+          privateDiagnostics: "\uBE44\uACF5\uAC1C \uC9C4\uB2E8"
+        },
+        renderAcademy: {
+          bothCoursesLiveHereForRetakesPer: "\uACFC\uC815\uC744 \uB2E4\uC2DC \uBCF5\uC2B5\uD560 \uC218 \uC788\uC5B4\uC694."
+        },
+        courseCard: {
+          completedAttempt: "{choice, select, yes {{signedName} \uB2D8\uC774 \uC644\uB8CC} other {\uC644\uB8CC}}, \uC2DC\uB3C4 {attempts}\uD68C.",
+          inProgressSection: "\uC9C4\uD589 \uC911, {section1}\uC808.",
+          lockedBehindNothingButYourTimeThis: "\uB178\uB825\uD574\uC57C \uC5F4\uB824\uC694. \uC644\uB8CC\uD558\uBA74 \uCF54\uB371\uC2A4\uB97C \uC4F8 \uC218 \uC788\uC5B4\uC694.",
+          theMandatoryPrimer: "\uD544\uC218 \uD29C\uD1A0\uB9AC\uC5BC\uC774\uC5D0\uC694.",
+          viewDiploma: "\uC878\uC5C5\uC7A5 \uBCF4\uAE30",
+          retakeCourse: "\uACFC\uC815 \uC7AC\uC218\uAC15",
+          leaveAnytimeTheCourseStaysCompletedOn: "\uC5B8\uC81C\uB4E0 \uB098\uAC00\uB3C4 \uB3FC\uC694~",
+          resume: "\uC774\uC5B4 \uD558\uAE30",
+          start: "\uC2DC\uC791",
+          sitTheExam: "\uC2DC\uD5D8 \uBCF4\uAE30",
+          value: "{i1}. {title}{choice, select, yes { \u25C7} other { \u25C6}}",
+          hasSilverOrSkippedStampsRetakeTo: "\uAE08\uC7A5\uC744 \uB178\uB9AC\uB824\uBA74 \uACFC\uC815\uC744 \uC7AC\uC218\uAC15\uD558\uC138\uC694",
+          allGold: "\uBAA8\uB450 \uAE08\uC7A5"
+        },
+        renderDiagnostics: {
+          turnOffLocalLogsThisIsNot: "\uB85C\uCEEC \uB85C\uADF8 \uB044\uAE30. \uAD8C\uC7A5\uD558\uC9C0 \uC54A\uC544\uC694",
+          tracksUiFailuresNavigationRequestsFilingCoverage: "UI \uC624\uB958, \uD654\uBA74 \uC774\uB3D9, \uC694\uCCAD, \uC815\uB9AC, \uC801\uC6A9 \uBC94\uC704, \uBD84\uAE30\xB7\uCEE8\uD14D\uC2A4\uD2B8 \uD310\uB2E8, \uD0C0\uC784\uC2A4\uD0EC\uD504, \uBA54\uC2DC\uC9C0 \uBC88\uD638, \uC624\uB958 \uCF54\uB4DC, \uBC88\uB4E4 \uC704\uCE58, \uAC00\uBA85 ID\uB97C \uAE30\uB85D\uD574\uC694. \uCC44\uD305\xB7\uC694\uC57D \uBCF8\uBB38, \uD504\uB86C\uD504\uD2B8, \uCD94\uB860, \uC774\uB984, \uC785\uB825\uAC12, URL, \uC790\uACA9 \uC99D\uBA85, \uC775\uBA85\uD654\uB418\uC9C0 \uC54A\uC740 \uC624\uB958\uB294 \uAE30\uB85D\uD558\uC9C0 \uC54A\uC544\uC694.",
+          exportDiagnostics: "\uC9C4\uB2E8 \uB0B4\uBCF4\uB0B4\uAE30",
+          clearDiagnostics: "\uC9C4\uB2E8 \uC9C0\uC6B0\uAE30"
+        }
+      },
+      booksTab: {
+        subtabs: {
+          shelf: "\uCC45\uC7A5",
+          compose: "\uB9CC\uB4E4\uAE30",
+          advanced: "\uACE0\uAE09"
+        },
+        draw: {
+          openAChatToBrowseMemoriaS: "\uC694\uC57D\uC744 \uBCF4\uB824\uBA74 \uCC44\uD305\uC744 \uC5EC\uC138\uC694"
+        },
+        sec: {
+          theShelf: "\uCC45\uC7A5",
+          pickMessagesForAChapter: "\uCC55\uD130\uB85C \uC815\uB9AC\uD560 \uBA54\uC2DC\uC9C0 \uC120\uD0DD",
+          bindChaptersIntoAnArc: "\uCC55\uD130\uB97C \uC544\uD06C\uB85C \uBB36\uAE30",
+          pressArcsIntoAVolume: "\uC544\uD06C\uB97C \uBCFC\uB968\uC73C\uB85C \uD569\uCE58\uAE30",
+          maintenance: "\uAD00\uB9AC",
+          bind: "{tierNamesTier1} \uBB36\uAE30",
+          summaryExportAndImport: "\uC694\uC57D \uB0B4\uBCF4\uB0B4\uAE30\xB7\uAC00\uC838\uC624\uAE30"
+        },
+        renderShelf: {
+          emptyShelfForNowMemoriaWillStart: "\uC544\uC9C1 \uC694\uC57D\uC774 \uC5C6\uC5B4\uC694."
+        },
+        search: {
+          searchTitlesAndSummaries: "\uC81C\uBAA9\uACFC \uC694\uC57D \uAC80\uC0C9..."
+        },
+        groups: {
+          volumes: "\uBCFC\uB968",
+          arcs: "\uC544\uD06C",
+          chapters: "\uCC55\uD130"
+        },
+        buildGroups: {
+          of: "{title} ({length2}\uAC1C \uC911 {length}\uAC1C)",
+          noMatch: "\uC77C\uCE58 \uD56D\uBAA9 \uC5C6\uC74C"
+        },
+        toggle: {
+          showRecentOnly: "\uCD5C\uADFC \uD56D\uBAA9\uB9CC \uBCF4\uAE30",
+          showAllShown: "\uC804\uCCB4 {length}\uAC1C \uBCF4\uAE30 ({length2}\uAC1C \uD45C\uC2DC \uC911)"
+        },
+        renderEntryRow: {
+          ghost: "\uC720\uB839",
+          t: "{range} \xB7 {contentTokens}t"
+        },
+        tokenStr: {
+          tokens: "{formatTokens}\u2192{contentTokens} \uD1A0\uD070",
+          tokens2: "{contentTokens} \uD1A0\uD070"
+        },
+        renderEntryDetail: {
+          ghostNotYetInjected: "\uC720\uB839, \uC544\uC9C1 \uC8FC\uC785 \uC548 \uB428",
+          memoria: "\uBA54\uBAA8\uB9AC\uC544: {shortComment}",
+          edit: "\uD3B8\uC9D1",
+          edit2: "{kind, select, chapter {\uCC55\uD130} arc {\uC544\uD06C} volume {\uBCFC\uB968} series {\uC2DC\uB9AC\uC988} saga {\uC0AC\uAC00} library {\uB77C\uC774\uBE0C\uB7EC\uB9AC} universe {\uC720\uB2C8\uBC84\uC2A4} codex {\uCF54\uB371\uC2A4} other {{kind}}} \uD3B8\uC9D1",
+          editThisEntrySLabelAndContent: "\uB77C\uBCA8\uACFC \uB0B4\uC6A9 \uD3B8\uC9D1",
+          regenerate: "\uC7AC\uC0DD\uC131",
+          resummarizeTheSameSources: "\uAC19\uC740 \uC6D0\uBCF8\uC73C\uB85C \uB2E4\uC2DC \uC694\uC57D",
+          release: "\uD574\uC81C",
+          stripTheLumiBooksMarkerSoTheEntry: "\uC77C\uBC18 \uC6D4\uB4DC\uBD81 \uD56D\uBAA9\uC73C\uB85C \uC804\uD658",
+          delete: "\uC0AD\uC81C"
+        },
+        ok: {
+          regenerate: "\uC7AC\uC0DD\uC131\uD560\uAE4C\uC694?",
+          memoriaWillResummarizeTheSameSourcesAnd: "\uAC19\uC740 \uC6D0\uBCF8\uC744 \uB2E4\uC2DC \uC694\uC57D\uD558\uACE0, \uC131\uACF5\uD558\uBA74 \uC774 \uD56D\uBAA9\uC744 \uAD50\uCCB4\uD574\uC694.",
+          releaseToLorebook: "\uC6D4\uB4DC\uBD81 \uD56D\uBAA9\uC73C\uB85C \uD574\uC81C\uD560\uAE4C\uC694?",
+          memoriaWillHandThisEntryToYour: "[orphaned] \uC811\uB450\uC0AC\uB97C \uBD99\uC5EC \uC77C\uBC18 \uC6D4\uB4DC\uBD81 \uD56D\uBAA9\uC73C\uB85C \uBC14\uAFB8\uACE0 LumiBooks\uC5D0\uC11C \uBD84\uB9AC\uD574\uC694. {freed}",
+          delete: "\uC0AD\uC81C\uD560\uAE4C\uC694?",
+          memoriaWillDropThisGhostChapterShe: "\uC774 \uC720\uB839 \uCC55\uD130\uB97C \uC0AD\uC81C\uD574\uC694. \uD574\uB2F9 \uBA54\uC2DC\uC9C0\uB294 \uB098\uC911\uC5D0 \uB2E4\uC2DC \uC694\uC57D\uB3FC\uC694.",
+          higherTierMemoriesKeepCoveringTheseSources: "\uC0C1\uC704 \uB2E8\uACC4 \uAE30\uC5B5\uC774 \uC774 \uC6D0\uBCF8\uC744 \uACC4\uC18D \uD3EC\uD568\uD574\uC694.",
+          memoriaWillLetThoseMessagesBackInto: "\uD574\uB2F9 \uBA54\uC2DC\uC9C0\uAC00 \uD504\uB86C\uD504\uD2B8\uB85C \uB3CC\uC544\uAC00\uC694.",
+          itsChaptersReviveAndKeepCoveringThose: "\uD558\uC704 \uCC55\uD130\uAC00 \uB2E4\uC2DC \uD65C\uC131\uD654\uB418\uC5B4 \uC774 \uBA54\uC2DC\uC9C0\uB97C \uACC4\uC18D \uD3EC\uD568\uD574\uC694.",
+          itsSourceSummariesReviveAndKeepCovering: "\uC6D0\uBCF8 \uC694\uC57D\uC774 \uB2E4\uC2DC \uD65C\uC131\uD654\uB418\uC5B4 \uC774 \uBA54\uC2DC\uC9C0\uB97C \uACC4\uC18D \uD3EC\uD568\uD574\uC694.",
+          rebuildTheShelf: "\uCC45\uC7A5\uC744 \uC7AC\uAD6C\uCD95\uD560\uAE4C\uC694?",
+          memoriaWillDeleteEveryChapterArcAnd: "\uC774 \uCC44\uD305\uC758 \uC694\uC57D\uC744 \uC0AD\uC81C\uD558\uACE0 \uCC98\uC74C\uBD80\uD130 \uB2E4\uC2DC \uC694\uC57D\uD574\uC694. \uB418\uB3CC\uB9B4 \uC218 \uC5C6\uC5B4\uC694.",
+          wipeTheShelf: "\uCC45\uC7A5\uC744 \uBE44\uC6B8\uAE4C\uC694?",
+          memoriaWillDeleteEveryChapterArcAnd2: "\uC774 \uCC44\uD305\uC758 \uC694\uC57D\uC744 \uC0AD\uC81C\uD558\uACE0 \uBA54\uC2DC\uC9C0\uB97C \uD504\uB86C\uD504\uD2B8\uB85C \uB418\uB3CC\uB824\uC694. \uB418\uB3CC\uB9B4 \uC218 \uC5C6\uC5B4\uC694."
+        },
+        freed: {
+          higherTierMemoriesKeepCoveringTheseSources: "\uC0C1\uC704 \uB2E8\uACC4 \uAE30\uC5B5\uC774 \uC774 \uC6D0\uBCF8\uC744 \uACC4\uC18D \uD3EC\uD568\uD574\uC694.",
+          itsMessagesReturnToThePromptUnless: "\uC0C1\uC704 \uB2E8\uACC4\uAC00 \uC544\uC9C1 \uD3EC\uD568\uD558\uACE0 \uC788\uC9C0 \uC54A\uB2E4\uBA74 \uD574\uB2F9 \uBA54\uC2DC\uC9C0\uAC00 \uD504\uB86C\uD504\uD2B8\uB85C \uB3CC\uC544\uAC00\uC694.",
+          itsChaptersReviveAndKeepCoveringThose: "\uD558\uC704 \uCC55\uD130\uAC00 \uB2E4\uC2DC \uD65C\uC131\uD654\uB418\uC5B4 \uC774 \uBA54\uC2DC\uC9C0\uB97C \uACC4\uC18D \uD3EC\uD568\uD574\uC694.",
+          itsSourceSummariesReviveAndKeepCovering: "\uC6D0\uBCF8 \uC694\uC57D\uC774 \uB2E4\uC2DC \uD65C\uC131\uD654\uB418\uC5B4 \uC774 \uBA54\uC2DC\uC9C0\uB97C \uACC4\uC18D \uD3EC\uD568\uD574\uC694."
+        },
+        renderChapterPicker: {
+          pickUncompressedMessagesAndFileThemInto: "\uC694\uC57D\uD560 \uBA54\uC2DC\uC9C0\uB97C \uC120\uD0DD\uD558\uC138\uC694. \u2713\uB294 \uC774\uBBF8 \uC815\uB9AC\uB41C \uBA54\uC2DC\uC9C0\uC608\uC694.",
+          shiftClickOrLongPressSelectsA: "Shift+\uD074\uB9AD\uD558\uAC70\uB098 \uAE38\uAC8C \uB20C\uB7EC \uBC94\uC704 \uC120\uD0DD",
+          pickUncompressed: "\uBBF8\uC555\uCD95 \uC120\uD0DD",
+          clear: "\uC120\uD0DD \uD574\uC81C"
+        },
+        filterSel: {
+          uncompressedOnly: "\uBBF8\uC555\uCD95\uB9CC",
+          allMessages: "\uBAA8\uB4E0 \uBA54\uC2DC\uC9C0",
+          alreadyFiled: "\uC774\uBBF8 \uC815\uB9AC\uB428"
+        },
+        query: {
+          search: "\uAC80\uC0C9..."
+        },
+        compressBtn: {
+          compress: "\uC555\uCD95"
+        },
+        excludeBtn: {
+          exclude: "\uC81C\uC678",
+          toggleExclusionForTheSelectedMessagesExcluded: "\uC120\uD0DD\uD55C \uBA54\uC2DC\uC9C0\uC758 \uC555\uCD95 \uC5EC\uBD80\uB97C \uC804\uD658\uD574\uC694. \uC81C\uC678\uB41C \uBA54\uC2DC\uC9C0\uB294 \uCEE8\uD14D\uC2A4\uD2B8\uC5D0 \uB0A8\uC544\uC694."
+        },
+        syncControls: {
+          selectedTokensBefore: "{size}\uAC1C \uC120\uD0DD\uB428 (\uC555\uCD95 \uC804 ~{formatTokens} \uD1A0\uD070)"
+        },
+        buildRows: {
+          noMessagesMatch: "\uC77C\uCE58\uD558\uB294 \uBA54\uC2DC\uC9C0 \uC5C6\uC74C"
+        },
+        more: {
+          showOlder: "\uC774\uC804 \uBA54\uC2DC\uC9C0 \uBCF4\uAE30 ({older})"
+        },
+        buildMessageRow: {
+          shiftClickOrLongPressOnTouch: "Shift+\uD074\uB9AD(\uD130\uCE58\uC5D0\uC11C\uB294 \uAE38\uAC8C \uB204\uB974\uAE30)\uC73C\uB85C \uBC94\uC704 \uC120\uD0DD",
+          value: "#{indexInChat1}",
+          alreadyFiledIntoAChapterArcOr: "\uCC55\uD130, \uC544\uD06C, \uBCFC\uB968 \uC911 \uD558\uB098\uB85C \uC774\uBBF8 \uC815\uB9AC\uB428",
+          value2: "\u2713",
+          excludedNeverHiddenReplacedOrSummarized: "\uC81C\uC678\uB428 - \uC228\uAE30\uAC70\uB098 \uB300\uCCB4\uD558\uAC70\uB098 \uC694\uC57D\uD558\uC9C0 \uC54A\uC74C",
+          value3: "\u2298",
+          hiddenInChat: "\uCC44\uD305\uC5D0\uC11C \uC228\uAE40",
+          empty: "(\uBE44\uC5B4 \uC788\uC74C)"
+        },
+        renderArcPicker: {
+          memoriaHasNotFiledAnyChaptersYet: "\uC544\uC9C1 \uCC55\uD130 \uC5C6\uC74C",
+          value: "{slice}{range} - {tokenStr}",
+          bindSelected: "\uC120\uD0DD \uD56D\uBAA9 \uBB36\uAE30",
+          selectAllActive: "\uD65C\uC131 \uD56D\uBAA9 \uBAA8\uB450 \uC120\uD0DD",
+          clear: "\uC120\uD0DD \uD574\uC81C"
+        },
+        updateArcCounts: {
+          selectedTokensBefore: "{size}\uAC1C \uC120\uD0DD\uB428 (\uC555\uCD95 \uC804 ~{formatTokens} \uD1A0\uD070)"
+        },
+        range: {
+          msgs: " (\uBA54\uC2DC\uC9C0 {firstMsgIdx1}-{lastMsgIdx1})"
+        },
+        renderVolumePicker: {
+          memoriaHasNoUnboundArcsToPress: "\uBB36\uC774\uC9C0 \uC54A\uC740 \uC544\uD06C \uC5C6\uC74C",
+          aVolumeReplacesItsSourceArcsIn: "\uBCFC\uB968\uC740 \uD504\uB86C\uD504\uD2B8\uC5D0\uC11C \uC790\uC2E0\uC774 \uD3EC\uD568\uD55C \uC544\uD06C\uB97C \uB300\uCCB4\uD574\uC694. \uC790\uB3D9\uD654\uB294 \uC870\uC815 \uD0ED\uC5D0\uC11C \uC124\uC815\uD558\uC138\uC694.",
+          value: "{slice}{range} - {tokenStr}",
+          pressSelected: "\uC120\uD0DD \uD56D\uBAA9 \uD569\uCE58\uAE30",
+          selectAllActive: "\uD65C\uC131 \uD56D\uBAA9 \uBAA8\uB450 \uC120\uD0DD",
+          clear: "\uC120\uD0DD \uD574\uC81C"
+        },
+        updateCounts: {
+          selectedTokensBefore: "{size}\uAC1C \uC120\uD0DD\uB428 (\uC555\uCD95 \uC804 ~{formatTokens} \uD1A0\uD070)"
+        },
+        renderContinuity: {
+          t: "[{tag}] {slice} ({contentTokens}t)"
+        },
+        originName: {
+          anImportedLorebook: "\uAC00\uC838\uC628 \uC6D4\uB4DC\uBD81"
+        },
+        wrap: {
+          noOtherChatHasMemoriesToInherit: "\uBB3C\uB824\uBC1B\uC744 \uC694\uC57D\uC774 \uC788\uB294 \uCC44\uD305 \uC5C6\uC74C",
+          inheritedFromMemor: "{originName}\uC5D0\uC11C \uBB3C\uB824\uBC1B\uC740 \uAE30\uC5B5 {rootEntryCount, plural, other {#\uAC1C}}.",
+          detachRoot: "\uB8E8\uD2B8 \uBD84\uB9AC",
+          removeTheInheritedRootMemoriesFromThis: "\uC774 \uCC44\uD305\uC5D0\uC11C \uBB3C\uB824\uBC1B\uC740 \uB8E8\uD2B8 \uAE30\uC5B5 \uC81C\uAC70",
+          detachInheritedMemories: "\uBB3C\uB824\uBC1B\uC740 \uAE30\uC5B5\uC744 \uBD84\uB9AC\uD560\uAE4C\uC694?",
+          memoriaWillRemoveTheInheritedMemoriesFrom: "\uBB3C\uB824\uBC1B\uC740 \uAE30\uC5B5\uC744 \uC81C\uAC70\uD574\uC694. \uC774 \uCC44\uD305\uC758 \uCC55\uD130\uC640 \uC544\uD06C\uB294 \uADF8\uB300\uB85C \uB46C\uC694.",
+          thisChatAlreadyHasItsOwnMemories: "\uC774 \uCC44\uD305\uC5D0\uB294 \uC774\uBBF8 \uC694\uC57D\uC774 \uC788\uC5B4\uC694. \uC7AC\uAD6C\uCD95\uD558\uBA74 \uAE30\uC874 \uC694\uC57D\uC744 \uAD50\uCCB4\uD55C \uB4A4 \uC120\uD0DD\uD55C \uB8E8\uD2B8\uB85C \uB2E4\uC2DC \uC694\uC57D\uD574\uC694.",
+          seedThisChatWithAnotherChatS: "\uB2E4\uB978 \uCC44\uD305\uC758 \uC694\uC57D\uC744 \uBB3C\uB824\uBC1B\uC544\uC694. \uB354 \uC0C8\uB85C\uC6B4 \uC694\uC57D\uC73C\uB85C \uBB36\uC774\uAE30 \uC804\uAE4C\uC9C0 \uCCAB \uBA54\uC2DC\uC9C0 \uC55E\uC5D0 \uC8FC\uC785\uB3FC\uC694.",
+          sourceChatToInheritMemoriesFrom: "\uAE30\uC5B5\uC744 \uBB3C\uB824\uBC1B\uC744 \uC6D0\uBCF8 \uCC44\uD305",
+          pickASourceChat: "\uC6D0\uBCF8 \uCC44\uD305 \uC120\uD0DD...",
+          rebuildFrom: "\uB2E4\uB978 \uCC44\uD305\uC5D0\uC11C \uC7AC\uAD6C\uCD95...",
+          replacesThisChatSMemoriesWithThe: "\uC120\uD0DD\uD55C \uB8E8\uD2B8\uB85C \uC694\uC57D \uAD50\uCCB4",
+          rebuildFromRoot: "\uB8E8\uD2B8\uB85C \uC7AC\uAD6C\uCD95\uD560\uAE4C\uC694?",
+          memoriaWillDeleteThisChatSExisting: "\uC774 \uCC44\uD305\uC758 \uCC55\uD130\uC640 \uC544\uD06C\uB97C \uC0AD\uC81C\uD558\uACE0, \uC120\uD0DD\uD55C \uB8E8\uD2B8\uB97C \uCD94\uAC00\uD55C \uB4A4 \uB2E4\uC2DC \uC694\uC57D\uD574\uC694. \uB418\uB3CC\uB9B4 \uC218 \uC5C6\uC5B4\uC694.",
+          rebase: "\uB9AC\uBCA0\uC774\uC2A4",
+          seedThisChatWithTheChosenChat: "\uC120\uD0DD\uD55C \uCC44\uD305\uC758 \uC694\uC57D \uBB3C\uB824\uBC1B\uAE30"
+        },
+        renderMaintenance: {
+          repairToolsForWhenTheShelfAnd: "\uC6D4\uB4DC\uBD81 \uD56D\uBAA9 \uD3B8\uC9D1 \uAC19\uC740 \uBCC0\uACBD \uB4A4\uC5D0 \uBA54\uC2DC\uC9C0 \uD45C\uC2DC \uC0C1\uD0DC\uB97C \uBC14\uB85C\uC7A1\uC544\uC694.",
+          reHideCovered: "\uC815\uB9AC\uB41C \uBA54\uC2DC\uC9C0 \uB2E4\uC2DC \uC228\uAE30\uAE30",
+          reApplyTheExcludeFromContextFlag: "\uC694\uC57D\uC5D0 \uD3EC\uD568\uB41C \uBA54\uC2DC\uC9C0\uB97C \uCEE8\uD14D\uC2A4\uD2B8\uC5D0\uC11C \uC81C\uC678",
+          resyncVisibility: "\uD45C\uC2DC \uC0C1\uD0DC \uC7AC\uB3D9\uAE30\uD654",
+          unhideMessagesWhoseChapterOrArcNo: "\uBA54\uC2DC\uC9C0 \uD45C\uC2DC \uC0C1\uD0DC\uB97C \uC694\uC57D \uBC94\uC704\uC5D0 \uB9DE\uCDA4",
+          rebuildBooks: "\uCC45 \uC7AC\uAD6C\uCD95",
+          wipeTheShelfAndReSummarizeThis: "\uC694\uC57D\uC744 \uC9C0\uC6B0\uACE0 \uCC98\uC74C\uBD80\uD130 \uB2E4\uC2DC \uC694\uC57D",
+          wipeBooks: "\uCC45 \uBE44\uC6B0\uAE30",
+          deleteEveryLumiBooksEntryForThisChat: "\uC774 \uCC44\uD305\uC758 LumiBooks \uC694\uC57D \uC0AD\uC81C"
+        },
+        renderHigherPickers: {
+          bindSelected: "\uC120\uD0DD \uD56D\uBAA9 \uBB36\uAE30",
+          bindReadyBatches: "\uC900\uBE44\uB41C \uBC30\uCE58 \uBB36\uAE30",
+          activeSourceEntriesReadyBatchesUseThis: "\uD65C\uC131 \uC6D0\uBCF8 \uD56D\uBAA9 {length}\uAC1C. \uC900\uBE44\uB41C \uBC30\uCE58\uB294 \uC870\uC815 \uD0ED\uC5D0 \uC124\uC815\uD55C \uC774 \uB2E8\uACC4\uC758 \uC784\uACC4\uAC12\uACFC \uC9C0\uC5F0\uC744 \uB530\uB77C\uC694."
+        },
+        renderSummaryTransfer: {
+          exportTheActiveShelfWithRawMessage: "\uC694\uC57D\uC744 \uB0B4\uBCF4\uB0B4\uC694. \uC774 \uCC44\uD305\uC5D0 \uB9DE\uCD98 \uB0B4\uBCF4\uB0B4\uAE30\uC608\uC694.",
+          exportSummaries: "\uC694\uC57D \uB0B4\uBCF4\uB0B4\uAE30",
+          importSummaries: "\uC694\uC57D \uAC00\uC838\uC624\uAE30",
+          readingSummaryFile: "\uC694\uC57D \uD30C\uC77C \uC77D\uB294 \uC911\u2026",
+          couldNotReadThatLorebookJsonFile: "\uC6D4\uB4DC\uBD81 JSON \uD30C\uC77C\uC744 \uC77D\uC9C0 \uBABB\uD588\uC5B4\uC694"
+        },
+        entryFallback: "{kind, select, chapter {\uCC55\uD130} arc {\uC544\uD06C} volume {\uBCFC\uB968} series {\uC2DC\uB9AC\uC988} saga {\uC0AC\uAC00} library {\uB77C\uC774\uBE0C\uB7EC\uB9AC} universe {\uC720\uB2C8\uBC84\uC2A4} codex {\uCF54\uB371\uC2A4} other {{kind}}} {id}"
+      },
+      codexTab: {
+        deliverCodexFileState: {
+          couldnTSaveThisCategorySSetting: "\uC774 \uBD84\uB958\uC758 \uC124\uC815\uC744 \uC800\uC7A5\uD558\uC9C0 \uBABB\uD588\uC5B4\uC694: {error}"
+        },
+        subtabs: {
+          overview: "\uAC1C\uC694",
+          entities: "\uAC1C\uCCB4",
+          relations: "\uAD00\uACC4",
+          timeline: "\uD0C0\uC784\uB77C\uC778",
+          threads: "\uC2A4\uB808\uB4DC",
+          lore: "\uC124\uC815",
+          secrets: "\uBE44\uBC00",
+          manage: "\uAD00\uB9AC"
+        },
+        entityGroups: {
+          characters: "\uCE90\uB9AD\uD130",
+          locations: "\uC7A5\uC18C",
+          things: "\uC0AC\uBB3C"
+        },
+        staleDraftAbort: {
+          memoriaRewroteThatRecordWhileYouWere: "\uD3B8\uC9D1\uD558\uB294 \uB3D9\uC548 \uAE30\uB85D\uC774 \uBC14\uB00C\uC5C8\uC5B4\uC694. \uC0C8 \uBC84\uC804\uC5D0 \uC218\uC815 \uB0B4\uC6A9\uC744 \uB2E4\uC2DC \uC801\uC6A9\uD558\uC138\uC694."
+        },
+        empty: {
+          knowledgeCodex: "\uC9C0\uC2DD \uCF54\uB371\uC2A4"
+        },
+        renderCodexTab: {
+          openAChatToConsultTheCodex: "\uCF54\uB371\uC2A4\uB97C \uBCF4\uB824\uBA74 \uCC44\uD305\uC744 \uC5EC\uC138\uC694",
+          memoriaIsFetchingTheCodexFiles: "\uCF54\uB371\uC2A4\uB97C \uBD88\uB7EC\uC624\uB294 \uC911\u2026"
+        },
+        sec: {
+          knowledgeCodex: "\uC9C0\uC2DD \uCF54\uB371\uC2A4",
+          storyBible: "\uC2A4\uD1A0\uB9AC \uBC14\uC774\uBE14",
+          entities: "\uAC1C\uCCB4",
+          relations: "\uAD00\uACC4",
+          timeline: "\uD0C0\uC784\uB77C\uC778",
+          threads: "\uC2A4\uB808\uB4DC"
+        },
+        search: {
+          searchThisSection: "\uC774 \uC139\uC158 \uAC80\uC0C9..."
+        },
+        bibleTiles: {
+          characters: "\uCE90\uB9AD\uD130",
+          locations: "\uC7A5\uC18C",
+          things: "\uC0AC\uBB3C",
+          relations: "\uAD00\uACC4",
+          timeline: "\uD0C0\uC784\uB77C\uC778",
+          threads: "\uC2A4\uB808\uB4DC",
+          lore: "\uC124\uC815",
+          secrets: "\uBE44\uBC00"
+        },
+        bits: {
+          memoriaWillDeleteEveryRecordInFor: "\uC774 \uCC44\uD305\uC758 {label} \uAE30\uB85D\uC744 \uC0AD\uC81C\uD574\uC694."
+        },
+        purgeMessage: {
+          referencesToThemInOtherRecordsBecome: "\uB2E4\uB978 \uAE30\uB85D\uC5D0\uC11C \uC774 \uAE30\uB85D\uC744 \uAC00\uB9AC\uD0A4\uB358 \uCC38\uC870\uB294 \uC77C\uBC18 \uD14D\uC2A4\uD2B8\uAC00 \uB3FC\uC694.",
+          theResolvedThreadArchiveClearsToo: "\uD574\uACB0\uB41C \uC2A4\uB808\uB4DC \uBCF4\uAD00\uD568\uB3C4 \uBE44\uC6CC\uC694.",
+          thisCannotBeUndone: "\uB418\uB3CC\uB9B4 \uC218 \uC5C6\uC5B4\uC694."
+        },
+        tileStateLabel: {
+          injectedUpdated: "\uC8FC\uC785 \xB7 \uAC31\uC2E0",
+          notInjectedStillUpdated: "\uC8FC\uC785 \uC548 \uD568 \xB7 \uAC31\uC2E0\uC740 \uACC4\uC18D",
+          frozenNoUpdates: "\uB3D9\uACB0 \xB7 \uAC31\uC2E0 \uC5C6\uC74C"
+        },
+        renderOverview: {
+          codexOnFile: "\uCF54\uB371\uC2A4 \uC788\uC74C",
+          noCodexYet: "\uCF54\uB371\uC2A4 \uC544\uC9C1 \uC5C6\uC74C",
+          messageUnindexed: "\uC0C9\uC778 \uC548 \uB41C \uBA54\uC2DC\uC9C0 {codexBacklog}\uAC1C",
+          updated: "{codexLastRunAt} \uAC31\uC2E0",
+          theCodexAgentIsOffForThis: "\uCF54\uB371\uC2A4\uAC00 \uAEBC\uC838 \uC788\uC5B4\uC694. \uC870\uC815 > \uC124\uC815 > \uCF54\uB371\uC2A4\uC5D0\uC11C \uCF1C\uC138\uC694.",
+          memoriaIsWorkingOnTheCodexWatch: "\uCF54\uB371\uC2A4 \uC791\uC5C5\uC774 \uC9C4\uD589 \uC911\uC774\uC5D0\uC694. \uC9C4\uD589 \uC0C1\uD669\uC740 \uD648\uC5D0\uC11C \uD655\uC778\uD558\uC138\uC694.",
+          unreadableOnDiskRebuildCodexRegeneratesThem: "\uC77D\uC744 \uC218 \uC5C6\uC5B4\uC694: {join}. \u300C\uCF54\uB371\uC2A4 \uC7AC\uAD6C\uCD95\u300D\uC73C\uB85C \uB2E4\uC2DC \uC0DD\uC131\uD558\uC138\uC694.",
+          noCodexYet2: "\uC544\uC9C1 \uCF54\uB371\uC2A4\uAC00 \uC5C6\uC5B4\uC694.",
+          clearStaleTags: "\uC624\uB798\uB428 \uD45C\uC2DC \uC9C0\uC6B0\uAE30",
+          acceptTheCurrentRecordsAsUpTo: "\uD14D\uC2A4\uD2B8\uB098 \uC0C9\uC778\uC740 \uBC14\uAFB8\uC9C0 \uC54A\uACE0 \uAE30\uB85D\uC744 \uCD5C\uC2E0\uC73C\uB85C \uD45C\uC2DC\uD574\uC694. \uBAA8\uB378\uC744 \uD638\uCD9C\uD558\uC9C0 \uC54A\uC544\uC694. \uB3D9\uACB0\uB41C \uAE30\uB85D\uC740 \uAC31\uC2E0\uC744 \uB193\uCE58\uBA74 \uB2E4\uC2DC \uC624\uB798\uB428\uC774 \uB420 \uC218 \uC788\uC5B4\uC694.",
+          recordMissedUpdatesWhileFrozen: "\uAE30\uB85D {length}\uAC1C\uAC00 \uB3D9\uACB0\uB41C \uB3D9\uC548 \uAC31\uC2E0\uC744 \uB193\uCCE4\uC5B4\uC694.",
+          catchUp1Pass: "\uB530\uB77C\uC7A1\uAE30 (1\uD68C)",
+          onePassRebuildsJustTheReEnabled: "\uB2E4\uC2DC \uCF20 \uAE30\uB85D\uB9CC \uC694\uC57D\uACFC \uCD5C\uADFC \uBA54\uC2DC\uC9C0\uB85C \uC7AC\uAD6C\uCD95\uD574\uC694",
+          rebuildInstead: "\uB300\uC2E0 \uC7AC\uAD6C\uCD95",
+          wipeEverythingAndRegenerateFromTheStart: "\uCF54\uB371\uC2A4\uB97C \uBE44\uC6B0\uACE0 \uCC98\uC74C\uBD80\uD130 \uB2E4\uC2DC \uC0DD\uC131\uD574\uC694",
+          clickARecordCardToCycleIt: "\uCE74\uB4DC\uB97C \uD074\uB9AD\uD558\uBA74 \uC8FC\uC785 \u2192 \uC8FC\uC785 \uC548 \uD568 \u2192 \uB3D9\uACB0 \uC21C\uC73C\uB85C \uBC14\uB00C\uC5B4\uC694. \uAE30\uB85D\uC740 \uACC4\uC18D \uD3B8\uC9D1\uD560 \uC218 \uC788\uC5B4\uC694.",
+          shorterAndSimplerChatsOftenRunBetter: "\uB2E8\uC21C\uD55C \uCC44\uD305\uC774\uB77C\uBA74 \uBD84\uB958\uB97C \uC904\uC774\uB294 \uD3B8\uC774 \uB098\uC744 \uC218 \uC788\uC5B4\uC694.",
+          updateNow: "\uC9C0\uAE08 \uC5C5\uB370\uC774\uD2B8",
+          consumeEverythingUpToTheNewestMessage: "\uC708\uB3C4\uC6B0\uC640 \uC9C0\uC5F0\uC744 \uBB34\uC2DC\uD558\uACE0 \uCD5C\uC2E0 \uBA54\uC2DC\uC9C0\uAE4C\uC9C0 \uAC31\uC2E0\uD574\uC694. \uBC00\uB9B0 \uC791\uC5C5\uC774 \uB9CE\uC73C\uBA74 \uBE60\uB978 \uBAA8\uB4DC\uB97C \uACE0\uB97C \uC218 \uC788\uC5B4\uC694.",
+          cancel: "\uCDE8\uC18C",
+          abortTheCodexTaskInFlight: "\uC9C4\uD589 \uC911\uC778 \uCF54\uB371\uC2A4 \uC791\uC5C5 \uCDE8\uC18C",
+          tidyUp: "\uC815\uB3C8",
+          chooseATargetSizeThenCompactUp: "\uBAA8\uB378\uC744 \uCD5C\uB300 6\uBC88 \uD638\uCD9C\uD574 \uAE30\uB85D\uC744 \uBAA9\uD45C \uD06C\uAE30\uB85C \uC904\uC5EC\uC694",
+          undo: "{codexUndoReasonUpdate} \uC2E4\uD589 \uCDE8\uC18C",
+          undo2: "\uC2E4\uD589 \uCDE8\uC18C",
+          rollBackToTheSnapshotTakenBefore: "\uB9C8\uC9C0\uB9C9 \uCF54\uB371\uC2A4 \uBCC0\uACBD \uC9C1\uC804 \uC2A4\uB0C5\uC0F7\uC73C\uB85C \uB418\uB3CC\uB824\uC694",
+          nothingToUndoYetMemoriaSnapshotsThe: "\uB418\uB3CC\uB9B4 \uC2A4\uB0C5\uC0F7\uC774 \uC5C6\uC5B4\uC694"
+        },
+        ok: {
+          rebuildTheCodex: "\uCF54\uB371\uC2A4\uB97C \uC7AC\uAD6C\uCD95\uD560\uAE4C\uC694?",
+          memoriaWillEraseTheStoryBibleAnd: "\uCF54\uB371\uC2A4\uB97C \uBE44\uC6B0\uACE0 \uCC44\uD305\uC744 \uB2E4\uC2DC \uC77D\uC5B4\uC694. \uB2E4\uC74C \uB2E8\uACC4\uC5D0\uC11C \uC18D\uB3C4\uB97C \uACE0\uB974\uC138\uC694.",
+          undoTheLastCodexChange: "\uB9C8\uC9C0\uB9C9 \uCF54\uB371\uC2A4 \uBCC0\uACBD\uC744 \uC2E4\uD589 \uCDE8\uC18C\uD560\uAE4C\uC694?",
+          memoriaWillRollTheCodexBackTo: "{codexUndoAt}\uC758 {codexUndoReasonUpdate} \uC9C1\uC804 \uC2A4\uB0C5\uC0F7\uC73C\uB85C \uB418\uB3CC\uB824\uC694. \uADF8 \uB4A4\uC758 \uBCC0\uACBD \uC0AC\uD56D\uC740 \uC0AC\uB77C\uC838\uC694.",
+          importACodexFile: "\uCF54\uB371\uC2A4 \uD30C\uC77C\uC744 \uAC00\uC838\uC62C\uAE4C\uC694?",
+          memoriaWillReplaceEveryCodexFileIn: "\uC774 \uCC44\uD305\uC758 \uCF54\uB371\uC2A4\uB97C \uAC00\uC838\uC628 \uD30C\uC77C\uB85C \uBC14\uAFD4\uC694. \uB418\uB3CC\uB9B4 \uC218 \uC5C6\uC5B4\uC694.",
+          wipeTheCodex: "\uCF54\uB371\uC2A4\uB97C \uBE44\uC6B8\uAE4C\uC694?",
+          memoriaWillEraseEveryCodexRecordFor: "\uC774 \uCC44\uD305\uC758 \uCF54\uB371\uC2A4\uB97C \uBE44\uC6CC\uC694. \uB2E4\uC74C \uAC31\uC2E0\uC740 \uCC98\uC74C\uBD80\uD130 \uC2DC\uC791\uD574\uC694. \uB418\uB3CC\uB9B4 \uC218 \uC5C6\uC5B4\uC694.",
+          rebuildThisRecord: "\uC774 \uAE30\uB85D\uC744 \uC7AC\uAD6C\uCD95\uD560\uAE4C\uC694?",
+          memoriaWillRegenerateEveryRecordInFrom: "\uC774\uC57C\uAE30 \uC804\uCCB4\uB97C \uD55C \uBC88\uC5D0 \uC77D\uC5B4 {label}\uC744(\uB97C) \uC7AC\uC0DD\uC131\uD574\uC694. \uC131\uACF5\uD558\uBA74 \uB0B4\uC6A9\uC744 \uBC14\uAFB8\uACE0, \uC7A0\uAE34 \uD56D\uBAA9\uC740 \uADF8\uB300\uB85C \uB46C\uC694.",
+          purgeThisRecord: "\uC774 \uAE30\uB85D\uC744 \uC601\uAD6C \uC0AD\uC81C\uD560\uAE4C\uC694?",
+          deleteEntity: "\uAC1C\uCCB4\uB97C \uC0AD\uC81C\uD560\uAE4C\uC694?",
+          memoriaWillRemoveFromTheCodexReferences: '"{str}"\uC744(\uB97C) \uC0AD\uC81C\uD574\uC694. \uC774 \uAC1C\uCCB4\uB97C \uAC00\uB9AC\uD0A4\uB358 \uCC38\uC870\uB294 \uC77C\uBC18 \uD14D\uC2A4\uD2B8\uAC00 \uB3FC\uC694.',
+          delete: "\uC0AD\uC81C\uD560\uAE4C\uC694?"
+        },
+        renderManage: {
+          noOtherChatHasACodexTo: "\uBCF5\uC0AC\uD560 \uCF54\uB371\uC2A4\uAC00 \uC788\uB294 \uCC44\uD305\uC774 \uC5C6\uC5B4\uC694",
+          carriedOverFromMemoriaIndexesThisChat: "{codexRootOriginName}\uC5D0\uC11C \uC774\uC5B4\uBC1B\uC558\uC5B4\uC694. \uC0C9\uC778\uC740 \uC774 \uCC44\uD305\uC758 \uCC98\uC74C\uBD80\uD130 \uC2DC\uC791\uD574\uC694.",
+          detachCodex: "\uCF54\uB371\uC2A4 \uBD84\uB9AC",
+          eraseTheCarriedOverCodexFromThis: "\uC774 \uCC44\uD305\uC5D0\uC11C \uC774\uC5B4\uBC1B\uC740 \uCF54\uB371\uC2A4\uB97C \uC9C0\uC6CC\uC694",
+          detachTheCarriedOverCodex: "\uC774\uC5B4\uBC1B\uC740 \uCF54\uB371\uC2A4\uB97C \uBD84\uB9AC\uD560\uAE4C\uC694?",
+          codexRecordsMergeAsMemoriaWorksSo: "\uBCF5\uC0AC\uD55C \uAE30\uB85D\uC740 \uC774\uBBF8 \uC774 \uCC44\uD305\uC758 \uCF54\uB371\uC2A4\uC640 \uD569\uCCD0\uC84C\uC5B4\uC694. \uBD84\uB9AC\uD558\uBA74 \uCF54\uB371\uC2A4\uAC00 \uBE44\uC6CC\uC9C0\uACE0 \uB2E4\uC74C \uAC31\uC2E0\uC740 \uCC98\uC74C\uBD80\uD130 \uC2DC\uC791\uD574\uC694. \uB418\uB3CC\uB9B4 \uC218 \uC5C6\uC5B4\uC694.",
+          continuingAnEarlierChatCarryItsStory: "\uC774\uC804 \uCC44\uD305\uC744 \uC774\uC5B4 \uAC04\uB2E4\uBA74 \uADF8 \uCF54\uB371\uC2A4\uB97C \uBCF5\uC0AC\uD574 \uC624\uC138\uC694.",
+          sourceChatToCarryTheCodexFrom: "\uCF54\uB371\uC2A4\uB97C \uC774\uC5B4\uBC1B\uC744 \uC6D0\uBCF8 \uCC44\uD305",
+          pickASourceChat: "\uC6D0\uBCF8 \uCC44\uD305 \uC120\uD0DD...",
+          carryCodexOver: "\uCF54\uB371\uC2A4 \uC774\uC5B4\uBC1B\uAE30",
+          copyAnotherChatSCodexIntoThis: "\uB2E4\uB978 \uCC44\uD305\uC758 \uCF54\uB371\uC2A4\uB97C \uC774 \uCC44\uD305\uC73C\uB85C \uBCF5\uC0AC\uD574\uC694",
+          carryTheCodexOver: "\uCF54\uB371\uC2A4\uB97C \uC774\uC5B4\uBC1B\uC744\uAE4C\uC694?",
+          memoriaWillCopyTheChosenChatS: "\uC120\uD0DD\uD55C \uCC44\uD305\uC758 \uCF54\uB371\uC2A4\uB97C \uBCF5\uC0AC\uD574\uC694. \uC0C9\uC778\uC740 \uC774 \uCC44\uD305\uC758 \uCC98\uC74C\uBD80\uD130 \uC2DC\uC791\uD574\uC694.",
+          exportWritesEveryCodexFileAndIts: "\uB0B4\uBCF4\uB0B4\uAE30\uB294 \uCF54\uB371\uC2A4 \uD30C\uC77C\uACFC \uC8FC\uC785 \uC124\uC815\uC744 JSON\uC73C\uB85C \uC800\uC7A5\uD574\uC694. \uAC00\uC838\uC624\uAE30\uB294 \uC774\uB97C \uB36E\uC5B4\uC368\uC694.",
+          export: "\uB0B4\uBCF4\uB0B4\uAE30",
+          downloadEveryCodexFilePlusItsInject: "\uCF54\uB371\uC2A4 \uD30C\uC77C\uACFC \uC8FC\uC785 \uC124\uC815\uC744 JSON\uC73C\uB85C \uB0B4\uB824\uBC1B\uC544\uC694",
+          import: "\uAC00\uC838\uC624\uAE30",
+          replaceThisChatSCodexFromAn: "\uB0B4\uBCF4\uB0B8 \uD30C\uC77C\uB85C \uC774 \uCC44\uD305\uC758 \uCF54\uB371\uC2A4\uB97C \uBC14\uAFD4\uC694",
+          rebuildReReadsTheWholeChatFrom: "\uC7AC\uAD6C\uCD95\uC740 \uCF54\uB371\uC2A4\uB97C \uBE44\uC6B0\uACE0 \uCC44\uD305\uC744 \uB2E4\uC2DC \uC77D\uC5B4\uC694. \uBE44\uC6B0\uAE30\uB294 \uB2E4\uC74C \uAC31\uC2E0 \uB54C\uAE4C\uC9C0 \uCF54\uB371\uC2A4\uB97C \uBE48 \uCC44\uB85C \uB46C\uC694.",
+          rebuildCodex: "\uCF54\uB371\uC2A4 \uC7AC\uAD6C\uCD95",
+          wipeAndRegenerateTheWholeStoryBible: "\uCF54\uB371\uC2A4\uB97C \uBE44\uC6B0\uACE0 \uCC98\uC74C\uBD80\uD130 \uB2E4\uC2DC \uC0DD\uC131\uD574\uC694",
+          wipeCodex: "\uCF54\uB371\uC2A4 \uBE44\uC6B0\uAE30"
+        },
+        files: {
+          codexFiles: "\uCF54\uB371\uC2A4 \uD30C\uC77C"
+        },
+        danger: {
+          startOver: "\uCC98\uC74C\uBD80\uD130 \uB2E4\uC2DC"
+        },
+        restoreBackup: {
+          memoriaCouldnTReadThatBackupFile: "\uBC31\uC5C5 \uD30C\uC77C\uC744 \uC77D\uC9C0 \uBABB\uD588\uC5B4\uC694"
+        },
+        renderBibleTile: {
+          clickToCycle: "{tileStateLabelSt}{choice, select, yes { \xB7 \uB3D9\uACB0\uB41C \uB3D9\uC548 \uAC31\uC2E0\uC744 \uB193\uCE68} other {}}{choice2, select, yes { \xB7 \uB530\uB77C\uC7A1\uAE30 \uB300\uAE30 \uC911} other {}} - \uD074\uB9AD\uD574\uC11C \uC804\uD658",
+          tokens: "{choice, select, yes {~} other {}}{formatTokens} \uD1A0\uD070",
+          stale: " \xB7 \uC624\uB798\uB428",
+          needsCatchUp: " \xB7 \uB530\uB77C\uC7A1\uAE30 \uD544\uC694",
+          clickToCycle2: "{tileStateLabelSt} - \uD074\uB9AD\uD574\uC11C \uC804\uD658"
+        },
+        tidyBtn: {
+          cancel: "\uCDE8\uC18C",
+          tidy: "\uC815\uB3C8",
+          abortTheCodexTaskInFlight: "\uC9C4\uD589 \uC911\uC778 \uCF54\uB371\uC2A4 \uC791\uC5C5 \uCDE8\uC18C",
+          chooseATargetSizeForThisRecord: "\uC774 \uAE30\uB85D\uC758 \uBAA9\uD45C \uD06C\uAE30\uB97C \uACE8\uB77C\uC694"
+        },
+        rebuildBtn: {
+          rebuild: "\uC7AC\uAD6C\uCD95",
+          regenerateJustThisCategoryFromTheWhole: "\uC774\uC57C\uAE30 \uC804\uCCB4\uB97C \uD55C \uBC88\uC5D0 \uC77D\uC5B4 \uC774 \uBD84\uB958\uB9CC \uC7AC\uC0DD\uC131\uD574\uC694"
+        },
+        purgeBtn: {
+          purge: "\uC601\uAD6C \uC0AD\uC81C",
+          deleteEveryRecordInThisCategoryAt: "\uC774 \uBD84\uB958\uC758 \uAE30\uB85D\uC744 \uC0AD\uC81C\uD574\uC694"
+        },
+        sheetStateTitle: {
+          memoriaMaintainsThisSheetClickToLock: "\uC790\uB3D9\uC73C\uB85C \uAC31\uC2E0\uB3FC\uC694. \uD074\uB9AD\uD558\uBA74 \uB3D9\uACB0\uD574\uC694.",
+          frozenAndStillInjectedClickToHold: "\uB3D9\uACB0\uB410\uACE0 \uC8FC\uC785\uC740 \uB3FC\uC694. \uD074\uB9AD\uD558\uBA74 \uD504\uB86C\uD504\uD2B8\uC5D0\uC11C \uBE7C\uC694.",
+          frozenAndHeldOutOfThePrompt: "\uB3D9\uACB0\uB410\uACE0 \uD504\uB86C\uD504\uD2B8\uC5D0\uC11C \uBE60\uC838 \uC788\uC5B4\uC694. \uD074\uB9AD\uD558\uBA74 \uB2E4\uC2DC \uAC31\uC2E0\uD574\uC694."
+        },
+        sheetStateLabel: {
+          state: "{locked, select, yes {\uD83D\uDD12} other {\uD83D\uDD13}} {injected, select, yes {\uC8FC\uC785} other {\uC8FC\uC785 \uC548 \uD568}} \xB7 {locked, select, yes {\uB3D9\uACB0} other {\uAC31\uC2E0}}"
+        },
+        renderEntities: {
+          clickANameToOpenItsSheet: "\uC774\uB984\uC744 \uD074\uB9AD\uD558\uBA74 \uD3B8\uC9D1\uD574\uC694.",
+          of: "{title} \xB7 {length2}\uAC1C \uC911 {length}\uAC1C",
+          value: "+ {singular, select, character {\uCE90\uB9AD\uD130} location {\uC7A5\uC18C} thing {\uC0AC\uBB3C} other {{singular}}}",
+          noEntitiesRecordedYetAddOneOr: "\uC544\uC9C1 \uAC1C\uCCB4\uAC00 \uC5C6\uC5B4\uC694. \uAC1C\uCCB4\uB97C \uCD94\uAC00\uD558\uAC70\uB098 \uCF54\uB371\uC2A4\uB97C \uAC31\uC2E0\uD558\uC138\uC694."
+        },
+        input: {
+          name: "\uC774\uB984...",
+          true: "\uCC38",
+          false: "\uAC70\uC9D3"
+        },
+        renderAddForm: {
+          create: "\uB9CC\uB4E4\uAE30",
+          cancel: "\uCDE8\uC18C"
+        },
+        renderEntityCard: {
+          notInjected: "\uC8FC\uC785 \uC548 \uD568",
+          locked: "\uC7A0\uAE40",
+          editSheet: "\uC2DC\uD2B8 \uD3B8\uC9D1",
+          delete: "\uC0AD\uC81C"
+        },
+        addKv: {
+          lockedFieldMemoriaCanNeverChangeIt: "\uBAA8\uB378\uC774 \uC218\uC815\uD558\uC9C0 \uBABB\uD558\uAC8C \uC7A0\uAE40"
+        },
+        renderEntityForm: {
+          newEntity: "\uC0C8 \uAC1C\uCCB4",
+          cancel: "\uCDE8\uC18C"
+        },
+        sync: {
+          locked: "\uD83D\uDD12 \uC7A0\uAE40",
+          lockedMemoriaReadsALockMarkerInstead: "\uBAA8\uB378\uC774 \uC218\uC815\uD558\uC9C0 \uBABB\uD558\uAC8C \uC7A0\uACA8 \uC788\uC5B4\uC694. \uD074\uB9AD\uD558\uBA74 \uC7A0\uAE08\uC744 \uD480\uC5B4\uC694.",
+          lockThisFieldSoOnlyYouCan: "\uBAA8\uB378\uC774 \uC218\uC815\uD558\uC9C0 \uBABB\uD558\uAC8C \uC7A0\uADF8\uAE30"
+        },
+        nameField: {
+          name: "\uC774\uB984"
+        },
+        w: {
+          commaSeparated: "{f} (\uC27C\uD45C\uB85C \uAD6C\uBD84)"
+        },
+        label: {
+          onePerLine: "{key} (\uD55C \uC904\uC5D0 \uD558\uB098\uC529)"
+        },
+        saveBtn: {
+          saving: "\uC800\uC7A5 \uC911...",
+          save: "\uC800\uC7A5",
+          theEntityNeedsAName: "\uAC1C\uCCB4 \uC774\uB984\uC744 \uC785\uB825\uD558\uC138\uC694"
+        },
+        renderRecordForm: {
+          saving: "\uC800\uC7A5 \uC911...",
+          save: "\uC800\uC7A5",
+          cancel: "\uCDE8\uC18C"
+        },
+        recordItemActions: {
+          edit: "\uD3B8\uC9D1",
+          delete: "\uC0AD\uC81C"
+        },
+        saveRelationDraft: {
+          theGroupNeedsAtLeastTwoMembers: "\uADF8\uB8F9\uC5D0\uB294 \uAD6C\uC131\uC6D0 2\uBA85 \uC774\uC0C1\uACFC \uC885\uB958, \uC0C1\uD0DC\uAC00 \uD544\uC694\uD574\uC694",
+          theRelationNeedsFromToAKind: "\uAD00\uACC4\uC5D0\uB294 \uC2DC\uC791, \uB300\uC0C1, \uC885\uB958, \uC0C1\uD0DC\uAC00 \uD544\uC694\uD574\uC694"
+        },
+        specs: {
+          type: "\uC720\uD615",
+          pairAB: "\uC30D (a \u2192 b)",
+          group: "\uADF8\uB8F9",
+          membersCommaSeparatedRefs: "\uAD6C\uC131\uC6D0 (\uC27C\uD45C\uB85C \uAD6C\uBD84\uD55C \uCC38\uC870)",
+          charEliasCharWren: "char:elias, char:wren",
+          fromA: "\uC2DC\uC791 (a)",
+          charElias: "char:elias",
+          toB: "\uB300\uC0C1 (b)",
+          charWren: "char:wren",
+          kind: "\uC885\uB958",
+          bondOwnsAtRival: "bond, owns, at, rival...",
+          state: "\uC0C1\uD0DC",
+          lovesHerHidesIt: "\uADF8\uB140\uB97C \uC0AC\uB791\uD558\uC9C0\uB9CC \uC228\uAE34\uB2E4",
+          historyOnePerLine: "\uC774\uB825 (\uD55C \uC904\uC5D0 \uD558\uB098\uC529)",
+          day12SheSawHimKill: "12\uC77C\uC9F8: \uADF8\uB140\uAC00 \uADF8\uC758 \uC0B4\uC778\uC744 \uBAA9\uACA9\uD568"
+        },
+        form: {
+          editRelation: "\uAD00\uACC4 \uD3B8\uC9D1",
+          newRelation: "\uC0C8 \uAD00\uACC4"
+        },
+        renderRelations: {
+          list: "\uBAA9\uB85D",
+          graph: "\uADF8\uB798\uD504",
+          relation: "+ \uAD00\uACC4",
+          noRelationsRecordedYetAddOneOr: "\uC544\uC9C1 \uAD00\uACC4\uAC00 \uC5C6\uC5B4\uC694. \uAD00\uACC4\uB97C \uCD94\uAC00\uD558\uAC70\uB098 \uCF54\uB371\uC2A4\uB97C \uAC31\uC2E0\uD558\uC138\uC694.",
+          theRelationsTableIsOffForThis: "\uAD00\uACC4 \uD45C\uAC00 \uAEBC\uC838 \uC788\uC5B4\uC694. \uAD00\uACC4\uB294 \uAC1C\uCCB4\uC758 \uC720\uB300 \uD544\uB4DC\uC5D0 \uC800\uC7A5\uB3FC\uC694.",
+          memoriaWillRemoveThisRelationFromThe: "\uC774 \uAD00\uACC4\uB97C \uC0AD\uC81C\uD574\uC694.",
+          noRelationMatchesTheSearch: "\uAC80\uC0C9\uACFC \uC77C\uCE58\uD558\uB294 \uAD00\uACC4\uAC00 \uC5C6\uC5B4\uC694"
+        },
+        arrowSpan: {
+          value: "\u2192"
+        },
+        renderRelationGraph: {
+          noRelationMatchesTheSearch: "\uAC80\uC0C9\uACFC \uC77C\uCE58\uD558\uB294 \uAD00\uACC4\uAC00 \uC5C6\uC5B4\uC694",
+          noRelationsToChartYet: "\uADF8\uB798\uD504\uB85C \uADF8\uB9B4 \uAD00\uACC4\uAC00 \uC544\uC9C1 \uC5C6\uC5B4\uC694",
+          group: " group",
+          value: "{name} ({id})",
+          zoomOut: "\uCD95\uC18C",
+          zoomIn: "\uD655\uB300",
+          fit: "\uB9DE\uCDA4",
+          frameTheWholeWeb: "\uADF8\uB798\uD504 \uC804\uCCB4 \uBCF4\uAE30",
+          tapAnEdgeForTheStoryTap: "\uC5F0\uACB0\uC120\uC744 \uD0ED\uD558\uBA74 \uC790\uC138\uD788, \uB9C8\uB984\uBAA8\uB97C \uD0ED\uD558\uBA74 \uC2DC\uD2B8\uB97C \uBD10\uC694. \uB9C8\uB984\uBAA8\uB97C \uB04C\uC5B4 \uBC30\uCE58\uB97C \uBC14\uAFB8\uACE0, \uC190\uAC00\uB77D\uC744 \uC624\uBBC0\uB9AC\uAC70\uB098 \uB04C\uC5B4\uC11C \uD654\uBA74\uC744 \uC6C0\uC9C1\uC5EC\uC694."
+        },
+        entries: {
+          character: "\uCE90\uB9AD\uD130",
+          location: "\uC7A5\uC18C",
+          thing: "\uC0AC\uBB3C"
+        },
+        saveEventDraft: {
+          theEventNeedsAWhenAndWhat: "\uC0AC\uAC74\uC774 \uC5B8\uC81C \uC77C\uC5B4\uB0AC\uACE0 \uBB34\uC2A8 \uC77C\uC774\uC5C8\uB294\uC9C0 \uC785\uB825\uD558\uC138\uC694"
+        },
+        eventSpecs: {
+          when: "\uC5B8\uC81C",
+          day12: "12\uC77C\uC9F8",
+          event: "\uC0AC\uAC74",
+          maraSeesEliasKillTheDuke: "\uB9C8\uB77C\uAC00 \uC5D8\uB9AC\uC544\uC2A4\uC758 \uACF5\uC791 \uC0B4\uD574\uB97C \uBAA9\uACA9\uD55C\uB2E4",
+          participantsCommaSeparatedRefs: "\uCC38\uC5EC\uC790 (\uC27C\uD45C\uB85C \uAD6C\uBD84\uD55C \uCC38\uC870)",
+          where: "\uC7A5\uC18C",
+          locAshfordManor: "loc:ashford_manor",
+          causes: "\uACB0\uACFC",
+          sheFleesTheCity: "\uADF8\uB140\uAC00 \uB3C4\uC2DC\uB97C \uB5A0\uB098 \uB2EC\uC544\uB09C\uB2E4"
+        },
+        renderTimeline: {
+          event: "+ \uC0AC\uAC74",
+          newEvent: "\uC0C8 \uC0AC\uAC74",
+          noEventsRecordedYet: "\uC544\uC9C1 \uAE30\uB85D\uB41C \uC0AC\uAC74\uC774 \uC5C6\uC5B4\uC694",
+          noEventMatchesTheSearch: "\uAC80\uC0C9\uACFC \uC77C\uCE58\uD558\uB294 \uC0AC\uAC74\uC774 \uC5C6\uC5B4\uC694",
+          editEvent: "\uC0AC\uAC74 \uD3B8\uC9D1",
+          clickForEditAndDelete: "\uD3B8\uC9D1 \uB610\uB294 \uC0AD\uC81C",
+          showRecentOnly: "\uCD5C\uADFC \uAC83\uB9CC \uBCF4\uAE30",
+          showEarlier: "\uC774\uC804 \uC0AC\uAC74 \uBCF4\uAE30 ({lengthTimelineRecent})"
+        },
+        actions: {
+          memoriaWillRemoveThisEventFromThe: "\uC774 \uC0AC\uAC74\uC744 \uC0AD\uC81C\uD574\uC694.",
+          memoriaWillRemoveThisTopicAndIts: "\uC774 \uC8FC\uC81C\uC640 \uC0AC\uC2E4\uB4E4\uC744 \uC0AD\uC81C\uD574\uC694.",
+          memoriaWillRemoveThisSecretFromThe: "\uC774 \uBE44\uBC00\uC744 \uC0AD\uC81C\uD574\uC694."
+        },
+        threadSpecs: {
+          name: "\uC774\uB984",
+          theStolenCrown: "\uB3C4\uB09C\uB2F9\uD55C \uC655\uAD00",
+          status: "\uC0C1\uD0DC",
+          open: "\uC9C4\uD589 \uC911",
+          stalled: "\uC815\uCCB4",
+          resolved: "\uD574\uACB0",
+          abandoned: "\uD3EC\uAE30",
+          summary: "\uC694\uC57D",
+          latestDevelopment: "\uCD5C\uADFC \uC804\uAC1C",
+          plantedDetailsOnePerLine: "\uC2EC\uC5B4 \uB454 \uBCF5\uC120 (\uD55C \uC904\uC5D0 \uD558\uB098\uC529)"
+        },
+        saveThreadDraft: {
+          theThreadNeedsANameAndA: "\uC2A4\uB808\uB4DC \uC774\uB984\uACFC \uC694\uC57D\uC744 \uC785\uB825\uD558\uC138\uC694"
+        },
+        renderThreads: {
+          thread: "+ \uC2A4\uB808\uB4DC",
+          editSeeds: "\uBCF5\uC120 \uD3B8\uC9D1",
+          newThread: "\uC0C8 \uC2A4\uB808\uB4DC",
+          seedsOnePerLine: "\uBCF5\uC120 (\uD55C \uC904\uC5D0 \uD558\uB098\uC529)",
+          noOpenStorylinesTrackedYet: "\uC9C4\uD589 \uC911\uC778 \uC2A4\uB808\uB4DC\uAC00 \uC5C6\uC5B4\uC694",
+          resolvedThreadsStayHereAsYourArchive: "\uD574\uACB0\uB41C \uC2A4\uB808\uB4DC\uB294 \uBCF4\uAD00\uB418\uACE0 \uD504\uB86C\uD504\uD2B8\uC5D0\uC11C \uBE60\uC838\uC694.",
+          editThread: "\uC2A4\uB808\uB4DC \uD3B8\uC9D1",
+          latest: "\uCD5C\uADFC: {latest}",
+          planted: "\u25C6 \uC2EC\uC5B4 \uB454 \uBCF5\uC120: {p}",
+          memoriaWillRemoveThisThreadFromThe: "\uC774 \uC2A4\uB808\uB4DC\uB97C \uC0AD\uC81C\uD574\uC694.",
+          noThreadMatchesTheSearch: "\uAC80\uC0C9\uACFC \uC77C\uCE58\uD558\uB294 \uC2A4\uB808\uB4DC\uAC00 \uC5C6\uC5B4\uC694",
+          seeds: "\uBCF5\uC120 ({length})"
+        },
+        saveWorldDraft: {
+          theTopicNeedsANameAndAt: "\uC8FC\uC81C \uC774\uB984\uACFC \uC0AC\uC2E4\uC744 \uC785\uB825\uD558\uC138\uC694"
+        },
+        saveKnowledgeDraft: {
+          theSecretNeedsItsFact: "\uBE44\uBC00\uC758 \uC0AC\uC2E4\uC744 \uC785\uB825\uD558\uC138\uC694"
+        },
+        worldSpecs: {
+          topic: "\uC8FC\uC81C",
+          magic: "\uB9C8\uBC95",
+          factsOnePerLine: "\uC0AC\uC2E4 (\uD55C \uC904\uC5D0 \uD558\uB098\uC529)",
+          bloodMagicCostsMemories: "\uD53C\uC758 \uB9C8\uBC95\uC740 \uAE30\uC5B5\uC744 \uB300\uAC00\uB85C \uCE58\uB978\uB2E4",
+          keywordsCommaSeparatedRetrievalTags: "\uD0A4\uC6CC\uB4DC (\uC27C\uD45C\uB85C \uAD6C\uBD84, \uAC80\uC0C9\uC6A9 \uD0DC\uADF8)",
+          ritualMemoriesBloodMagic: "\uC758\uC2DD, \uAE30\uC5B5, \uD53C\uC758 \uB9C8\uBC95"
+        },
+        knowledgeSpecs: {
+          fact: "\uC0AC\uC2E4",
+          eliasKilledTheDuke: "\uC5D8\uB9AC\uC544\uC2A4\uAC00 \uACF5\uC791\uC744 \uC8FD\uC600\uB2E4",
+          knownByCommaSeparatedRefs: "\uC544\uB294 \uC0AC\uB78C (\uC27C\uD45C\uB85C \uAD6C\uBD84\uD55C \uCC38\uC870)",
+          hiddenFromCommaSeparatedRefs: "\uBAA8\uB974\uAC8C \uD560 \uC0AC\uB78C (\uC27C\uD45C\uB85C \uAD6C\uBD84\uD55C \uCC38\uC870)",
+          falseBeliefsOnePerLineWhoBelief: '\uC798\uBABB\uB41C \uBBFF\uC74C (\uD55C \uC904\uC5D0 \uD558\uB098\uC529, "\uB204\uAC00 => \uBBFF\uC74C")',
+          charCaptainBanditsDidIt: "char:captain => \uC0B0\uC801\uB4E4 \uC9D3\uC774\uB2E4",
+          note: "\uBA54\uBAA8",
+          keywordsCommaSeparatedRetrievalTags: "\uD0A4\uC6CC\uB4DC (\uC27C\uD45C\uB85C \uAD6C\uBD84, \uAC80\uC0C9\uC6A9 \uD0DC\uADF8)",
+          murderDaggerDuke: "\uC0B4\uC778, \uB2E8\uAC80, \uACF5\uC791"
+        },
+        world: {
+          worldRules: "\uC138\uACC4 \uADDC\uCE59"
+        },
+        renderLore: {
+          topic: "+ \uC8FC\uC81C",
+          newTopic: "\uC0C8 \uC8FC\uC81C",
+          noWorldLoreRecordedYet: "\uC544\uC9C1 \uAE30\uB85D\uB41C \uC138\uACC4 \uC124\uC815\uC774 \uC5C6\uC5B4\uC694",
+          noTopicMatchesTheSearch: "\uAC80\uC0C9\uACFC \uC77C\uCE58\uD558\uB294 \uC8FC\uC81C\uAC00 \uC5C6\uC5B4\uC694",
+          editTopic: "\uC8FC\uC81C \uD3B8\uC9D1",
+          clickForEditAndDelete: "\uD3B8\uC9D1 \uB610\uB294 \uC0AD\uC81C",
+          keywords: "\uD0A4\uC6CC\uB4DC: {join}"
+        },
+        secrets: {
+          whoKnowsWhat: "\uB204\uAC00 \uBB34\uC5C7\uC744 \uC544\uB294\uAC00"
+        },
+        renderSecrets: {
+          secret: "+ \uBE44\uBC00",
+          newSecret: "\uC0C8 \uBE44\uBC00",
+          noSecretsOrAsymmetricKnowledgeTrackedYet: "\uAE30\uB85D\uB41C \uBE44\uBC00\uC774 \uC5C6\uC5B4\uC694",
+          noSecretMatchesTheSearch: "\uAC80\uC0C9\uACFC \uC77C\uCE58\uD558\uB294 \uBE44\uBC00\uC774 \uC5C6\uC5B4\uC694",
+          editSecret: "\uBE44\uBC00 \uD3B8\uC9D1",
+          clickForEditAndDelete: "\uD3B8\uC9D1 \uB610\uB294 \uC0AD\uC81C",
+          knows: "\uC544\uB294 \uC0AC\uB78C: {nameOf}",
+          hidden: "\uBAA8\uB974\uB294 \uC0AC\uB78C: {nameOf}",
+          wronglyBelieves: "{nameOf}\uC758 \uC798\uBABB\uB41C \uBBFF\uC74C: {str}",
+          keywords: "\uD0A4\uC6CC\uB4DC: {join}"
+        },
+        entityFields: {
+          kind: "\uC885\uB958",
+          role: "\uC5ED\uD560",
+          significance: "\uC911\uC694\uB3C4",
+          appearance: "\uC678\uBAA8",
+          description: "\uC124\uBA85",
+          notes: "\uBA54\uBAA8",
+          aliases: "\uBCC4\uCE6D",
+          traits: "\uD2B9\uC131",
+          goals: "\uBAA9\uD45C",
+          ties: "\uC720\uB300",
+          keywords: "\uD0A4\uC6CC\uB4DC"
+        },
+        threadStatus: "{status, select, open {\uC9C4\uD589 \uC911} stalled {\uC815\uCCB4} resolved {\uD574\uACB0} abandoned {\uD3EC\uAE30} other {{status}}}"
+      },
+      homeTab: {
+        buildStreamPanel: {
+          liveFromMemoriaSDesk: "\uC2E4\uC2DC\uAC04 \uCD9C\uB825",
+          value: "\u2715",
+          closeTheLiveView: "\uC2E4\uC2DC\uAC04 \uBCF4\uAE30 \uB2EB\uAE30",
+          waitingForTheFirstTokensFromThe: "\uBAA8\uB378 \uCD9C\uB825\uC744 \uAE30\uB2E4\uB9AC\uB294 \uC911\u2026"
+        },
+        lessonReminder: {
+          takeALesson: "\uC218\uC5C5 \uB4E3\uAE30"
+        },
+        renderHomeTab: {
+          myLessonIsStillWaitingForYou: "\uC81C \uC218\uC5C5\uC774 \uC544\uC9C1 \uAE30\uB2E4\uB9AC\uACE0 \uC788\uC5B4\uC694",
+          theCodexLessonIsStillWaitingFor: "\uCF54\uB371\uC2A4 \uC218\uC5C5\uC774 \uC544\uC9C1 \uAE30\uB2E4\uB9AC\uACE0 \uC788\uC5B4\uC694",
+          openAChatAndMemoriaWillSet: "LumiBooks\uB97C \uC4F0\uB824\uBA74 \uCC44\uD305\uC744 \uC5EC\uC138\uC694"
+        },
+        empty: {
+          overview: "\uAC1C\uC694",
+          noBookYet: "\uC544\uC9C1 \uCC45 \uC5C6\uC74C"
+        },
+        hostGroups: {
+          promptBlocks: "\uD504\uB86C\uD504\uD2B8 \uBE14\uB85D",
+          chatHistory: "\uCC44\uD305 \uAE30\uB85D",
+          longTermMemory: "\uC7A5\uAE30 \uAE30\uC5B5",
+          worldInfo: "\uC6D4\uB4DC \uC778\uD3EC",
+          sidecar: "\uC0AC\uC774\uB4DC\uCE74",
+          extensions: "\uD655\uC7A5 \uAE30\uB2A5",
+          system: "\uC2DC\uC2A4\uD15C"
+        },
+        groups: {
+          promptBlocks: "\uD504\uB86C\uD504\uD2B8 \uBE14\uB85D",
+          chatHistory: "\uCC44\uD305 \uAE30\uB85D",
+          worldInfo: "\uC6D4\uB4DC \uC778\uD3EC",
+          extensions: "\uD655\uC7A5 \uAE30\uB2A5"
+        },
+        renderLessonPromptPanel: {
+          tokens: "{label} \xB7 {tokens} \uD1A0\uD070",
+          promptVsContextWindow: "\uCEE8\uD14D\uC2A4\uD2B8 \uC708\uB3C4\uC6B0 \uB300\uBE44 \uD504\uB86C\uD504\uD2B8",
+          value: "{formatTokens} / {formatTokens2} ({round}%)",
+          simulatedExampleTheLivePanelReadsYour: "\uBAA8\uC758 \uC608\uC2DC\uC608\uC694. \uC2E4\uC81C \uD328\uB110\uC740 \uD638\uC2A4\uD2B8\uC758 \uC2E4\uC81C \uD504\uB86C\uD504\uD2B8\uB97C \uC77D\uC5B4\uC694."
+        },
+        sec: {
+          thePrompt: "\uD504\uB86C\uD504\uD2B8",
+          overview: "\uAC1C\uC694",
+          pendingPreviews: "\uB300\uAE30 \uC911\uC778 \uBBF8\uB9AC\uBCF4\uAE30 ({length})",
+          actions: "\uC791\uC5C5"
+        },
+        simulate: {
+          simulate: "\uC2DC\uBBAC\uB808\uC774\uC158",
+          assembleTheNextPromptThroughTheHost: "\uC0DD\uC131\uD558\uC9C0 \uC54A\uACE0 \uB2E4\uC74C \uD504\uB86C\uD504\uD2B8 \uBBF8\uB9AC\uBCF4\uAE30"
+        },
+        drawPromptContent: {
+          readingTheLastFire: "\uB9C8\uC9C0\uB9C9 \uD504\uB86C\uD504\uD2B8 \uBD88\uB7EC\uC624\uB294 \uC911\u2026",
+          memoriaIsAskingTheHostForThe: "\uD504\uB86C\uD504\uD2B8 \uAD6C\uC131 \uBD88\uB7EC\uC624\uB294 \uC911\u2026",
+          couldnTReadTheHostPrompt: "\uD638\uC2A4\uD2B8 \uD504\uB86C\uD504\uD2B8\uB97C \uC77D\uC9C0 \uBABB\uD588\uC5B4\uC694",
+          noPromptDataYet: "\uC544\uC9C1 \uD504\uB86C\uD504\uD2B8 \uB370\uC774\uD130 \uC5C6\uC74C",
+          tokens: "{label} \xB7 {tokens} \uD1A0\uD070",
+          freeSpaceTokens: "\uC5EC\uC720 \uACF5\uAC04 \xB7 {formatTokens} \uD1A0\uD070",
+          promptVsContextWindow: "\uCEE8\uD14D\uC2A4\uD2B8 \uC708\uB3C4\uC6B0 \uB300\uBE44 \uD504\uB86C\uD504\uD2B8",
+          promptTotal: "\uD504\uB86C\uD504\uD2B8 \uD569\uACC4",
+          tokens2: "{totalTokens} \uD1A0\uD070",
+          contextNearlyFull: "\uCEE8\uD14D\uC2A4\uD2B8\uAC00 \uAC70\uC758 \uAC00\uB4DD \uCC38",
+          value: "{tokens} \xB7 {pct}%",
+          freeSpace: "\uC5EC\uC720 \uACF5\uAC04",
+          value2: "{formatTokens} \xB7 {pct}%"
+        },
+        retry: {
+          retry: "\uC7AC\uC2DC\uB3C4"
+        },
+        srcLabel: {
+          lastFire: "\uB9C8\uC9C0\uB9C9 \uD504\uB86C\uD504\uD2B8",
+          simulatedNextFire: "\uB2E4\uC74C \uD504\uB86C\uD504\uD2B8 \uBBF8\uB9AC\uBCF4\uAE30"
+        },
+        spineLabel: {
+          knowledgeCodex: "\uC9C0\uC2DD \uCF54\uB371\uC2A4",
+          inAVolume: "\uBCFC\uB968\uC5D0 \uD3EC\uD568",
+          inASeries: "\uC2DC\uB9AC\uC988\uC5D0 \uD3EC\uD568",
+          inASaga: "\uC0AC\uAC00\uC5D0 \uD3EC\uD568",
+          inALibrary: "\uB77C\uC774\uBE0C\uB7EC\uB9AC\uC5D0 \uD3EC\uD568",
+          inAUniverse: "\uC720\uB2C8\uBC84\uC2A4\uC5D0 \uD3EC\uD568",
+          inAnArc: "\uC544\uD06C\uC5D0 \uD3EC\uD568",
+          inAChapter: "\uCC55\uD130\uC5D0 \uD3EC\uD568",
+          stagedAsGhost: "\uC720\uB839\uC73C\uB85C \uB300\uAE30 \uC911"
+        },
+        where: {
+          msgs: "\uBA54\uC2DC\uC9C0 {from1}\u2013{to1} \xB7 "
+        },
+        renderSpine: {
+          tokens: "{where}{kind} \xB7 ~{tokens} \uD1A0\uD070{choice, select, yes { (\uD074\uB9AD\uD574\uC11C \uC5F4\uAE30)} other {}}"
+        },
+        renderBreakdown: {
+          knowledgeCodexConstantPart: "\uC9C0\uC2DD \uCF54\uB371\uC2A4 (\uC0C1\uC2DC \uBD80\uBD84)",
+          volumesAndHigher: "\uBCFC\uB968 \uC774\uC0C1 ({length})",
+          arcs: "\uC544\uD06C ({length})",
+          chapters: "\uCC55\uD130 ({length})",
+          uncompressedTailMsgs: "\uBBF8\uC555\uCD95 \uCD5C\uADFC \uAD6C\uAC04 (\uBA54\uC2DC\uC9C0 {tailCount}\uAC1C)",
+          excludedMsgs: "\uC81C\uC678\uB428 (\uBA54\uC2DC\uC9C0 {excludedCount}\uAC1C)",
+          codexCountsIncludeEnabledConstantLorebookEntries: "\uCF54\uB371\uC2A4 \uD0A4\uC6CC\uB4DC\xB7\uBCA1\uD130 \uC77C\uCE58\uB85C \uD1A0\uD070\uC774 \uB354 \uB298\uC5B4\uB0A0 \uC218 \uC788\uC5B4\uC694.",
+          storyContextInThePrompt: "\uD504\uB86C\uD504\uD2B8 \uC18D \uC774\uC57C\uAE30 \uCEE8\uD14D\uC2A4\uD2B8"
+        },
+        renderOverview: {
+          chat: "\uCC44\uD305",
+          character: "\uCE90\uB9AD\uD130",
+          filed: "\uC815\uB9AC\uB428",
+          ofMsgs: "\uBA54\uC2DC\uC9C0 {totalMessages}\uAC1C \uC911 {coveredMessages}\uAC1C",
+          shareOfThisChatSMessagesAlready: "\uC694\uC57D\uC5D0 \uD3EC\uD568\uB41C \uCC44\uD305 \uBA54\uC2DC\uC9C0",
+          tail: "\uCD5C\uADFC \uAD6C\uAC04",
+          msgsUncompressed: "\uBBF8\uC555\uCD95 \uBA54\uC2DC\uC9C0 {uncoveredMessages}\uAC1C",
+          recentMessagesStillInThePromptAt: "\uC694\uC57D \uC708\uB3C4\uC6B0\uC640 \uC9C0\uC5F0 \uC870\uAC74\uC744 \uAE30\uB2E4\uB9AC\uBA70 \uCEE8\uD14D\uC2A4\uD2B8\uC5D0 \uB0A8\uC544 \uC788\uB294 \uBA54\uC2DC\uC9C0",
+          codex: "\uCF54\uB371\uC2A4",
+          messagesTheStoryBibleHasNotRead: "\uCF54\uB371\uC2A4\uAC00 \uC544\uC9C1 \uC0C9\uC778\uD558\uC9C0 \uC54A\uC740 \uBA54\uC2DC\uC9C0",
+          offEnableInTuning: "\uAEBC\uC9D0, \uC870\uC815 \uD0ED\uC5D0\uC11C \uCF1C\uAE30",
+          memoriaHasNoConnectionToWriteWith: "\uC0AC\uC6A9\uD560 \uC5F0\uACB0\uC774 \uC5C6\uC5B4\uC694. Lumiverse\uC5D0\uC11C \uC5F0\uACB0\uC744 \uCD94\uAC00\uD558\uC138\uC694.",
+          pickAConnectionInTheTuningTab: "\uC870\uC815 \uD0ED\uC5D0\uC11C \uC5F0\uACB0\uC744 \uC120\uD0DD\uD558\uC138\uC694."
+        },
+        shelfTile: {
+          shelf: "\uCC45\uC7A5",
+          volArcChap: "\uBCFC\uB968 \xB7 \uC544\uD06C \xB7 \uCC55\uD130",
+          uncompressedSummariesHoverForExistingHigherTiers: "\uD65C\uC131 \uC694\uC57D\uC774\uC5D0\uC694. \uB9C8\uC6B0\uC2A4\uB97C \uC62C\uB9AC\uBA74 \uC0C1\uC704 \uB2E8\uACC4\uB3C4 \uBCF4\uC5EC\uC694."
+        },
+        locked: {
+          codex: "\uCF54\uB371\uC2A4",
+          takeALesson: "\uC218\uC5C5 \uB4E3\uAE30",
+          theKnowledgeCodexUnlocksAfterMemoriaS: "\uBA54\uBAA8\uB9AC\uC544\uC758 \uCF54\uB371\uC2A4 \uC218\uC5C5\uC744 \uB4E4\uC73C\uBA74 \uC9C0\uC2DD \uCF54\uB371\uC2A4\uAC00 \uC5F4\uB824\uC694"
+        },
+        subText: {
+          msgsUnindexedManualOnly: "\uBBF8\uC0C9\uC778 \uBA54\uC2DC\uC9C0, \uC218\uB3D9 \uC804\uC6A9",
+          msgsUnindexed: "\uBBF8\uC0C9\uC778 \uBA54\uC2DC\uC9C0",
+          updated: "\uC5C5\uB370\uC774\uD2B8: {codexLastRunAt}",
+          noCodexYet: "\uC544\uC9C1 \uCF54\uB371\uC2A4 \uC5C6\uC74C"
+        },
+        watchBtn: {
+          hide: "\uC228\uAE30\uAE30",
+          watch: "\uBCF4\uAE30",
+          seeMemoriaSRawOutputStreamIn: "\uBAA8\uB378 \uCD9C\uB825 \uBCF4\uAE30"
+        },
+        abortBtn: {
+          abort: "\uC911\uB2E8",
+          cancelTheInFlightGeneration: "\uC0DD\uC131 \uCDE8\uC18C"
+        },
+        renderFailure: {
+          lastArcAttemptFailed: "\uB9C8\uC9C0\uB9C9 \uC544\uD06C \uC2DC\uB3C4 \uC2E4\uD328",
+          lastAttemptFailed: "\uB9C8\uC9C0\uB9C9 {kind, select, chapter {\uCC55\uD130} arc {\uC544\uD06C} volume {\uBCFC\uB968} series {\uC2DC\uB9AC\uC988} saga {\uC0AC\uAC00} library {\uB77C\uC774\uBE0C\uB7EC\uB9AC} universe {\uC720\uB2C8\uBC84\uC2A4} codex {\uCF54\uB371\uC2A4} other {{kind}}} \uC2DC\uB3C4 \uC2E4\uD328",
+          lastChapterAttemptFailed: "\uB9C8\uC9C0\uB9C9 \uCC55\uD130 \uC2DC\uB3C4 \uC2E4\uD328",
+          triedX: "{message} ({retriedTimes}\uD68C \uC2DC\uB3C4)",
+          retry: "\uC7AC\uC2DC\uB3C4"
+        },
+        titleField: {
+          title: "\uC81C\uBAA9"
+        },
+        contentField: {
+          content: "\uB0B4\uC6A9"
+        },
+        renderPreviewCard: {
+          memoria: "\uBA54\uBAA8\uB9AC\uC544: {shortComment}",
+          tokens: "{tokenCountOutput} \uD1A0\uD070",
+          save: "\uC800\uC7A5",
+          discard: "\uBC84\uB9AC\uAE30"
+        },
+        renderActions: {
+          lagReady: "\uC9C0\uC5F0 \uCDA9\uC871",
+          lagBuilding: "\uC9C0\uC5F0 \uB300\uAE30",
+          windowReady: "\uC708\uB3C4\uC6B0 \uCDA9\uC871",
+          windowBuilding: "\uC708\uB3C4\uC6B0 \uB300\uAE30",
+          chapterReady: "\uCC55\uD130 {backlogChapters, plural, other {#\uAC1C}} \uC900\uBE44\uB428",
+          arcReady: "\uC544\uD06C {backlogArcs, plural, other {#\uAC1C}} \uC900\uBE44\uB428",
+          fileChapter: "\uCC55\uD130 \uC815\uB9AC",
+          compressTheOldestUncoveredMessagesIntoA: "\uC708\uB3C4\uC6B0\uAC00 \uB2E4 \uCC28\uC9C0 \uC54A\uC558\uC5B4\uB3C4 \uAC00\uC7A5 \uC624\uB798\uB41C \uBBF8\uC815\uB9AC \uBA54\uC2DC\uC9C0\uB97C \uC694\uC57D\uD574\uC694",
+          fileAll: "\uBAA8\uB450 \uC815\uB9AC ({backlogChapters})",
+          drainTheChapterBacklogKeepsFilingChapters: "\uC708\uB3C4\uC6B0\uB098 \uC9C0\uC5F0 \uD55C\uB3C4\uC5D0 \uB2FF\uC744 \uB54C\uAE4C\uC9C0 \uCC55\uD130\uB97C \uC815\uB9AC\uD574\uC694",
+          bindArc: "\uC544\uD06C \uBB36\uAE30",
+          rollTheOldestUnsupersededChaptersIntoA: "\uAC00\uC7A5 \uC624\uB798\uB41C \uD65C\uC131 \uCC55\uD130\uB97C \uC544\uD06C\uB85C \uBB36\uC5B4\uC694",
+          bindAll: "\uBAA8\uB450 \uBB36\uAE30 ({backlogArcs})",
+          drainTheArcBacklogKeepsBindingArcs: "\uC784\uACC4\uAC12\uC774\uB098 \uC9C0\uC5F0 \uD55C\uB3C4\uC5D0 \uB2FF\uC744 \uB54C\uAE4C\uC9C0 \uC544\uD06C\uB97C \uBB36\uC5B4\uC694",
+          updateCodex: "\uCF54\uB371\uC2A4 \uC5C5\uB370\uC774\uD2B8",
+          consumeEverythingUpToTheNewestMessage: "\uC708\uB3C4\uC6B0\uC640 \uC9C0\uC5F0\uC744 \uBB34\uC2DC\uD558\uACE0 \uCD5C\uC2E0 \uBA54\uC2DC\uC9C0\uAE4C\uC9C0 \uC5C5\uB370\uC774\uD2B8\uD574\uC694. \uBC00\uB9B0 \uC791\uC5C5\uC774 \uB9CE\uC73C\uBA74 \uBE60\uB978 \uBAA8\uB4DC\uB97C \uC81C\uC548\uD574\uC694.",
+          actionsUnlockWhenMemoriaFinishesHerCurrent: "\uD604\uC7AC \uC791\uC5C5\uC774 \uB05D\uB0A0 \uB54C\uAE4C\uC9C0 \uAE30\uB2E4\uB824 \uC8FC\uC138\uC694",
+          theExtensionIsOffFlipItOn: "\uD655\uC7A5 \uAE30\uB2A5\uC774 \uAEBC\uC838 \uC788\uC5B4\uC694. \uC870\uC815 \uD0ED\uC5D0\uC11C \uCF1C\uC138\uC694.",
+          memoriaWillCreateThisChatSWorld: "\uCCAB \uCC55\uD130\uB97C \uC815\uB9AC\uD558\uBA74 \uC6D4\uB4DC\uBD81\uC774 \uB9CC\uB4E4\uC5B4\uC838\uC694",
+          worldBookWhereChaptersAndArcsAre: "\uC774 \uCC44\uD305\uC758 \uC694\uC57D \uC6D4\uB4DC\uBD81"
+        },
+        lockedBtn: {
+          codexTakeALesson: "\uD83D\uDD12 \uCF54\uB371\uC2A4 \xB7 \uC218\uC5C5 \uB4E3\uAE30",
+          theCodexUnlocksAfterMemoriaSCodex: "\uBA54\uBAA8\uB9AC\uC544\uC758 \uCF54\uB371\uC2A4 \uC218\uC5C5\uC744 \uB4E4\uC73C\uBA74 \uCF54\uB371\uC2A4\uAC00 \uC5F4\uB824\uC694"
+        },
+        tag: {
+          bookReady: "\uCC45 \uC900\uBE44\uB428"
+        },
+        streamStatus: "{running, select, yes {\uC2A4\uD2B8\uB9AC\uBC0D \uC911} other {\uC644\uB8CC}}",
+        higherCount: "{kind, select, chapter {\uCC55\uD130} arc {\uC544\uD06C} volume {\uBCFC\uB968} series {\uC2DC\uB9AC\uC988} saga {\uC0AC\uAC00} library {\uB77C\uC774\uBE0C\uB7EC\uB9AC} universe {\uC720\uB2C8\uBC84\uC2A4} codex {\uCF54\uB371\uC2A4} other {{kind}}} {count}\uAC1C"
+      },
+      profileTab: {
+        profileDefaults: {
+          defaults: "\uAE30\uBCF8\uAC12"
+        },
+        sec: {
+          knowledgeCodex: "\uC9C0\uC2DD \uCF54\uB371\uC2A4",
+          codexConnection: "\uCF54\uB371\uC2A4 \uC5F0\uACB0",
+          reset: "\uC7AC\uC124\uC815",
+          profile: "\uD504\uB85C\uD544",
+          summarySettings: "\uC694\uC57D \uC124\uC815",
+          summaryConnection: "\uC694\uC57D \uC5F0\uACB0",
+          summarySamplers: "\uC694\uC57D \uC0D8\uD50C\uB7EC",
+          codexSamplers: "\uCF54\uB371\uC2A4 \uC0D8\uD50C\uB7EC",
+          regex: "\uC815\uADDC\uC2DD",
+          context: "\uCEE8\uD14D\uC2A4\uD2B8",
+          behavior: "\uB3D9\uC791"
+        },
+        renderCodexSettings: {
+          enableCodex: "\uCF54\uB371\uC2A4 \uC0AC\uC6A9",
+          window: "\uC708\uB3C4\uC6B0",
+          lag: "\uC9C0\uC5F0",
+          unit: "{kind} \uB2E8\uC704",
+          messages: "\uBA54\uC2DC\uC9C0 \uC218",
+          messageTokens: "\uBA54\uC2DC\uC9C0 \uD1A0\uD070",
+          tokensBreakpoint: "\uD1A0\uD070 \uAE30\uC900\uC810",
+          runsWhenEitherTheWindowOrThis: "\uC708\uB3C4\uC6B0\uB098 \uC774 \uD1A0\uD070 \uC218 \uC911 \uD558\uB098\uC5D0 \uBA3C\uC800 \uB3C4\uB2EC\uD558\uBA74 \uC2E4\uD589\uB3FC\uC694.",
+          loreLimit: "\uC6D4\uB4DC\uBD81 \uD55C\uB3C4",
+          ofMaxContext: "\uCD5C\uB300 \uCEE8\uD14D\uC2A4\uD2B8 \uB300\uBE44 %",
+          tokenCap: "\uD1A0\uD070 \uC0C1\uD55C",
+          loreTokens0NoLimit: "\uC6D4\uB4DC\uBD81 \uD1A0\uD070 (0 = \uC81C\uD55C \uC5C6\uC74C)",
+          loreOfMaxContext: "\uCD5C\uB300 \uCEE8\uD14D\uC2A4\uD2B8 \uB300\uBE44 \uC6D4\uB4DC\uBD81 %",
+          yourActivatedLorebookEntriesRideEveryCodex: "\uC6D4\uB4DC\uBD81 \uD56D\uBAA9\uC744 \uCEE8\uD14D\uC2A4\uD2B8\uB85C \uD3EC\uD568\uD574\uC694. \uC608\uC0B0\uC744 \uB118\uB294 \uD56D\uBAA9\uC740 \uAC74\uB108\uB6F0\uC5B4\uC694. \uD1A0\uD070 \uC0C1\uD55C\uC744 0\uC73C\uB85C \uB450\uBA74 \uC81C\uD55C\uC774 \uC5C6\uC5B4\uC694.",
+          codexRecall: "\uCF54\uB371\uC2A4 \uC0C1\uAE30",
+          theActiveProfileSetsRecallForEnabled: "\uD0C0\uC784\uB77C\uC778\uACFC \uC2A4\uB808\uB4DC\uB294 \uB298 \uC0C1\uC2DC \uC8FC\uC785\uB418\uC9C0\uB9CC, \uB2E4\uB978 \uAE30\uB85D\uC740 \uC0C1\uC2DC\xB7\uD0A4\uC6CC\uB4DC\xB7\uBCA1\uD130 \uC0C1\uAE30 \uC911\uC5D0\uC11C \uACE0\uB97C \uC218 \uC788\uC5B4\uC694.",
+          codexPlacement: "\uCF54\uB371\uC2A4 \uBC30\uCE58",
+          lorebookBefore: "\uC6D4\uB4DC\uBD81 (\uC55E)",
+          atHistoryDepth: "\uAE30\uB85D \uC2EC\uB3C4 \uC704\uCE58",
+          afterChatHistory: "\uCC44\uD305 \uAE30\uB85D \uB4A4",
+          depthFromNewestTurn: "\uCD5C\uC2E0 \uD134 \uAE30\uC900 \uC2EC\uB3C4",
+          summariesReplaceTheirSourceHistoryInPlace: "\uC694\uC57D\uC740 \uC6D0\uB798 \uBA54\uC2DC\uC9C0 \uC790\uB9AC\uC5D0 \uC8FC\uC785\uB418\uACE0, \uCF54\uB371\uC2A4\uB294 \uC77C\uBC18 \uC6D4\uB4DC\uBD81 \uD56D\uBAA9\uC73C\uB85C \uC8FC\uC785\uB3FC\uC694. \uC708\uB3C4\uC6B0\uAC00 \uD074\uC218\uB85D \uC5C5\uB370\uC774\uD2B8\uAC00 \uB738\uD574\uC838 \uBE44\uC6A9\uC774 \uC904 \uC218 \uC788\uC5B4\uC694. \uC55E\uCABD \uC6D4\uB4DC\uBD81\uC774 \uACE0\uC815\uB3FC \uC788\uB2E4\uBA74 \uCF54\uB371\uC2A4\uB97C \uAE30\uB85D \uB4A4\uC5D0 \uBC30\uCE58\uD560 \uB54C \uCE90\uC2DC\uAC00 \uB354 \uC798 \uC720\uC9C0\uB3FC\uC694.",
+          relationsTable: "\uAD00\uACC4 \uD45C",
+          tracksConnectionsBetweenEntitiesAsOneShared: "\uAD00\uACC4\uB97C \uCC38\uC870 \uAC80\uC0AC\uAC00 \uC788\uB294 \uACF5\uC6A9 \uD45C\uC5D0 \uC800\uC7A5\uD574\uC694. \uB044\uBA74 \uAC01 \uAC1C\uCCB4 \uC548\uC5D0 \uC800\uC7A5\uD574\uC694.",
+          thoroughMode: "\uAF3C\uAF3C \uBAA8\uB4DC",
+          spendsOneExtraVerificationRoundPerUpdate: "\uAC80\uC99D \uB77C\uC6B4\uB4DC\uB97C \uD55C \uBC88 \uB354 \uB3CC\uB824 \uC624\uB798\uB41C \uC815\uBCF4\uB97C \uC810\uAC80\uD558\uACE0 \uAE30\uB85D\uC744 \uC9E7\uAC8C \uB2E4\uB4EC\uC5B4\uC694.",
+          extraContextMode: "\uCD94\uAC00 \uCEE8\uD14D\uC2A4\uD2B8 \uBAA8\uB4DC",
+          summarizesChaptersEarlyAtTheCodexLag: "\uCF54\uB371\uC2A4 \uC9C0\uC5F0 \uC9C0\uC810\uC5D0\uC11C \uC720\uB839 \uCC55\uD130\uB97C \uBBF8\uB9AC \uB9CC\uB4E4\uC5B4\uC694. \uCF54\uB371\uC2A4\uC5D0 \uC694\uC57D \uCEE8\uD14D\uC2A4\uD2B8\uB97C \uC8FC\uB294 \uB370 \uB3C4\uC6C0\uC774 \uB3FC\uC694.",
+          chaptersProvided: "\uC81C\uACF5\uD560 \uCC55\uD130 \uC218",
+          howManyRecentChapterSummariesExtraContext: "\uCD94\uAC00 \uCEE8\uD14D\uC2A4\uD2B8 \uBAA8\uB4DC\uC5D0\uC11C \uCEE8\uD14D\uC2A4\uD2B8\uB85C \uB123\uC744 \uCD5C\uADFC \uCC55\uD130 \uC218\uC608\uC694.",
+          theCodexAgentSConnectionAndSamplers: "\uCF54\uB371\uC2A4 \uC5F0\uACB0\uACFC \uC0D8\uD50C\uB7EC\uB294 \uC5F0\uACB0 > \uCF54\uB371\uC2A4\uC5D0 \uC788\uC5B4\uC694."
+        },
+        updating: {
+          codexUpdating: "\uCF54\uB371\uC2A4 \uC5C5\uB370\uC774\uD2B8"
+        },
+        connOpts: {
+          sameAsSummaryConnection: "\uC694\uC57D \uC5F0\uACB0\uACFC \uAC19\uC74C",
+          value: "{name} - {provider}{choice, select, yes {/{model}} other {}}{choice2, select, yes { (\uAE30\uBCF8\uAC12)} other {}}"
+        },
+        renderCodexConnection: {
+          useToolCalls: "\uB3C4\uAD6C \uD638\uCD9C \uC0AC\uC6A9",
+          offByDefaultTheAgentWritesOne: "\uB044\uBA74 JSON \uC751\uB2F5\uC744 \uC368\uC694. \uC5F0\uACB0\uC774 \uB3C4\uAD6C \uD638\uCD9C\uC744 \uC9C0\uC6D0\uD558\uBA74 \uCF1C\uC138\uC694.",
+          updateDelivery: "\uC5C5\uB370\uC774\uD2B8 \uC804\uB2EC \uBC29\uC2DD",
+          allRecordsAtOnce: "\uC77C\uAD04",
+          oneRecordAtATime: "\uC21C\uCC28",
+          memoriaAlwaysMakesSureEveryRecordIs: "\uC77C\uAD04 \uC5C5\uB370\uC774\uD2B8\uAC00 \uBE44\uC6A9\uC774 \uB354 \uC801\uC5B4\uC694. \uAE34 \uC751\uB2F5\uC5D0 \uBB38\uC81C\uAC00 \uC788\uC744 \uB54C\uB9CC \uC21C\uCC28\uB97C \uC4F0\uC138\uC694."
+        },
+        renderResetSettings: {
+          resetsThisProfileSSettingsToTheir: "\uC774 \uD504\uB85C\uD544\uC758 \uC124\uC815\uC744 \uAE30\uBCF8\uAC12\uC73C\uB85C \uB418\uB3CC\uB824\uC694."
+        },
+        idle: {
+          resetProfileToDefaults: "\uD504\uB85C\uD544\uC744 \uAE30\uBCF8\uAC12\uC73C\uB85C \uC7AC\uC124\uC815"
+        },
+        confirm: {
+          clickAgainToConfirm: "\uD655\uC778\uD560\uAE4C\uC694?"
+        },
+        renderProfilePicker: {
+          new: "\uC0C8\uB85C \uB9CC\uB4E4\uAE30",
+          delete: "\uC0AD\uC81C",
+          enabled: "\uC0AC\uC6A9",
+          masterSwitchWhenOffMemoriaDoesNothing: "\uC774 \uACC4\uC815\uC5D0\uC11C LumiBooks\uB97C \uC0AC\uC6A9\uD574\uC694."
+        },
+        name: {
+          newProfileName: "\uC0C8 \uD504\uB85C\uD544 \uC774\uB984"
+        },
+        nameField: {
+          profileName: "\uD504\uB85C\uD544 \uC774\uB984"
+        },
+        enableWrap: {
+          extension: "\uD655\uC7A5"
+        },
+        renderSummarySettings: {
+          windowLagAndCompressionSettingsForEach: "\uB2E8\uACC4\uBCC4 \uC708\uB3C4\uC6B0, \uC9C0\uC5F0, \uC555\uCD95 \uC124\uC815\uC774\uC5D0\uC694.",
+          runAutomation: "\uC790\uB3D9\uD654 \uC0AC\uC6A9",
+          windowUnit: "\uC708\uB3C4\uC6B0 \uB2E8\uC704",
+          messages: "\uBA54\uC2DC\uC9C0 \uC218",
+          messageTokens: "\uBA54\uC2DC\uC9C0 \uD1A0\uD070",
+          window: "\uC708\uB3C4\uC6B0",
+          lagUnit: "\uC9C0\uC5F0 \uB2E8\uC704",
+          lag: "\uC9C0\uC5F0",
+          chapterEntries: "\uCC55\uD130 \uD56D\uBAA9 \uC218",
+          summaryTokens: "\uC694\uC57D \uD1A0\uD070",
+          manualOnly: "\uC218\uB3D9 \uC804\uC6A9",
+          entries: "{tierNamesTier2} \uD56D\uBAA9 \uC218"
+        },
+        card: {
+          chapterFiling: "\uCC55\uD130 \uC815\uB9AC",
+          binding: "{name} \uBB36\uAE30"
+        },
+        appendAutomationControls: {
+          automate: "\uC790\uB3D9\uD654?"
+        },
+        change: {
+          targetUnit: "{prefix}TargetUnit",
+          targetPercent: "{prefix}TargetPercent",
+          targetTokens: "{prefix}TargetTokens"
+        },
+        appendCompressionTarget: {
+          compressionTarget: "\uC555\uCD95 \uBAA9\uD45C",
+          percentOfInput: "\uC785\uB825 \uB300\uBE44 \uBE44\uC728",
+          fixedTokens: "\uACE0\uC815 \uD1A0\uD070",
+          targetTokens: "\uBAA9\uD45C \uD1A0\uD070",
+          targetPercent: "\uBAA9\uD45C \uBE44\uC728"
+        },
+        opts: {
+          defaultConnection: "\uAE30\uBCF8 \uC5F0\uACB0",
+          noConnectionsAvailable: "\uC0AC\uC6A9\uD560 \uC218 \uC788\uB294 \uC5F0\uACB0\uC774 \uC5C6\uC74C",
+          value: "{name} - {provider}{choice, select, yes {/{model}} other {}}{choice2, select, yes { (\uAE30\uBCF8\uAC12)} other {}}"
+        },
+        renderConnection: {
+          memoriaWritesWith: "\uC5F0\uACB0: {name}"
+        },
+        renderSamplers: {
+          usedWhenMemoriaWritesChaptersArcsAnd: "\uC694\uC57D\uC5D0 \uC4F0\uC5EC\uC694. \uBE48 \uCE78\uC740 \uC790\uB9AC \uD45C\uC2DC\uC790\uB85C \uBCF4\uC774\uB294 \uAE30\uBCF8\uAC12\uC744 \uC368\uC694. \uC628\uB3C4, \uCD5C\uB300 \uCD9C\uB825, \uCD5C\uB300 \uC785\uB825\uC740 \uD56D\uC0C1 \uBCF4\uB0B4\uACE0 top_p, top_k, \uD328\uB110\uD2F0\uB294 \uAC12\uC744 \uC815\uD588\uC744 \uB54C\uB9CC \uBCF4\uB0B4\uC694.",
+          maxInputTokens: "\uCD5C\uB300 \uC785\uB825 \uD1A0\uD070",
+          maxOutputTokens: "\uCD5C\uB300 \uCD9C\uB825 \uD1A0\uD070",
+          temperature: "\uC628\uB3C4",
+          topP: "Top P",
+          topK: "Top K",
+          freqPenalty: "\uBE48\uB3C4 \uD328\uB110\uD2F0",
+          presPenalty: "\uC874\uC7AC \uD328\uB110\uD2F0"
+        },
+        options: {
+          books: "\uCC45",
+          codex: "\uCF54\uB371\uC2A4"
+        },
+        renderCodexSamplers: {
+          samplersForTheCodexAgentOnlySeparate: "\uC694\uC57D\uACFC \uBCC4\uAC1C\uC778 \uCF54\uB371\uC2A4 \uC0D8\uD50C\uB7EC\uC608\uC694. \uBE48 \uCE78\uC740 \uCF54\uB371\uC2A4 \uAE30\uBCF8\uAC12\uC744 \uC368\uC694.",
+          maxInputTokens: "\uCD5C\uB300 \uC785\uB825 \uD1A0\uD070",
+          maxOutputTokens: "\uCD5C\uB300 \uCD9C\uB825 \uD1A0\uD070",
+          temperature: "\uC628\uB3C4",
+          topP: "Top P",
+          topK: "Top K",
+          freqPenalty: "\uBE48\uB3C4 \uD328\uB110\uD2F0",
+          presPenalty: "\uC874\uC7AC \uD328\uB110\uD2F0"
+        },
+        renderRegex: {
+          noRegexScriptsFoundInLumiverse: "Lumiverse\uC5D0 \uC815\uADDC\uC2DD \uC2A4\uD06C\uB9BD\uD2B8\uAC00 \uC5C6\uC5B4\uC694",
+          outgoingRunsOnThePromptBeforeMemoria: "\uBCF4\uB0B4\uB294 \uC815\uADDC\uC2DD\uC740 \uD504\uB86C\uD504\uD2B8\uC5D0, \uBC1B\uB294 \uC815\uADDC\uC2DD\uC740 \uBAA8\uB378 \uCD9C\uB825\uC5D0 \uC801\uC6A9\uB3FC\uC694."
+        },
+        outgoing: {
+          outgoing: "\uBCF4\uB0B4\uB294 \uCABD"
+        },
+        incoming: {
+          incoming: "\uBC1B\uB294 \uCABD"
+        },
+        f: {
+          chapterContext: "\uCC55\uD130 \uCEE8\uD14D\uC2A4\uD2B8"
+        },
+        renderContext: {
+          howManyRecentChaptersToFeedMemoria: "\uCEE8\uD14D\uC2A4\uD2B8\uB85C \uB123\uC744 \uCD5C\uADFC \uCC55\uD130 \uC218\uC608\uC694.",
+          triesPerAttemptAfterTheLastTry: "\uD55C \uBC88 \uC2E4\uD589\uD560 \uB54C \uC2DC\uB3C4\uD558\uB294 \uD69F\uC218\uC608\uC694. \uBAA8\uB450 \uC2E4\uD328\uD558\uBA74 \uB2E4\uC74C \uD134\uC5D0 \uAC19\uC740 \uBA54\uC2DC\uC9C0\uB85C \uB2E4\uC2DC \uC2DC\uB3C4\uD574\uC694.",
+          howLongMemoriaWaitsForTheFirst: "\uC2A4\uD2B8\uB9AC\uBC0D \uCCAB \uD1A0\uD070\uC744 \uAE30\uB2E4\uB9AC\uB294 \uC2DC\uAC04\uC774\uC5D0\uC694."
+        },
+        retry: {
+          retries: "\uC7AC\uC2DC\uB3C4"
+        },
+        ttft: {
+          firstTokenTimeoutSeconds: "\uCCAB \uD1A0\uD070 \uC81C\uD55C \uC2DC\uAC04 (\uCD08)"
+        },
+        renderBehavior: {
+          hideMessagesOnceFiled: "\uC815\uB9AC\uB41C \uBA54\uC2DC\uC9C0 \uC228\uAE30\uAE30",
+          greysOutCoveredMessagesInTheChat: "\uC694\uC57D\uB41C \uBA54\uC2DC\uC9C0\uB97C \uCC44\uD305\uC5D0\uC11C \uD750\uB9AC\uAC8C \uD45C\uC2DC\uD574\uC694. \uC694\uC57D \uC801\uC6A9 \uBC94\uC704\uB294 \uC774 \uC124\uC815\uACFC \uC0C1\uAD00\uC5C6\uC774 \uAC19\uC544\uC694.",
+          previewBeforeSaving: "\uC800\uC7A5 \uC804 \uBBF8\uB9AC\uBCF4\uAE30",
+          memoriaStagesNewChaptersAndArcsIn: "\uCC55\uD130\uC640 \uC544\uD06C\uB97C \uC800\uC7A5\uD558\uAE30 \uC804\uC5D0 \uD648 > \uB300\uAE30 \uC911\uC778 \uBBF8\uB9AC\uBCF4\uAE30\uC5D0\uC11C \uAC80\uD1A0\uD574\uC694."
+        }
+      },
+      promptsTab: {
+        categorySubtabs: {
+          chapter: "\uCC55\uD130",
+          arc: "\uC544\uD06C",
+          volume: "\uBCFC\uB968",
+          codex: "\uCF54\uB371\uC2A4"
+        },
+        groupHelp: {
+          oneBlockPerCodexFile: "\uCF54\uB371\uC2A4 \uD30C\uC77C\uB9C8\uB2E4 \uBE14\uB85D \uD558\uB098\uC608\uC694.",
+          howTheAgentIsToldToDeliver: "\uC804\uB2EC \uC9C0\uC2DC\uBB38\uC744 \uD3B8\uC9D1\uD574\uC694. \uB3C4\uAD6C \uD638\uCD9C \uC0AC\uC6A9 \uC124\uC815\uC5D0 \uB530\uB77C \uC120\uD0DD\uB3FC\uC694.",
+          theTaskTextForEachKindOf: "\uC2E4\uD589 \uC720\uD615\uBCC4 \uC791\uC5C5 \uC9C0\uC2DC\uBB38\uC774\uC5D0\uC694.",
+          warningsPrependedOnlyWhenTheirSituationApplies: "\uD574\uB2F9\uD560 \uB54C\uB9CC \uD3EC\uD568\uB418\uB294 \uC548\uB0B4\uC608\uC694."
+        },
+        sec: {
+          codexPromptTemplates: "\uCF54\uB371\uC2A4 \uD504\uB86C\uD504\uD2B8 \uD15C\uD50C\uB9BF",
+          memoriaOverrides: "\uBA54\uBAA8\uB9AC\uC544 \uB36E\uC5B4\uC4F0\uAE30",
+          arcPrompt: "\uC544\uD06C \uD504\uB86C\uD504\uD2B8",
+          volumePrompt: "\uBCFC\uB968 \uD504\uB86C\uD504\uD2B8",
+          codexDirectives: "\uCF54\uB371\uC2A4 \uC9C0\uCE68",
+          chapterPrompt: "\uCC55\uD130 \uD504\uB86C\uD504\uD2B8",
+          importStmbPresets: "STMB \uD504\uB9AC\uC14B \uAC00\uC838\uC624\uAE30",
+          info: "\uC815\uBCF4"
+        },
+        draw: {
+          everyOtherBlockOfTheCodexAgent: '\uCD94\uAC00 \uCF54\uB371\uC2A4 \uD504\uB86C\uD504\uD2B8 \uBE14\uB85D\uC774\uC5D0\uC694. "{displayName}" \uD504\uB9AC\uC14B\uC5D0 \uC800\uC7A5\uB3FC\uC694. \uD504\uB9AC\uC14B\uC744 \uBC14\uAFB8\uBA74 \uD504\uB86C\uD504\uD2B8 \uC138\uD2B8\uB3C4 \uBC14\uB00C\uC5B4\uC694. \uD3B8\uC9D1\uD558\uAE30 \uC804\uC5D0 \uC0AC\uC6A9\uBC95\uC744 \uC77D\uC5B4 \uC8FC\uC138\uC694.',
+          otherBlocksOfTheCodexAgentS: "\uC774 \uD504\uB9AC\uC14B\uC758 \uCD94\uAC00 \uCF54\uB371\uC2A4 \uD504\uB86C\uD504\uD2B8 \uBE14\uB85D\uC774\uC5D0\uC694.",
+          templateCustomizedInThisPreset: "\uC774 \uD504\uB9AC\uC14B\uC5D0\uC11C \uD15C\uD50C\uB9BF {overridden, plural, other {#\uAC1C}}\uB97C \uC218\uC815\uD588\uC5B4\uC694."
+        },
+        renderTemplateRow: {
+          customized: "\uC218\uC815\uB428",
+          hostMacrosLikeUserAlsoWorkThey: "'{{user}}' \uAC19\uC740 \uD638\uC2A4\uD2B8 \uB9E4\uD06C\uB85C\uB97C \uC9C0\uC6D0\uD558\uBA70, \uBCF4\uB0BC \uB54C \uCE58\uD658\uB3FC\uC694.",
+          builtInPresetDuplicateItAboveTo: "\uAE30\uBCF8 \uC81C\uACF5 \uD504\uB9AC\uC14B\uC774\uC5D0\uC694. \uC774 \uD15C\uD50C\uB9BF\uC744 \uD3B8\uC9D1\uD558\uB824\uBA74 \uC704\uC5D0\uC11C \uBCF5\uC81C\uD558\uC138\uC694."
+        },
+        howBtn: {
+          hideHowTo: "\uC0AC\uC6A9\uBC95 \uC228\uAE30\uAE30",
+          howTo: "\uC0AC\uC6A9\uBC95"
+        },
+        resetBtn: {
+          resetToDefault: "\uAE30\uBCF8\uAC12\uC73C\uB85C \uC7AC\uC124\uC815",
+          clickAgainToConfirm: "\uD655\uC778\uD560\uAE4C\uC694?"
+        },
+        renderMemoriaOverrides: {
+          personaIsTheSystemPromptHeaderShort: "\uD398\uB974\uC18C\uB098\uB294 \uC2DC\uC2A4\uD15C \uD504\uB86C\uD504\uD2B8 \uBA38\uB9AC\uB9D0\uC744 \uC815\uD574\uC694. \uC9E7\uC740 \uCF54\uBA58\uD2B8 \uADDC\uCE59\uC740 '{{memoria_short_comment_rules}}'\uC5D0 \uCC44\uC6CC\uC838\uC694.",
+          memoriaPersona: "\uBA54\uBAA8\uB9AC\uC544 \uD398\uB974\uC18C\uB098",
+          memoriaShortCommentRules: "\uBA54\uBAA8\uB9AC\uC544 \uC9E7\uC740 \uCF54\uBA58\uD2B8 \uADDC\uCE59"
+        },
+        buildOverrideBlock: {
+          resetToDefault: "\uAE30\uBCF8\uAC12\uC73C\uB85C \uC7AC\uC124\uC815",
+          clickAgainToConfirm: "\uD655\uC778\uD560\uAE4C\uC694?"
+        },
+        restoreIdle: {
+          resetToDefault: "\uAE30\uBCF8\uAC12\uC73C\uB85C \uC7AC\uC124\uC815"
+        },
+        renderCategory: {
+          theMissionBlockAtTheTopOf: "\uCF54\uB371\uC2A4 \uC2DC\uC2A4\uD15C \uD504\uB86C\uD504\uD2B8 \uB9E8 \uC55E\uC5D0 \uB4E4\uC5B4\uAC00\uB294 \uC9C0\uC2DC\uBB38\uC774\uC5D0\uC694. \uC120\uD0DD\uD55C \uD504\uB9AC\uC14B\uC5D0 \uC544\uB798 \uD15C\uD50C\uB9BF\uACFC \uD568\uAED8 \uC800\uC7A5\uB3FC\uC694. \uC870\uB9BD\uB41C \uD504\uB86C\uD504\uD2B8\uB294 \uBAA8\uC758 \uC2E4\uD589\uC73C\uB85C \uBBF8\uB9AC \uBCFC \uC218 \uC788\uC5B4\uC694.",
+          newBlankPrompt: "\uBE48 \uD504\uB86C\uD504\uD2B8 \uC0C8\uB85C \uB9CC\uB4E4\uAE30",
+          duplicateToNew: "\uC0C8\uB85C \uBCF5\uC81C",
+          duplicateToEdit: "\uBCF5\uC81C\uD574\uC11C \uD3B8\uC9D1",
+          dryRun: "\uBAA8\uC758 \uC2E4\uD589",
+          assembleTheNextCodexRunSComplete: "\uCE58\uD658\uB41C \uC2DC\uC2A4\uD15C\xB7\uC0AC\uC6A9\uC790 \uD504\uB86C\uD504\uD2B8\uB97C \uBBF8\uB9AC \uBD10\uC694. \uBAA8\uB378\uC740 \uD638\uCD9C\uD558\uC9C0 \uC54A\uC544\uC694.",
+          assembleThisPresetSPromptWithAll: "\uC774 \uD504\uB9AC\uC14B\uC758 \uCE58\uD658\uB41C \uD504\uB86C\uD504\uD2B8\uB97C \uBBF8\uB9AC \uBD10\uC694. \uBAA8\uB378\uC740 \uD638\uCD9C\uD558\uC9C0 \uC54A\uC544\uC694.",
+          delete: "\uC0AD\uC81C",
+          promptBuiltInDuplicateToEdit: "\uD504\uB86C\uD504\uD2B8 (\uAE30\uBCF8 \uC81C\uACF5, \uBCF5\uC81C\uD574\uC11C \uD3B8\uC9D1)"
+        },
+        opts: {
+          builtIn: "\uAE30\uBCF8 \uC81C\uACF5: {displayName}",
+          custom: "\uC0AC\uC6A9\uC790 \uC9C0\uC815: {displayName}"
+        },
+        name: {
+          nameForNewPrompt: "\uC0C8 {category} \uD504\uB86C\uD504\uD2B8 \uC774\uB984",
+          untitled: "\uC81C\uBAA9 \uC5C6\uC74C",
+          nameForDuplicate: "\uBCF5\uC81C\uBCF8 \uC774\uB984"
+        },
+        sourceName: {
+          untitled: "\uC81C\uBAA9 \uC5C6\uC74C"
+        },
+        ok: {
+          deletePrompt: "\uD504\uB86C\uD504\uD2B8\uB97C \uC0AD\uC81C\uD560\uAE4C\uC694?",
+          thisRemovesTheCustomPromptAndFalls: "\uC774 \uC0AC\uC6A9\uC790 \uC9C0\uC815 \uD504\uB86C\uD504\uD2B8\uB97C \uC0AD\uC81C\uD558\uACE0 \uAE30\uBCF8 \uC81C\uACF5 \uD504\uB86C\uD504\uD2B8\uB97C \uC120\uD0DD\uD574\uC694.",
+          deletePreset: "\uD504\uB9AC\uC14B\uC744 \uC0AD\uC81C\uD560\uAE4C\uC694?"
+        },
+        nameField: {
+          displayName: "\uD45C\uC2DC \uC774\uB984"
+        },
+        textField: {
+          prompt: "\uD504\uB86C\uD504\uD2B8"
+        },
+        renderImport: {
+          uploadASillyTavernMemoryBooksExportMemoria: "SillyTavern Memory Books \uB0B4\uBCF4\uB0B4\uAE30 \uD30C\uC77C\uC744 \uD3B8\uC9D1 \uAC00\uB2A5\uD55C \uD504\uB9AC\uC14B\uC73C\uB85C \uAC00\uC838\uC640\uC694.",
+          importChapterPresets: "\uCC55\uD130 \uD504\uB9AC\uC14B \uAC00\uC838\uC624\uAE30",
+          importArcPresets: "\uC544\uD06C \uD504\uB9AC\uC14B \uAC00\uC838\uC624\uAE30",
+          delete: "\uC0AD\uC81C",
+          noCustomPresetsYet: "\uC544\uC9C1 \uC0AC\uC6A9\uC790 \uC9C0\uC815 \uD504\uB9AC\uC14B\uC774 \uC5C6\uC5B4\uC694"
+        },
+        importFile: {
+          memoriaCanTReadThisFile: "\uD30C\uC77C\uC744 \uC77D\uC9C0 \uBABB\uD588\uC5B4\uC694",
+          memoriaCouldnTParseThePresetJson: "\uD504\uB9AC\uC14B JSON\uC774 \uC62C\uBC14\uB974\uC9C0 \uC54A\uC544\uC694"
+        },
+        showImportFailure: {
+          importFailed: "\uAC00\uC838\uC624\uAE30 \uC2E4\uD328",
+          ok: "\uD655\uC778"
+        },
+        lines: {
+          duplicateAnyBuiltInOrCreateNew: "\uD3B8\uC9D1\uD558\uB824\uBA74 \uAE30\uBCF8 \uC81C\uACF5 \uD504\uB9AC\uC14B\uC744 \uBCF5\uC81C\uD558\uAC70\uB098 \uC0AC\uC6A9\uC790 \uC9C0\uC815 \uD504\uB9AC\uC14B\uC744 \uB9CC\uB4DC\uC138\uC694.",
+          promptsMustAskTheModelForStrict: "\uD504\uB86C\uD504\uD2B8\uB294 \uBAA8\uB378\uC5D0\uAC8C \uC5C4\uACA9\uD55C JSON\uC744 \uC694\uAD6C\uD574\uC57C \uD574\uC694 (\uC544\uB798 \uC608\uC2DC \uCC38\uACE0).",
+          targetTokensExpandsToTheActiveCompression: "'{{target_tokens}}'\uB294 \uD604\uC7AC \uC555\uCD95 \uBAA9\uD45C\uB85C \uCE58\uD658\uB3FC\uC694.",
+          memoriaShortCommentRulesExpandsToThis: "'{{memoria_short_comment_rules}}'\uB294 \uC774\uBC88 \uD134\uC758 \uB0E5\uB370\uB808 \uC9E7\uC740 \uCF54\uBA58\uD2B8 \uADDC\uCE59\uC73C\uB85C \uCE58\uD658\uB3FC\uC694.",
+          promptsAreMacroEvaluated: "\uD504\uB86C\uD504\uD2B8\uC758 \uB9E4\uD06C\uB85C\uB294 \uCE58\uD658\uB3FC\uC694."
+        },
+        groups: {
+          fileSchemas: "\uD30C\uC77C \uC2A4\uD0A4\uB9C8",
+          writeProtocol: "\uAE30\uB85D \uD504\uB85C\uD1A0\uCF5C",
+          passInstructions: "\uD328\uC2A4 \uC9C0\uC2DC\uBB38",
+          runNotes: "\uC2E4\uD589 \uC548\uB0B4"
+        }
+      },
+      tuningTab: {
+        subtabs: {
+          connection: "\uC5F0\uACB0",
+          settings: "\uC124\uC815",
+          prompts: "\uD504\uB86C\uD504\uD2B8"
+        },
+        renderTuningTab: {
+          profile: "\uD504\uB85C\uD544",
+          extensionOff: "\xB7 \uD655\uC7A5 \uAEBC\uC9D0",
+          switchOrManageProfilesInTheConnection: "\uD504\uB85C\uD544 \uC804\uD658\xB7\uAD00\uB9AC\uB294 \uC5F0\uACB0 \uD328\uB110\uC5D0\uC11C \uD558\uC138\uC694"
+        },
+        options: {
+          books: "\uCC45",
+          codex: "\uCF54\uB371\uC2A4"
+        },
+        sec: {
+          everywhere: "\uC804\uCCB4 \uACF5\uD1B5"
+        },
+        renderGlobalSettings: {
+          theseApplyToEveryChatAndProfile: "\uBAA8\uB4E0 \uCC44\uD305\uACFC \uD504\uB85C\uD544\uC5D0 \uC801\uC6A9\uB418\uB294 \uACC4\uC815 \uC124\uC815\uC774\uC5D0\uC694.",
+          automationToasts: "\uC790\uB3D9\uD654 \uC54C\uB9BC",
+          whenOffMemoriaSBackgroundRunsStay: "\uC790\uB3D9 \uC791\uC5C5 \uC54C\uB9BC\uC744 \uD45C\uC2DC\uD574\uC694. \uC624\uB958\uC640 \uC9C1\uC811 \uC2E4\uD589\uD55C \uC791\uC5C5\uC740 \uAEBC\uB3C4 \uC54C\uB824\uC694.",
+          summaryRecall: "\uC694\uC57D \uC0C1\uAE30",
+          appliesToExistingAndFutureChapterAnd: "\uBAA8\uB4E0 \uCC44\uD305\uC758 \uAE30\uC874 \uC694\uC57D\uACFC \uC55E\uC73C\uB85C \uB9CC\uB4E4 \uC694\uC57D\uC5D0 \uC801\uC6A9\uB3FC\uC694. \uC694\uC57D \uBC94\uC704\uB294 \uBC14\uB00C\uC9C0 \uC54A\uC544\uC694. \uD0A4\uC6CC\uB4DC\xB7\uBCA1\uD130 \uBAA8\uB4DC\uB294 \uC77C\uCE58\uD558\uB294 \uC694\uC57D\uC744 \uB123\uACE0, \uCD5C\uADFC \uD14D\uC2A4\uD2B8\uAC00 \uBCF4\uC774\uC9C0 \uC54A\uC73C\uBA74 \uBCA1\uD130 \uC0C1\uAE30\uB294 \uD0A4\uC6CC\uB4DC \uBC29\uC2DD\uC73C\uB85C \uB300\uCCB4\uB3FC\uC694.",
+          lorebookNamesFollowChatNames: "\uC6D4\uB4DC\uBD81 \uC774\uB984\uC744 \uCC44\uD305 \uC774\uB984\uC5D0 \uB9DE\uCD94\uAE30",
+          turnOffToRenameYourBooksAnd: "\uB044\uBA74 Lumiverse\uC5D0\uC11C \uCC45\xB7\uCF54\uB371\uC2A4 \uC6D4\uB4DC\uBD81 \uC774\uB984\uC744 \uC9C1\uC811 \uBC14\uAFC0 \uC218 \uC788\uC5B4\uC694. \uCF1C\uBA74 \uB2E4\uC74C \uB3D9\uAE30\uD654 \uB54C \uCC44\uD305 \uAE30\uBC18 \uC774\uB984\uC73C\uB85C \uB3CC\uC544\uAC00\uC694."
+        }
+      }
+    },
+    common: {
+      messageCount: "\uBA54\uC2DC\uC9C0 {count}\uAC1C",
+      compactRole: "{role, select, user {\uC0AC\uC6A9\uC790} assistant {AI} system {\uC2DC\uC2A4\uD15C} tool {\uB3C4\uAD6C} other {{fallback}}}",
+      role: "{role, select, user {\uC0AC\uC6A9\uC790} assistant {\uC5B4\uC2DC\uC2A4\uD134\uD2B8} system {\uC2DC\uC2A4\uD15C} tool {\uB3C4\uAD6C} other {{role}}}",
+      compactTokens: "{tokens}t",
+      compactTokenChange: "{before}t\u2192{after}t"
+    }
+  },
+  guides: {
+    codex: {
+      markdown: `# \uC9C0\uC2DD \uCF54\uB371\uC2A4
+
+\uCEE8\uD14D\uC2A4\uD2B8\uAC00 \uAE38\uC5B4\uC9C0\uACE0 \uB118\uCCD0 \uD750\uB97C\uC218\uB85D \uBAA8\uB378\uC740 \uC0AC\uC2E4\uC744 \uC78A\uACE0, \uD0C0\uC784\uB77C\uC778\uC744 \uB4A4\uC11E\uACE0, \uCE90\uB9AD\uD130\uC5D0\uC11C \uBC97\uC5B4\uB098\uC694. \uC5F0\uAD6C\uC790\uB4E4\uC740 \uC7A5\uAE30 \uB864\uD50C\uB808\uC774\uC5D0\uC11C \uC774\uB7F0 \uC2E4\uD328 \uC720\uD615\uC744 \uCE21\uC815\uD588\uC5B4\uC694. \uC0AC\uC2E4 \uC190\uC2E4, \uD0C0\uC784\uB77C\uC778 \uD63C\uB3D9, \uD398\uB974\uC18C\uB098 \uC774\uD0C8\uC774\uC5D0\uC694([ARPM, 2026](https://arxiv.org/pdf/2605.14802), [PCL](https://arxiv.org/html/2503.17662v1), [CloneMem](https://arxiv.org/pdf/2601.07023)).
+
+LumiBooks\uB294 \uC774\uBBF8 \uC555\uCD95\uC73C\uB85C \uC774 \uBB38\uC81C\uC5D0 \uC5B4\uB290 \uC815\uB3C4 \uB9DE\uC11C\uACE0 \uC788\uC5B4\uC694. \uBA54\uBAA8\uB9AC\uC544\uAC00 \uCC44\uD305\uC744 \uCC55\uD130\uB85C \uC815\uB9AC\uD558\uACE0, \uCC55\uD130\uB97C \uC544\uD06C\uB85C \uBB36\uACE0, \uC544\uD06C\uB97C \uBCFC\uB968\uC73C\uB85C \uD569\uCCD0\uC694.
+
+\uC694\uCEE8\uB300 \uC774 \uC694\uC57D\uB4E4\uC740 *\uBB34\uC2A8 \uC77C\uC774 \uC788\uC5C8\uB294\uC9C0*\uB97C \uC2DC\uAC04\uC21C\uC73C\uB85C \uC54C\uB824 \uC918\uC694. \uC694\uC57D\uC5D0\uB9CC \uAE30\uB300\uBA74 \uAC1C\uCCB4 \uAC04 \uAD00\uACC4\uB098 \uC138\uBD80 \uC0AC\uD56D\uCC98\uB7FC \uACC4\uCE35\uC801\uC774\uACE0 \uAC00\uCE58 \uB192\uC740 \uC815\uBCF4\uB97C \uC694\uC57D\uC774 \uBE60\uC9D0\uC5C6\uC774 \uB2F4\uC544 \uC8FC\uAE30\uB9CC \uBC14\uB77C\uC57C \uD55C\uB2E4\uB294 \uAC8C \uAC00\uC7A5 \uD070 \uBB38\uC81C\uC608\uC694. \uC555\uCD95\uC744 \uAC70\uB4ED\uD560\uC218\uB85D \uC774\uAC74 \uC810\uC810 \uC5B4\uB824\uC6CC\uC9C0\uB2C8, \uBA85\uC2DC\uC801\uC778 \uCD94\uC801\uC774 \uD544\uC694\uD574\uC694.
+
+\uC9C0\uC2DD \uCF54\uB371\uC2A4\uAC00 \uBC14\uB85C \uC774 \uBB38\uC81C\uB97C \uD574\uACB0\uD574\uC694.
+
+## \uCF54\uB371\uC2A4\uB780
+
+\uCF54\uB371\uC2A4\uB294 \uCC44\uD305\uC744 \uC704\uD55C \uC2A4\uD1A0\uB9AC \uBC14\uC774\uBE14\uC774\uC5D0\uC694. \uC774\uC57C\uAE30\uAC00 \uC790\uB77C\uB294 \uB3D9\uC548 \uC5D0\uC774\uC804\uD2B8\uAC00 \uC0C8 \uD134\uC744 \uBE60\uC9D0\uC5C6\uC774 \uC77D\uACE0, \uBA87 \uAC00\uC9C0 \uAE30\uB85D\uC744 \uAC31\uC2E0\uD574\uC694.
+
+- **\uCE90\uB9AD\uD130, \uC7A5\uC18C, \uC0AC\uBB3C.** \uAC1C\uCCB4 \uC2DC\uD2B8\uB294 \uACC4\uCE35\uC801 \uC2DC\uB098\uB9AC\uC624 \uC791\uC131\uBD80\uD130 \uAD6C\uC870\uD654\uB41C \uC2A4\uD1A0\uB9AC \uC0DD\uC131\uAE4C\uC9C0, \uB300\uBD80\uBD84\uC758 \uC2A4\uD1A0\uB9AC \uC2DC\uC2A4\uD15C\uC758 \uBF08\uB300\uC608\uC694([Dramatron](https://arxiv.org/pdf/2209.14958), [Narrative Planning](https://arxiv.org/pdf/1401.3841), [Decomposed Screenwriting](https://arxiv.org/html/2510.23163v1)).
+- **\uAD00\uACC4.** \uAC1C\uCCB4 \uC0AC\uC774\uC758 \uAD00\uACC4\uC640 \uADF8 \uD750\uB984\uC744 \uC801\uB294 \uACF5\uC720 \uD45C\uC608\uC694. \uB0B4\uB7EC\uD2F0\uBE0C \uC9C0\uC2DD \uADF8\uB798\uD504 \uC5F0\uAD6C\uC5D0 \uB530\uB974\uBA74 \uAD00\uACC4\uB294 \uACE0\uC815\uB41C \uC2A4\uB0C5\uC20F\uC774 \uC544\uB2C8\uB77C \uBCC0\uD574 \uAC00\uB294 \uBAA8\uC2B5\uB300\uB85C \uCD94\uC801\uD574\uC57C \uD574\uC694([Iyyer et al., NAACL 2016](https://aclanthology.org/N16-1180/), [Narrative Graph](https://www.researchgate.net/publication/370272383_Narrative_Graph_Telling_Evolving_Stories_Based_on_Event-centric_Temporal_Knowledge_Graph), [Relation Clustering](https://www.researchgate.net/publication/346475960_Relation_Clustering_in_Narrative_Knowledge_Graphs)). \uC77C\uBD80 \uBAA8\uB378\uC740 \uC774 \uD45C\uB97C \uAD00\uB9AC\uD558\uAE30 \uBC84\uAC70\uC6CC\uD574\uC11C \uC120\uD0DD \uC0AC\uD56D\uC774\uC5D0\uC694.
+- **\uD0C0\uC784\uB77C\uC778.** \uC8FC\uC694 \uC0AC\uAC74\uC744 \uB0A0\uC9DC\uC640 \uD568\uAED8 \uB0A8\uAE30\uB294 \uAE30\uB85D\uC774\uC5D0\uC694. \uD0C0\uC784\uB77C\uC778 \uD63C\uB3D9\uC740 \uAC00\uC7A5 \uD754\uD55C \uC2E4\uD328 \uC720\uD615 \uC911 \uD558\uB098\uC774\uACE0, \uAFB8\uC900\uD788 \uAD00\uB9AC\uD558\uB294 \uD0C0\uC784\uB77C\uC778\uC740 \uACE0\uC804\uC801\uC778 \uBC29\uC5B4\uCC45\uC774\uC5D0\uC694([ARPM](https://arxiv.org/pdf/2605.14802), [narrative dimensions](https://arxiv.org/pdf/2604.10786), [event relation extraction](https://arxiv.org/pdf/2106.08629)).
+- **\uC2A4\uB808\uB4DC.** \uC9C4\uD589 \uC911\uC774\uAC70\uB098 \uBA48\uCD98 \uC904\uAC70\uB9AC, \uADF8\uB9AC\uACE0 \uB098\uC911\uC5D0 \uD68C\uC218\uD558\uB824\uACE0 \uC2EC\uC5B4 \uB454 \uBCF5\uC120\uC774\uC5D0\uC694. \uC2A4\uB808\uB4DC\uC640 \uAC1C\uC694 \uC0C1\uD0DC\uB97C \uBA85\uC2DC\uC801\uC73C\uB85C \uAD00\uB9AC\uD574\uC57C \uC218\uCC9C \uB2E8\uC5B4\uAC00 \uB118\uC5B4\uAC00\uB3C4 \uD50C\uB86F\uC774 \uC77C\uAD00\uC131\uC744 \uC720\uC9C0\uD574\uC694([DOC](https://arxiv.org/pdf/2212.10077), [Writing Path](https://arxiv.org/html/2404.13919v1), [plot structure management](https://www.sciencedirect.com/science/article/pii/S1875952123000459)).
+- **\uC138\uACC4.** \uBC30\uACBD \uC138\uACC4\uC758 \uADDC\uCE59\uC774\uC5D0\uC694(\uB9C8\uBC95 \uCCB4\uACC4, \uC138\uB825, \uC9C0\uB9AC, \uC124\uC815, \uC138\uACC4 \uC790\uCCB4\uC5D0 \uAD00\uD55C \uC0AC\uC2E4). \uC774\uC57C\uAE30\uC758 \uAE4A\uC774\uC5D0 \uC911\uC694\uD574\uC694([KG-guided storytelling](https://arxiv.org/html/2505.24803v2), [KG + literary theory](https://arxiv.org/pdf/2508.03137), [hierarchical story KGs](https://arxiv.org/html/2506.10008v1)).
+- **\uC9C0\uC2DD\uACFC \uBE44\uBC00.** \uB204\uAC00 \uBB34\uC5C7\uC744 \uC544\uB294\uC9C0\uC608\uC694. \uAC01 \uCE90\uB9AD\uD130\uAC00 \uC2E4\uC81C\uB85C \uBAA9\uACA9\uD55C \uAC83\uC73C\uB85C \uAE30\uC5B5\uC744 \uC81C\uD55C\uD558\uBA74 \uBAA8\uB378\uC774 \uD06C\uAC8C \uB098\uC544\uC9C0\uB294\uB370, \uBBFF\uC74C \uCD94\uC801\uC740 LLM\uC774 \uC815\uB9D0 \uD615\uD3B8\uC5C6\uB294 \uBD84\uC57C\uC608\uC694([perspective-bounded memory](https://arxiv.org/pdf/2606.25632), [MREval](https://aclanthology.org/2026.findings-acl.1175/), [ToMATO, AAAI 2025](https://ojs.aaai.org/index.php/AAAI/article/view/32143), [EnigmaToM](https://arxiv.org/pdf/2503.03340)).
+
+## \uC65C \uC774 \uAE30\uB85D\uB4E4\uC778\uAC00\uC694?
+
+\uBAA8\uB450 \uAC80\uC99D\uB41C \uC2E4\uD328 \uC720\uD615\uC774\uAC70\uB098, \uAE34 \uAE00\uC758 \uC77C\uAD00\uC131\uC744 \uB192\uC778\uB2E4\uACE0 \uBC1D\uD600\uC9C4 \uC7A5\uCE58\uC608\uC694. \uC2A4\uD1A0\uB9AC \uBC14\uC774\uBE14\uC740 \uC4F8\uBAA8 \uC788\uACE0 \uAC04\uACB0\uD574\uC57C \uD558\uBA74\uC11C\uB3C4, \uC555\uCD95 \uACFC\uC815\uC5D0\uC11C \uC0AC\uB77C\uC9C0\uAE30 \uC26C\uC6B4 \uACE0\uBC00\uB3C4 \uC815\uBCF4\uB97C \uC9C0\uCF1C\uC57C \uD574\uC694([Generative Agents](https://arxiv.org/abs/2304.03442), [MemGPT](https://arxiv.org/abs/2310.08560), [MemoryBank, AAAI 2024](https://arxiv.org/abs/2305.10250)).
+
+\uB2E4\uB978 \uD2B8\uB798\uCEE4\uAC00 \uAE30\uB85D\uD558\uB294 \uAC83 \uC911 \uC77C\uBD80\uB294 \uC77C\uBD80\uB7EC \uBE90\uC5B4\uC694.
+
+- **\uD638\uAC10\uB3C4\xB7\uC2E0\uB8B0\uB3C4 \uC218\uCE58.** \uAD00\uACC4\uB294 \uC810\uC218\uBCF4\uB2E4 \uD750\uB984\uC73C\uB85C \uB2E4\uB8E8\uB294 \uD3B8\uC774 \uB0AB\uB2E4\uB294 \uC5F0\uAD6C\uAC00 \uC788\uC5B4\uC694([Narrative Graph](https://www.researchgate.net/publication/370272383_Narrative_Graph_Telling_Evolving_Stories_Based_on_Event-centric_Temporal_Knowledge_Graph)). \uD638\uAC10\uB3C4 62 \uAC19\uC740 \uC22B\uC790\uB294 LLM\uC774 \uC81C\uBA4B\uB300\uB85C \uD574\uC11D\uD560 \uC218 \uC788\uB294 \uAC00\uC9DC \uC815\uBC00\uB3C4\uC608\uC694. "\uADF8\uB140\uB97C \uC0AC\uB791\uD558\uC9C0\uB9CC \uC228\uAE40, 12\uC77C\uC9F8\uC5D0 \uBC30\uC2E0\uB2F9\uD568"\uC774 \uD6E8\uC52C \uB9CE\uC740 \uC815\uBCF4\uB97C \uB2F4\uC544\uC694. \uC774\uB7F0 \uAC74 \uAD00\uACC4\uB85C \uCD94\uC801\uD574\uC694.
+- **\uD134\uB9C8\uB2E4\uC758 \uC7A5\uBA74 \uC0C1\uD0DC.** \uB204\uAC00 \uC5B4\uB514\uC5D0 \uC11C \uC788\uB294\uC9C0, \uC9C0\uAE08 \uB0A0\uC528, \uC21C\uAC04\uC801\uC778 \uAE30\uBD84 \uAC19\uC740 \uAC83\uB4E4\uC774\uC5D0\uC694. \uCC44\uD305 \uB05D\uC758 \uBBF8\uC555\uCD95 \uAD6C\uAC04\uC774 \uC774\uBBF8 \uD604\uC7AC \uC7A5\uBA74\uC744 \uBCF4\uC5EC \uC8FC\uB2C8 \uB450 \uBC88 \uCD94\uC801\uD560 \uD544\uC694\uAC00 \uC5C6\uACE0, \uCD94\uC801\uD558\uB824\uBA74 \uB9E4 \uD134 \uAC31\uC2E0\uD574\uC57C \uD574\uC694.
+- **\uC18C\uC9C0\uD488 \uC7A5\uBD80, \uC131\uACA9 \uBCC0\uD654 \uB85C\uADF8, \uC138\uB825 \uAD00\uACC4 \uD589\uB82C.** \uD45C\uAC00 \uD558\uB098 \uB298 \uB54C\uB9C8\uB2E4 \uC5D0\uC774\uC804\uD2B8\uC758 \uAD00\uB9AC \uBD80\uB2F4\uC774 \uBA87 \uBC30\uB85C \uCEE4\uC9C0\uACE0, \uC624\uB798\uB41C \uB370\uC774\uD130\uAC00 \uC313\uC774\uACE0 \uCD94\uC801\uD560 \uAD00\uACC4\uAC00 \uC0DD\uAE30\uB294 \uC790\uB9AC\uAC00 \uD558\uB098 \uB354 \uB298\uC5B4\uC694. \uC911\uC694\uD55C \uBB3C\uAC74\uC740 \uC774\uBBF8 \uC0AC\uBB3C\uB85C \uAE30\uB85D\uB418\uACE0, \uC624\uB798\uAC00\uB294 \uCE90\uB9AD\uD130 \uBCC0\uD654\uB294 \uC2DC\uD2B8 \uC790\uCCB4\uC5D0, \uACB0\uC815\uC801\uC778 \uC804\uD658\uC740 \uD0C0\uC784\uB77C\uC778\uC758 \uC0AC\uAC74\uC73C\uB85C \uB4E4\uC5B4\uAC00\uC694.
+- **\uB300\uC0AC \uC6D0\uBB38.** \uB098\uC911\uC5D0\uB294 \uB300\uC0AC\uB3C4 \uCD94\uC801\uD560 \uC218 \uC788\uC744\uC9C0 \uBAB0\uB77C\uC694. \uC544\uC9C1\uC740 \uBAA8\uB974\uACA0\uC5B4\uC694.
+
+## \uC791\uB3D9 \uBC29\uC2DD
+
+\uC9C1\uC811 \uC815\uD55C \uC77C\uC815\uC5D0 \uB530\uB77C \uC8FC\uAE30\uC801\uC73C\uB85C, LB\uAC00 \uC774\uC57C\uAE30\uC758 \uD55C \uC870\uAC01\uC744 \uD604\uC7AC \uAE30\uB85D\uACFC \uC57D\uAC04\uC758 \uACFC\uAC70 \uB9E5\uB77D\uACFC \uD568\uAED8 \uAC00\uBCBC\uC6B4 \uC5D0\uC774\uC804\uD2B8\uC5D0\uAC8C \uB118\uACA8\uC694. \uADF8\uB7EC\uBA74 \uC5D0\uC774\uC804\uD2B8\uAC00 \uC138 \uAC00\uC9C0 \uC77C\uC744 \uD574\uC694.
+
+1. **\uAC31\uC2E0.** \uC774\uC57C\uAE30\uAC00 \uC9C4\uD589\uB418\uBA70 \uB0A1\uC740 \uC139\uC158\uC744 \uBAA8\uB450 \uB2E4\uC2DC \uC368\uC694.
+2. **\uC810\uAC80.** \uC624\uB798\uB41C \uB0B4\uC6A9\uC774 \uB0A8\uC544 \uC788\uC9C0 \uC54A\uC740\uC9C0 \uD655\uC778\uD574\uC694.
+3. **\uC555\uCD95.** \uAD70\uB354\uB354\uAE30\uC640 \uC11C\uC220\uD615 \uBB38\uC7A5, \uC911\uBCF5 \uC815\uBCF4, \uC7A5\uD669\uD55C \uD45C\uD604\uC744 \uAC77\uC5B4\uB0B4\uC694.
+
+\uC0C8\uB86D\uACE0 \uC544\uB984\uB2E4\uC6B4 \uAE00\uB798\uC2A4 UI\uC5D0\uC11C \uAE30\uB85D\uC744 \uC9C1\uC811 \uD3B8\uC9D1\uD560 \uC218\uB3C4 \uC788\uC5B4\uC694.
+
+## \uD504\uB86C\uD504\uD2B8\uC5D0 \uB4E4\uC5B4\uAC00\uB294 \uBC29\uC2DD
+
+\uCF54\uB371\uC2A4\uB294 \uB298 \uCF1C\uC838 \uC788\uB294 \uD55C \uB369\uC5B4\uB9AC \uBE14\uB85D\uC73C\uB85C \uC8FC\uC785\uB418\uC9C0 \uC54A\uC544\uC694. \uAC01 \uAE30\uB85D\uC740 \`LumiBooks Codex [Do Not Edit] - <chat>\`\uC774\uB77C\uB294 \uCC44\uD305\uBCC4 \uC804\uC6A9 \uC6D4\uB4DC\uBD81\uC5D0 \uBBF8\uB7EC\uB9C1\uB418\uACE0, \uBB34\uC5C7\uC774 \uD504\uB86C\uD504\uD2B8\uC5D0 \uB4E4\uC5B4\uAC08\uC9C0\uB294 \uD638\uC2A4\uD2B8\uC758 \uAE30\uBCF8 \uC6D4\uB4DC\uBD81 \uD65C\uC131\uD654 \uAE30\uB2A5\uC774 \uC815\uD574\uC694.
+
+- **\uAC1C\uCCB4, \uC138\uACC4 \uC8FC\uC81C, \uBE44\uBC00**\uC740 \uC870\uC815 \u2192 \uC124\uC815 \u2192 \uCF54\uB371\uC2A4\uC758 \uC138 \uAC00\uC9C0 **\uCF54\uB371\uC2A4 \uC0C1\uAE30** \uC124\uC815\uC744 \uB530\uB77C\uC694. **\uD56D\uC0C1**, **\uD0A4\uC6CC\uB4DC**(\uAE30\uBCF8\uAC12), **\uBCA1\uD130 + \uD0A4\uC6CC\uB4DC** \uC911\uC5D0\uC11C \uACE0\uB97C \uC218 \uC788\uC5B4\uC694. \uC5D0\uC774\uC804\uD2B8\uB294 \uAE30\uB85D\uB9C8\uB2E4 \`keywords\` \uBAA9\uB85D\uC744 \uD568\uAED8 \uC801\uC5B4\uC694(\uC774\uB984, \uBCC4\uCE6D, \uCC38\uC5EC\uC790\uB294 \uC790\uB3D9\uC73C\uB85C \uC77C\uCE58\uD574\uC694). \uBCA1\uD130 \uBAA8\uB4DC\uC5D0\uC11C\uB294 Lumiverse\uC758 \uC6D4\uB4DC\uBD81 \uAC80\uC0C9\uC73C\uB85C \uC758\uBBF8\uAC00 \uAC00\uAE4C\uC6B4 \uAE30\uB85D\uB3C4 \uCC3E\uC544\uC640\uC694.
+- **\uD0C0\uC784\uB77C\uC778\uACFC \uC2A4\uB808\uB4DC**\uB294 \uD0A4\uC6CC\uB4DC \uC77C\uCE58\uAC00 \uBCC4 \uC758\uBBF8\uAC00 \uC5C6\uC5B4\uC11C \uC0C1\uC2DC \uD56D\uBAA9\uC774\uC5D0\uC694.
+
+\uBCA1\uD130 \uC0C1\uAE30\uB97C \uC4F0\uB824\uBA74 Lumiverse\uC5D0\uC11C \uD14C\uC2A4\uD2B8\uB97C \uB9C8\uCE5C \uC784\uBCA0\uB529 \uC5F0\uACB0\uACFC \uC6D4\uB4DC\uBD81 \uBCA1\uD130\uD654\uAC00 \uCF1C\uC838 \uC788\uC5B4\uC57C \uD574\uC694. \uBAA8\uB4DC\uB97C \uBC14\uAFB8\uBA74 \uAE30\uC874 \uAE30\uB85D\uC774 \uC0C9\uC778 \uB300\uAE30\uC5F4\uC5D0 \uB4E4\uC5B4\uAC00\uACE0, \uC0C8\uB85C \uB9CC\uB4E4\uAC70\uB098 \uD3B8\uC9D1\uD55C \uAE30\uB85D\uB3C4 \uAC19\uC740 \uC124\uC815\uC744 \uB530\uB77C\uC694. \uC0C9\uC778\uC774 \uB05D\uB098\uAE30 \uC804\uC774\uB098, \uAC80\uC0C9\uC744 \uC4F8 \uC218 \uC5C6\uAC70\uB098, \uAC80\uC0C9\uC5D0 \uC4F8 \uCD5C\uADFC \uD14D\uC2A4\uD2B8\uAC00 \uBCF4\uC774\uC9C0 \uC54A\uC744 \uB54C\uB3C4 \uD0A4\uC6CC\uB4DC \uC77C\uCE58\uB294 \uADF8\uB300\uB85C \uC791\uB3D9\uD574\uC694. \uAEBC \uB454 \uAE30\uB85D\uACFC \uD30C\uC77C\uC740 \uACC4\uC18D \uC81C\uC678\uB3FC\uC694. \uAC80\uC0C9 \uD55C\uB3C4\uC640 \uC784\uBCA0\uB529 \uD504\uB85C\uBC14\uC774\uB354\uB294 Lumiverse\uAC00 \uAD00\uB9AC\uD558\uACE0, \uC815\uBCF8\uC740 \uC5EC\uC804\uD788 \uCF54\uB371\uC2A4 \uD30C\uC77C\uC774\uC5D0\uC694.
+
+\uCC55\uD130\uC640 \uADF8 \uC704 \uB2E8\uACC4\uC758 \uC694\uC57D\uC5D0\uB294 \uC870\uC815 \u2192 \uC124\uC815 \u2192 \uCC45 \u2192 \uC804\uCCB4 \uACF5\uD1B5\uC5D0 \uBCC4\uB3C4\uC758 **\uC694\uC57D \uC0C1\uAE30** \uC124\uC815\uC774 \uC788\uC5B4\uC694. \uAE30\uBCF8\uAC12\uC740 **\uD56D\uC0C1**\uC774\uC5D0\uC694. \uC5B4\uB5A4 \uAE30\uC5B5\uC744 \uACE0\uB974\uB4E0 \uC815\uB9AC\uB418\uAC70\uB098 \uC228\uACA8\uC9C0\uB294 \uBA54\uC2DC\uC9C0\uB294 \uBC14\uB00C\uC9C0 \uC54A\uC544\uC694. \uAC19\uC740 \uC139\uC158\uC5D0\uC11C, Lumiverse\uC5D0\uC11C \uAD00\uB9AC\uB418\uB294 \uB450 \uC6D4\uB4DC\uBD81 \uC911 \uC5B4\uB290 \uCABD\uC774\uB4E0 \uC774\uB984\uC744 \uC9C1\uC811 \uBC14\uAFB8\uAE30 \uC804\uC5D0 **\uC6D4\uB4DC\uBD81 \uC774\uB984\uC744 \uCC44\uD305 \uC774\uB984\uC5D0 \uB9DE\uCD94\uAE30**\uB97C \uAEBC \uB450\uC138\uC694.
+
+\uBBF8\uB7EC \uC6D4\uB4DC\uBD81\uC740 LumiBooks\uAC00 \uC790\uC8FC \uB2E4\uC2DC \uC4F0\uB2C8 \uC9C1\uC811 \uD3B8\uC9D1\uD558\uC9C0 \uB9C8\uC138\uC694. \uAE30\uB85D\uC740 \uCF54\uB371\uC2A4 \uD0ED(\uB610\uB294 JSON \uD30C\uC77C)\uC5D0\uC11C \uD3B8\uC9D1\uD558\uC138\uC694.
+
+## \uD655\uC7A5 \uD504\uB85C\uADF8\uB7A8 \uAC1C\uBC1C\uC790\uC6A9
+
+LumiBooks\uB294 \uCF54\uB371\uC2A4\uB97C Spindle\uC758 \uACF5\uC720 RPC \uD480\uC5D0 \uAC8C\uC2DC\uD574\uC694. \uC5B4\uB290 \uD655\uC7A5 \uD504\uB85C\uADF8\uB7A8 \uBC31\uC5D4\uB4DC\uC5D0\uC11C\uB4E0 \uC77D\uC744 \uC218 \uC788\uC5B4\uC694.
+
+\`\`\`ts
+// Full snapshot: all 8 files as parsed JSON, plus per-file states.
+const snap = await spindle.rpcPool.read(\`lumi_books.codex.$'{'chatId'}'\`);
+// snap: '{' chatId, userId, files: '{' characters, locations, things, relations,
+//         timeline, threads, world, knowledge '}', fileStates, runs, updatedAt '}'
+
+// The whole Codex rendered as one text block. Note LumiBooks itself no longer
+// injects this block: records reach the prompt as lorebook entries (see
+// "How it reaches the prompt"), so this is a convenience view for consumers.
+const text = await spindle.rpcPool.read(\`lumi_books.codex.$'{'chatId'}'.rendered\`);
+
+// Change signal: the most recent Codex mutation across all chats.
+const evt = await spindle.rpcPool.read("lumi_books.codex_updated");
+// evt: '{' chatId, userId, changedFiles, reason: "run"|"tidy"|"edit"|"states"|"wipe", updatedAt '}'
+\`\`\`
+
+\uCC38\uACE0:
+
+- \uC5D4\uB4DC\uD3EC\uC778\uD2B8\uB294 \uC138\uC158\uC5D0\uC11C \uCF54\uB371\uC2A4\uAC00 \uCC98\uC74C \uD65C\uB3D9\uD55C \uB4A4\uC5D0 \uC0DD\uACA8\uC694. \uADF8 \uC804\uC5D0\uB294 \`read\`\uAC00 \uAC70\uBD80\uB418\uB2C8 try/catch\uB85C \uAC10\uC2F8\uC138\uC694.
+- \uCF54\uB371\uC2A4\uB97C \uBE44\uC6B0\uBA74 \uB450 \uCC44\uD305 \uC5D4\uB4DC\uD3EC\uC778\uD2B8 \uBAA8\uB450\uC5D0 \`null\`\uC774 \uAC8C\uC2DC\uB3FC\uC694.
+- \`fileStates\`\uB294 \uC0AC\uC6A9\uC790\uAC00 \uB048(\`noInject\`) \uD30C\uC77C\uACFC \uB3D9\uACB0\uD55C(\`frozen\`) \uD30C\uC77C\uC744 \uD45C\uC2DC\uD574\uC694. \`rendered\` \uD14D\uC2A4\uD2B8\uC5D0\uB294 \uC774\uBBF8 \uBE60\uC838 \uC788\uC5B4\uC694. \`files\`\uB97C \uC9C1\uC811 \uC4F4\uB2E4\uBA74 \uC774 \uD50C\uB798\uADF8\uB97C \uC9C0\uCF1C \uC8FC\uC138\uC694.
+- \`lumi_books.latest_chapter\`, \`lumi_books.latest_arc\`, \`lumi_books.latest_volume\`\uC740 \uC694\uC57D \uC774\uBCA4\uD2B8\uB97C \uC804\uB2EC\uD558\uBA70, \uC774\uC804\uBD80\uD130 \uAC8C\uC2DC\uB418\uC5B4 \uC654\uC5B4\uC694.
+`
+    }
+  },
+  promptBreakdown: {
+    assembledTranscript: "\uC870\uD569\uB41C \uB300\uD654 \uAE30\uB85D"
+  }
+};
 
 // src/i18n/index.ts
 var DEFAULT_LOCALE = "en";
@@ -5837,7 +8817,9 @@ function createTranslator(locale = DEFAULT_LOCALE, catalogs = {}) {
     throw new Error(`Missing English message: ${key}`);
   };
 }
-var t = createTranslator();
+var BUNDLED_CATALOGS = { ko: ko_default };
+var APP_LOCALE = "ko";
+var t = createTranslator(APP_LOCALE, BUNDLED_CATALOGS);
 
 // src/prompts/codex/directives.txt
 var directives_default = `You are Memoria's archivist. You maintain the Knowledge Codex: a set of JSON files that together form the complete story bible of a roleplay. The codex is the one comprehensive ledger of every durable element the story has established: every character, place, and object of consequence, every standing relationship, every dated event, every open storyline, every world rule, every secret and asymmetry of knowledge. If a durable story fact is not in the codex, it is lost. You will receive the current codex files and new story material. Update the codex so that nothing the story has established is missing, outdated, or bloated.
@@ -6428,11 +9410,11 @@ var CODEX_TEMPLATES = [
     defaultText: locked_fields_default
   }
 ];
-var CODEX_TEMPLATE_KEYS = CODEX_TEMPLATES.map((t) => t.key);
+var CODEX_TEMPLATE_KEYS = CODEX_TEMPLATES.map((t2) => t2.key);
 function isCodexTemplateKey(v) {
   return typeof v === "string" && CODEX_TEMPLATE_KEYS.includes(v);
 }
-var BY_KEY = new Map(CODEX_TEMPLATES.map((t) => [t.key, t]));
+var BY_KEY = new Map(CODEX_TEMPLATES.map((t2) => [t2.key, t2]));
 function codexTemplateText(key, overrides) {
   const o = overrides[key];
   if (typeof o === "string" && o.trim())
@@ -7824,19 +10806,19 @@ function trimLagFromTail(uncoveredTail, profile) {
     return uncoveredTail.slice();
   if (profile.lagUnit === "messages") {
     let counted = 0;
-    let cutoffIdx = uncoveredTail.length;
+    let cutoffIdx2 = uncoveredTail.length;
     for (let i = uncoveredTail.length - 1;i >= 0; i--) {
       if (isEligibleForCount(uncoveredTail[i], profile)) {
         counted++;
         if (counted >= profile.lagValue) {
-          cutoffIdx = i;
+          cutoffIdx2 = i;
           break;
         }
       }
     }
     if (counted < profile.lagValue)
       return [];
-    return uncoveredTail.slice(0, cutoffIdx);
+    return uncoveredTail.slice(0, cutoffIdx2);
   }
   let lagged = 0;
   let cutoffIdx = 0;
@@ -8153,9 +11135,9 @@ async function loadPromptBreakdown(request, userId) {
       const saved = await generate.getBreakdown(messageId, userId);
       if (!saved)
         continue;
-      const d = normalizeBreakdown(saved, typeof saved.chatHistoryTokens === "number" ? saved.chatHistoryTokens : 0);
-      if (d)
-        return { d, source: "fire" };
+      const d2 = normalizeBreakdown(saved, typeof saved.chatHistoryTokens === "number" ? saved.chatHistoryTokens : 0);
+      if (d2)
+        return { d: d2, source: "fire" };
     }
   }
   const preview = await generate.dryRun({ chatId: request.chatId }, userId);
@@ -9296,13 +12278,13 @@ function fillPrompt(template, vars) {
 }
 // spindle.json
 var spindle_default = {
-  identifier: "lumi_books",
-  version: "1.1.1",
-  name: "LumiBooks",
-  author: "AMousePad",
-  github: "https://github.com/AMousePad/LumiBooks",
-  homepage: "https://github.com/AMousePad/LumiBooks",
-  description: "Memoria the librarian compresses old chat into chapters and arcs, splicing them back into your prompt where the messages used to be.",
+  identifier: "lumi_books_ko",
+  version: "1.1.1+ko",
+  name: "LumiBooks (\uD55C\uAD6D\uC5B4)",
+  author: "AMousePad (\uD55C\uAD6D\uC5B4\uD310: mallang0723)",
+  github: "https://github.com/mallang0723/LumiBooks-ko",
+  homepage: "https://github.com/mallang0723/LumiBooks-ko",
+  description: "\uC0AC\uC11C \uBA54\uBAA8\uB9AC\uC544\uAC00 \uC624\uB798\uB41C \uCC44\uD305\uC744 \uCC55\uD130\uC640 \uC544\uD06C\uB85C \uC555\uCD95\uD574, \uC6D0\uB798 \uBA54\uC2DC\uC9C0\uAC00 \uC788\uB358 \uC790\uB9AC\uC5D0 \uD504\uB86C\uD504\uD2B8\uB85C \uB2E4\uC2DC \uB07C\uC6CC \uB123\uC5B4\uC694.",
   permissions: [
     "world_books",
     "chats",
@@ -9534,12 +12516,12 @@ function project(raw, stored) {
       truncated = true;
     return rows;
   };
-  const messages = take(v.messages).flatMap((raw) => {
-    const m = object(raw), id = ref(m.id), index = number(m.index);
+  const messages = take(v.messages).flatMap((raw2) => {
+    const m = object(raw2), id = ref(m.id), index = number(m.index);
     return id && index !== undefined ? [{ id, index, position: number(m.position), coveredBy: ref(m.coveredBy), excluded: bool(m.excluded), hidden: bool(m.hidden), selected: bool(m.selected), eligible: bool(m.eligible), empty: bool(m.empty) }] : [];
   });
-  const entries = take(v.entries).flatMap((raw) => {
-    const e = object(raw), id = ref(e.id), tier = number(e.tier);
+  const entries = take(v.entries).flatMap((raw2) => {
+    const e = object(raw2), id = ref(e.id), tier = number(e.tier);
     if (!id || tier === undefined)
       return [];
     return [{
@@ -9554,8 +12536,8 @@ function project(raw, stored) {
       disabled: bool(e.disabled),
       sourceCount: number(e.sourceCount),
       sourceEntryCount: number(e.sourceEntryCount),
-      messages: take(e.messages).flatMap((id) => ref(id) ? [ref(id)] : []),
-      sources: take(e.sources).flatMap((id) => ref(id) ? [ref(id)] : [])
+      messages: take(e.messages).flatMap((id2) => ref(id2) ? [ref(id2)] : []),
+      sources: take(e.sources).flatMap((id2) => ref(id2) ? [ref(id2)] : [])
     }];
   });
   return {
@@ -9731,8 +12713,8 @@ async function clearDiagnostics(userId) {
     healthByUser.delete(userId);
   });
 }
-function diagnosticErrorReason(error) {
-  const name = error instanceof Error ? error.name : "";
+function diagnosticErrorReason(error2) {
+  const name = error2 instanceof Error ? error2.name : "";
   switch (name) {
     case "AbortError":
     case "AbortedSummarizerError":
@@ -10183,60 +13165,60 @@ JSON-only:
 - No markdown fences, no commentary, no system prompts, no extra text.`;
 
 // src/prompts/books/volume-default.txt
-var volume_default_default = `You are an expert narrative analyst and memory-engine assistant.\r
-Your task is to take multiple story ARC summaries (each already a condensed span of the story), normalize them, reconstruct the full chronology, and output a single consolidated VOLUME entry in JSON.\r
-\r
-A volume is a higher compression tier: it replaces all of its source arcs in a long-running RP memory system, so it must preserve everything future scenes may depend on while being far more compact than the arcs combined.\r
-\r
-{{TARGET_DIRECTIVE}}\r
-\r
-Strict output format (JSON only; no markdown, no prose outside JSON):\r
-{\r
-  "title": "Short descriptive volume title (3-6 words)",\r
-  "opener": "{{memoria_opener}}",\r
-  "content": "Structured volume summary as a single string (see Summary Content Structure below).",\r
-  "keywords": ["keyword1", "keyword2"],\r
-  "short_comment": "{{memoria_short_comment_rules}}"\r
-}\r
-\r
-The opener field MUST be the exact string shown above, copied verbatim. Do not rephrase it or invent your own.\r
-\r
-Notes:\r
-- Respect chronology of the source arcs (oldest first).\r
-- Merge overlapping or repeated information across arcs into single beats.\r
-- Prefer whole-story trajectory over scene detail: what changed permanently matters more than how each scene played out.\r
-\r
-Summary Content Structure (follow inside the content string; use headings and bullets as plain text):\r
-\r
-# [Volume Title]\r
-Time period: What timeframe the volume covers.\r
-\r
-Volume Premise: One or two sentences describing the overall movement of the story across these arcs.\r
-\r
-## Major Beats\r
-- 5-10 bullets capturing the major plot movements across all arcs\r
-- Focus on cause \u2192 effect logic and permanent consequences\r
-- Include only plot-affecting events\r
-\r
-## Character Dynamics\r
-- 1-3 paragraphs describing how the characters' motives, emotions, boundaries, and relationships evolved across the volume\r
-- Capture the net change from the start of the first arc to the end of the last\r
-\r
-## Key Exchanges\r
-- Up to 8 short, exact quotes that defined the volume\r
-- Only dialogue that materially shifted tone, emotion, or relationship dynamics\r
-\r
-## Outcome & Continuity\r
-- 5-10 bullets capturing decisions, promises, emotional states, routines, injuries or physical changes, foreshadowed events, unresolved threads, and permanent consequences\r
-\r
-KEYWORDS\r
-- Provide 15-30 standalone retrieval keywords.\r
-- Concrete nouns, physical objects, places, proper nouns, distinctive actions, or memorable elements only.\r
-- Each keyword = ONE concept, retrievable if mentioned alone.\r
-- No narrative keywords, no emotional or abstract words, no multi-fact keywords, no character names.\r
-\r
-JSON-only:\r
-- Return only the JSON object described above.\r
+var volume_default_default = `You are an expert narrative analyst and memory-engine assistant.
+Your task is to take multiple story ARC summaries (each already a condensed span of the story), normalize them, reconstruct the full chronology, and output a single consolidated VOLUME entry in JSON.
+
+A volume is a higher compression tier: it replaces all of its source arcs in a long-running RP memory system, so it must preserve everything future scenes may depend on while being far more compact than the arcs combined.
+
+{{TARGET_DIRECTIVE}}
+
+Strict output format (JSON only; no markdown, no prose outside JSON):
+{
+  "title": "Short descriptive volume title (3-6 words)",
+  "opener": "{{memoria_opener}}",
+  "content": "Structured volume summary as a single string (see Summary Content Structure below).",
+  "keywords": ["keyword1", "keyword2"],
+  "short_comment": "{{memoria_short_comment_rules}}"
+}
+
+The opener field MUST be the exact string shown above, copied verbatim. Do not rephrase it or invent your own.
+
+Notes:
+- Respect chronology of the source arcs (oldest first).
+- Merge overlapping or repeated information across arcs into single beats.
+- Prefer whole-story trajectory over scene detail: what changed permanently matters more than how each scene played out.
+
+Summary Content Structure (follow inside the content string; use headings and bullets as plain text):
+
+# [Volume Title]
+Time period: What timeframe the volume covers.
+
+Volume Premise: One or two sentences describing the overall movement of the story across these arcs.
+
+## Major Beats
+- 5-10 bullets capturing the major plot movements across all arcs
+- Focus on cause \u2192 effect logic and permanent consequences
+- Include only plot-affecting events
+
+## Character Dynamics
+- 1-3 paragraphs describing how the characters' motives, emotions, boundaries, and relationships evolved across the volume
+- Capture the net change from the start of the first arc to the end of the last
+
+## Key Exchanges
+- Up to 8 short, exact quotes that defined the volume
+- Only dialogue that materially shifted tone, emotion, or relationship dynamics
+
+## Outcome & Continuity
+- 5-10 bullets capturing decisions, promises, emotional states, routines, injuries or physical changes, foreshadowed events, unresolved threads, and permanent consequences
+
+KEYWORDS
+- Provide 15-30 standalone retrieval keywords.
+- Concrete nouns, physical objects, places, proper nouns, distinctive actions, or memorable elements only.
+- Each keyword = ONE concept, retrievable if mentioned alone.
+- No narrative keywords, no emotional or abstract words, no multi-fact keywords, no character names.
+
+JSON-only:
+- Return only the JSON object described above.
 - No markdown fences, no commentary, no extra text.`;
 
 // src/backend/presets.ts
@@ -10599,9 +13581,9 @@ async function countTextTokens(text, model, userId) {
 async function resolveTargets(unit, percent, tokens, inputText, model, userId) {
   const inputTokens = await countTextTokens(inputText, model, userId);
   if (unit === "tokens") {
-    const targetTokens = Math.max(1, Math.floor(tokens));
-    const targetPercent = inputTokens > 0 ? Math.max(1, Math.round(targetTokens / inputTokens * 100)) : 0;
-    return { targetTokens, targetPercent, inputTokens };
+    const targetTokens2 = Math.max(1, Math.floor(tokens));
+    const targetPercent = inputTokens > 0 ? Math.max(1, Math.round(targetTokens2 / inputTokens * 100)) : 0;
+    return { targetTokens: targetTokens2, targetPercent, inputTokens };
   }
   const targetTokens = Math.max(1, Math.floor(inputTokens * percent / 100));
   return { targetTokens, targetPercent: percent, inputTokens };
@@ -11238,7 +14220,7 @@ function maskLockedFields(e) {
 function agentFileJson(bundle, key) {
   if (key === "threads") {
     return JSON.stringify({
-      threads: bundle.threads.threads.filter((t) => t.status !== "resolved"),
+      threads: bundle.threads.threads.filter((t2) => t2.status !== "resolved"),
       seeds: bundle.threads.seeds
     });
   }
@@ -11398,7 +14380,7 @@ function buildCodexRefreshMessage(ctx, bundle, targets, books, tailTranscript, n
   const special = specialNotes(bundle, notes, ctx);
   if (special)
     parts.push(special);
-  const list = targets.map((t) => `${t}.json`).join(", ");
+  const list = targets.map((t2) => `${t2}.json`).join(", ");
   const shape = books.length && tailTranscript ? "its filed summaries, oldest first, followed by the raw newest turns" : books.length ? "its filed summaries, oldest first" : "raw turns";
   parts.push(fillPrompt(tpl(ctx, "pass_refresh"), {
     TARGET_FILES: list,
@@ -11432,7 +14414,7 @@ function buildCodexRebuildMessage(ctx, bundle, targets, books, tailTranscript, n
   const special = specialNotes(bundle, notes, ctx);
   if (special)
     parts.push(special);
-  const list = targets.map((t) => `${t}.json`).join(", ");
+  const list = targets.map((t2) => `${t2}.json`).join(", ");
   const shape = books.length && tailTranscript ? "its filed summaries, oldest first, followed by the raw newest turns" : books.length ? "its filed summaries, oldest first" : "raw turns";
   parts.push(fillPrompt(tpl(ctx, "pass_rebuild"), { TARGET_FILES: list, STORY_SHAPE: shape }));
   if (lore) {
@@ -11476,7 +14458,7 @@ function buildCodexTidyMessage(ctx, bundle, targets, budget) {
   if (lockedFields.length) {
     parts.push(fillPrompt(tpl(ctx, "note_locked_fields"), { IDS: lockedFields.join(", ") }));
   }
-  parts.push(`TARGET FILES: ${targets.map((t) => `${t}.json`).join(", ")}. Do not write any other file.`);
+  parts.push(`TARGET FILES: ${targets.map((t2) => `${t2}.json`).join(", ")}. Do not write any other file.`);
   for (const file of targets) {
     const guidance = TIDY_FILE_GUIDANCE[file];
     if (guidance)
@@ -11519,8 +14501,8 @@ function resolveRefName(names, ref) {
 function relationLine(r, names) {
   const nameOf = (ref) => resolveRefName(names, ref);
   if (r.type === "pair") {
-    const hist = r.history?.length ? ` (${r.history.join("; ")})` : "";
-    return `- ${nameOf(r.a)} -> ${nameOf(r.b)} [${r.kind}]: ${r.state}${hist}`;
+    const hist2 = r.history?.length ? ` (${r.history.join("; ")})` : "";
+    return `- ${nameOf(r.a)} -> ${nameOf(r.b)} [${r.kind}]: ${r.state}${hist2}`;
   }
   const members = r.members.map((m) => {
     const role = r.roles?.[m];
@@ -11544,14 +14526,14 @@ function uniqKeys(parts) {
   const seen = new Set;
   const out = [];
   for (const p of parts) {
-    const t = p.trim();
-    if (!t)
+    const t2 = p.trim();
+    if (!t2)
       continue;
-    const k = t.toLowerCase();
+    const k = t2.toLowerCase();
     if (seen.has(k))
       continue;
     seen.add(k);
-    out.push(t);
+    out.push(t2);
   }
   return out;
 }
@@ -11586,8 +14568,8 @@ function renderCodexRecords(bundle, opts) {
     const label = ENTITY_FILE_LABEL[fileKey];
     for (const e of bundle[fileKey].entities) {
       const lines = [entityLine(e)];
-      for (const t of e.ties ?? [])
-        lines.push(`  * ${t}`);
+      for (const t2 of e.ties ?? [])
+        lines.push(`  * ${t2}`);
       if (opts.includeRelations && !opts.disabledFiles?.has(fileKey) && !e.noInject) {
         bundle.relations.relations.forEach((r, i) => {
           if (!relationInvolves(r, e.id))
@@ -11725,8 +14707,8 @@ function renderCodexFileSections(bundle) {
     const lines = [`== ${title} ==`];
     for (const e of entities) {
       lines.push(entityLine(e));
-      for (const t of e.ties ?? [])
-        lines.push(`  * ${t}`);
+      for (const t2 of e.ties ?? [])
+        lines.push(`  * ${t2}`);
     }
     out[key] = lines.join(`
 `);
@@ -11749,13 +14731,13 @@ function renderCodexFileSections(bundle) {
   } else {
     out.timeline = "";
   }
-  const liveThreads = bundle.threads.threads.filter((t) => t.status !== "resolved");
+  const liveThreads = bundle.threads.threads.filter((t2) => t2.status !== "resolved");
   if (liveThreads.length || bundle.threads.seeds.length) {
     const lines = ["== Threads =="];
-    for (const t of liveThreads) {
-      const latest = t.latest ? ` | latest: ${t.latest}` : "";
-      lines.push(`- ${t.name} (${t.status}): ${t.summary}${latest}`);
-      for (const p of t.planted ?? [])
+    for (const t2 of liveThreads) {
+      const latest = t2.latest ? ` | latest: ${t2.latest}` : "";
+      lines.push(`- ${t2.name} (${t2.status}): ${t2.summary}${latest}`);
+      for (const p of t2.planted ?? [])
         lines.push(`  * planted: ${p}`);
     }
     for (const s of bundle.threads.seeds)
@@ -12034,9 +15016,9 @@ async function syncCodexProfiles(userId) {
         }
       });
     } catch (err) {
-      const error = describeError(err);
-      failures.push({ chatId, error });
-      warn(`Codex profile sync failed for ${chatId}: ${error}`);
+      const error2 = describeError(err);
+      failures.push({ chatId, error: error2 });
+      warn(`Codex profile sync failed for ${chatId}: ${error2}`);
     }
   }
   return failures;
@@ -12091,10 +15073,10 @@ function selectBindingBatch(entries, tier, rule, closedOnly = false) {
     return [];
   const runs = summaryRuns(entries, tier);
   const ordered = runs.flatMap((run) => run.entries);
-  const size = (e) => rule.unit === "tokens" ? approximateTokensFromChars(e.raw.content.length) : 1;
+  const size2 = (e) => rule.unit === "tokens" ? approximateTokensFromChars(e.raw.content.length) : 1;
   let cutoff = ordered.length, reserved = 0;
   while (cutoff > 0 && reserved < rule.lag)
-    reserved += size(ordered[--cutoff]);
+    reserved += size2(ordered[--cutoff]);
   const eligible = new Set(ordered.slice(0, cutoff).map((e) => e.raw.id));
   for (const run of runs) {
     if (closedOnly && !run.closed)
@@ -12105,7 +15087,7 @@ function selectBindingBatch(entries, tier, rule, closedOnly = false) {
       if (!run.closed && !eligible.has(entry.raw.id))
         break;
       selected.push(entry);
-      count += size(entry);
+      count += size2(entry);
       if (count >= Math.max(1, rule.batch))
         return selected;
     }
@@ -12485,10 +15467,10 @@ function chatKey(userId, chatId) {
 }
 var cb = null;
 function registerPipelineCallbacks(c) {
-  function delivery(name, send) {
+  function delivery(name, send2) {
     return (...args) => {
       try {
-        send(...args);
+        send2(...args);
       } catch (err) {
         warn(`${name} delivery failed: ${describeError(err)}`);
       }
@@ -13414,18 +16396,18 @@ async function acceptPreview(chatId, draftId, profile, userId) {
     if (preview.kind === "chapter") {
       const messages = await spindle.chat.getMessages(chatId);
       const acceptEntries = preview.replacesEntryId ? (await listLmbEntries(chatId, userId, true)).filter((e) => e.raw.id !== preview.replacesEntryId) : await listLmbEntries(chatId, userId, true);
-      const coverage = await buildCoverage(chatId, userId, acceptEntries, extraContextActive(profile));
+      const coverage2 = await buildCoverage(chatId, userId, acceptEntries, extraContextActive(profile));
       const intent = new Set(preview.sourceMessageIds);
-      const window = messages.filter((m) => intent.has(m.id) && !coverage.coveredBy.has(m.id) && !isExcluded(m));
-      const sources = previewSources.get(preview);
-      if (window.length !== preview.sourceMessageIds.length || !sources || window.some((m, i) => m.id !== preview.sourceMessageIds[i] || messageSource(m) !== sources[i])) {
+      const window = messages.filter((m) => intent.has(m.id) && !coverage2.coveredBy.has(m.id) && !isExcluded(m));
+      const sources2 = previewSources.get(preview);
+      if (window.length !== preview.sourceMessageIds.length || !sources2 || window.some((m, i) => m.id !== preview.sourceMessageIds[i] || messageSource(m) !== sources2[i])) {
         cb?.onToast(userId, "warn", changedSources().message);
         cb?.onStateChange(userId, chatId);
         return null;
       }
       const firstIdx = window[0].index_in_chat;
       const lastIdx = window[window.length - 1].index_in_chat;
-      const fakeResult = {
+      const fakeResult2 = {
         rawOutput: preview.content,
         title: preview.title,
         opener: "",
@@ -13438,9 +16420,9 @@ async function acceptPreview(chatId, draftId, profile, userId) {
         connectionId: preview.connectionId,
         presetKey: preview.presetKey
       };
-      copyReplacement(preview, fakeResult);
+      copyReplacement(preview, fakeResult2);
       try {
-        const entryId = await commitChapter(chatId, profile, userId, window, fakeResult, firstIdx, lastIdx, messages, true, preview.replacesEntryId);
+        const entryId = await commitChapter(chatId, profile, userId, window, fakeResult2, firstIdx, lastIdx, messages, true, preview.replacesEntryId);
         dropPendingPreview(userId, chatId, draftId);
         nyaaToast(userId, "success", false);
         cb?.onStateChange(userId, chatId);
@@ -13866,8 +16848,8 @@ var inflight3 = new Map;
 var retryAt = new Map;
 var RETRY_BACKOFF_MS = 30000;
 var forkAnomalyCb = null;
-function registerForkAnomalyCallback(cb) {
-  forkAnomalyCb = cb;
+function registerForkAnomalyCallback(cb2) {
+  forkAnomalyCb = cb2;
 }
 function key(userId, chatId) {
   return `${userId}::${chatId}`;
@@ -14369,12 +17351,12 @@ async function exportSummaryLorebook(chatId, userId, progress) {
     byEntry.set(e.raw.id, [...ids].flatMap((id) => positions.has(id) ? [positions.get(id)] : []).sort((a, b) => a - b));
   }
   for (const [messageId, entryId] of coverage.coveredBy) {
-    const at = positions.get(messageId), indices = byEntry.get(entryId);
-    if (at !== undefined && indices)
-      indices.push(at);
+    const at = positions.get(messageId), indices2 = byEntry.get(entryId);
+    if (at !== undefined && indices2)
+      indices2.push(at);
   }
-  for (const [id, indices] of byEntry)
-    byEntry.set(id, [...new Set(indices)].sort((a, b) => a - b));
+  for (const [id, indices2] of byEntry)
+    byEntry.set(id, [...new Set(indices2)].sort((a, b) => a - b));
   const indices = [...new Set([...byEntry.values()].flat())].sort((a, b) => a - b);
   const hashes = await hashRawMessages(indices.map((i) => messages[i]), (done) => progress?.(t("backend.summaryBackup.hashes.hashingRawMessages", { done, length: indices.length })));
   const fingerprint = await makeFingerprint(indices.map((index, i) => ({ index, hash: hashes[i] })));
@@ -14644,8 +17626,8 @@ async function runSummaryTransfer(userId, chatId, request) {
 
 // src/backend/injection.ts
 var injectionAnomalyCb = null;
-function registerInjectionAnomalyCallback(cb) {
-  injectionAnomalyCb = cb;
+function registerInjectionAnomalyCallback(cb2) {
+  injectionAnomalyCb = cb2;
 }
 function isAssembledHistory(lm) {
   return lm["__isChatHistory"] === true;
@@ -14692,26 +17674,26 @@ function orderEntries(coverage, msgIdToIdx) {
 var LEGACY_ACTIVATION_WAIT_MS = 240000;
 var legacyActivationInflight = new Map;
 async function getLegacyActivated(chatId, userId) {
-  const key = `${userId}:${chatId}`;
-  let pending = legacyActivationInflight.get(key);
+  const key3 = `${userId}:${chatId}`;
+  let pending = legacyActivationInflight.get(key3);
   if (!pending) {
     const raw = spindle.world_books.getActivated(chatId, userId).catch(() => null);
     pending = new Promise((resolve) => {
       const timer = setTimeout(() => {
-        if (legacyActivationInflight.get(key) === pending) {
-          legacyActivationInflight.delete(key);
+        if (legacyActivationInflight.get(key3) === pending) {
+          legacyActivationInflight.delete(key3);
         }
         resolve(null);
       }, LEGACY_ACTIVATION_WAIT_MS);
       raw.then((value) => {
         clearTimeout(timer);
         resolve(value);
-        if (legacyActivationInflight.get(key) === pending) {
-          legacyActivationInflight.delete(key);
+        if (legacyActivationInflight.get(key3) === pending) {
+          legacyActivationInflight.delete(key3);
         }
       });
     });
-    legacyActivationInflight.set(key, pending);
+    legacyActivationInflight.set(key3, pending);
   }
   return await pending;
 }
@@ -14902,9 +17884,9 @@ async function countCodexText(text, userId) {
 async function measureCodexTokens(bundle, userId, fileStates = {}, forceConstant = false) {
   const sections = renderCodexFileSections(bundle);
   const counts = { files: {}, constant: 0, approximate: false };
-  for (const key of CODEX_FILE_KEYS) {
-    const count = await countCodexText(sections[key], userId);
-    counts.files[key] = count.tokens;
+  for (const key3 of CODEX_FILE_KEYS) {
+    const count = await countCodexText(sections[key3], userId);
+    counts.files[key3] = count.tokens;
     counts.approximate ||= count.approximate;
   }
   const disabledFiles = new Set(CODEX_FILE_KEYS.filter((k) => fileStates[k] === "noInject" || fileStates[k] === "frozen"));
@@ -15161,7 +18143,7 @@ function stageWrite(file, args, current, validateOpts, timelineAppendOnly) {
         lockedRows.set(row["id"], row);
     }
   }
-  const hiddenResolved = file === "threads" ? current.threads.filter((t) => t.status === "resolved") : [];
+  const hiddenResolved = file === "threads" ? current.threads.filter((t2) => t2.status === "resolved") : [];
   if (rawContent !== undefined) {
     if (hasPatch) {
       return { errors: ["content replaces the whole file - never combine it with set, drop, or seeds"], lockedKept, lockedFieldsKept, dropMisses, archivedKept };
@@ -15174,44 +18156,44 @@ function stageWrite(file, args, current, validateOpts, timelineAppendOnly) {
         return { errors: ["content: string was not valid JSON, pass the object directly"], lockedKept, lockedFieldsKept, dropMisses, archivedKept };
       }
     }
-    const result = validateCodexFile(file, content, validateOpts);
-    if (!result.ok)
-      return { errors: result.errors, lockedKept, lockedFieldsKept, dropMisses, archivedKept };
-    const value = result.value;
+    const result2 = validateCodexFile(file, content, validateOpts);
+    if (!result2.ok)
+      return { errors: result2.errors, lockedKept, lockedFieldsKept, dropMisses, archivedKept };
+    const value2 = result2.value;
     if (lockedRows.size > 0) {
-      const rows = fileRows(value, file);
+      const rows2 = fileRows(value2, file);
       for (const [id, orig] of lockedRows) {
-        const idx = rows.findIndex((r) => r["id"] === id);
+        const idx = rows2.findIndex((r) => r["id"] === id);
         if (idx >= 0) {
-          if (JSON.stringify(rows[idx]) !== JSON.stringify(orig))
+          if (JSON.stringify(rows2[idx]) !== JSON.stringify(orig))
             lockedKept.push(id);
-          rows[idx] = clone(orig);
+          rows2[idx] = clone(orig);
         } else {
           lockedKept.push(id);
-          rows.push(clone(orig));
+          rows2.push(clone(orig));
         }
       }
     }
     if (keyField === "id") {
-      for (const row of fileRows(value, file)) {
+      for (const row of fileRows(value2, file)) {
         if (row["locked"] === true && !lockedRows.has(String(row["id"] ?? "")))
           delete row["locked"];
       }
     }
     if (file === "threads" && hiddenResolved.length > 0) {
-      const t = value;
+      const t2 = value2;
       const hiddenRids = new Set(hiddenResolved.map((h) => h.rid).filter(Boolean));
-      for (const row of t.threads) {
+      for (const row of t2.threads) {
         if (row.rid && hiddenRids.has(row.rid))
           archivedKept.push(row.rid);
       }
-      t.threads = t.threads.filter((row) => !(row.rid && hiddenRids.has(row.rid)));
-      t.threads.push(...hiddenResolved.map((h) => clone(h)));
+      t2.threads = t2.threads.filter((row) => !(row.rid && hiddenRids.has(row.rid)));
+      t2.threads.push(...hiddenResolved.map((h) => clone(h)));
     }
-    lockedFieldsKept.push(...restoreLockedFields(file, value, current));
-    restoreNoInject(file, value, current);
-    assignMissingRids(file, value);
-    return { value, errors, lockedKept, lockedFieldsKept, dropMisses, archivedKept, notes: result.notes };
+    lockedFieldsKept.push(...restoreLockedFields(file, value2, current));
+    restoreNoInject(file, value2, current);
+    assignMissingRids(file, value2);
+    return { value: value2, errors, lockedKept, lockedFieldsKept, dropMisses, archivedKept, notes: result2.notes };
   }
   if (!hasPatch) {
     return { errors: ["empty write: provide set, drop, seeds, or content"], lockedKept, lockedFieldsKept, dropMisses, archivedKept };
@@ -15265,45 +18247,45 @@ function stageWrite(file, args, current, validateOpts, timelineAppendOnly) {
   let rows = fileRows(current, file).map((r) => clone(r));
   if (file === "threads")
     rows = rows.filter((r) => r["status"] !== "resolved");
-  const isArchivedRid = (key) => file === "threads" && hiddenResolved.some((h) => h.rid === key);
-  for (const key of dropKeys) {
-    if (lockedRows.has(key)) {
-      lockedKept.push(key);
+  const isArchivedRid = (key3) => file === "threads" && hiddenResolved.some((h) => h.rid === key3);
+  for (const key3 of dropKeys) {
+    if (lockedRows.has(key3)) {
+      lockedKept.push(key3);
       continue;
     }
-    if (isArchivedRid(key)) {
-      archivedKept.push(key);
+    if (isArchivedRid(key3)) {
+      archivedKept.push(key3);
       continue;
     }
     if (file === "timeline" && timelineAppendOnly) {
-      errors.push(`drop "${key}": the timeline is append-only - events are only removed in reconcile or tidy passes`);
+      errors.push(`drop "${key3}": the timeline is append-only - events are only removed in reconcile or tidy passes`);
       continue;
     }
-    const idx = rows.findIndex((r) => r[keyField] === key);
+    const idx = rows.findIndex((r) => r[keyField] === key3);
     if (idx === -1) {
-      dropMisses.push(key);
+      dropMisses.push(key3);
       continue;
     }
     rows.splice(idx, 1);
   }
   setRows.forEach((row, i) => {
-    const key = row[keyField];
-    if (typeof key === "string" && key) {
-      if (lockedRows.has(key)) {
-        lockedKept.push(key);
+    const key3 = row[keyField];
+    if (typeof key3 === "string" && key3) {
+      if (lockedRows.has(key3)) {
+        lockedKept.push(key3);
         return;
       }
-      const idx = rows.findIndex((r) => r[keyField] === key);
+      const idx = rows.findIndex((r) => r[keyField] === key3);
       if (idx >= 0) {
         rows[idx] = row;
         return;
       }
       if (keyField === "rid") {
-        if (isArchivedRid(key)) {
-          archivedKept.push(key);
+        if (isArchivedRid(key3)) {
+          archivedKept.push(key3);
           return;
         }
-        errors.push(`set[${i}]: rid "${key}" does not exist in ${file}.json - omit rid to add a new row`);
+        errors.push(`set[${i}]: rid "${key3}" does not exist in ${file}.json - omit rid to add a new row`);
         return;
       }
       rows.push(row);
@@ -15403,17 +18385,17 @@ async function runCodexAgentInner(opts) {
     const broken = newDanglingFiles(working, baselineDangling);
     const clean = [...changed].filter((k) => !rejectedFiles.has(k) && !broken.has(k));
     const projected = { ...opts.bundle };
-    for (const key of clean)
-      projected[key] = working[key];
+    for (const key3 of clean)
+      projected[key3] = working[key3];
     if (newDangling(projected, baselineDangling).length > 0)
       return [];
     const saved = [];
-    for (const key of clean) {
+    for (const key3 of clean) {
       try {
-        await saveCodexFile(chatId, key, working[key], userId);
-        saved.push(key);
+        await saveCodexFile(chatId, key3, working[key3], userId);
+        saved.push(key3);
       } catch (err) {
-        warn(`codex: failed to persist ${key}.json from a failed run: ${describeError(err)}`);
+        warn(`codex: failed to persist ${key3}.json from a failed run: ${describeError(err)}`);
       }
     }
     return saved;
@@ -15438,11 +18420,11 @@ async function runCodexAgentInner(opts) {
         const f = typeof call.args["file"] === "string" ? call.args["file"] : "?";
         let label;
         if (call.args["content"] !== undefined) {
-          let size = 0;
+          let size2 = 0;
           try {
-            size = JSON.stringify(call.args["content"] ?? "").length;
+            size2 = JSON.stringify(call.args["content"] ?? "").length;
           } catch {}
-          label = t("backend.codex.agent.runCodexAgentInner.fullRewriteKChars", { toFixed: (size / 1000).toFixed(1) });
+          label = t("backend.codex.agent.runCodexAgentInner.fullRewriteKChars", { toFixed: (size2 / 1000).toFixed(1) });
         } else {
           const bits = [];
           const setN = Array.isArray(call.args["set"]) ? call.args["set"].length : 0;
@@ -15592,12 +18574,12 @@ async function runCodexAgentInner(opts) {
     for (const d of newDangling(working, baselineDangling)) {
       if (changed.has(d.file))
         continue;
-      for (const key of ["characters", "locations", "things"]) {
-        if (!changed.has(key))
+      for (const key3 of ["characters", "locations", "things"]) {
+        if (!changed.has(key3))
           continue;
-        const original = opts.bundle[key].entities.find((e) => e.id === d.ref);
-        if (original && !working[key].entities.some((e) => e.id === d.ref)) {
-          working[key].entities.push(structuredClone(original));
+        const original = opts.bundle[key3].entities.find((e) => e.id === d.ref);
+        if (original && !working[key3].entities.some((e) => e.id === d.ref)) {
+          working[key3].entities.push(structuredClone(original));
           opts.onDelta?.("text", t("backend.codex.agent.runCodexAgentInner.keptStillReferencedByUnchangedJson", { ref: d.ref, file: d.file }));
         }
       }
@@ -15740,11 +18722,11 @@ ${integrityErrors.join(`
       throw new Error(t("backend.codex.agent.runCodexAgentInner.inlineMigrationProducedNoTiesFromThe"));
     }
   }
-  for (const key of changed) {
+  for (const key3 of changed) {
     try {
-      await saveCodexFile(chatId, key, working[key], userId);
+      await saveCodexFile(chatId, key3, working[key3], userId);
     } catch (err) {
-      throw new Error(t("backend.codex.agent.runCodexAgentInner.failedToSaveJson", { key, describeError: describeError(err) }));
+      throw new Error(t("backend.codex.agent.runCodexAgentInner.failedToSaveJson", { key: key3, describeError: describeError(err) }));
     }
   }
   return {
@@ -15790,30 +18772,30 @@ function parseCodexBackup(raw, fallbackRelationsTable) {
   const relationsTableMode = typeof v.relationsTableMode === "boolean" ? v.relationsTableMode : null;
   const relationsTable = relationsTableMode ?? fallbackRelationsTable;
   const values = [];
-  for (const key of CODEX_FILE_KEYS) {
-    const rawText = v.files[key];
+  for (const key3 of CODEX_FILE_KEYS) {
+    const rawText = v.files[key3];
     if (typeof rawText !== "string")
       continue;
     let parsed;
     try {
       parsed = JSON.parse(rawText);
     } catch {
-      return { error: t("backend.codex.backup.parseCodexBackup.jsonInTheBackupIsNotValid", { key }) };
+      return { error: t("backend.codex.backup.parseCodexBackup.jsonInTheBackupIsNotValid", { key: key3 }) };
     }
-    const result = validateCodexFile(key, parsed, { relationsTable });
+    const result = validateCodexFile(key3, parsed, { relationsTable });
     if (!result.ok)
-      return { error: t("backend.codex.backup.parseCodexBackup.jsonInTheBackupIsInvalid", { key, errors0: result.errors[0] }) };
-    values.push({ key, value: result.value });
+      return { error: t("backend.codex.backup.parseCodexBackup.jsonInTheBackupIsInvalid", { key: key3, errors0: result.errors[0] }) };
+    values.push({ key: key3, value: result.value });
   }
   if (values.length === 0)
     return { error: t("backend.codex.backup.parseCodexBackup.theBackupHasNoCodexFilesIn") };
   const fileStates = {};
   const rawStates = v.fileStates && typeof v.fileStates === "object" ? v.fileStates : {};
-  for (const [key, state] of Object.entries(rawStates)) {
-    if (!isCodexFileKey(key))
+  for (const [key3, state] of Object.entries(rawStates)) {
+    if (!isCodexFileKey(key3))
       continue;
     if (state === "on" || state === "noInject" || state === "frozen")
-      fileStates[key] = state;
+      fileStates[key3] = state;
   }
   return {
     values,
@@ -15863,8 +18845,8 @@ async function clearCodexUndo(chatId, userId) {
   await spindle.userStorage.delete(undoPath(chatId), userId).catch(() => {});
 }
 async function applyCodexBackup(chatId, userId, parsed, restoreCursor) {
-  for (const { key, value } of parsed.values) {
-    await saveCodexFile(chatId, key, value, userId);
+  for (const { key: key3, value } of parsed.values) {
+    await saveCodexFile(chatId, key3, value, userId);
   }
   await withCursorLock(chatId, userId, async () => {
     const saved = restoreCursor ?? (parsed.chatId === chatId ? parsed.cursor : undefined);
@@ -15955,16 +18937,16 @@ var ENTRIES_ENSURED_CAP = 5000;
 async function ensureCodexEntriesSynced(chatId, userId, profile) {
   if (!profile.codexEnabled)
     return;
-  const key = `${userId}::${chatId}`;
-  if (entriesEnsured.has(key))
+  const key3 = `${userId}::${chatId}`;
+  if (entriesEnsured.has(key3))
     return;
   if (entriesEnsured.size >= ENTRIES_ENSURED_CAP)
     entriesEnsured.clear();
-  entriesEnsured.add(key);
+  entriesEnsured.add(key3);
   try {
     await syncCodexEntries(chatId, userId, profile.codexRelationsTable);
   } catch (err) {
-    entriesEnsured.delete(key);
+    entriesEnsured.delete(key3);
     warn(`codex entry ensure-sync failed for ${chatId.slice(0, 8)}: ${describeError(err)}`);
     cb2?.onToast(userId, "error", t("backend.codex.index.ensureCodexEntriesSynced.memoriaCouldnTSyncTheCodexTo", { shortErrorText: shortErrorText(err) }));
   }
@@ -16204,8 +19186,8 @@ async function dryRunCodex(chatId, profile, settings, userId) {
     diagnostics.push({ message: t("backend.codex.index.dryRunCodex.unreadableFilesShownEmpty", { join: notes.loadProblems.join(", ") }) });
   const lockedEntities = [];
   const fieldLocked = [];
-  for (const key of ["characters", "locations", "things"]) {
-    for (const e of bundle[key].entities) {
+  for (const key3 of ["characters", "locations", "things"]) {
+    for (const e of bundle[key3].entities) {
       if (e.locked === true)
         lockedEntities.push(e.id);
       if (Array.isArray(e.lockedFields) && e.lockedFields.length)
@@ -16577,20 +19559,20 @@ async function catchupCodex(chatId, profile, settings, userId, mode) {
       for (let pass = 0;pass < CATCHUP_PASS_CAP; pass++) {
         if (controller.signal.aborted)
           throw new AbortedSummarizerError;
-        const plan = await planRun(chatId, userId, profile.codexLagUnit, 0);
-        if (plan.compressible.length === 0)
+        const plan2 = await planRun(chatId, userId, profile.codexLagUnit, 0);
+        if (plan2.compressible.length === 0)
           break;
-        if (CODEX_FILE_KEYS.every((k) => plan.cursor.fileStates[k] === "frozen"))
+        if (CODEX_FILE_KEYS.every((k) => plan2.cursor.fileStates[k] === "frozen"))
           break;
-        if (!plan.rewound && plan.startPos <= prevStart) {
-          warn(`codex fast catch-up stalled at message ${plan.startPos + 1} for ${chatId.slice(0, 8)}, stopping`);
+        if (!plan2.rewound && plan2.startPos <= prevStart) {
+          warn(`codex fast catch-up stalled at message ${plan2.startPos + 1} for ${chatId.slice(0, 8)}, stopping`);
           break;
         }
-        prevStart = plan.startPos;
-        const batch = nextSummaryBatch(plan, coverage.chapters, profile);
+        prevStart = plan2.startPos;
+        const batch = nextSummaryBatch(plan2, coverage.chapters, profile);
         if (!batch)
           break;
-        await runChunk(chatId, userId, profile, plan, plan.messages.slice(plan.startPos, batch.endIdx + 1), false, controller.signal, progress, (ctx, bundle, notes, label) => buildCodexSummaryCatchupMessage(ctx, bundle, batch.blocks, label, notes));
+        await runChunk(chatId, userId, profile, plan2, plan2.messages.slice(plan2.startPos, batch.endIdx + 1), false, controller.signal, progress, (ctx, bundle, notes, label) => buildCodexSummaryCatchupMessage(ctx, bundle, batch.blocks, label, notes));
         runs++;
       }
     }
@@ -16763,10 +19745,10 @@ async function buildCodexInjectionText(chatId, userId, profile) {
     const cursor = await loadCursor(chatId, userId);
     const diskMode = cursor.relationsTableMode ?? profile.codexRelationsTable;
     const { bundle } = await loadCodex(chatId, userId, { relationsTable: diskMode });
-    for (const key of CODEX_FILE_KEYS) {
-      const st = cursor.fileStates[key];
+    for (const key3 of CODEX_FILE_KEYS) {
+      const st = cursor.fileStates[key3];
       if (st === "noInject" || st === "frozen") {
-        bundle[key] = emptyCodexFile(key);
+        bundle[key3] = emptyCodexFile(key3);
       }
     }
     text = bundleIsEmpty(bundle) ? null : renderCodexForInjection(bundle) || null;
@@ -16880,10 +19862,10 @@ async function rebuildCodex(chatId, profile, userId, mode = "slow", settings = n
       return;
     }
     const failed = [];
-    for (const key of CODEX_FILE_KEYS) {
-      if (frozenKeys.has(key))
+    for (const key3 of CODEX_FILE_KEYS) {
+      if (frozenKeys.has(key3))
         continue;
-      await saveCodexFile(chatId, key, emptyCodexFile(key), userId).catch(() => failed.push(key));
+      await saveCodexFile(chatId, key3, emptyCodexFile(key3), userId).catch(() => failed.push(key3));
     }
     invalidateCodexInjectionCache(chatId);
     if (failed.length > 0) {
@@ -16928,8 +19910,8 @@ async function runCodexTidy(chatId, profile, userId, only, target) {
       const sections = renderCodexFileSections(bundle);
       let tokens = 0;
       let approximate = false;
-      for (const key of targets) {
-        const count = await countCodexText(sections[key], userId);
+      for (const key3 of targets) {
+        const count = await countCodexText(sections[key3], userId);
         tokens += count.tokens;
         approximate ||= count.approximate;
       }
@@ -16990,8 +19972,8 @@ async function runCodexTidy(chatId, profile, userId, only, target) {
       }
       cb2?.onStateChange(userId, chatId);
     }
-    const size = `${current.approximate ? "~" : ""}${current.tokens}`;
-    cb2?.onToast(userId, current.tokens <= limit ? "success" : "warn", current.tokens <= limit ? t("backend.codex.index.runCodexTidy.codexTidiedToTokensLimitInModel", { size, limit, used: callBudget.used }) : t("backend.codex.index.runCodexTidy.stoppedAfterModelCallsTokensStillAbove", { used: callBudget.used, size, limit }));
+    const size2 = `${current.approximate ? "~" : ""}${current.tokens}`;
+    cb2?.onToast(userId, current.tokens <= limit ? "success" : "warn", current.tokens <= limit ? t("backend.codex.index.runCodexTidy.codexTidiedToTokensLimitInModel", { size: size2, limit, used: callBudget.used }) : t("backend.codex.index.runCodexTidy.stoppedAfterModelCallsTokensStillAbove", { used: callBudget.used, size: size2, limit }));
   } catch (err) {
     if (err instanceof AbortedSummarizerError) {
       cb2?.onToast(userId, "info", t("backend.codex.index.runCodexTidy.tidyingStoppedCompletedEditsAreKeptUndo"));
@@ -17083,19 +20065,19 @@ async function refreshCodexFiles(chatId, profile, userId) {
     clearBusy(userId, chatId, "codex");
   }
 }
-function fileIsEmpty(bundle, key) {
-  const v = bundle[key];
+function fileIsEmpty(bundle, key3) {
+  const v = bundle[key3];
   return Object.values(v).every((arr) => !Array.isArray(arr) || arr.length === 0);
 }
 function blankTargets(bundle, targets) {
   const out = { ...bundle };
-  for (const t of targets) {
-    if (t === "characters" || t === "locations" || t === "things") {
-      out[t] = {
-        entities: bundle[t].entities.filter((e) => e.locked === true || Array.isArray(e.lockedFields) && e.lockedFields.length > 0)
+  for (const t2 of targets) {
+    if (t2 === "characters" || t2 === "locations" || t2 === "things") {
+      out[t2] = {
+        entities: bundle[t2].entities.filter((e) => e.locked === true || Array.isArray(e.lockedFields) && e.lockedFields.length > 0)
       };
     } else {
-      out[t] = emptyCodexFile(t);
+      out[t2] = emptyCodexFile(t2);
     }
   }
   return out;
@@ -17228,10 +20210,10 @@ async function seedRoot(targetChatId, sourceChatId, sourceEntries, existingRoots
 async function rebaseRoot(targetChatId, sourceChatId, userId) {
   if (sourceChatId === targetChatId)
     return { ok: false, reason: "same_chat" };
-  const key = lockKey(userId, targetChatId);
-  if (inFlight.has(key))
+  const key3 = lockKey(userId, targetChatId);
+  if (inFlight.has(key3))
     return { ok: false, reason: "busy" };
-  inFlight.add(key);
+  inFlight.add(key3);
   try {
     return await withCommitMutex(userId, targetChatId, async () => {
       const targetEntries = await listLmbEntries(targetChatId, userId, true);
@@ -17245,16 +20227,16 @@ async function rebaseRoot(targetChatId, sourceChatId, userId) {
       return { ok: true, count };
     });
   } finally {
-    inFlight.delete(key);
+    inFlight.delete(key3);
   }
 }
 async function rebuildRoot(targetChatId, sourceChatId, userId) {
   if (sourceChatId === targetChatId)
     return { ok: false, reason: "same_chat" };
-  const key = lockKey(userId, targetChatId);
-  if (inFlight.has(key))
+  const key3 = lockKey(userId, targetChatId);
+  if (inFlight.has(key3))
     return { ok: false, reason: "busy" };
-  inFlight.add(key);
+  inFlight.add(key3);
   try {
     return await withCommitMutex(userId, targetChatId, async () => {
       const sourceEntries = (await listLmbEntries(sourceChatId, userId, true)).filter((e) => !e.raw.disabled);
@@ -17266,7 +20248,7 @@ async function rebuildRoot(targetChatId, sourceChatId, userId) {
       return { ok: true, count };
     });
   } finally {
-    inFlight.delete(key);
+    inFlight.delete(key3);
   }
 }
 async function detachRoot(targetChatId, userId) {
@@ -17988,7 +20970,7 @@ spindle.onFrontendMessage(async (raw, userId) => {
             warn(`hideCoveredMessages re-sync failed: ${describeError(err)}`);
           }
         }
-        if (id === activeBefore && ["codexActivationMode", "codexInjectionPosition", "codexInjectionDepth"].some((key) => (key in incoming))) {
+        if (id === activeBefore && ["codexActivationMode", "codexInjectionPosition", "codexInjectionDepth"].some((key3) => (key3 in incoming))) {
           await syncProfileSettings(userId);
         }
         if (prevExtra === true && nextExtra === false && id === activeBefore && msg.chatId) {
@@ -18758,10 +21740,10 @@ spindle.onFrontendMessage(async (raw, userId) => {
         await saveCodexFile(msg.chatId, msg.file, result.value, userId);
         invalidateCodexInjectionCache(msg.chatId);
         await withCursorLock(msg.chatId, userId, async () => {
-          const cur = await loadCursor(msg.chatId, userId);
-          if (cur.relationsTableMode === null) {
-            cur.relationsTableMode = relationsTable;
-            await saveCursor(msg.chatId, cur, userId);
+          const cur2 = await loadCursor(msg.chatId, userId);
+          if (cur2.relationsTableMode === null) {
+            cur2.relationsTableMode = relationsTable;
+            await saveCursor(msg.chatId, cur2, userId);
           }
         });
         if (profile)

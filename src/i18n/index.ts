@@ -1,5 +1,6 @@
 import { IntlMessageFormat } from "intl-messageformat";
 import english from "../locales/en.json";
+import korean from "../locales/ko.json";
 
 export type Catalog = { readonly [key: string]: string | Catalog };
 type LeafKeys<T> = { [K in keyof T & string]: T[K] extends string ? K : `${K}.${LeafKeys<T[K]>}` }[keyof T & string];
@@ -45,6 +46,13 @@ export function createTranslator(locale = DEFAULT_LOCALE, catalogs: Readonly<Rec
   };
 }
 
-/** Current app language stays English. Future preference wiring should create
- * account-scoped translators before constructing UI/lesson metadata. */
-export const t = createTranslator();
+/** LumiBooks-ko: bundled language packs. `bun build --define LUMIBOOKS_LOCALE='"ko"'`
+ * selects the app language at build time (see docs/ko-fork.md); sources run
+ * without the define (tests, checks) stay English. Missing keys fall back to English. */
+export const BUNDLED_CATALOGS: Readonly<Record<string, Catalog>> = { ko: korean };
+declare const LUMIBOOKS_LOCALE: string | undefined;
+export const APP_LOCALE = typeof LUMIBOOKS_LOCALE === "string" ? LUMIBOOKS_LOCALE : DEFAULT_LOCALE;
+
+/** Module-level UI/lesson metadata is built with this translator at load time,
+ * so the build-time locale applies everywhere; there is no live switching. */
+export const t = createTranslator(APP_LOCALE, BUNDLED_CATALOGS);
