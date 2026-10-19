@@ -8,7 +8,7 @@
     "codex": {
       "agent": {
         "messages": {
-          "theAssembledCodexPromptIsKTokens": "코덱스 프롬프트: ~{round}k 토큰, 한도: {round2}k. 조정 > 연결 > 코덱스에서 최대 입력 토큰을 늘리거나, 조정 > 설정 > 코덱스에서 윈도우·제공 챕터 수·설정 한도를 줄이세요. 코덱스 > 개요에서 기록을 동결해도 입력이 줄어요."
+          "theAssembledCodexPromptIsKTokens": "코덱스 프롬프트: ~{round}k 토큰, 한도: {round2}k. 조정 > 연결 > 코덱스에서 최대 입력 토큰을 늘리거나, 조정 > 설정 > 코덱스에서 윈도우·제공 챕터 수·월드북 한도를 줄이세요. 코덱스 > 개요에서 기록을 동결해도 입력이 줄어요."
         },
         "resolveCodexConnection": {
           "codexConnectionHasNoModelSetPick": "코덱스 연결 \"{id}\"에 모델이 설정되지 않았어요. 설정에서 모델을 고르세요",
@@ -88,7 +88,7 @@
           "locksLockedEntitWithLockedFieldsMasked": "잠금: 개체 {length}개, 그중 {length2}개는 잠긴 필드를 모델에게 숨김",
           "storySoFarContextTokens": "지금까지의 이야기 컨텍스트: ~{length}토큰",
           "activatedLoreReferenceTokens": "활성화된 설정 참고 자료: ~{length}토큰",
-          "activatedLoreExceededTheLoreLimitTokens": "설정이 설정 한도({effectiveLoreLimitTokens}토큰)를 넘어서 잘렸어요",
+          "activatedLoreExceededTheLoreLimitTokens": "활성화된 월드북 항목이 월드북 한도({effectiveLoreLimitTokens}토큰)를 넘어서 잘렸어요",
           "thoroughMode": "꼼꼼 모드: {choice, select, yes {켜짐, 검증 라운드 추가} other {꺼짐}}",
           "promptSizeTokensSystemTokensUserCodex": "프롬프트 크기: 시스템 ~{length}토큰 + 사용자 ~{length2}토큰 (코덱스 최대 입력 {codexMaxInputTokens})",
           "wouldFail": "실패 예상: {message}",

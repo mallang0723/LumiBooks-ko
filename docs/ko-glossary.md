@@ -123,6 +123,7 @@
 | embedding, vectorization | 임베딩, 벡터화 | |
 | tokenizer | 토크나이저 | |
 | nyandere | 냥데레 | |
+| Lore limit / Lore tokens (프로필 예산) | 월드북 한도 / 월드북 토큰 | 활성화된 월드북 항목의 토큰 예산. 코덱스의 `lore`(설정)와 구별 |
 
 ## 탭 이름
 
