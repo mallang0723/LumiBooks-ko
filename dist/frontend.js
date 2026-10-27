@@ -2815,6 +2815,9 @@ var IntlMessageFormat = class IntlMessageFormat2 {
 // src/locales/en.json
 var en_default = {
   backend: {
+    regex: {
+      searchChanged: "Regex scripts changed while searching. Refresh to try again."
+    },
     binding: {
       messages: {
         selectConsecutiveSummariesWithoutCrossingAnotherSummary: "Select consecutive summaries without crossing another summary tier"
@@ -3313,6 +3316,7 @@ Tidy: {tokens} tokens; limit {limit}; model target {modelTarget}; {remaining} ca
         memoriaIsFilingAChapter: "Creating chapter"
       },
       createChapterFromRange: {
+        alreadyFiled: "Some selected messages are already filed. Select unfiled messages or regenerate the existing chapter.",
         memoriaIsFilingAChapter: "Creating chapter"
       },
       runChapter: {
@@ -3368,6 +3372,7 @@ Tidy: {tokens} tokens; limit {limit}; model target {modelTarget}; {remaining} ca
         noChaptersToBindYet: "No chapters to bind"
       },
       dryRunVolume: {
+        noSources: "No {name} summaries to consolidate",
         noArcsToPressYet: "No arcs to press"
       },
       promoteGhostChapters: {
@@ -3471,6 +3476,8 @@ Tidy: {tokens} tokens; limit {limit}; model target {modelTarget}; {remaining} ca
         targetTokens2: "Target tokens: {targetTokens} ({choice, select, yes {fixed budget, ~{arcTargetUnitTokens}% of input} other {{arcTargetPercent}% of input}})",
         presetKey2: "Preset key: {arcPresetKey}",
         sourceArcs: "Source arcs: {length}",
+        higherSources: "Source {name} summaries: {count}",
+        higherSourceTokens: "Source summaries: {bodyTokens} tokens (model tokenizer)",
         concatenatedArcBodyTokensModelTokenizer: "Source arcs: {bodyTokens} tokens (model tokenizer)",
         targetTokens3: "Target tokens: {targetTokens} ({choice, select, yes {fixed budget, ~{volumeTargetUnitTokens}% of input} other {{volumeTargetPercent}% of input}})",
         presetKey3: "Preset key: {volumePresetKey}"
@@ -3711,8 +3718,22 @@ Tidy: {tokens} tokens; limit {limit}; model target {modelTarget}; {remaining} ca
     summaryKindTag: "{kind, select, chapter {CHAPTER} arc {ARC} volume {VOLUME} series {SERIES} saga {SAGA} library {LIBRARY} universe {UNIVERSE} codex {Codex} other {{kind}}}"
   },
   ui: {
+    regexPicker: {
+      searchProgress: "Searching scripts… {scanned, number} of {total, number} checked",
+      search: "Search regex names…",
+      noMatches: "No matching regex scripts.",
+      previous: "Previous",
+      next: "Next",
+      page: "Page",
+      refresh: "Refresh",
+      loading: "Loading regex scripts…",
+      failed: "Could not load this page. Select Refresh to retry.",
+      range: "{first}–{last} of {total} scripts",
+      selected: "{count} selected across all pages"
+    },
     activationControl: {
       activationControl: {
+        constant: "Constant",
         always: "Always",
         keywords: "Keywords",
         vectorKeywords: "Vector + keywords"
@@ -4489,6 +4510,7 @@ Days 3-8. The duke dies, Elias flees with the silver locket, and Mara chooses si
       },
       showDryRunModal: {
         dryRun: "Dry run: {choice, select, yes {Arc} other {{choice2, select, yes {Volume} other {{choice3, select, yes {Codex} other {Chapter}}}}}}",
+        higherTier: "Dry run: {name}",
         value: "×",
         closeDryRun: "Close dry run",
         diagnostics: "Diagnostics",
@@ -4688,6 +4710,7 @@ Days 3-8. The duke dies, Elias flees with the silver locket, and Mara chooses si
           showOlder: "Show older ({older})"
         },
         buildMessageRow: {
+          stagedGhost: "Staged for Codex. Compressing these messages replaces the overlapping ghost chapters after saving.",
           shiftClickOrLongPressOnTouch: "Shift+click (or long-press on touch) to select a range",
           value: "#{indexInChat1}",
           alreadyFiledIntoAChapterArcOr: "Already filed into a chapter, arc, or volume",
@@ -5314,6 +5337,7 @@ Days 3-8. The duke dies, Elias flees with the silver locket, and Mara chooses si
           cancelTheInFlightGeneration: "Cancel generation"
         },
         renderFailure: {
+          saveFailed: "Summary generated, but saving failed. {message}",
           lastArcAttemptFailed: "Last arc attempt failed",
           lastAttemptFailed: "Last {kind, select, chapter {chapter} arc {arc} volume {volume} series {series} saga {saga} library {library} universe {universe} codex {Codex} other {{kind}}} attempt failed",
           lastChapterAttemptFailed: "Last chapter attempt failed",
@@ -5440,6 +5464,9 @@ Days 3-8. The duke dies, Elias flees with the silver locket, and Mara chooses si
         },
         renderProfilePicker: {
           new: "New",
+          rename: "Rename profile",
+          duplicate: "Duplicate profile",
+          copyName: "{name} copy",
           delete: "Delete",
           enabled: "Enabled",
           masterSwitchWhenOffMemoriaDoesNothing: "Enable LumiBooks for this account."
@@ -5551,6 +5578,7 @@ Days 3-8. The duke dies, Elias flees with the silver locket, and Mara chooses si
       },
       promptsTab: {
         categorySubtabs: {
+          summaries: "Summaries",
           chapter: "Chapter",
           arc: "Arc",
           volume: "Volume",
@@ -5564,6 +5592,7 @@ Days 3-8. The duke dies, Elias flees with the silver locket, and Mara chooses si
         },
         sec: {
           codexPromptTemplates: "Codex prompt templates",
+          summaryPrompt: "{name} prompt",
           memoriaOverrides: "Memoria overrides",
           arcPrompt: "Arc prompt",
           volumePrompt: "Volume prompt",
@@ -5591,7 +5620,7 @@ Days 3-8. The duke dies, Elias flees with the silver locket, and Mara chooses si
           clickAgainToConfirm: "Confirm?"
         },
         renderMemoriaOverrides: {
-          personaIsTheSystemPromptHeaderShort: "Persona sets the system-prompt header. Short-comment rules fill '{{memoria_short_comment_rules}}'.",
+          personaIsTheSystemPromptHeaderShort: "Persona sets the instruction header. Short-comment rules fill '{{memoria_short_comment_rules}}'.",
           memoriaPersona: "Memoria persona",
           memoriaShortCommentRules: "Memoria short-comment rules"
         },
@@ -5603,19 +5632,28 @@ Days 3-8. The duke dies, Elias flees with the silver locket, and Mara chooses si
           resetToDefault: "Reset to default"
         },
         renderCategory: {
-          theMissionBlockAtTheTopOf: "Instructions at the start of the Codex system prompt. Saved with the templates below in the selected preset. Preview assembled prompts with Dry run.",
+          presetScope: "Preset selection is saved per profile. Editing a preset changes it for every profile using it; duplicate it for a separate version.",
+          theMissionBlockAtTheTopOf: "Instructions at the start of the Codex prompt. Saved with the templates below in the selected preset. Preview assembled prompts with Dry run.",
           newBlankPrompt: "New blank prompt",
           duplicateToNew: "Duplicate to new",
           duplicateToEdit: "Duplicate to edit",
           dryRun: "Dry run",
-          assembleTheNextCodexRunSComplete: "Preview resolved system and user prompts. No model call.",
+          assembleTheNextCodexRunSComplete: "Preview resolved messages and their roles. No model call.",
           assembleThisPresetSPromptWithAll: "Preview this preset''s resolved prompt. No model call.",
           delete: "Delete",
           promptBuiltInDuplicateToEdit: "Prompt (built-in, duplicate to edit)"
         },
         opts: {
+          useVolume: "Use Volume preset (adapted to this tier)",
           builtIn: "Built-in: {displayName}",
           custom: "Custom: {displayName}"
+        },
+        sendAs: {
+          label: "Send as:",
+          system: "System",
+          assistant: "Assistant",
+          user: "User",
+          help: "Role for this category's instructions. Source material is sent as User. Saved per profile."
         },
         name: {
           nameForNewPrompt: "Name for new {category} prompt",
@@ -5670,11 +5708,6 @@ Days 3-8. The duke dies, Elias flees with the silver locket, and Mara chooses si
           connection: "Connection",
           settings: "Settings",
           prompts: "Prompts"
-        },
-        renderTuningTab: {
-          profile: "Profile",
-          extensionOff: "· extension off",
-          switchOrManageProfilesInTheConnection: "Switch or manage profiles in the Connection pane"
         },
         options: {
           books: "Books",
@@ -5755,7 +5788,7 @@ The Codex is not injected as one always-on block. Each record is mirrored into a
 
 Vector recall requires a tested embedding connection and lorebook vectorization enabled in Lumiverse. Existing records are queued for indexing when you switch modes; new and edited records follow the same setting. Until indexing finishes, or when retrieval is unavailable or there is no visible recent text for a query, keyword matching remains available. Disabled records and files stay excluded. Lumiverse controls retrieval limits and the embedding provider; Codex files remain the source of truth.
 
-Chapter and higher-tier summaries have a separate **Summary recall** control in Tuning → Settings → Books → Everywhere. Its default is **Always**. Selecting memories never changes which messages are filed or hidden. In the same section, turn off **Lorebook names follow chat names** before manually renaming either managed lorebook in Lumiverse.
+Chapter and higher-tier summaries have a separate **Summary recall** control in Tuning → Settings → Books → Everywhere. Its default is **Constant**. Selecting memories never changes which messages are filed or hidden. In the same section, turn off **Lorebook names follow chat names** before manually renaming either managed lorebook in Lumiverse.
 
 The mirror book is rewritten by LumiBooks often, so don''t edit it by hand. Edit records in the Codex tab (or the JSON files) instead.
 
@@ -5795,6 +5828,9 @@ Notes:
 // src/locales/ko.json
 var ko_default = {
   backend: {
+    regex: {
+      searchChanged: "검색하는 동안 정규식 스크립트가 바뀌었어요. 새로고침한 뒤 다시 시도하세요."
+    },
     binding: {
       messages: {
         selectConsecutiveSummariesWithoutCrossingAnotherSummary: "다른 요약 단계를 건너뛰지 않고 연속된 요약을 선택하세요"
@@ -6293,6 +6329,7 @@ var ko_default = {
         memoriaIsFilingAChapter: "챕터 생성 중"
       },
       createChapterFromRange: {
+        alreadyFiled: "선택한 메시지 중 이미 정리된 것이 있어요. 정리되지 않은 메시지를 선택하거나 기존 챕터를 재생성하세요.",
         memoriaIsFilingAChapter: "챕터 생성 중"
       },
       runChapter: {
@@ -6348,6 +6385,7 @@ var ko_default = {
         noChaptersToBindYet: "묶을 챕터가 없어요"
       },
       dryRunVolume: {
+        noSources: "합칠 {name} 요약이 없어요",
         noArcsToPressYet: "합칠 아크가 없어요"
       },
       promoteGhostChapters: {
@@ -6451,6 +6489,8 @@ var ko_default = {
         targetTokens2: "목표 토큰: {targetTokens} ({choice, select, yes {고정 예산, 입력의 ~{arcTargetUnitTokens}%} other {입력의 {arcTargetPercent}%}})",
         presetKey2: "프리셋 키: {arcPresetKey}",
         sourceArcs: "원본 아크: {length}",
+        higherSources: "원본 {name} 요약: {count}",
+        higherSourceTokens: "원본 요약: {bodyTokens} 토큰 (모델 토크나이저 기준)",
         concatenatedArcBodyTokensModelTokenizer: "원본 아크: {bodyTokens} 토큰 (모델 토크나이저 기준)",
         targetTokens3: "목표 토큰: {targetTokens} ({choice, select, yes {고정 예산, 입력의 ~{volumeTargetUnitTokens}%} other {입력의 {volumeTargetPercent}%}})",
         presetKey3: "프리셋 키: {volumePresetKey}"
@@ -6691,8 +6731,22 @@ var ko_default = {
     summaryKindTag: "{kind, select, chapter {챕터} arc {아크} volume {볼륨} series {시리즈} saga {사가} library {라이브러리} universe {유니버스} codex {코덱스} other {{kind}}}"
   },
   ui: {
+    regexPicker: {
+      searchProgress: "스크립트 검색 중… {total, number}개 중 {scanned, number}개 확인",
+      search: "정규식 이름 검색…",
+      noMatches: "일치하는 정규식 스크립트가 없어요.",
+      previous: "이전",
+      next: "다음",
+      page: "페이지",
+      refresh: "새로고침",
+      loading: "정규식 스크립트를 불러오는 중…",
+      failed: "이 페이지를 불러오지 못했어요. 새로고침을 눌러 다시 시도하세요.",
+      range: "스크립트 {total}개 중 {first}–{last}",
+      selected: "모든 페이지에서 {count}개 선택됨"
+    },
     activationControl: {
       activationControl: {
+        constant: "상시",
         always: "항상",
         keywords: "키워드",
         vectorKeywords: "벡터 + 키워드"
@@ -7469,6 +7523,7 @@ var ko_default = {
       },
       showDryRunModal: {
         dryRun: "모의 실행: {choice, select, yes {아크} other {{choice2, select, yes {볼륨} other {{choice3, select, yes {코덱스} other {챕터}}}}}}",
+        higherTier: "모의 실행: {name}",
         value: "×",
         closeDryRun: "모의 실행 닫기",
         diagnostics: "진단",
@@ -7668,6 +7723,7 @@ var ko_default = {
           showOlder: "이전 메시지 보기 ({older})"
         },
         buildMessageRow: {
+          stagedGhost: "코덱스용으로 대기 중이에요. 이 메시지들을 압축하면 저장 후 겹치는 유령 챕터가 교체돼요.",
           shiftClickOrLongPressOnTouch: "Shift+클릭(터치에서는 길게 누르기)으로 범위 선택",
           value: "#{indexInChat1}",
           alreadyFiledIntoAChapterArcOr: "챕터, 아크, 볼륨 중 하나로 이미 정리됨",
@@ -8294,6 +8350,7 @@ var ko_default = {
           cancelTheInFlightGeneration: "생성 취소"
         },
         renderFailure: {
+          saveFailed: "요약은 생성했지만 저장하지 못했어요. {message}",
           lastArcAttemptFailed: "마지막 아크 시도 실패",
           lastAttemptFailed: "마지막 {kind, select, chapter {챕터} arc {아크} volume {볼륨} series {시리즈} saga {사가} library {라이브러리} universe {유니버스} codex {코덱스} other {{kind}}} 시도 실패",
           lastChapterAttemptFailed: "마지막 챕터 시도 실패",
@@ -8420,6 +8477,9 @@ var ko_default = {
         },
         renderProfilePicker: {
           new: "새로 만들기",
+          rename: "프로필 이름 바꾸기",
+          duplicate: "프로필 복제",
+          copyName: "{name} 복사본",
           delete: "삭제",
           enabled: "사용",
           masterSwitchWhenOffMemoriaDoesNothing: "이 계정에서 LumiBooks를 사용해요."
@@ -8531,6 +8591,7 @@ var ko_default = {
       },
       promptsTab: {
         categorySubtabs: {
+          summaries: "요약",
           chapter: "챕터",
           arc: "아크",
           volume: "볼륨",
@@ -8544,6 +8605,7 @@ var ko_default = {
         },
         sec: {
           codexPromptTemplates: "코덱스 프롬프트 템플릿",
+          summaryPrompt: "{name} 프롬프트",
           memoriaOverrides: "메모리아 덮어쓰기",
           arcPrompt: "아크 프롬프트",
           volumePrompt: "볼륨 프롬프트",
@@ -8571,7 +8633,7 @@ var ko_default = {
           clickAgainToConfirm: "확인할까요?"
         },
         renderMemoriaOverrides: {
-          personaIsTheSystemPromptHeaderShort: "페르소나는 시스템 프롬프트 머리말을 정해요. 짧은 코멘트 규칙은 '{{memoria_short_comment_rules}}'에 채워져요.",
+          personaIsTheSystemPromptHeaderShort: "페르소나는 지시문 머리말을 정해요. 짧은 코멘트 규칙은 '{{memoria_short_comment_rules}}'에 채워져요.",
           memoriaPersona: "메모리아 페르소나",
           memoriaShortCommentRules: "메모리아 짧은 코멘트 규칙"
         },
@@ -8583,19 +8645,28 @@ var ko_default = {
           resetToDefault: "기본값으로 재설정"
         },
         renderCategory: {
-          theMissionBlockAtTheTopOf: "코덱스 시스템 프롬프트 맨 앞에 들어가는 지시문이에요. 선택한 프리셋에 아래 템플릿과 함께 저장돼요. 조립된 프롬프트는 모의 실행으로 미리 볼 수 있어요.",
+          presetScope: "프리셋 선택은 프로필마다 저장돼요. 프리셋을 편집하면 그것을 쓰는 모든 프로필에 반영되니, 따로 쓰려면 복제하세요.",
+          theMissionBlockAtTheTopOf: "코덱스 프롬프트 맨 앞에 들어가는 지시문이에요. 선택한 프리셋에 아래 템플릿과 함께 저장돼요. 조립된 프롬프트는 모의 실행으로 미리 볼 수 있어요.",
           newBlankPrompt: "빈 프롬프트 새로 만들기",
           duplicateToNew: "새로 복제",
           duplicateToEdit: "복제해서 편집",
           dryRun: "모의 실행",
-          assembleTheNextCodexRunSComplete: "치환된 시스템·사용자 프롬프트를 미리 봐요. 모델은 호출하지 않아요.",
+          assembleTheNextCodexRunSComplete: "치환된 메시지와 그 역할을 미리 봐요. 모델은 호출하지 않아요.",
           assembleThisPresetSPromptWithAll: "이 프리셋의 치환된 프롬프트를 미리 봐요. 모델은 호출하지 않아요.",
           delete: "삭제",
           promptBuiltInDuplicateToEdit: "프롬프트 (기본 제공, 복제해서 편집)"
         },
         opts: {
+          useVolume: "볼륨 프리셋 사용 (이 단계에 맞춰 조정)",
           builtIn: "기본 제공: {displayName}",
           custom: "사용자 지정: {displayName}"
+        },
+        sendAs: {
+          label: "보낼 역할:",
+          system: "시스템",
+          assistant: "어시스턴트",
+          user: "사용자",
+          help: "이 카테고리의 지시문을 보낼 역할이에요. 원본 자료는 사용자 역할로 보내요. 프로필마다 저장돼요."
         },
         name: {
           nameForNewPrompt: "새 {category} 프롬프트 이름",
@@ -8650,11 +8721,6 @@ var ko_default = {
           connection: "연결",
           settings: "설정",
           prompts: "프롬프트"
-        },
-        renderTuningTab: {
-          profile: "프로필",
-          extensionOff: "· 확장 꺼짐",
-          switchOrManageProfilesInTheConnection: "프로필 전환·관리는 연결 패널에서 하세요"
         },
         options: {
           books: "책",
@@ -8735,7 +8801,7 @@ LumiBooks는 이미 압축으로 이 문제에 어느 정도 맞서고 있어요
 
 벡터 상기를 쓰려면 Lumiverse에서 테스트를 마친 임베딩 연결과 월드북 벡터화가 켜져 있어야 해요. 모드를 바꾸면 기존 기록이 색인 대기열에 들어가고, 새로 만들거나 편집한 기록도 같은 설정을 따라요. 색인이 끝나기 전이나, 검색을 쓸 수 없거나, 검색에 쓸 최근 텍스트가 보이지 않을 때도 키워드 일치는 그대로 작동해요. 꺼 둔 기록과 파일은 계속 제외돼요. 검색 한도와 임베딩 프로바이더는 Lumiverse가 관리하고, 정본은 여전히 코덱스 파일이에요.
 
-챕터와 그 위 단계의 요약에는 조정 → 설정 → 책 → 전체 공통에 별도의 **요약 상기** 설정이 있어요. 기본값은 **항상**이에요. 어떤 기억을 고르든 정리되거나 숨겨지는 메시지는 바뀌지 않아요. 같은 섹션에서, Lumiverse에서 관리되는 두 월드북 중 어느 쪽이든 이름을 직접 바꾸기 전에 **월드북 이름을 채팅 이름에 맞추기**를 꺼 두세요.
+챕터와 그 위 단계의 요약에는 조정 → 설정 → 책 → 전체 공통에 별도의 **요약 상기** 설정이 있어요. 기본값은 **상시**예요. 어떤 기억을 고르든 정리되거나 숨겨지는 메시지는 바뀌지 않아요. 같은 섹션에서, Lumiverse에서 관리되는 두 월드북 중 어느 쪽이든 이름을 직접 바꾸기 전에 **월드북 이름을 채팅 이름에 맞추기**를 꺼 두세요.
 
 미러 월드북은 LumiBooks가 자주 다시 쓰니 직접 편집하지 마세요. 기록은 코덱스 탭(또는 JSON 파일)에서 편집하세요.
 
@@ -9740,26 +9806,9 @@ var STYLES = `
 
 .lmb-pane { display: flex; flex-direction: column; gap: 14px; }
 
-/* Compact profile context strip shown on Tuning subtabs that aren't Profile:
-   the full picker block would otherwise repeat above every pane. */
-.lmb-profile-strip {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 7px 11px;
-  background: var(--lmb-fill);
-  border: 1px solid var(--lmb-hairline);
-  border-radius: var(--lmb-r);
-  font-size: 11px;
-  color: var(--lmb-ink-dim);
-}
-.lmb-profile-strip b {
-  color: var(--lmb-ink);
-  font-weight: 600;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
+.lmb-profile-picker-row { flex-wrap: wrap; }
+.lmb-profile-picker-row .lmb-grow { flex: 1 1 140px; }
+.lmb-profile-picker-row .lmb-profile-action { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; padding: 0; }
 
 /* ---------------------------------------------------------- section card */
 .lmb-section {
@@ -10160,6 +10209,13 @@ var STYLES = `
 /* ---------------------------------------------------------------- fields */
 .lmb-field { display: flex; flex-direction: column; gap: 4px; }
 .lmb-field-row { display: flex; align-items: center; gap: 8px; }
+.lmb-prompt-role-row { flex-wrap: wrap; }
+.lmb-prompt-role-row .lmb-field-label { white-space: nowrap; }
+.lmb-prompt-role-row .lmb-prompt-role { width: 140px; }
+.lmb-summary-tier > summary { cursor: pointer; list-style: none; margin-bottom: 0; }
+.lmb-summary-tier > summary::-webkit-details-marker { display: none; }
+.lmb-summary-tier[open] > summary { margin-bottom: 10px; }
+.lmb-summary-tier[open] > summary .lmb-chevron { transform: rotate(45deg); margin-bottom: 4px; }
 .lmb-grow { flex: 1; min-width: 0; }
 .lmb-field-label {
   font-size: 10px;
@@ -10355,6 +10411,55 @@ input.lmb-input[type="number"]::-webkit-inner-spin-button { opacity: 0.6; }
   transition: background 200ms var(--lmb-ease);
 }
 .lmb-multiselect-row:hover { background: var(--lmb-frame-faint); }
+
+/* Compact regex browser controls, matching the RisuRealm pager. */
+.lmb-regex-results { display: flex; flex-direction: column; gap: 12px; }
+.lmb-regex-toolbar { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 12px; }
+.lmb-regex-pager {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid var(--lmb-edge);
+  border-radius: 999px;
+  background: var(--lmb-fill);
+  box-shadow: var(--lmb-lift);
+}
+.lmb-regex-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--lmb-ink);
+  cursor: pointer;
+}
+.lmb-regex-arrow:hover:not(:disabled) { background: var(--lmb-fill-hover); color: var(--lmb-gold); }
+.lmb-regex-arrow:disabled, .lmb-regex-page:disabled { opacity: 0.4; cursor: not-allowed; }
+.lmb-regex-page {
+  appearance: textfield;
+  width: 48px;
+  height: 28px;
+  padding: 0 4px;
+  border: 0;
+  border-radius: var(--lmb-r);
+  background: transparent;
+  color: var(--lmb-ink);
+  font: inherit;
+  font-weight: 600;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+.lmb-regex-page::-webkit-inner-spin-button,
+.lmb-regex-page::-webkit-outer-spin-button { appearance: none; margin: 0; }
+.lmb-regex-pager :focus-visible { outline: 2px solid var(--lmb-gold); outline-offset: 1px; }
+.lmb-regex-range { margin-left: auto; }
+.lmb-regex-group-heading { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 2px 12px; }
+.lmb-regex-group-heading .lmb-help { font-weight: 400; letter-spacing: normal; text-transform: none; }
 
 /* ------------------------------------------------------------------ pills */
 /* Pills are STATUS, not controls: no border-box (that's the button costume),
@@ -11347,6 +11452,7 @@ var UI_OPERATIONS = [
   "ready",
   "refresh",
   "prompt_breakdown",
+  "regex_scripts_page",
   "save_settings",
   "save_profile",
   "save_samplers",
@@ -12641,6 +12747,7 @@ var CODEX_FILE_KEYS = [
 ];
 var STORAGE_VERSION = 7;
 var TIER_KINDS = ["chapter", "arc", "volume", "series", "saga", "library", "universe"];
+var MODEL_TIER_NAMES = ["Chapter", "Arc", "Volume", "Series", "Saga", "Library", "Universe"];
 var TIER_NAMES = [t("shared.tierNames.chapter"), t("shared.tierNames.arc"), t("shared.tierNames.volume"), t("shared.tierNames.series"), t("shared.tierNames.saga"), t("shared.tierNames.library"), t("shared.tierNames.universe")];
 var HIGHER_TIERS = [3, 4, 5, 6, 7];
 function defaultHigherTiers() {
@@ -12653,6 +12760,11 @@ function defaultHigherTiers() {
     targetPercent: 25,
     targetTokens: 3000
   }]));
+}
+var EXTRA_PRESET_CATEGORIES = ["series", "saga", "library", "universe"];
+var PRESET_CATEGORIES = [...TIER_KINDS, "codex"];
+function promptRoleFor(profile, category) {
+  return profile.promptRoles[category] ?? "system";
 }
 var DEFAULT_SAMPLERS = {
   temperature: null,
@@ -12706,6 +12818,8 @@ function makeDefaultProfile(id, name) {
     chapterPresetKey: "summary",
     arcPresetKey: "arc_default",
     volumePresetKey: "volume_default",
+    higherTierPresetKeys: {},
+    promptRoles: {},
     previousMemoriesCount: 7,
     regexOutgoingScriptIds: [],
     regexIncomingScriptIds: [],
@@ -13177,7 +13291,8 @@ function showDryRunModal(kind, messages, diagnostics) {
   const header = document.createElement("div");
   header.className = "lmb-preview-modal__header";
   const title = document.createElement("h3");
-  title.textContent = t("ui.modals.showDryRunModal.dryRun", { choice: kind === "arc" ? "yes" : "no", choice2: !(kind === "arc") && kind === "volume" ? "yes" : "no", choice3: !(kind === "arc") && !(kind === "volume") && kind === "codex" ? "yes" : "no" });
+  const tierIndex = TIER_KINDS.indexOf(kind);
+  title.textContent = tierIndex > 2 ? t("ui.modals.showDryRunModal.higherTier", { name: TIER_NAMES[tierIndex] }) : t("ui.modals.showDryRunModal.dryRun", { choice: kind === "arc" ? "yes" : "no", choice2: !(kind === "arc") && kind === "volume" ? "yes" : "no", choice3: !(kind === "arc") && !(kind === "volume") && kind === "codex" ? "yes" : "no" });
   header.appendChild(title);
   const closeBtn = document.createElement("button");
   closeBtn.type = "button";
@@ -14226,7 +14341,7 @@ function renderFailure(host, state, send) {
   head.textContent = f.kind === "arc" ? t("ui.tabs.homeTab.renderFailure.lastArcAttemptFailed") : f.kind !== "chapter" ? t("ui.tabs.homeTab.renderFailure.lastAttemptFailed", { kind: f.kind }) : t("ui.tabs.homeTab.renderFailure.lastChapterAttemptFailed");
   const detail = document.createElement("div");
   detail.style.opacity = "0.85";
-  detail.textContent = t("ui.tabs.homeTab.renderFailure.triedX", { message: f.message, retriedTimes: f.retriedTimes });
+  detail.textContent = f.phase === "save" ? t("ui.tabs.homeTab.renderFailure.saveFailed", { message: f.message }) : t("ui.tabs.homeTab.renderFailure.triedX", { message: f.message, retriedTimes: f.retriedTimes });
   const row = document.createElement("div");
   row.className = "lmb-actions";
   const chatId = state.activeChatId;
@@ -14401,16 +14516,218 @@ function resetHomeTabLocal() {
   promptCache.expanded.clear();
 }
 
+// src/ui/regex-picker.ts
+var page = null;
+var loadedAt = 0;
+var pending2 = null;
+var requestedOffset = 0;
+var failed = false;
+var timer;
+var searchTimer;
+var query = "";
+var pageQuery = "";
+var pendingQuery = "";
+var progress = null;
+var repaint;
+function resetRegexPicker() {
+  clearTimeout(timer);
+  clearTimeout(searchTimer);
+  searchTimer = undefined;
+  query = "";
+  pageQuery = "";
+  pendingQuery = "";
+  progress = null;
+  page = null;
+  loadedAt = 0;
+  pending2 = null;
+  requestedOffset = 0;
+  failed = false;
+  repaint = undefined;
+}
+function deliverRegexScriptsPage(message) {
+  if (message.requestId !== pending2)
+    return;
+  if ("progress" in message) {
+    progress = message.progress;
+    armTimeout(message.requestId);
+    repaint?.();
+    return;
+  }
+  clearTimeout(timer);
+  pending2 = null;
+  failed = "error" in message;
+  if ("page" in message) {
+    page = message.page;
+    pageQuery = pendingQuery;
+    loadedAt = Date.now();
+  }
+  repaint?.();
+}
+function armTimeout(requestId) {
+  clearTimeout(timer);
+  timer = setTimeout(() => {
+    if (pending2 !== requestId)
+      return;
+    pending2 = null;
+    failed = true;
+    repaint?.();
+  }, 30000);
+}
+function renderRegex(host, profile, patch, send) {
+  const sec = section(t("ui.tabs.profileTab.sec.regex"));
+  host.appendChild(sec.wrap);
+  let outgoingIds = profile.regexOutgoingScriptIds.slice();
+  let incomingIds = profile.regexIncomingScriptIds.slice();
+  sec.body.appendChild(textNode(t("ui.tabs.profileTab.renderRegex.outgoingRunsOnThePromptBeforeMemoria"), "lmb-help"));
+  const search = searchField({ value: query, placeholder: t("ui.regexPicker.search"), onChange: (value) => {
+    query = value;
+    clearTimeout(timer);
+    pending2 = null;
+    failed = false;
+    progress = null;
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(() => {
+      searchTimer = undefined;
+      load(0);
+    }, 250);
+    draw();
+  } });
+  const results = document.createElement("div");
+  results.className = "lmb-regex-results";
+  sec.body.append(search.wrap, results);
+  function load(offset, refresh = false) {
+    clearTimeout(searchTimer);
+    searchTimer = undefined;
+    clearTimeout(timer);
+    pendingQuery = query.trim();
+    requestedOffset = offset;
+    failed = false;
+    progress = null;
+    const requestId = Array.from(crypto.getRandomValues(new Uint8Array(16)), (b) => b.toString(16).padStart(2, "0")).join("");
+    pending2 = requestId;
+    armTimeout(requestId);
+    draw();
+    try {
+      send({ type: "regex_scripts_page", requestId, offset, query: pendingQuery, refresh });
+    } catch {
+      clearTimeout(timer);
+      pending2 = null;
+      failed = true;
+      draw();
+    }
+  }
+  function draw() {
+    results.replaceChildren();
+    const visiblePage = pageQuery === query.trim() ? page : null;
+    const loading = !!pending2 || !!searchTimer;
+    const navigation = document.createElement("div");
+    navigation.className = "lmb-regex-toolbar";
+    const limit = visiblePage?.limit ?? 50;
+    const offset = visiblePage?.offset ?? 0;
+    const total = visiblePage?.total ?? 0;
+    const pages = Math.max(1, Math.ceil(total / limit));
+    const pager = document.createElement("div");
+    pager.className = "lmb-regex-pager";
+    const jump = numberInput({
+      value: offset / limit + 1,
+      min: 1,
+      max: pages,
+      step: 1,
+      disabled: loading || !visiblePage,
+      onBlur: (value) => {
+        if (loading || !visiblePage)
+          return;
+        const next2 = (Math.min(pages, Math.max(1, Math.floor(value ?? offset / limit + 1))) - 1) * limit;
+        jump.value = String(next2 / limit + 1);
+        if (next2 !== offset)
+          load(next2);
+      }
+    });
+    jump.className = "lmb-regex-page";
+    jump.inputMode = "numeric";
+    jump.enterKeyHint = "go";
+    jump.setAttribute("aria-label", t("ui.regexPicker.page"));
+    jump.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        jump.blur();
+      }
+    });
+    const previous = makeButton("", () => load(Math.max(0, offset - limit)), { title: t("ui.regexPicker.previous"), disabled: loading || offset === 0 });
+    const next = makeButton("", () => load(offset + limit), { title: t("ui.regexPicker.next"), disabled: loading || offset + limit >= total });
+    for (const [button, label, points] of [
+      [previous, t("ui.regexPicker.previous"), "15 18 9 12 15 6"],
+      [next, t("ui.regexPicker.next"), "9 18 15 12 9 6"]
+    ]) {
+      button.className = "lmb-regex-arrow";
+      button.setAttribute("aria-label", label);
+      button.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="${points}"/></svg>`;
+    }
+    pager.append(previous, jump, next);
+    navigation.append(pager, makeButton(t("ui.regexPicker.refresh"), () => load(failed ? requestedOffset : Math.min(offset, (pages - 1) * limit), true), { small: true, disabled: loading }));
+    if (visiblePage)
+      navigation.appendChild(textNode(t("ui.regexPicker.range", {
+        first: visiblePage.scripts.length ? offset + 1 : 0,
+        last: visiblePage.scripts.length ? offset + visiblePage.scripts.length : 0,
+        total
+      }), "lmb-help lmb-regex-range"));
+    results.appendChild(navigation);
+    if (loading)
+      results.appendChild(textNode(progress ? t("ui.regexPicker.searchProgress", { scanned: progress.scanned, total: progress.total }) : t("ui.regexPicker.loading"), "lmb-help"));
+    if (failed)
+      results.appendChild(textNode(t("ui.regexPicker.failed"), "lmb-help"));
+    if (!visiblePage)
+      return;
+    if (!visiblePage.scripts.length) {
+      results.appendChild(textNode(query.trim() ? t("ui.regexPicker.noMatches") : t("ui.tabs.profileTab.renderRegex.noRegexScriptsFoundInLumiverse"), "lmb-empty"));
+      return;
+    }
+    const options = visiblePage.scripts.map((script) => ({ value: script.id, label: script.name }));
+    const outgoing = field(t("ui.tabs.profileTab.outgoing.outgoing"));
+    outgoing.wrap.firstElementChild.classList.add("lmb-regex-group-heading");
+    outgoing.wrap.firstElementChild.appendChild(textNode(t("ui.regexPicker.selected", { count: outgoingIds.length }), "lmb-help"));
+    outgoing.body.append(multiSelect({
+      options,
+      selected: outgoingIds,
+      onChange: (ids) => {
+        outgoingIds = ids;
+        patch({ regexOutgoingScriptIds: ids });
+        draw();
+      }
+    }));
+    const incoming = field(t("ui.tabs.profileTab.incoming.incoming"));
+    incoming.wrap.firstElementChild.classList.add("lmb-regex-group-heading");
+    incoming.wrap.firstElementChild.appendChild(textNode(t("ui.regexPicker.selected", { count: incomingIds.length }), "lmb-help"));
+    incoming.body.append(multiSelect({
+      options,
+      selected: incomingIds,
+      onChange: (ids) => {
+        incomingIds = ids;
+        patch({ regexIncomingScriptIds: ids });
+        draw();
+      }
+    }));
+    results.append(outgoing.wrap, incoming.wrap);
+  }
+  repaint = () => {
+    if (sec.wrap.isConnected)
+      draw();
+  };
+  draw();
+  if (!pending2 && !searchTimer && !failed && (!page || Date.now() - loadedAt >= 5000))
+    load(page?.offset ?? 0);
+}
+
 // src/ui/summary-transfer.ts
 function reportLocalSummaryTransfer(chatId, text, stage = "working") {
   document.dispatchEvent(new CustomEvent("lmb-summary-transfer", { detail: { id: "local", chatId, stage, text } }));
 }
 function createSummaryTransferPanel(host, send) {
-  const pending2 = new Map;
+  const pending3 = new Map;
   let chatId = null;
   const draw = () => {
     host.replaceChildren();
-    const item = chatId ? pending2.get(chatId) : null;
+    const item = chatId ? pending3.get(chatId) : null;
     host.hidden = !item;
     if (!item)
       return;
@@ -14479,7 +14796,7 @@ function createSummaryTransferPanel(host, send) {
       actions.appendChild(makeButton(status.stage === "done" || status.stage === "error" ? t("ui.summaryTransfer.draw.dismiss") : t("ui.summaryTransfer.draw.cancelImport"), () => {
         if (status.id !== "local" && status.id !== "busy")
           choose("cancel");
-        pending2.delete(status.chatId);
+        pending3.delete(status.chatId);
         draw();
       }));
     actions.appendChild(makeButton(t("ui.summaryTransfer.draw.hide"), () => {
@@ -14497,15 +14814,15 @@ function createSummaryTransferPanel(host, send) {
     },
     deliver(status) {
       if (status.stage === "cancelled") {
-        pending2.delete(status.chatId);
+        pending3.delete(status.chatId);
         if (status.chatId === chatId)
           draw();
         return;
       }
-      const old = pending2.get(status.chatId);
+      const old = pending3.get(status.chatId);
       if (old && JSON.stringify(old.status) === JSON.stringify(status))
         return;
-      pending2.set(status.chatId, { status, collapsed: old?.collapsed ?? false, input: old?.input ?? "" });
+      pending3.set(status.chatId, { status, collapsed: old?.collapsed ?? false, input: old?.input ?? "" });
       if (status.chatId === chatId)
         draw();
     }
@@ -14906,7 +15223,7 @@ function renderChapterPicker(host, state, send, redraw) {
       redraw();
     }
   });
-  const query = searchField({
+  const query2 = searchField({
     value: localState.messageQuery,
     placeholder: t("ui.tabs.booksTab.query.search"),
     onChange: (v) => {
@@ -14917,7 +15234,7 @@ function renderChapterPicker(host, state, send, redraw) {
       syncControls();
     }
   });
-  filterRow.append(filterSel, query.wrap);
+  filterRow.append(filterSel, query2.wrap);
   sec.body.appendChild(filterRow);
   const counts = document.createElement("div");
   counts.className = "lmb-help";
@@ -15046,11 +15363,11 @@ function buildMessageRow(m, state, onToggle, redraw) {
       return;
     const startX = pe.clientX;
     const startY = pe.clientY;
-    let timer = null;
+    let timer2 = null;
     const cleanup = () => {
-      if (timer !== null) {
-        clearTimeout(timer);
-        timer = null;
+      if (timer2 !== null) {
+        clearTimeout(timer2);
+        timer2 = null;
       }
       row.removeEventListener("pointermove", onMove);
       row.removeEventListener("pointerup", cleanup);
@@ -15066,8 +15383,8 @@ function buildMessageRow(m, state, onToggle, redraw) {
     row.addEventListener("pointerup", cleanup);
     row.addEventListener("pointercancel", cleanup);
     row.addEventListener("pointerleave", cleanup);
-    timer = setTimeout(() => {
-      timer = null;
+    timer2 = setTimeout(() => {
+      timer2 = null;
       cleanup();
       if (!triggerRangeFromAnchor())
         return;
@@ -15101,6 +15418,13 @@ function buildMessageRow(m, state, onToggle, redraw) {
   preview.textContent = m.preview || t("ui.tabs.booksTab.buildMessageRow.empty");
   const icons = document.createElement("span");
   icons.className = "lmb-msg-icons";
+  if (m.staged && !m.covered && !m.excluded) {
+    const staged = document.createElement("span");
+    staged.className = "lmb-entry-tag ghost";
+    staged.textContent = t("ui.tabs.booksTab.renderEntryRow.ghost");
+    staged.title = t("ui.tabs.booksTab.buildMessageRow.stagedGhost");
+    icons.appendChild(staged);
+  }
   if (m.covered && !m.excluded) {
     const filed = document.createElement("span");
     filed.title = t("ui.tabs.booksTab.buildMessageRow.alreadyFiledIntoAChapterArcOr");
@@ -16071,7 +16395,7 @@ function clearNow() {
 function Timer() {
   this._call = this._time = this._next = null;
 }
-Timer.prototype = timer.prototype = {
+Timer.prototype = timer2.prototype = {
   constructor: Timer,
   restart: function(callback, delay, time) {
     if (typeof callback !== "function")
@@ -16096,7 +16420,7 @@ Timer.prototype = timer.prototype = {
     }
   }
 };
-function timer(callback, delay, time) {
+function timer2(callback, delay, time) {
   var t2 = new Timer;
   t2.restart(callback, delay, time);
   return t2;
@@ -16179,7 +16503,7 @@ function y2(d) {
 var initialRadius = 10;
 var initialAngle = Math.PI * (3 - Math.sqrt(5));
 function simulation_default(nodes) {
-  var simulation, alpha = 1, alphaMin = 0.001, alphaDecay = 1 - Math.pow(alphaMin, 1 / 300), alphaTarget = 0, velocityDecay = 0.6, forces = new Map, stepper = timer(step), event = dispatch_default("tick", "end"), random = lcg_default();
+  var simulation, alpha = 1, alphaMin = 0.001, alphaDecay = 1 - Math.pow(alphaMin, 1 / 300), alphaTarget = 0, velocityDecay = 0.6, forces = new Map, stepper = timer2(step), event = dispatch_default("tick", "end"), random = lcg_default();
   if (nodes == null)
     nodes = [];
   function step() {
@@ -16460,27 +16784,27 @@ class CodexFileStateChanges {
       existing.desired = desired;
       return;
     }
-    const pending2 = { confirmed: current2, desired, sent: desired, seq: ++this.sequence, send };
-    this.pending.set(key, pending2);
-    send({ type: "codex_set_file_state", chatId, file, state: desired, seq: pending2.seq });
+    const pending3 = { confirmed: current2, desired, sent: desired, seq: ++this.sequence, send };
+    this.pending.set(key, pending3);
+    send({ type: "codex_set_file_state", chatId, file, state: desired, seq: pending3.seq });
   }
   acknowledge(chatId, file, seq, error = false) {
-    const key = this.key(chatId, file), pending2 = this.pending.get(key);
-    if (!pending2 || pending2.seq !== seq)
+    const key = this.key(chatId, file), pending3 = this.pending.get(key);
+    if (!pending3 || pending3.seq !== seq)
       return null;
     if (error) {
       this.pending.delete(key);
-      return pending2.confirmed;
+      return pending3.confirmed;
     }
-    pending2.confirmed = pending2.sent;
-    if (pending2.desired === pending2.sent)
+    pending3.confirmed = pending3.sent;
+    if (pending3.desired === pending3.sent)
       this.pending.delete(key);
     else {
-      pending2.sent = pending2.desired;
-      pending2.seq = ++this.sequence;
-      pending2.send({ type: "codex_set_file_state", chatId, file, state: pending2.sent, seq: pending2.seq });
+      pending3.sent = pending3.desired;
+      pending3.seq = ++this.sequence;
+      pending3.send({ type: "codex_set_file_state", chatId, file, state: pending3.sent, seq: pending3.seq });
     }
-    return pending2.confirmed;
+    return pending3.confirmed;
   }
   clear() {
     this.pending.clear();
@@ -17037,11 +17361,11 @@ function renderOverview2(host, state, ctx, send, parsed) {
         title: t("ui.tabs.codexTab.renderOverview.acceptTheCurrentRecordsAsUpTo")
       }));
     }
-    const pending2 = state.codexRefreshPending ?? [];
-    if (pending2.length > 0) {
+    const pending3 = state.codexRefreshPending ?? [];
+    if (pending3.length > 0) {
       const banner = document.createElement("div");
       banner.className = "lmb-actions";
-      banner.append(textNode(t("ui.tabs.codexTab.renderOverview.recordMissedUpdatesWhileFrozen", { length: pending2.length }), "lmb-help"), makeButton(t("ui.tabs.codexTab.renderOverview.catchUp1Pass"), () => send({ type: "codex_refresh", chatId }), {
+      banner.append(textNode(t("ui.tabs.codexTab.renderOverview.recordMissedUpdatesWhileFrozen", { length: pending3.length }), "lmb-help"), makeButton(t("ui.tabs.codexTab.renderOverview.catchUp1Pass"), () => send({ type: "codex_refresh", chatId }), {
         primary: true,
         small: true,
         disabled: busy || !state.settings.enabled || !profile.codexEnabled,
@@ -18982,7 +19306,7 @@ function renderSecrets(host, parsed, state, ctx, send) {
 
 // src/ui/activation-control.ts
 var nextGroup = 0;
-function activationControl(label, value, onChange) {
+function activationControl(label, value, onChange, alwaysLabel = t("ui.activationControl.activationControl.always")) {
   const group = document.createElement("fieldset");
   group.className = "lmb-activation";
   const legend = document.createElement("legend");
@@ -18991,7 +19315,7 @@ function activationControl(label, value, onChange) {
   const row = document.createElement("div");
   row.className = "lmb-activation-options";
   const name = `lmb-activation-${++nextGroup}`;
-  for (const [mode, title] of [["always", t("ui.activationControl.activationControl.always")], ["keywords", t("ui.activationControl.activationControl.keywords")], ["vector", t("ui.activationControl.activationControl.vectorKeywords")]]) {
+  for (const [mode, title] of [["always", alwaysLabel], ["keywords", t("ui.activationControl.activationControl.keywords")], ["vector", t("ui.activationControl.activationControl.vectorKeywords")]]) {
     const option = document.createElement("label");
     const input = document.createElement("input");
     input.type = "radio";
@@ -19202,12 +19526,12 @@ function renderResetSettings(host, state, send) {
   const CONFIRM = t("ui.tabs.profileTab.confirm.clickAgainToConfirm");
   let btn;
   let armed = false;
-  let timer2;
+  let timer3;
   const disarm = () => {
     armed = false;
-    if (timer2) {
-      clearTimeout(timer2);
-      timer2 = undefined;
+    if (timer3) {
+      clearTimeout(timer3);
+      timer3 = undefined;
     }
     btn.textContent = IDLE;
   };
@@ -19215,7 +19539,7 @@ function renderResetSettings(host, state, send) {
     if (!armed) {
       armed = true;
       btn.textContent = CONFIRM;
-      timer2 = setTimeout(disarm, 3000);
+      timer3 = setTimeout(disarm, 3000);
       return;
     }
     disarm();
@@ -19231,7 +19555,7 @@ function renderResetSettings(host, state, send) {
 function renderProfilePicker(host, state, ctx, send) {
   const sec = section(t("ui.tabs.profileTab.sec.profile"));
   const row = document.createElement("div");
-  row.className = "lmb-field-row";
+  row.className = "lmb-field-row lmb-profile-picker-row";
   lessonMark(row, "tuning.profile.select");
   const grow = document.createElement("div");
   grow.className = "lmb-grow";
@@ -19241,22 +19565,31 @@ function renderProfilePicker(host, state, ctx, send) {
     onChange: (v) => send({ type: "set_active_profile", profileId: v, chatId: state.activeChatId })
   }));
   row.appendChild(grow);
-  row.append(makeButton(t("ui.tabs.profileTab.renderProfilePicker.new"), async () => {
+  const iconButton = (title, drawing, onClick) => {
+    const button = makeButton("", onClick, { small: true, title });
+    button.classList.add("lmb-profile-action");
+    button.setAttribute("aria-label", title);
+    button.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${drawing}</svg>`;
+    return button;
+  };
+  const actions = document.createElement("div");
+  actions.className = "lmb-actions";
+  row.appendChild(actions);
+  actions.append(iconButton(t("ui.tabs.profileTab.renderProfilePicker.new"), '<path d="M12 5v14M5 12h14"/>', async () => {
     const name = await promptForString(ctx, t("ui.tabs.profileTab.name.newProfileName"), "");
     if (!name)
       return;
     send({ type: "create_profile", name, chatId: state.activeChatId });
-  }, { small: true }), makeButton(t("ui.tabs.profileTab.renderProfilePicker.delete"), () => {
+  }), iconButton(t("ui.tabs.profileTab.renderProfilePicker.rename"), '<path d="m16 3 5 5-12 12H4v-5L16 3ZM14 5l5 5"/>', async () => {
+    const name = await promptForString(ctx, t("ui.tabs.profileTab.nameField.profileName"), state.activeProfile.name);
+    if (name)
+      send({ type: "save_profile", profile: { id: state.activeProfile.id, name: name.slice(0, 60) }, chatId: state.activeChatId });
+  }), iconButton(t("ui.tabs.profileTab.renderProfilePicker.duplicate"), '<rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V4H4v12h4"/>', () => {
+    send({ type: "create_profile", name: t("ui.tabs.profileTab.renderProfilePicker.copyName", { name: state.activeProfile.name }), copyFromId: state.activeProfile.id, chatId: state.activeChatId });
+  }), makeButton(t("ui.tabs.profileTab.renderProfilePicker.delete"), () => {
     send({ type: "delete_profile", profileId: state.activeProfile.id, chatId: state.activeChatId });
   }, { small: true, danger: true, disabled: state.settings.profiles.length <= 1 }));
   sec.body.appendChild(row);
-  const profile = state.activeProfile;
-  const nameField = field(t("ui.tabs.profileTab.nameField.profileName"));
-  nameField.body.appendChild(textInput({
-    value: profile.name,
-    onBlur: (v) => send({ type: "save_profile", profile: { id: profile.id, name: v.slice(0, 60) }, chatId: state.activeChatId })
-  }));
-  sec.body.appendChild(nameField.wrap);
   const enableWrap = field(t("ui.tabs.profileTab.enableWrap.extension"));
   enableWrap.body.appendChild(checkbox({
     checked: state.settings.enabled,
@@ -19266,6 +19599,27 @@ function renderProfilePicker(host, state, ctx, send) {
   }));
   sec.body.appendChild(enableWrap.wrap);
   host.appendChild(sec.wrap);
+}
+var expandedSummaryTiers = new Set;
+function summaryTierSection(title, tier) {
+  if (tier <= 3)
+    return section(title);
+  const wrap = document.createElement("details");
+  wrap.className = "lmb-section lmb-summary-tier";
+  wrap.open = expandedSummaryTiers.has(tier);
+  wrap.addEventListener("toggle", () => {
+    if (wrap.open)
+      expandedSummaryTiers.add(tier);
+    else
+      expandedSummaryTiers.delete(tier);
+  });
+  const head = document.createElement("summary");
+  head.className = "lmb-section-title";
+  head.append(document.createTextNode(title), textNode("", "lmb-chevron"));
+  const body = document.createElement("div");
+  body.className = "lmb-collapsible-body";
+  wrap.append(head, body);
+  return { wrap, head, body };
 }
 function renderSummarySettings(host, profile, patch) {
   const sec = section(t("ui.tabs.profileTab.sec.summarySettings"));
@@ -19277,7 +19631,7 @@ function renderSummarySettings(host, profile, patch) {
   }), "tuning.auto"));
   for (const tier of [1, 2, ...HIGHER_TIERS]) {
     const name = TIER_NAMES[tier - 1];
-    const card = section(tier === 1 ? t("ui.tabs.profileTab.card.chapterFiling") : t("ui.tabs.profileTab.card.binding", { name }));
+    const card = summaryTierSection(tier === 1 ? t("ui.tabs.profileTab.card.chapterFiling") : t("ui.tabs.profileTab.card.binding", { name }), tier);
     const lag = document.createElement("div");
     lag.className = "lmb-collapsible-body";
     if (tier === 1) {
@@ -19635,33 +19989,6 @@ function renderCodexSamplers(host, state, profile, send) {
   sec.body.appendChild(sampleGrid);
   host.appendChild(sec.wrap);
 }
-function renderRegex(host, state, profile, patch) {
-  const sec = section(t("ui.tabs.profileTab.sec.regex"));
-  if (state.regexScripts.length === 0) {
-    sec.body.appendChild(textNode(t("ui.tabs.profileTab.renderRegex.noRegexScriptsFoundInLumiverse"), "lmb-empty"));
-    host.appendChild(sec.wrap);
-    return;
-  }
-  const help = document.createElement("div");
-  help.className = "lmb-help";
-  help.textContent = t("ui.tabs.profileTab.renderRegex.outgoingRunsOnThePromptBeforeMemoria");
-  sec.body.appendChild(help);
-  const outgoing = field(t("ui.tabs.profileTab.outgoing.outgoing"));
-  outgoing.body.appendChild(multiSelect({
-    options: state.regexScripts.map((s) => ({ value: s.id, label: s.name })),
-    selected: profile.regexOutgoingScriptIds,
-    onChange: (ids) => patch({ regexOutgoingScriptIds: ids })
-  }));
-  sec.body.appendChild(outgoing.wrap);
-  const incoming = field(t("ui.tabs.profileTab.incoming.incoming"));
-  incoming.body.appendChild(multiSelect({
-    options: state.regexScripts.map((s) => ({ value: s.id, label: s.name })),
-    selected: profile.regexIncomingScriptIds,
-    onChange: (ids) => patch({ regexIncomingScriptIds: ids })
-  }));
-  sec.body.appendChild(incoming.wrap);
-  host.appendChild(sec.wrap);
-}
 function renderContext(host, profile, patch) {
   const sec = section(t("ui.tabs.profileTab.sec.context"));
   lessonMark(sec.wrap, "tuning.ctx");
@@ -19724,6 +20051,49 @@ function renderBehavior(host, profile, patch) {
   host.appendChild(sec.wrap);
 }
 
+// src/prompts/categories.ts
+var KEY_FIELDS = { chapter: "chapterPresetKey", arc: "arcPresetKey", volume: "volumePresetKey", codex: "codexPresetKey" };
+function isExtraCategory(category) {
+  return EXTRA_PRESET_CATEGORIES.includes(category);
+}
+function presetKeyFor(profile, category) {
+  return isExtraCategory(category) ? profile.higherTierPresetKeys[category] ?? "" : profile[KEY_FIELDS[category]];
+}
+function presetKeyPatch(category, key) {
+  return isExtraCategory(category) ? { higherTierPresetKeys: { [category]: key } } : { [KEY_FIELDS[category]]: key };
+}
+function higherTierPreset(text, tier) {
+  return text.replace(/\b(volumes?|arcs?)\b/gi, (word) => {
+    const source = word.toLowerCase().startsWith("arc");
+    const name = MODEL_TIER_NAMES[tier - (source ? 2 : 1)];
+    const plural = word.toLowerCase().endsWith("s");
+    const replacement = name + (plural && name !== "Series" ? name === "Library" ? "" : "s" : "");
+    const result = plural && name === "Library" ? "Libraries" : replacement;
+    return word === word.toUpperCase() ? result.toUpperCase() : result;
+  });
+}
+function builtInPresetsFor(pools, category) {
+  if (!isExtraCategory(category))
+    return pools[`${category}Presets`];
+  const index2 = TIER_KINDS.indexOf(category);
+  return [{
+    key: `${category}_default`,
+    displayName: TIER_NAMES[index2],
+    prompt: higherTierPreset(pools.volumePresets[0].prompt, index2 + 1)
+  }];
+}
+function resolvePresetText(profile, customs, pools, category) {
+  const key = presetKeyFor(profile, category);
+  if (isExtraCategory(category) && !key) {
+    return higherTierPreset(resolvePresetText(profile, customs, pools, "volume"), TIER_KINDS.indexOf(category) + 1);
+  }
+  const custom = customs.find((p) => p.key === key && p.category === category);
+  if (custom)
+    return custom.prompt;
+  const builtIns = builtInPresetsFor(pools, category);
+  return (builtIns.find((p) => p.key === key) ?? builtIns[0])?.prompt ?? "";
+}
+
 // src/prompts/fill.ts
 function fillPrompt(template, vars) {
   return template.replace(/\{\{(\w+)\}\}/g, (m2, k) => (k in vars) ? String(vars[k]) : m2);
@@ -19750,42 +20120,47 @@ var short_comment_rules_default = 'A single playful nyandere remark in Memoria v
 
 // src/ui/tabs/prompts-tab.ts
 var CATEGORY_SUBTABS = [
-  { key: "chapter", label: t("ui.tabs.promptsTab.categorySubtabs.chapter") },
-  { key: "arc", label: t("ui.tabs.promptsTab.categorySubtabs.arc") },
-  { key: "volume", label: t("ui.tabs.promptsTab.categorySubtabs.volume") },
+  { key: "summaries", label: t("ui.tabs.promptsTab.categorySubtabs.summaries") },
   { key: "codex", label: t("ui.tabs.promptsTab.categorySubtabs.codex") }
 ];
+var SUMMARY_LABELS = [t("ui.tabs.promptsTab.categorySubtabs.chapter"), t("ui.tabs.promptsTab.categorySubtabs.arc"), t("ui.tabs.promptsTab.categorySubtabs.volume"), ...TIER_NAMES.slice(3)];
+var SUMMARY_SUBTABS = TIER_KINDS.map((key, index2) => ({ key, label: SUMMARY_LABELS[index2] }));
 var local2 = {
-  category: "chapter",
+  category: "summaries",
+  summary: "chapter",
   codexExpanded: new Set,
   codexHowTo: new Set
 };
 function setPromptsCategory(cat) {
-  local2.category = cat;
+  local2.category = cat === "codex" ? "codex" : "summaries";
+  if (cat !== "codex")
+    local2.summary = cat;
 }
 function renderPromptsPane(host, state, ctx, send) {
   const profile = state.activeProfile;
   const setKey = (category, key) => {
-    const p = category === "arc" ? { arcPresetKey: key } : category === "volume" ? { volumePresetKey: key } : category === "codex" ? { codexPresetKey: key } : { chapterPresetKey: key };
+    const p = presetKeyPatch(category, key);
     send({ type: "save_profile", profile: { id: profile.id, ...p }, chatId: state.activeChatId });
   };
-  const selectedKeyFor = (c2) => c2 === "arc" ? profile.arcPresetKey : c2 === "volume" ? profile.volumePresetKey : c2 === "codex" ? profile.codexPresetKey : profile.chapterPresetKey;
   const pane = document.createElement("div");
   pane.className = "lmb-pane";
   host.appendChild(pane);
   const draw = () => {
     pane.replaceChildren();
-    pane.appendChild(makeSubtabs(CATEGORY_SUBTABS, local2.category, (key) => {
+    pane.appendChild(makeSubtabs([...CATEGORY_SUBTABS], local2.category, (key) => {
       local2.category = key;
       draw();
     }));
-    const cat = local2.category;
-    if (cat === "codex") {
-      renderCategory(pane, state, ctx, send, "codex", selectedKeyFor("codex"), setKey);
+    if (local2.category === "codex") {
+      renderCategory(pane, state, ctx, send, "codex", presetKeyFor(profile, "codex"), setKey);
       renderCodexTemplates(pane, state, send);
       return;
     }
-    renderCategory(pane, state, ctx, send, cat, selectedKeyFor(cat), setKey);
+    pane.appendChild(makeSubtabs(SUMMARY_SUBTABS, local2.summary, (key) => {
+      local2.summary = key;
+      draw();
+    }));
+    renderCategory(pane, state, ctx, send, local2.summary, presetKeyFor(profile, local2.summary), setKey);
     renderMemoriaOverrides(pane, state, send);
     renderImport(pane, state, ctx, send);
     renderHelp(pane);
@@ -20017,7 +20392,7 @@ function buildOverrideBlock(opts) {
 }
 function renderCategory(host, state, ctx, send, category, selectedKey, setKey) {
   const isCodex = category === "codex";
-  const sec = section(category === "arc" ? t("ui.tabs.promptsTab.sec.arcPrompt") : category === "volume" ? t("ui.tabs.promptsTab.sec.volumePrompt") : isCodex ? t("ui.tabs.promptsTab.sec.codexDirectives") : t("ui.tabs.promptsTab.sec.chapterPrompt"));
+  const sec = section(category === "chapter" ? t("ui.tabs.promptsTab.sec.chapterPrompt") : category === "arc" ? t("ui.tabs.promptsTab.sec.arcPrompt") : category === "volume" ? t("ui.tabs.promptsTab.sec.volumePrompt") : isCodex ? t("ui.tabs.promptsTab.sec.codexDirectives") : t("ui.tabs.promptsTab.sec.summaryPrompt", { name: TIER_NAMES[TIER_KINDS.indexOf(category)] }));
   lessonMark(sec.wrap, isCodex ? "tuning.prompts.codex" : "tuning.prompts");
   if (isCodex) {
     const help = document.createElement("div");
@@ -20025,9 +20400,26 @@ function renderCategory(host, state, ctx, send, category, selectedKey, setKey) {
     help.textContent = t("ui.tabs.promptsTab.renderCategory.theMissionBlockAtTheTopOf");
     sec.body.appendChild(help);
   }
-  const builtIns = category === "arc" ? state.arcPresets : category === "volume" ? state.volumePresets : isCodex ? state.codexPresets : state.chapterPresets;
+  const roleRow = document.createElement("label");
+  roleRow.className = "lmb-field-row lmb-prompt-role-row";
+  roleRow.append(textNode(t("ui.tabs.promptsTab.sendAs.label"), "lmb-field-label"));
+  const role = select({
+    value: promptRoleFor(state.activeProfile, category),
+    options: [
+      { value: "system", label: t("ui.tabs.promptsTab.sendAs.system") },
+      { value: "assistant", label: t("ui.tabs.promptsTab.sendAs.assistant") },
+      { value: "user", label: t("ui.tabs.promptsTab.sendAs.user") }
+    ],
+    onChange: (value) => send({ type: "save_profile", profile: { id: state.activeProfile.id, promptRoles: { [category]: value } }, chatId: state.activeChatId })
+  });
+  role.classList.add("lmb-prompt-role");
+  role.setAttribute("aria-label", t("ui.tabs.promptsTab.sendAs.label"));
+  roleRow.append(role);
+  sec.body.append(roleRow, textNode(t("ui.tabs.promptsTab.sendAs.help"), "lmb-field-hint"));
+  const builtIns = builtInPresetsFor(state, category);
   const customs = state.customPresets.filter((p) => p.category === category);
   const opts = [
+    ...isExtraCategory(category) ? [{ value: "", label: t("ui.tabs.promptsTab.opts.useVolume") }] : [],
     ...builtIns.map((b) => ({ value: b.key, label: t("ui.tabs.promptsTab.opts.builtIn", { displayName: b.displayName }) })),
     ...customs.map((c2) => ({ value: c2.key, label: t("ui.tabs.promptsTab.opts.custom", { displayName: c2.displayName }) }))
   ];
@@ -20042,8 +20434,9 @@ function renderCategory(host, state, ctx, send, category, selectedKey, setKey) {
   }));
   pickerRow.append(grow);
   sec.body.appendChild(pickerRow);
+  sec.body.appendChild(textNode(t("ui.tabs.promptsTab.renderCategory.presetScope"), "lmb-field-hint"));
   const isUserPreset = customs.some((c2) => c2.key === selectedKey);
-  const selectedText = findPresetText(state, category, selectedKey);
+  const selectedText = resolvePresetText(state.activeProfile, state.customPresets, state, category);
   const buttonsRow = document.createElement("div");
   buttonsRow.className = "lmb-actions";
   buttonsRow.append(makeButton(t("ui.tabs.promptsTab.renderCategory.newBlankPrompt"), async () => {
@@ -20085,7 +20478,7 @@ function renderCategory(host, state, ctx, send, category, selectedKey, setKey) {
   buttonsRow.append(makeButton(t("ui.tabs.promptsTab.renderCategory.dryRun"), () => {
     if (!state.activeChatId)
       return;
-    send(category === "arc" ? { type: "dry_run_arc", chatId: state.activeChatId } : category === "volume" ? { type: "dry_run_volume", chatId: state.activeChatId } : category === "codex" ? { type: "dry_run_codex", chatId: state.activeChatId } : { type: "dry_run_chapter", chatId: state.activeChatId });
+    send(category === "arc" ? { type: "dry_run_arc", chatId: state.activeChatId } : category === "codex" ? { type: "dry_run_codex", chatId: state.activeChatId } : category === "chapter" ? { type: "dry_run_chapter", chatId: state.activeChatId } : { type: "dry_run_volume", chatId: state.activeChatId, tier: TIER_KINDS.indexOf(category) + 1 });
   }, {
     small: true,
     disabled: !state.activeChatId || !state.settings.enabled,
@@ -20142,16 +20535,7 @@ function renderCategory(host, state, ctx, send, category, selectedKey, setKey) {
 function blankPromptTemplate(category) {
   if (category === "codex")
     return CODEX_DIRECTIVES_DEFAULT;
-  const noun = category === "arc" ? "arc" : category === "volume" ? "volume" : "chapter";
-  return fillPrompt(blank_template_default, { NOUN: noun });
-}
-function findPresetText(state, category, key) {
-  const c2 = state.customPresets.find((p) => p.key === key && p.category === category);
-  if (c2)
-    return c2.prompt;
-  const builtIns = category === "arc" ? state.arcPresets : category === "volume" ? state.volumePresets : category === "codex" ? state.codexPresets : state.chapterPresets;
-  const b = builtIns.find((p) => p.key === key);
-  return b?.prompt ?? "";
+  return fillPrompt(blank_template_default, { NOUN: category });
 }
 function renderImport(host, state, ctx, send) {
   const sec = section(t("ui.tabs.promptsTab.sec.importStmbPresets"));
@@ -20274,19 +20658,7 @@ function resetTuningTabLocal() {
 }
 function renderTuningTab(host, state, ctx, send) {
   host.replaceChildren();
-  if (local3.subtab !== "profile") {
-    const strip = document.createElement("div");
-    strip.className = "lmb-profile-strip";
-    strip.append(document.createTextNode(t("ui.tabs.tuningTab.renderTuningTab.profile")));
-    const name = document.createElement("b");
-    name.textContent = state.activeProfile.name;
-    strip.appendChild(name);
-    if (!state.settings.enabled) {
-      strip.appendChild(document.createTextNode(t("ui.tabs.tuningTab.renderTuningTab.extensionOff")));
-    }
-    strip.title = t("ui.tabs.tuningTab.renderTuningTab.switchOrManageProfilesInTheConnection");
-    host.appendChild(strip);
-  }
+  renderProfilePicker(host, state, ctx, send);
   host.appendChild(makeSubtabs(SUBTABS3, local3.subtab, (key) => {
     local3.subtab = key;
     renderTuningTab(host, state, ctx, send);
@@ -20303,7 +20675,6 @@ function renderTuningTab(host, state, ctx, send) {
   host.appendChild(pane);
   switch (local3.subtab) {
     case "profile": {
-      renderProfilePicker(pane, state, ctx, send);
       const rest = document.createElement("div");
       rest.className = "lmb-pane";
       if (!state.settings.enabled) {
@@ -20331,7 +20702,7 @@ function renderTuningTab(host, state, ctx, send) {
           renderSummarySettings(body, profile, patch);
           renderContext(body, profile, patch);
           renderBehavior(body, profile, patch);
-          renderRegex(body, state, profile, patch);
+          renderRegex(body, profile, patch, send);
           renderGlobalSettings(body, state, send);
           renderResetSettings(body, state, send);
         } else if (codexLessonGated(state.lessons)) {
@@ -20375,7 +20746,7 @@ function renderGlobalSettings(host, state, send) {
     hint: t("ui.tabs.tuningTab.renderGlobalSettings.whenOffMemoriaSBackgroundRunsStay"),
     onChange: (v) => send({ type: "save_settings", patch: { showAutomationToasts: v }, chatId: state.activeChatId })
   }));
-  sec.body.appendChild(lessonMark(activationControl(t("ui.tabs.tuningTab.renderGlobalSettings.summaryRecall"), state.settings.summaryActivationMode, (mode) => send({ type: "set_summary_activation", mode, chatId: state.activeChatId })), "tuning.every.constant"));
+  sec.body.appendChild(lessonMark(activationControl(t("ui.tabs.tuningTab.renderGlobalSettings.summaryRecall"), state.settings.summaryActivationMode, (mode) => send({ type: "set_summary_activation", mode, chatId: state.activeChatId }), t("ui.activationControl.activationControl.constant")), "tuning.every.constant"));
   const hint = document.createElement("div");
   hint.className = "lmb-field-hint";
   hint.textContent = t("ui.tabs.tuningTab.renderGlobalSettings.appliesToExistingAndFutureChapterAnd");
@@ -22064,6 +22435,7 @@ function makeMessages(total) {
       hidden: false,
       covered: false,
       coveredByEntryId: null,
+      staged: false,
       indexInChat: i,
       excluded: false
     });
@@ -22426,7 +22798,6 @@ function buildFixture(variant) {
     volumePresets: BUILTIN_VOLUME_PRESETS,
     codexPresets: BUILTIN_CODEX_PRESETS,
     customPresets: [],
-    regexScripts: [],
     pendingPreviews: [],
     backlogChapters: Math.floor(headroom / Math.max(1, profile.windowValue)),
     backlogArcs: 0,
@@ -22757,9 +23128,9 @@ function diagramRot(wrap) {
   let n = 0;
   for (let i = 0;i < MAX - 2; i++)
     col.appendChild(bar("msg", MSG_WIDTHS[n++ % MSG_WIDTHS.length]));
-  const timer2 = setInterval(() => {
+  const timer3 = setInterval(() => {
     if (!col.isConnected) {
-      clearInterval(timer2);
+      clearInterval(timer3);
       return;
     }
     const fresh = bar("msg", MSG_WIDTHS[n++ % MSG_WIDTHS.length]);
@@ -24397,6 +24768,9 @@ function setupApp(ctx, diagnostics, setContext) {
         code: msg.type === "state_error" || msg.type === "error" || msg.type === "codex_file_state_saved" && msg.error || msg.type === "summary_transfer_status" && msg.status.stage === "error" ? "failed" : undefined
       });
       switch (msg.type) {
+        case "regex_scripts_page":
+          deliverRegexScriptsPage(msg);
+          break;
         case "prompt_breakdown":
           deliverPromptBreakdown(msg);
           break;
@@ -24545,6 +24919,7 @@ function setupApp(ctx, diagnostics, setContext) {
   requestState("ready");
   return () => {
     disposed = true;
+    resetRegexPicker();
     resetHomeTabLocal();
     clearLoadTimer();
     try {

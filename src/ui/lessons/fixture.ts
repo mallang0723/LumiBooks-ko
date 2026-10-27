@@ -45,6 +45,7 @@ function makeMessages(total: number): MessageStub[] {
       hidden: false,
       covered: false,
       coveredByEntryId: null,
+      staged: false,
       indexInChat: i,
       excluded: false,
     });
@@ -399,7 +400,6 @@ export function buildFixture(variant: string): FrontendState {
     volumePresets: BUILTIN_VOLUME_PRESETS,
     codexPresets: BUILTIN_CODEX_PRESETS,
     customPresets: [],
-    regexScripts: [],
     pendingPreviews: [],
     backlogChapters: Math.floor(headroom / Math.max(1, profile.windowValue)),
     backlogArcs: 0,

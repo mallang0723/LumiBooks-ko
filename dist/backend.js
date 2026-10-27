@@ -2816,6 +2816,9 @@ var IntlMessageFormat = class IntlMessageFormat2 {
 // src/locales/en.json
 var en_default = {
   backend: {
+    regex: {
+      searchChanged: "Regex scripts changed while searching. Refresh to try again."
+    },
     binding: {
       messages: {
         selectConsecutiveSummariesWithoutCrossingAnotherSummary: "Select consecutive summaries without crossing another summary tier"
@@ -3314,6 +3317,7 @@ Tidy: {tokens} tokens; limit {limit}; model target {modelTarget}; {remaining} ca
         memoriaIsFilingAChapter: "Creating chapter"
       },
       createChapterFromRange: {
+        alreadyFiled: "Some selected messages are already filed. Select unfiled messages or regenerate the existing chapter.",
         memoriaIsFilingAChapter: "Creating chapter"
       },
       runChapter: {
@@ -3369,6 +3373,7 @@ Tidy: {tokens} tokens; limit {limit}; model target {modelTarget}; {remaining} ca
         noChaptersToBindYet: "No chapters to bind"
       },
       dryRunVolume: {
+        noSources: "No {name} summaries to consolidate",
         noArcsToPressYet: "No arcs to press"
       },
       promoteGhostChapters: {
@@ -3472,6 +3477,8 @@ Tidy: {tokens} tokens; limit {limit}; model target {modelTarget}; {remaining} ca
         targetTokens2: "Target tokens: {targetTokens} ({choice, select, yes {fixed budget, ~{arcTargetUnitTokens}% of input} other {{arcTargetPercent}% of input}})",
         presetKey2: "Preset key: {arcPresetKey}",
         sourceArcs: "Source arcs: {length}",
+        higherSources: "Source {name} summaries: {count}",
+        higherSourceTokens: "Source summaries: {bodyTokens} tokens (model tokenizer)",
         concatenatedArcBodyTokensModelTokenizer: "Source arcs: {bodyTokens} tokens (model tokenizer)",
         targetTokens3: "Target tokens: {targetTokens} ({choice, select, yes {fixed budget, ~{volumeTargetUnitTokens}% of input} other {{volumeTargetPercent}% of input}})",
         presetKey3: "Preset key: {volumePresetKey}"
@@ -3712,8 +3719,22 @@ Tidy: {tokens} tokens; limit {limit}; model target {modelTarget}; {remaining} ca
     summaryKindTag: "{kind, select, chapter {CHAPTER} arc {ARC} volume {VOLUME} series {SERIES} saga {SAGA} library {LIBRARY} universe {UNIVERSE} codex {Codex} other {{kind}}}"
   },
   ui: {
+    regexPicker: {
+      searchProgress: "Searching scripts\u2026 {scanned, number} of {total, number} checked",
+      search: "Search regex names\u2026",
+      noMatches: "No matching regex scripts.",
+      previous: "Previous",
+      next: "Next",
+      page: "Page",
+      refresh: "Refresh",
+      loading: "Loading regex scripts\u2026",
+      failed: "Could not load this page. Select Refresh to retry.",
+      range: "{first}\u2013{last} of {total} scripts",
+      selected: "{count} selected across all pages"
+    },
     activationControl: {
       activationControl: {
+        constant: "Constant",
         always: "Always",
         keywords: "Keywords",
         vectorKeywords: "Vector + keywords"
@@ -4490,6 +4511,7 @@ Days 3-8. The duke dies, Elias flees with the silver locket, and Mara chooses si
       },
       showDryRunModal: {
         dryRun: "Dry run: {choice, select, yes {Arc} other {{choice2, select, yes {Volume} other {{choice3, select, yes {Codex} other {Chapter}}}}}}",
+        higherTier: "Dry run: {name}",
         value: "\xD7",
         closeDryRun: "Close dry run",
         diagnostics: "Diagnostics",
@@ -4689,6 +4711,7 @@ Days 3-8. The duke dies, Elias flees with the silver locket, and Mara chooses si
           showOlder: "Show older ({older})"
         },
         buildMessageRow: {
+          stagedGhost: "Staged for Codex. Compressing these messages replaces the overlapping ghost chapters after saving.",
           shiftClickOrLongPressOnTouch: "Shift+click (or long-press on touch) to select a range",
           value: "#{indexInChat1}",
           alreadyFiledIntoAChapterArcOr: "Already filed into a chapter, arc, or volume",
@@ -5315,6 +5338,7 @@ Days 3-8. The duke dies, Elias flees with the silver locket, and Mara chooses si
           cancelTheInFlightGeneration: "Cancel generation"
         },
         renderFailure: {
+          saveFailed: "Summary generated, but saving failed. {message}",
           lastArcAttemptFailed: "Last arc attempt failed",
           lastAttemptFailed: "Last {kind, select, chapter {chapter} arc {arc} volume {volume} series {series} saga {saga} library {library} universe {universe} codex {Codex} other {{kind}}} attempt failed",
           lastChapterAttemptFailed: "Last chapter attempt failed",
@@ -5441,6 +5465,9 @@ Days 3-8. The duke dies, Elias flees with the silver locket, and Mara chooses si
         },
         renderProfilePicker: {
           new: "New",
+          rename: "Rename profile",
+          duplicate: "Duplicate profile",
+          copyName: "{name} copy",
           delete: "Delete",
           enabled: "Enabled",
           masterSwitchWhenOffMemoriaDoesNothing: "Enable LumiBooks for this account."
@@ -5552,6 +5579,7 @@ Days 3-8. The duke dies, Elias flees with the silver locket, and Mara chooses si
       },
       promptsTab: {
         categorySubtabs: {
+          summaries: "Summaries",
           chapter: "Chapter",
           arc: "Arc",
           volume: "Volume",
@@ -5565,6 +5593,7 @@ Days 3-8. The duke dies, Elias flees with the silver locket, and Mara chooses si
         },
         sec: {
           codexPromptTemplates: "Codex prompt templates",
+          summaryPrompt: "{name} prompt",
           memoriaOverrides: "Memoria overrides",
           arcPrompt: "Arc prompt",
           volumePrompt: "Volume prompt",
@@ -5592,7 +5621,7 @@ Days 3-8. The duke dies, Elias flees with the silver locket, and Mara chooses si
           clickAgainToConfirm: "Confirm?"
         },
         renderMemoriaOverrides: {
-          personaIsTheSystemPromptHeaderShort: "Persona sets the system-prompt header. Short-comment rules fill '{{memoria_short_comment_rules}}'.",
+          personaIsTheSystemPromptHeaderShort: "Persona sets the instruction header. Short-comment rules fill '{{memoria_short_comment_rules}}'.",
           memoriaPersona: "Memoria persona",
           memoriaShortCommentRules: "Memoria short-comment rules"
         },
@@ -5604,19 +5633,28 @@ Days 3-8. The duke dies, Elias flees with the silver locket, and Mara chooses si
           resetToDefault: "Reset to default"
         },
         renderCategory: {
-          theMissionBlockAtTheTopOf: "Instructions at the start of the Codex system prompt. Saved with the templates below in the selected preset. Preview assembled prompts with Dry run.",
+          presetScope: "Preset selection is saved per profile. Editing a preset changes it for every profile using it; duplicate it for a separate version.",
+          theMissionBlockAtTheTopOf: "Instructions at the start of the Codex prompt. Saved with the templates below in the selected preset. Preview assembled prompts with Dry run.",
           newBlankPrompt: "New blank prompt",
           duplicateToNew: "Duplicate to new",
           duplicateToEdit: "Duplicate to edit",
           dryRun: "Dry run",
-          assembleTheNextCodexRunSComplete: "Preview resolved system and user prompts. No model call.",
+          assembleTheNextCodexRunSComplete: "Preview resolved messages and their roles. No model call.",
           assembleThisPresetSPromptWithAll: "Preview this preset''s resolved prompt. No model call.",
           delete: "Delete",
           promptBuiltInDuplicateToEdit: "Prompt (built-in, duplicate to edit)"
         },
         opts: {
+          useVolume: "Use Volume preset (adapted to this tier)",
           builtIn: "Built-in: {displayName}",
           custom: "Custom: {displayName}"
+        },
+        sendAs: {
+          label: "Send as:",
+          system: "System",
+          assistant: "Assistant",
+          user: "User",
+          help: "Role for this category's instructions. Source material is sent as User. Saved per profile."
         },
         name: {
           nameForNewPrompt: "Name for new {category} prompt",
@@ -5671,11 +5709,6 @@ Days 3-8. The duke dies, Elias flees with the silver locket, and Mara chooses si
           connection: "Connection",
           settings: "Settings",
           prompts: "Prompts"
-        },
-        renderTuningTab: {
-          profile: "Profile",
-          extensionOff: "\xB7 extension off",
-          switchOrManageProfilesInTheConnection: "Switch or manage profiles in the Connection pane"
         },
         options: {
           books: "Books",
@@ -5756,7 +5789,7 @@ The Codex is not injected as one always-on block. Each record is mirrored into a
 
 Vector recall requires a tested embedding connection and lorebook vectorization enabled in Lumiverse. Existing records are queued for indexing when you switch modes; new and edited records follow the same setting. Until indexing finishes, or when retrieval is unavailable or there is no visible recent text for a query, keyword matching remains available. Disabled records and files stay excluded. Lumiverse controls retrieval limits and the embedding provider; Codex files remain the source of truth.
 
-Chapter and higher-tier summaries have a separate **Summary recall** control in Tuning \u2192 Settings \u2192 Books \u2192 Everywhere. Its default is **Always**. Selecting memories never changes which messages are filed or hidden. In the same section, turn off **Lorebook names follow chat names** before manually renaming either managed lorebook in Lumiverse.
+Chapter and higher-tier summaries have a separate **Summary recall** control in Tuning \u2192 Settings \u2192 Books \u2192 Everywhere. Its default is **Constant**. Selecting memories never changes which messages are filed or hidden. In the same section, turn off **Lorebook names follow chat names** before manually renaming either managed lorebook in Lumiverse.
 
 The mirror book is rewritten by LumiBooks often, so don''t edit it by hand. Edit records in the Codex tab (or the JSON files) instead.
 
@@ -5796,6 +5829,9 @@ Notes:
 // src/locales/ko.json
 var ko_default = {
   backend: {
+    regex: {
+      searchChanged: "\uAC80\uC0C9\uD558\uB294 \uB3D9\uC548 \uC815\uADDC\uC2DD \uC2A4\uD06C\uB9BD\uD2B8\uAC00 \uBC14\uB00C\uC5C8\uC5B4\uC694. \uC0C8\uB85C\uACE0\uCE68\uD55C \uB4A4 \uB2E4\uC2DC \uC2DC\uB3C4\uD558\uC138\uC694."
+    },
     binding: {
       messages: {
         selectConsecutiveSummariesWithoutCrossingAnotherSummary: "\uB2E4\uB978 \uC694\uC57D \uB2E8\uACC4\uB97C \uAC74\uB108\uB6F0\uC9C0 \uC54A\uACE0 \uC5F0\uC18D\uB41C \uC694\uC57D\uC744 \uC120\uD0DD\uD558\uC138\uC694"
@@ -6294,6 +6330,7 @@ var ko_default = {
         memoriaIsFilingAChapter: "\uCC55\uD130 \uC0DD\uC131 \uC911"
       },
       createChapterFromRange: {
+        alreadyFiled: "\uC120\uD0DD\uD55C \uBA54\uC2DC\uC9C0 \uC911 \uC774\uBBF8 \uC815\uB9AC\uB41C \uAC83\uC774 \uC788\uC5B4\uC694. \uC815\uB9AC\uB418\uC9C0 \uC54A\uC740 \uBA54\uC2DC\uC9C0\uB97C \uC120\uD0DD\uD558\uAC70\uB098 \uAE30\uC874 \uCC55\uD130\uB97C \uC7AC\uC0DD\uC131\uD558\uC138\uC694.",
         memoriaIsFilingAChapter: "\uCC55\uD130 \uC0DD\uC131 \uC911"
       },
       runChapter: {
@@ -6349,6 +6386,7 @@ var ko_default = {
         noChaptersToBindYet: "\uBB36\uC744 \uCC55\uD130\uAC00 \uC5C6\uC5B4\uC694"
       },
       dryRunVolume: {
+        noSources: "\uD569\uCE60 {name} \uC694\uC57D\uC774 \uC5C6\uC5B4\uC694",
         noArcsToPressYet: "\uD569\uCE60 \uC544\uD06C\uAC00 \uC5C6\uC5B4\uC694"
       },
       promoteGhostChapters: {
@@ -6452,6 +6490,8 @@ var ko_default = {
         targetTokens2: "\uBAA9\uD45C \uD1A0\uD070: {targetTokens} ({choice, select, yes {\uACE0\uC815 \uC608\uC0B0, \uC785\uB825\uC758 ~{arcTargetUnitTokens}%} other {\uC785\uB825\uC758 {arcTargetPercent}%}})",
         presetKey2: "\uD504\uB9AC\uC14B \uD0A4: {arcPresetKey}",
         sourceArcs: "\uC6D0\uBCF8 \uC544\uD06C: {length}",
+        higherSources: "\uC6D0\uBCF8 {name} \uC694\uC57D: {count}",
+        higherSourceTokens: "\uC6D0\uBCF8 \uC694\uC57D: {bodyTokens} \uD1A0\uD070 (\uBAA8\uB378 \uD1A0\uD06C\uB098\uC774\uC800 \uAE30\uC900)",
         concatenatedArcBodyTokensModelTokenizer: "\uC6D0\uBCF8 \uC544\uD06C: {bodyTokens} \uD1A0\uD070 (\uBAA8\uB378 \uD1A0\uD06C\uB098\uC774\uC800 \uAE30\uC900)",
         targetTokens3: "\uBAA9\uD45C \uD1A0\uD070: {targetTokens} ({choice, select, yes {\uACE0\uC815 \uC608\uC0B0, \uC785\uB825\uC758 ~{volumeTargetUnitTokens}%} other {\uC785\uB825\uC758 {volumeTargetPercent}%}})",
         presetKey3: "\uD504\uB9AC\uC14B \uD0A4: {volumePresetKey}"
@@ -6692,8 +6732,22 @@ var ko_default = {
     summaryKindTag: "{kind, select, chapter {\uCC55\uD130} arc {\uC544\uD06C} volume {\uBCFC\uB968} series {\uC2DC\uB9AC\uC988} saga {\uC0AC\uAC00} library {\uB77C\uC774\uBE0C\uB7EC\uB9AC} universe {\uC720\uB2C8\uBC84\uC2A4} codex {\uCF54\uB371\uC2A4} other {{kind}}}"
   },
   ui: {
+    regexPicker: {
+      searchProgress: "\uC2A4\uD06C\uB9BD\uD2B8 \uAC80\uC0C9 \uC911\u2026 {total, number}\uAC1C \uC911 {scanned, number}\uAC1C \uD655\uC778",
+      search: "\uC815\uADDC\uC2DD \uC774\uB984 \uAC80\uC0C9\u2026",
+      noMatches: "\uC77C\uCE58\uD558\uB294 \uC815\uADDC\uC2DD \uC2A4\uD06C\uB9BD\uD2B8\uAC00 \uC5C6\uC5B4\uC694.",
+      previous: "\uC774\uC804",
+      next: "\uB2E4\uC74C",
+      page: "\uD398\uC774\uC9C0",
+      refresh: "\uC0C8\uB85C\uACE0\uCE68",
+      loading: "\uC815\uADDC\uC2DD \uC2A4\uD06C\uB9BD\uD2B8\uB97C \uBD88\uB7EC\uC624\uB294 \uC911\u2026",
+      failed: "\uC774 \uD398\uC774\uC9C0\uB97C \uBD88\uB7EC\uC624\uC9C0 \uBABB\uD588\uC5B4\uC694. \uC0C8\uB85C\uACE0\uCE68\uC744 \uB20C\uB7EC \uB2E4\uC2DC \uC2DC\uB3C4\uD558\uC138\uC694.",
+      range: "\uC2A4\uD06C\uB9BD\uD2B8 {total}\uAC1C \uC911 {first}\u2013{last}",
+      selected: "\uBAA8\uB4E0 \uD398\uC774\uC9C0\uC5D0\uC11C {count}\uAC1C \uC120\uD0DD\uB428"
+    },
     activationControl: {
       activationControl: {
+        constant: "\uC0C1\uC2DC",
         always: "\uD56D\uC0C1",
         keywords: "\uD0A4\uC6CC\uB4DC",
         vectorKeywords: "\uBCA1\uD130 + \uD0A4\uC6CC\uB4DC"
@@ -7470,6 +7524,7 @@ var ko_default = {
       },
       showDryRunModal: {
         dryRun: "\uBAA8\uC758 \uC2E4\uD589: {choice, select, yes {\uC544\uD06C} other {{choice2, select, yes {\uBCFC\uB968} other {{choice3, select, yes {\uCF54\uB371\uC2A4} other {\uCC55\uD130}}}}}}",
+        higherTier: "\uBAA8\uC758 \uC2E4\uD589: {name}",
         value: "\xD7",
         closeDryRun: "\uBAA8\uC758 \uC2E4\uD589 \uB2EB\uAE30",
         diagnostics: "\uC9C4\uB2E8",
@@ -7669,6 +7724,7 @@ var ko_default = {
           showOlder: "\uC774\uC804 \uBA54\uC2DC\uC9C0 \uBCF4\uAE30 ({older})"
         },
         buildMessageRow: {
+          stagedGhost: "\uCF54\uB371\uC2A4\uC6A9\uC73C\uB85C \uB300\uAE30 \uC911\uC774\uC5D0\uC694. \uC774 \uBA54\uC2DC\uC9C0\uB4E4\uC744 \uC555\uCD95\uD558\uBA74 \uC800\uC7A5 \uD6C4 \uACB9\uCE58\uB294 \uC720\uB839 \uCC55\uD130\uAC00 \uAD50\uCCB4\uB3FC\uC694.",
           shiftClickOrLongPressOnTouch: "Shift+\uD074\uB9AD(\uD130\uCE58\uC5D0\uC11C\uB294 \uAE38\uAC8C \uB204\uB974\uAE30)\uC73C\uB85C \uBC94\uC704 \uC120\uD0DD",
           value: "#{indexInChat1}",
           alreadyFiledIntoAChapterArcOr: "\uCC55\uD130, \uC544\uD06C, \uBCFC\uB968 \uC911 \uD558\uB098\uB85C \uC774\uBBF8 \uC815\uB9AC\uB428",
@@ -8295,6 +8351,7 @@ var ko_default = {
           cancelTheInFlightGeneration: "\uC0DD\uC131 \uCDE8\uC18C"
         },
         renderFailure: {
+          saveFailed: "\uC694\uC57D\uC740 \uC0DD\uC131\uD588\uC9C0\uB9CC \uC800\uC7A5\uD558\uC9C0 \uBABB\uD588\uC5B4\uC694. {message}",
           lastArcAttemptFailed: "\uB9C8\uC9C0\uB9C9 \uC544\uD06C \uC2DC\uB3C4 \uC2E4\uD328",
           lastAttemptFailed: "\uB9C8\uC9C0\uB9C9 {kind, select, chapter {\uCC55\uD130} arc {\uC544\uD06C} volume {\uBCFC\uB968} series {\uC2DC\uB9AC\uC988} saga {\uC0AC\uAC00} library {\uB77C\uC774\uBE0C\uB7EC\uB9AC} universe {\uC720\uB2C8\uBC84\uC2A4} codex {\uCF54\uB371\uC2A4} other {{kind}}} \uC2DC\uB3C4 \uC2E4\uD328",
           lastChapterAttemptFailed: "\uB9C8\uC9C0\uB9C9 \uCC55\uD130 \uC2DC\uB3C4 \uC2E4\uD328",
@@ -8421,6 +8478,9 @@ var ko_default = {
         },
         renderProfilePicker: {
           new: "\uC0C8\uB85C \uB9CC\uB4E4\uAE30",
+          rename: "\uD504\uB85C\uD544 \uC774\uB984 \uBC14\uAFB8\uAE30",
+          duplicate: "\uD504\uB85C\uD544 \uBCF5\uC81C",
+          copyName: "{name} \uBCF5\uC0AC\uBCF8",
           delete: "\uC0AD\uC81C",
           enabled: "\uC0AC\uC6A9",
           masterSwitchWhenOffMemoriaDoesNothing: "\uC774 \uACC4\uC815\uC5D0\uC11C LumiBooks\uB97C \uC0AC\uC6A9\uD574\uC694."
@@ -8532,6 +8592,7 @@ var ko_default = {
       },
       promptsTab: {
         categorySubtabs: {
+          summaries: "\uC694\uC57D",
           chapter: "\uCC55\uD130",
           arc: "\uC544\uD06C",
           volume: "\uBCFC\uB968",
@@ -8545,6 +8606,7 @@ var ko_default = {
         },
         sec: {
           codexPromptTemplates: "\uCF54\uB371\uC2A4 \uD504\uB86C\uD504\uD2B8 \uD15C\uD50C\uB9BF",
+          summaryPrompt: "{name} \uD504\uB86C\uD504\uD2B8",
           memoriaOverrides: "\uBA54\uBAA8\uB9AC\uC544 \uB36E\uC5B4\uC4F0\uAE30",
           arcPrompt: "\uC544\uD06C \uD504\uB86C\uD504\uD2B8",
           volumePrompt: "\uBCFC\uB968 \uD504\uB86C\uD504\uD2B8",
@@ -8572,7 +8634,7 @@ var ko_default = {
           clickAgainToConfirm: "\uD655\uC778\uD560\uAE4C\uC694?"
         },
         renderMemoriaOverrides: {
-          personaIsTheSystemPromptHeaderShort: "\uD398\uB974\uC18C\uB098\uB294 \uC2DC\uC2A4\uD15C \uD504\uB86C\uD504\uD2B8 \uBA38\uB9AC\uB9D0\uC744 \uC815\uD574\uC694. \uC9E7\uC740 \uCF54\uBA58\uD2B8 \uADDC\uCE59\uC740 '{{memoria_short_comment_rules}}'\uC5D0 \uCC44\uC6CC\uC838\uC694.",
+          personaIsTheSystemPromptHeaderShort: "\uD398\uB974\uC18C\uB098\uB294 \uC9C0\uC2DC\uBB38 \uBA38\uB9AC\uB9D0\uC744 \uC815\uD574\uC694. \uC9E7\uC740 \uCF54\uBA58\uD2B8 \uADDC\uCE59\uC740 '{{memoria_short_comment_rules}}'\uC5D0 \uCC44\uC6CC\uC838\uC694.",
           memoriaPersona: "\uBA54\uBAA8\uB9AC\uC544 \uD398\uB974\uC18C\uB098",
           memoriaShortCommentRules: "\uBA54\uBAA8\uB9AC\uC544 \uC9E7\uC740 \uCF54\uBA58\uD2B8 \uADDC\uCE59"
         },
@@ -8584,19 +8646,28 @@ var ko_default = {
           resetToDefault: "\uAE30\uBCF8\uAC12\uC73C\uB85C \uC7AC\uC124\uC815"
         },
         renderCategory: {
-          theMissionBlockAtTheTopOf: "\uCF54\uB371\uC2A4 \uC2DC\uC2A4\uD15C \uD504\uB86C\uD504\uD2B8 \uB9E8 \uC55E\uC5D0 \uB4E4\uC5B4\uAC00\uB294 \uC9C0\uC2DC\uBB38\uC774\uC5D0\uC694. \uC120\uD0DD\uD55C \uD504\uB9AC\uC14B\uC5D0 \uC544\uB798 \uD15C\uD50C\uB9BF\uACFC \uD568\uAED8 \uC800\uC7A5\uB3FC\uC694. \uC870\uB9BD\uB41C \uD504\uB86C\uD504\uD2B8\uB294 \uBAA8\uC758 \uC2E4\uD589\uC73C\uB85C \uBBF8\uB9AC \uBCFC \uC218 \uC788\uC5B4\uC694.",
+          presetScope: "\uD504\uB9AC\uC14B \uC120\uD0DD\uC740 \uD504\uB85C\uD544\uB9C8\uB2E4 \uC800\uC7A5\uB3FC\uC694. \uD504\uB9AC\uC14B\uC744 \uD3B8\uC9D1\uD558\uBA74 \uADF8\uAC83\uC744 \uC4F0\uB294 \uBAA8\uB4E0 \uD504\uB85C\uD544\uC5D0 \uBC18\uC601\uB418\uB2C8, \uB530\uB85C \uC4F0\uB824\uBA74 \uBCF5\uC81C\uD558\uC138\uC694.",
+          theMissionBlockAtTheTopOf: "\uCF54\uB371\uC2A4 \uD504\uB86C\uD504\uD2B8 \uB9E8 \uC55E\uC5D0 \uB4E4\uC5B4\uAC00\uB294 \uC9C0\uC2DC\uBB38\uC774\uC5D0\uC694. \uC120\uD0DD\uD55C \uD504\uB9AC\uC14B\uC5D0 \uC544\uB798 \uD15C\uD50C\uB9BF\uACFC \uD568\uAED8 \uC800\uC7A5\uB3FC\uC694. \uC870\uB9BD\uB41C \uD504\uB86C\uD504\uD2B8\uB294 \uBAA8\uC758 \uC2E4\uD589\uC73C\uB85C \uBBF8\uB9AC \uBCFC \uC218 \uC788\uC5B4\uC694.",
           newBlankPrompt: "\uBE48 \uD504\uB86C\uD504\uD2B8 \uC0C8\uB85C \uB9CC\uB4E4\uAE30",
           duplicateToNew: "\uC0C8\uB85C \uBCF5\uC81C",
           duplicateToEdit: "\uBCF5\uC81C\uD574\uC11C \uD3B8\uC9D1",
           dryRun: "\uBAA8\uC758 \uC2E4\uD589",
-          assembleTheNextCodexRunSComplete: "\uCE58\uD658\uB41C \uC2DC\uC2A4\uD15C\xB7\uC0AC\uC6A9\uC790 \uD504\uB86C\uD504\uD2B8\uB97C \uBBF8\uB9AC \uBD10\uC694. \uBAA8\uB378\uC740 \uD638\uCD9C\uD558\uC9C0 \uC54A\uC544\uC694.",
+          assembleTheNextCodexRunSComplete: "\uCE58\uD658\uB41C \uBA54\uC2DC\uC9C0\uC640 \uADF8 \uC5ED\uD560\uC744 \uBBF8\uB9AC \uBD10\uC694. \uBAA8\uB378\uC740 \uD638\uCD9C\uD558\uC9C0 \uC54A\uC544\uC694.",
           assembleThisPresetSPromptWithAll: "\uC774 \uD504\uB9AC\uC14B\uC758 \uCE58\uD658\uB41C \uD504\uB86C\uD504\uD2B8\uB97C \uBBF8\uB9AC \uBD10\uC694. \uBAA8\uB378\uC740 \uD638\uCD9C\uD558\uC9C0 \uC54A\uC544\uC694.",
           delete: "\uC0AD\uC81C",
           promptBuiltInDuplicateToEdit: "\uD504\uB86C\uD504\uD2B8 (\uAE30\uBCF8 \uC81C\uACF5, \uBCF5\uC81C\uD574\uC11C \uD3B8\uC9D1)"
         },
         opts: {
+          useVolume: "\uBCFC\uB968 \uD504\uB9AC\uC14B \uC0AC\uC6A9 (\uC774 \uB2E8\uACC4\uC5D0 \uB9DE\uCDB0 \uC870\uC815)",
           builtIn: "\uAE30\uBCF8 \uC81C\uACF5: {displayName}",
           custom: "\uC0AC\uC6A9\uC790 \uC9C0\uC815: {displayName}"
+        },
+        sendAs: {
+          label: "\uBCF4\uB0BC \uC5ED\uD560:",
+          system: "\uC2DC\uC2A4\uD15C",
+          assistant: "\uC5B4\uC2DC\uC2A4\uD134\uD2B8",
+          user: "\uC0AC\uC6A9\uC790",
+          help: "\uC774 \uCE74\uD14C\uACE0\uB9AC\uC758 \uC9C0\uC2DC\uBB38\uC744 \uBCF4\uB0BC \uC5ED\uD560\uC774\uC5D0\uC694. \uC6D0\uBCF8 \uC790\uB8CC\uB294 \uC0AC\uC6A9\uC790 \uC5ED\uD560\uB85C \uBCF4\uB0B4\uC694. \uD504\uB85C\uD544\uB9C8\uB2E4 \uC800\uC7A5\uB3FC\uC694."
         },
         name: {
           nameForNewPrompt: "\uC0C8 {category} \uD504\uB86C\uD504\uD2B8 \uC774\uB984",
@@ -8651,11 +8722,6 @@ var ko_default = {
           connection: "\uC5F0\uACB0",
           settings: "\uC124\uC815",
           prompts: "\uD504\uB86C\uD504\uD2B8"
-        },
-        renderTuningTab: {
-          profile: "\uD504\uB85C\uD544",
-          extensionOff: "\xB7 \uD655\uC7A5 \uAEBC\uC9D0",
-          switchOrManageProfilesInTheConnection: "\uD504\uB85C\uD544 \uC804\uD658\xB7\uAD00\uB9AC\uB294 \uC5F0\uACB0 \uD328\uB110\uC5D0\uC11C \uD558\uC138\uC694"
         },
         options: {
           books: "\uCC45",
@@ -8736,7 +8802,7 @@ LumiBooks\uB294 \uC774\uBBF8 \uC555\uCD95\uC73C\uB85C \uC774 \uBB38\uC81C\uC5D0 
 
 \uBCA1\uD130 \uC0C1\uAE30\uB97C \uC4F0\uB824\uBA74 Lumiverse\uC5D0\uC11C \uD14C\uC2A4\uD2B8\uB97C \uB9C8\uCE5C \uC784\uBCA0\uB529 \uC5F0\uACB0\uACFC \uC6D4\uB4DC\uBD81 \uBCA1\uD130\uD654\uAC00 \uCF1C\uC838 \uC788\uC5B4\uC57C \uD574\uC694. \uBAA8\uB4DC\uB97C \uBC14\uAFB8\uBA74 \uAE30\uC874 \uAE30\uB85D\uC774 \uC0C9\uC778 \uB300\uAE30\uC5F4\uC5D0 \uB4E4\uC5B4\uAC00\uACE0, \uC0C8\uB85C \uB9CC\uB4E4\uAC70\uB098 \uD3B8\uC9D1\uD55C \uAE30\uB85D\uB3C4 \uAC19\uC740 \uC124\uC815\uC744 \uB530\uB77C\uC694. \uC0C9\uC778\uC774 \uB05D\uB098\uAE30 \uC804\uC774\uB098, \uAC80\uC0C9\uC744 \uC4F8 \uC218 \uC5C6\uAC70\uB098, \uAC80\uC0C9\uC5D0 \uC4F8 \uCD5C\uADFC \uD14D\uC2A4\uD2B8\uAC00 \uBCF4\uC774\uC9C0 \uC54A\uC744 \uB54C\uB3C4 \uD0A4\uC6CC\uB4DC \uC77C\uCE58\uB294 \uADF8\uB300\uB85C \uC791\uB3D9\uD574\uC694. \uAEBC \uB454 \uAE30\uB85D\uACFC \uD30C\uC77C\uC740 \uACC4\uC18D \uC81C\uC678\uB3FC\uC694. \uAC80\uC0C9 \uD55C\uB3C4\uC640 \uC784\uBCA0\uB529 \uD504\uB85C\uBC14\uC774\uB354\uB294 Lumiverse\uAC00 \uAD00\uB9AC\uD558\uACE0, \uC815\uBCF8\uC740 \uC5EC\uC804\uD788 \uCF54\uB371\uC2A4 \uD30C\uC77C\uC774\uC5D0\uC694.
 
-\uCC55\uD130\uC640 \uADF8 \uC704 \uB2E8\uACC4\uC758 \uC694\uC57D\uC5D0\uB294 \uC870\uC815 \u2192 \uC124\uC815 \u2192 \uCC45 \u2192 \uC804\uCCB4 \uACF5\uD1B5\uC5D0 \uBCC4\uB3C4\uC758 **\uC694\uC57D \uC0C1\uAE30** \uC124\uC815\uC774 \uC788\uC5B4\uC694. \uAE30\uBCF8\uAC12\uC740 **\uD56D\uC0C1**\uC774\uC5D0\uC694. \uC5B4\uB5A4 \uAE30\uC5B5\uC744 \uACE0\uB974\uB4E0 \uC815\uB9AC\uB418\uAC70\uB098 \uC228\uACA8\uC9C0\uB294 \uBA54\uC2DC\uC9C0\uB294 \uBC14\uB00C\uC9C0 \uC54A\uC544\uC694. \uAC19\uC740 \uC139\uC158\uC5D0\uC11C, Lumiverse\uC5D0\uC11C \uAD00\uB9AC\uB418\uB294 \uB450 \uC6D4\uB4DC\uBD81 \uC911 \uC5B4\uB290 \uCABD\uC774\uB4E0 \uC774\uB984\uC744 \uC9C1\uC811 \uBC14\uAFB8\uAE30 \uC804\uC5D0 **\uC6D4\uB4DC\uBD81 \uC774\uB984\uC744 \uCC44\uD305 \uC774\uB984\uC5D0 \uB9DE\uCD94\uAE30**\uB97C \uAEBC \uB450\uC138\uC694.
+\uCC55\uD130\uC640 \uADF8 \uC704 \uB2E8\uACC4\uC758 \uC694\uC57D\uC5D0\uB294 \uC870\uC815 \u2192 \uC124\uC815 \u2192 \uCC45 \u2192 \uC804\uCCB4 \uACF5\uD1B5\uC5D0 \uBCC4\uB3C4\uC758 **\uC694\uC57D \uC0C1\uAE30** \uC124\uC815\uC774 \uC788\uC5B4\uC694. \uAE30\uBCF8\uAC12\uC740 **\uC0C1\uC2DC**\uC608\uC694. \uC5B4\uB5A4 \uAE30\uC5B5\uC744 \uACE0\uB974\uB4E0 \uC815\uB9AC\uB418\uAC70\uB098 \uC228\uACA8\uC9C0\uB294 \uBA54\uC2DC\uC9C0\uB294 \uBC14\uB00C\uC9C0 \uC54A\uC544\uC694. \uAC19\uC740 \uC139\uC158\uC5D0\uC11C, Lumiverse\uC5D0\uC11C \uAD00\uB9AC\uB418\uB294 \uB450 \uC6D4\uB4DC\uBD81 \uC911 \uC5B4\uB290 \uCABD\uC774\uB4E0 \uC774\uB984\uC744 \uC9C1\uC811 \uBC14\uAFB8\uAE30 \uC804\uC5D0 **\uC6D4\uB4DC\uBD81 \uC774\uB984\uC744 \uCC44\uD305 \uC774\uB984\uC5D0 \uB9DE\uCD94\uAE30**\uB97C \uAEBC \uB450\uC138\uC694.
 
 \uBBF8\uB7EC \uC6D4\uB4DC\uBD81\uC740 LumiBooks\uAC00 \uC790\uC8FC \uB2E4\uC2DC \uC4F0\uB2C8 \uC9C1\uC811 \uD3B8\uC9D1\uD558\uC9C0 \uB9C8\uC138\uC694. \uAE30\uB85D\uC740 \uCF54\uB371\uC2A4 \uD0ED(\uB610\uB294 JSON \uD30C\uC77C)\uC5D0\uC11C \uD3B8\uC9D1\uD558\uC138\uC694.
 
@@ -9487,6 +9553,11 @@ function tierHeader(tier, number, sources, turns) {
   const sourceLabel = sources === 1 || sourceName === "series" ? sourceName : sourceName === "library" ? "libraries" : `${sourceName}s`;
   return `${MODEL_TIER_NAMES[tier - 1]} ${ordinal(number)} (${sources} ${sourceLabel}, ${turns} turns)`;
 }
+var EXTRA_PRESET_CATEGORIES = ["series", "saga", "library", "universe"];
+var PRESET_CATEGORIES = [...TIER_KINDS, "codex"];
+function promptRoleFor(profile, category) {
+  return profile.promptRoles[category] ?? "system";
+}
 var DEFAULT_SAMPLERS = {
   temperature: null,
   top_p: null,
@@ -9539,6 +9610,8 @@ function makeDefaultProfile(id, name) {
     chapterPresetKey: "summary",
     arcPresetKey: "arc_default",
     volumePresetKey: "volume_default",
+    higherTierPresetKeys: {},
+    promptRoles: {},
     previousMemoriesCount: 7,
     regexOutgoingScriptIds: [],
     regexIncomingScriptIds: [],
@@ -9649,6 +9722,14 @@ function normalizeProfile(raw) {
     chapterPresetKey: typeof v.chapterPresetKey === "string" && v.chapterPresetKey.trim() ? v.chapterPresetKey : base.chapterPresetKey,
     arcPresetKey: typeof v.arcPresetKey === "string" && v.arcPresetKey.trim() ? v.arcPresetKey : base.arcPresetKey,
     volumePresetKey: typeof v.volumePresetKey === "string" && v.volumePresetKey.trim() ? v.volumePresetKey : base.volumePresetKey,
+    higherTierPresetKeys: Object.fromEntries(EXTRA_PRESET_CATEGORIES.flatMap((category) => {
+      const key = v.higherTierPresetKeys?.[category];
+      return typeof key === "string" && key.trim() ? [[category, key]] : [];
+    })),
+    promptRoles: Object.fromEntries(PRESET_CATEGORIES.flatMap((category) => {
+      const role = v.promptRoles?.[category];
+      return role === "system" || role === "assistant" || role === "user" ? [[category, role]] : [];
+    })),
     previousMemoriesCount: clampInt(v.previousMemoriesCount, 0, 20, base.previousMemoriesCount),
     regexOutgoingScriptIds: Array.isArray(v.regexOutgoingScriptIds) ? v.regexOutgoingScriptIds.filter((x) => typeof x === "string") : base.regexOutgoingScriptIds,
     regexIncomingScriptIds: Array.isArray(v.regexIncomingScriptIds) ? v.regexIncomingScriptIds.filter((x) => typeof x === "string") : base.regexIncomingScriptIds,
@@ -9718,7 +9799,7 @@ function normalizeCustomPreset(raw) {
     return null;
   if (typeof v.prompt !== "string" || !v.prompt.trim())
     return null;
-  const category = v.category === "arc" || v.category === "volume" || v.category === "codex" ? v.category : "chapter";
+  const category = PRESET_CATEGORIES.includes(v.category) ? v.category : "chapter";
   const templates = category === "codex" ? normalizeCodexTemplates(v.templates) : undefined;
   return {
     key: v.key,
@@ -9807,9 +9888,6 @@ function buildChapterHeader(sceneNumber, turnCount) {
 }
 function buildArcHeader(sceneNumber, chapterCount, turnCount) {
   return `${ordinal(sceneNumber)} Summary ARC Containing ${chapterCount} Prior Chapter${chapterCount === 1 ? "" : "s"} and ${turnCount} Prior Turn${turnCount === 1 ? "" : "s"}`;
-}
-function buildVolumeHeader(sceneNumber, arcCount, turnCount) {
-  return `${ordinal(sceneNumber)} Summary VOLUME Containing ${arcCount} Prior Arc${arcCount === 1 ? "" : "s"} and ${turnCount} Prior Turn${turnCount === 1 ? "" : "s"}`;
 }
 function bookNameFor(chatName, chatId) {
   const cleanName = (chatName ?? "").trim();
@@ -10708,7 +10786,8 @@ function withLiveMessageRanges(entries, messages) {
 }
 async function buildCoverage(chatId, userId, preloadedEntries, includeGhosts = false, selectedEntryIds) {
   const allEntries = preloadedEntries ?? await listLmbEntries(chatId, userId);
-  const entries = allEntries.filter((e) => (!selectedEntryIds || selectedEntryIds.has(e.raw.id)) && (!e.raw.disabled || includeGhosts && e.meta.ghost === true));
+  const realCoverage = includeGhosts ? await buildCoverage(chatId, userId, allEntries) : undefined;
+  const entries = allEntries.filter((e) => (!selectedEntryIds || selectedEntryIds.has(e.raw.id)) && (!e.raw.disabled || includeGhosts && e.meta.ghost === true && !e.meta.msgIds.some((id) => realCoverage.coveredBy.has(id))));
   const chapters = entries.filter((e) => e.meta.tier === 1);
   const arcs = entries.filter((e) => e.meta.tier === 2);
   const volumes = entries.filter((e) => e.meta.tier === 3);
@@ -12279,7 +12358,7 @@ function fillPrompt(template, vars) {
 // spindle.json
 var spindle_default = {
   identifier: "lumi_books_ko",
-  version: "1.1.1+ko",
+  version: "1.1.4+ko",
   name: "LumiBooks (\uD55C\uAD6D\uC5B4)",
   author: "AMousePad (\uD55C\uAD6D\uC5B4\uD310: mallang0723)",
   github: "https://github.com/mallang0723/LumiBooks-ko",
@@ -12309,6 +12388,7 @@ var UI_OPERATIONS = [
   "ready",
   "refresh",
   "prompt_breakdown",
+  "regex_scripts_page",
   "save_settings",
   "save_profile",
   "save_samplers",
@@ -12444,7 +12524,7 @@ var encoder = new TextEncoder;
 var EVENTS = ["operation", "request", "selection", "context", "retry", "failure", "preview", "commit", "fork", "snapshot", "injection", "codex", "action", "message", "ghost", "frontend"];
 var MODES = ["automatic", "manual", "selected", "regenerate", "ghost", "chapter", "arc", "volume", "series", "saga", "library", "universe", "codex"];
 var OUTCOMES = ["started", "finished", "success", "failed", "skipped", "created", "removed", "pending"];
-var REASONS = ["busy", "empty", "no_window", "generation", "storage", "coverage_changed", "unknown", "cancelled", "excluded", "missing", "adoption", "snapshot_unavailable", "timeout", "invalid_output", "context_limit", "connection", "protocol", "stale"];
+var REASONS = ["busy", "empty", "no_window", "generation", "storage", "coverage_changed", "sources_changed", "unknown", "cancelled", "excluded", "missing", "adoption", "snapshot_unavailable", "timeout", "invalid_output", "context_limit", "connection", "protocol", "stale"];
 var NUMBER_KEYS = ["tier", "attempt", "durationMs", "total", "covered", "uncovered", "excluded", "eligible", "hidden", "selected", "requested", "missing", "entries", "previous", "first", "last", "input", "output", "sourceCount", "changed", "rounds", "promptTokens", "completionTokens", "indexGaps", "duplicateIndexes", "gaps", "overlaps", "rangeMismatches", "missingSources", "lag", "window", "previousCount", "retryCount", "regexOutgoing", "regexIncoming", "arcBatch", "arcLag", "inputCharacters", "outputCharacters", "maxInputTokens", "maxOutputTokens", "temperature", "targetPercent", "targetTokens"];
 var FLAGS = ["automation", "ghost", "regeneration", "previews", "hideCovered", "extraContext", "lagTokens", "windowTokens", "active", "root", "disabled", "vector", "constant"];
 var ACTIONS = ["save_settings", "save_profile", "save_samplers", "set_active_profile", "create_chapter", "create_chapter_range", "create_all_chapters", "create_arc", "create_arc_from", "create_all_arcs", "create_higher_from", "create_higher_auto", "create_volume_from", "retry_last_failure", "delete_entry", "release_entry", "regenerate_entry", "update_entry", "resync_hidden", "resync_visibility", "abort_busy", "accept_preview", "discard_preview", "edit_preview", "rebase_root", "rebuild_root", "detach_root", "set_message_excluded", "summary_import", "summary_import_resolve", "codex_update_now", "codex_reset", "codex_rebuild", "codex_tidy"];
@@ -12716,6 +12796,8 @@ async function clearDiagnostics(userId) {
 function diagnosticErrorReason(error2) {
   const name = error2 instanceof Error ? error2.name : "";
   switch (name) {
+    case "SummarySourcesChangedError":
+      return "sources_changed";
     case "AbortError":
     case "AbortedSummarizerError":
       return "cancelled";
@@ -12843,37 +12925,156 @@ async function captureDiagnosticSnapshot(userId, chatId) {
   }
 }
 
+// src/prompts/categories.ts
+var KEY_FIELDS = { chapter: "chapterPresetKey", arc: "arcPresetKey", volume: "volumePresetKey", codex: "codexPresetKey" };
+function isExtraCategory(category) {
+  return EXTRA_PRESET_CATEGORIES.includes(category);
+}
+function presetKeyFor(profile, category) {
+  return isExtraCategory(category) ? profile.higherTierPresetKeys[category] ?? "" : profile[KEY_FIELDS[category]];
+}
+function presetKeyPatch(category, key) {
+  return isExtraCategory(category) ? { higherTierPresetKeys: { [category]: key } } : { [KEY_FIELDS[category]]: key };
+}
+function higherTierPreset(text, tier) {
+  return text.replace(/\b(volumes?|arcs?)\b/gi, (word) => {
+    const source = word.toLowerCase().startsWith("arc");
+    const name = MODEL_TIER_NAMES[tier - (source ? 2 : 1)];
+    const plural = word.toLowerCase().endsWith("s");
+    const replacement = name + (plural && name !== "Series" ? name === "Library" ? "" : "s" : "");
+    const result = plural && name === "Library" ? "Libraries" : replacement;
+    return word === word.toUpperCase() ? result.toUpperCase() : result;
+  });
+}
+function builtInPresetsFor(pools, category) {
+  if (!isExtraCategory(category))
+    return pools[`${category}Presets`];
+  const index = TIER_KINDS.indexOf(category);
+  return [{
+    key: `${category}_default`,
+    displayName: TIER_NAMES[index],
+    prompt: higherTierPreset(pools.volumePresets[0].prompt, index + 1)
+  }];
+}
+function resolvePresetText(profile, customs, pools, category) {
+  const key = presetKeyFor(profile, category);
+  if (isExtraCategory(category) && !key) {
+    return higherTierPreset(resolvePresetText(profile, customs, pools, "volume"), TIER_KINDS.indexOf(category) + 1);
+  }
+  const custom = customs.find((p) => p.key === key && p.category === category);
+  if (custom)
+    return custom.prompt;
+  const builtIns = builtInPresetsFor(pools, category);
+  return (builtIns.find((p) => p.key === key) ?? builtIns[0])?.prompt ?? "";
+}
+
 // src/backend/regex.ts
 var TTL_MS = 5000;
+var PAGE_LIMIT2 = 50;
+var CACHE_LIMIT = 500;
 var cachedScripts = new Map;
-async function listRegexScripts(userId) {
-  const cached = cachedScripts.get(userId);
-  if (cached && Date.now() - cached.at < TTL_MS)
-    return cached.data;
+var SEARCH_TTL_MS = 60000;
+var SEARCH_PAGE_LIMIT = 200;
+var searchIndexes = new Map;
+async function listRegexScriptsPage(userId, requestedOffset, query = "", onProgress, refresh = false) {
+  const offset = Number.isSafeInteger(requestedOffset) && requestedOffset >= 0 ? Math.floor(requestedOffset / PAGE_LIMIT2) * PAGE_LIMIT2 : 0;
+  const needle = typeof query === "string" ? query.trim().toLowerCase() : "";
+  if (refresh)
+    invalidateRegexCache(userId);
+  if (needle) {
+    const rows = await searchIndex(userId, onProgress);
+    const matches = rows.filter((row) => row.name.toLowerCase().includes(needle));
+    return { scripts: matches.slice(offset, offset + PAGE_LIMIT2), total: matches.length, offset, limit: PAGE_LIMIT2 };
+  }
+  const page = await spindle.regex_scripts.list({ userId, limit: PAGE_LIMIT2, offset });
+  return { scripts: page.data.map(({ id, name }) => ({ id, name })), total: page.total, offset, limit: PAGE_LIMIT2 };
+}
+async function searchIndex(userId, onProgress) {
+  let index = searchIndexes.get(userId);
+  if (!index || index.at && Date.now() - index.at >= SEARCH_TTL_MS) {
+    index = { rows: [], at: 0, invalidated: false, progress: { scanned: 0, total: 0 }, listeners: new Set, ready: Promise.resolve() };
+    const current = index;
+    searchIndexes.delete(userId);
+    searchIndexes.set(userId, current);
+    while (searchIndexes.size > 8)
+      searchIndexes.delete(searchIndexes.keys().next().value);
+    current.ready = (async () => {
+      let offset = 0;
+      try {
+        while (true) {
+          const page = await spindle.regex_scripts.list({ userId, limit: SEARCH_PAGE_LIMIT, offset });
+          if (current.invalidated)
+            throw new Error(t("backend.regex.searchChanged"));
+          current.rows.push(...page.data.map(({ id, name }) => ({ id, name })));
+          offset += page.data.length;
+          current.progress = { scanned: offset, total: page.total };
+          for (const listener of current.listeners) {
+            try {
+              listener(current.progress);
+            } catch {}
+          }
+          if (offset >= page.total || page.data.length === 0)
+            break;
+        }
+        current.at = Date.now();
+      } catch (err) {
+        if (searchIndexes.get(userId) === current)
+          searchIndexes.delete(userId);
+        throw err;
+      }
+    })();
+  }
+  if (onProgress)
+    index.listeners.add(onProgress);
   try {
-    const result = await spindle.regex_scripts.list({ userId });
-    cachedScripts.set(userId, { at: Date.now(), data: result.data });
-    return result.data;
-  } catch (err) {
-    warn(`regex_scripts.list failed: ${describeError(err)}`);
-    cachedScripts.set(userId, { at: Date.now(), data: [] });
-    return [];
+    if (onProgress && index.progress.scanned) {
+      try {
+        onProgress(index.progress);
+      } catch {}
+    }
+    await index.ready;
+    if (index.invalidated)
+      throw new Error(t("backend.regex.searchChanged"));
+    return index.rows;
+  } finally {
+    if (onProgress)
+      index.listeners.delete(onProgress);
   }
 }
 function invalidateRegexCache(userId) {
-  if (userId)
-    cachedScripts.delete(userId);
-  else
+  if (!userId) {
     cachedScripts.clear();
+    for (const index of searchIndexes.values())
+      index.invalidated = true;
+    searchIndexes.clear();
+  } else {
+    for (const [key, value] of cachedScripts)
+      if (value.userId === userId)
+        cachedScripts.delete(key);
+    const index = searchIndexes.get(userId);
+    if (index)
+      index.invalidated = true;
+    searchIndexes.delete(userId);
+  }
+}
+async function getScript(userId, id) {
+  const key = JSON.stringify([userId, id]);
+  const cached = cachedScripts.get(key);
+  if (cached && Date.now() - cached.at < TTL_MS)
+    return cached.script;
+  const script = await spindle.regex_scripts.get(id, userId);
+  cachedScripts.delete(key);
+  cachedScripts.set(key, { userId, at: Date.now(), script });
+  while (cachedScripts.size > CACHE_LIMIT)
+    cachedScripts.delete(cachedScripts.keys().next().value);
+  return script;
 }
 async function applySelectedRegex(text, scriptIds, userId) {
   if (!scriptIds.length)
     return text;
-  const all = await listRegexScripts(userId);
-  const byId = new Map(all.map((s) => [s.id, s]));
   let out = text;
   for (const id of scriptIds) {
-    const script = byId.get(id);
+    const script = await getScript(userId, id);
     if (!script)
       continue;
     out = runScript(out, script);
@@ -13240,6 +13441,12 @@ var BUILTIN_VOLUME_PRESETS = [
 var BUILTIN_CODEX_PRESETS = [
   { key: "codex_default", displayName: t("backend.presets.builtinCodexPresets.default"), prompt: CODEX_DIRECTIVES_DEFAULT }
 ];
+var BUILTIN_PRESET_POOLS = {
+  chapterPresets: BUILTIN_CHAPTER_PRESETS,
+  arcPresets: BUILTIN_ARC_PRESETS,
+  volumePresets: BUILTIN_VOLUME_PRESETS,
+  codexPresets: BUILTIN_CODEX_PRESETS
+};
 function parseStmbPresetExport(raw, category) {
   const out = [];
   if (!raw || typeof raw !== "object" || Array.isArray(raw))
@@ -13358,15 +13565,7 @@ class FatalSummarizerError extends Error {
   }
 }
 function findPresetText(profile, customPresets, category) {
-  const key = category === "arc" ? profile.arcPresetKey : category === "volume" ? profile.volumePresetKey : category === "codex" ? profile.codexPresetKey : profile.chapterPresetKey;
-  const builtIns = category === "arc" ? BUILTIN_ARC_PRESETS : category === "volume" ? BUILTIN_VOLUME_PRESETS : category === "codex" ? BUILTIN_CODEX_PRESETS : BUILTIN_CHAPTER_PRESETS;
-  const custom = customPresets.find((p) => p.key === key && p.category === category);
-  if (custom)
-    return custom.prompt;
-  const builtIn = builtIns.find((p) => p.key === key);
-  if (builtIn)
-    return builtIn.prompt;
-  return builtIns[0]?.prompt ?? "";
+  return resolvePresetText(profile, customPresets, BUILTIN_PRESET_POOLS, category);
 }
 function renderTranscript(messages, includeIndex = true, indexOffset = 0) {
   const lines = [];
@@ -13665,7 +13864,7 @@ async function assembleChapterPrompt(profile, customPresets, chatId, messages, p
   }
   return {
     messages: [
-      { role: "system", content: resolvedSystem },
+      { role: promptRoleFor(profile, "chapter"), content: resolvedSystem },
       { role: "user", content: outgoingUser }
     ],
     diagnostics
@@ -13712,27 +13911,18 @@ ${c.raw.content}`).join(`
   }
   return {
     messages: [
-      { role: "system", content: resolvedSystem },
+      { role: promptRoleFor(profile, "arc"), content: resolvedSystem },
       { role: "user", content: outgoingUser }
     ],
     diagnostics
   };
 }
-function higherTierPreset(text, tier) {
-  return text.replace(/\b(volumes?|arcs?)\b/gi, (word) => {
-    const source = word.toLowerCase().startsWith("arc");
-    const name = MODEL_TIER_NAMES[tier - (source ? 2 : 1)];
-    const plural = word.toLowerCase().endsWith("s");
-    const replacement = name + (plural && name !== "Series" ? name === "Library" ? "" : "s" : "");
-    const result = plural && name === "Library" ? "Libraries" : replacement;
-    return word === word.toUpperCase() ? result.toUpperCase() : result;
-  });
-}
 async function assembleVolumePrompt(profile, customPresets, chatId, arcs, userId, opener, tier = 3) {
   const conn = await resolveConnection(profile, userId);
   if (!conn)
     throw new FatalSummarizerError(t("backend.summarizer.assembleVolumePrompt.noConnectionAvailableForMemoria"));
-  const presetText = higherTierPreset(findPresetText(profile, customPresets, "volume"), tier);
+  const category = TIER_KINDS[tier - 1];
+  const presetText = findPresetText(profile, customPresets, category);
   if (!presetText)
     throw new Error(t("backend.summarizer.assembleVolumePrompt.volumePresetMissing"));
   const body = arcs.map((a, idx) => `<<${MODEL_TIER_NAMES[tier - 2].toUpperCase()} ${idx + 1}: ${a.raw.comment || a.meta.title || "untitled"}>>
@@ -13754,12 +13944,12 @@ ${a.raw.content}`).join(`
   const samplerParams = buildSamplerParameters(profile);
   const diagnostics = [
     { message: t("backend.summarizer.diagnostics.connection", { name: conn.name, provider: conn.provider, model: conn.model }) },
-    { message: t("backend.summarizer.diagnostics.sourceArcs", { length: arcs.length }) },
-    { message: t("backend.summarizer.diagnostics.concatenatedArcBodyTokensModelTokenizer", { bodyTokens }) },
+    { message: tier === 3 ? t("backend.summarizer.diagnostics.sourceArcs", { length: arcs.length }) : t("backend.summarizer.diagnostics.higherSources", { name: MODEL_TIER_NAMES[tier - 2], count: arcs.length }) },
+    { message: tier === 3 ? t("backend.summarizer.diagnostics.concatenatedArcBodyTokensModelTokenizer", { bodyTokens }) : t("backend.summarizer.diagnostics.higherSourceTokens", { bodyTokens }) },
     { message: t("backend.summarizer.diagnostics.targetTokens3", { targetTokens, choice: profile.volumeTargetUnit === "tokens" ? "yes" : "no", volumeTargetUnitTokens: profile.volumeTargetUnit === "tokens" ? targetPercent : "", volumeTargetPercent: !(profile.volumeTargetUnit === "tokens") ? profile.volumeTargetPercent : "" }) },
     { message: t("backend.summarizer.diagnostics.targetWordsShownToModel", { value: Math.max(1, Math.round(targetTokens / 1.4)) }) },
     { message: t("backend.summarizer.diagnostics.opener", { opener }) },
-    { message: t("backend.summarizer.diagnostics.presetKey3", { volumePresetKey: profile.volumePresetKey }) },
+    { message: t("backend.summarizer.diagnostics.presetKey3", { volumePresetKey: presetKeyFor(profile, category) || profile.volumePresetKey }) },
     { message: t("backend.summarizer.diagnostics.samplerParametersBeingSentOnTheWire", { stringify: JSON.stringify(samplerParams) }) }
   ];
   const resolvedSystem = await resolveMacrosWithDiagnostics(built.system, chatId, userId, diagnostics);
@@ -13769,7 +13959,7 @@ ${a.raw.content}`).join(`
   }
   return {
     messages: [
-      { role: "system", content: resolvedSystem },
+      { role: promptRoleFor(profile, category), content: resolvedSystem },
       { role: "user", content: outgoingUser }
     ],
     diagnostics
@@ -13779,7 +13969,8 @@ async function summarizeVolume(profile, customPresets, chatId, arcs, userId, ope
   const conn = await resolveConnection(profile, userId);
   if (!conn)
     throw new FatalSummarizerError(t("backend.summarizer.summarizeVolume.noConnectionAvailableForMemoria"));
-  const presetText = higherTierPreset(findPresetText(profile, customPresets, "volume"), tier);
+  const category = TIER_KINDS[tier - 1];
+  const presetText = findPresetText(profile, customPresets, category);
   if (!presetText)
     throw new Error(t("backend.summarizer.summarizeVolume.volumePresetMissing"));
   const body = arcs.map((a, idx) => `<<${MODEL_TIER_NAMES[tier - 2].toUpperCase()} ${idx + 1}: ${a.raw.comment || a.meta.title || "untitled"}>>
@@ -13801,7 +13992,7 @@ ${a.raw.content}`).join(`
   const resolvedSystem = await resolveSystemMacros(built.system, chatId, userId);
   const outgoingUser = await applySelectedRegex(built.user, profile.regexOutgoingScriptIds, userId);
   const llmMessages = [
-    { role: "system", content: resolvedSystem },
+    { role: promptRoleFor(profile, category), content: resolvedSystem },
     { role: "user", content: outgoingUser }
   ];
   recordDiagnostic(userId, { event: "request", chatId, mode: TIER_KINDS[tier - 1], outcome: "started", numbers: {
@@ -13835,7 +14026,7 @@ ${a.raw.content}`).join(`
     usageCompletionTokens: result.usage?.completion_tokens ?? 0,
     model: conn.model,
     connectionId: conn.id,
-    presetKey: profile.volumePresetKey
+    presetKey: presetKeyFor(profile, category) || profile.volumePresetKey
   };
 }
 async function summarizeChapter(profile, customPresets, chatId, messages, previousMemories, userId, opener, streamOptions) {
@@ -13863,7 +14054,7 @@ async function summarizeChapter(profile, customPresets, chatId, messages, previo
   const resolvedSystem = await resolveSystemMacros(built.system, chatId, userId);
   const outgoingUser = await applySelectedRegex(built.user, profile.regexOutgoingScriptIds, userId);
   const llmMessages = [
-    { role: "system", content: resolvedSystem },
+    { role: promptRoleFor(profile, "chapter"), content: resolvedSystem },
     { role: "user", content: outgoingUser }
   ];
   recordDiagnostic(userId, { event: "request", chatId, mode: "chapter", outcome: "started", numbers: {
@@ -13926,7 +14117,7 @@ ${c.raw.content}`).join(`
   const resolvedSystem = await resolveSystemMacros(built.system, chatId, userId);
   const outgoingUser = await applySelectedRegex(built.user, profile.regexOutgoingScriptIds, userId);
   const llmMessages = [
-    { role: "system", content: resolvedSystem },
+    { role: promptRoleFor(profile, "arc"), content: resolvedSystem },
     { role: "user", content: outgoingUser }
   ];
   recordDiagnostic(userId, { event: "request", chatId, mode: "arc", outcome: "started", numbers: {
@@ -15389,7 +15580,7 @@ var failureByChat = new Map;
 var previewsByChat = new Map;
 var previewSources = new WeakMap;
 var replacementSources = new WeakMap;
-var changedSources = () => new Error(t("backend.pipeline.changedSources.summarySourcesChangedDiscardThisResultAnd"));
+var changedSources = () => Object.assign(new Error(t("backend.pipeline.changedSources.summarySourcesChangedDiscardThisResultAnd")), { name: "SummarySourcesChangedError" });
 var messageSource = (m) => msgSig(m.role, m.content || "");
 var entrySource = (e) => msgSig("summary", JSON.stringify([e.raw.content, e.meta.tier, e.meta.msgIds, e.meta.sourceChapterEntryIds, e.meta.isRoot]));
 var replacementSource = (e) => msgSig("replacement", JSON.stringify([entrySource(e), e.raw.comment, e.raw.key]));
@@ -15738,7 +15929,7 @@ async function runWithRetry(attempts, fn, onRetry) {
   }
   return { ok: false, err: lastErr, retries: tries - 1 };
 }
-function recordFailure(userId, chatId, kind, retries, err, selection) {
+function recordFailure(userId, chatId, kind, retries, err, selection, phase = "generation") {
   recordDiagnostic(userId, { event: "failure", chatId, mode: kind, outcome: "failed", reason: diagnosticErrorReason(err), numbers: { attempt: retries }, replacesEntryId: selection?.replacesEntryId });
   const key = chatKey(userId, chatId);
   if (failureByChat.has(key))
@@ -15747,6 +15938,7 @@ function recordFailure(userId, chatId, kind, retries, err, selection) {
     kind,
     message: describeError(err),
     retriedTimes: retries,
+    phase,
     at: Date.now(),
     ...selection
   });
@@ -15808,7 +16000,12 @@ async function createChapterFromRange(chatId, messageIds, profile, settings, use
     const window = messages.filter((m) => set.has(m.id) && !isExcluded(m));
     if (window.length !== set.size)
       throw changedSources();
-    const coverage = await buildCoverage(chatId, userId, undefined, extraContextActive(profile));
+    const entries = await listLmbEntries(chatId, userId, true);
+    const coverage = await buildCoverage(chatId, userId, entries, extraContextActive(profile));
+    const realCoverage = await buildCoverage(chatId, userId, entries.filter((e) => e.raw.id !== opts.replacesEntryId));
+    if (window.some((m) => realCoverage.coveredBy.has(m.id))) {
+      throw new Error(t("backend.pipeline.createChapterFromRange.alreadyFiled"));
+    }
     recordSelection(userId, chatId, profile, messages, coverage, window, opts.replacesEntryId ? "regenerate" : "selected", opts.replacesEntryId);
     recordDiagnostic(userId, { event: "action", chatId, mode: opts.replacesEntryId ? "regenerate" : "selected", numbers: { requested: messageIds.length, selected: window.length, missing: messageIds.filter((id) => !liveIds.has(id)).length } });
     if (window.length === 0)
@@ -15895,7 +16092,7 @@ async function runChapter(chatId, profile, settings, userId, allMessages, window
     return entryId;
   } catch (err) {
     warn(`commitChapter failed: ${describeError(err)}`);
-    recordFailure(userId, chatId, "chapter", 0, err, retrySelection);
+    recordFailure(userId, chatId, "chapter", 0, err, retrySelection, "save");
     failToast(userId, "chapter", err);
     cb?.onStateChange(userId, chatId);
     return null;
@@ -15924,7 +16121,7 @@ async function commitChapter(chatId, profile, userId, window, result, firstIdx, 
     const freshEntries = await listLmbEntries(chatId, userId, true);
     await assertReplacementActive(freshEntries, replacesEntryId, chatId, userId, result);
     const entriesForCoverage = replacesEntryId ? freshEntries.filter((e) => e.raw.id !== replacesEntryId) : freshEntries;
-    const freshCoverage = await buildCoverage(chatId, userId, entriesForCoverage, ghost || extraContextActive(profile));
+    const freshCoverage = await buildCoverage(chatId, userId, entriesForCoverage, ghost);
     const validWindow = window.filter((m) => !freshCoverage.coveredBy.has(m.id));
     if (validWindow.length === 0) {
       const ghostById = new Map(freshEntries.map((e) => [e.raw.id, e.meta.ghost === true]));
@@ -15981,6 +16178,23 @@ ${result.content}`;
       throw err;
     }
     recordDiagnostic(userId, { event: "commit", chatId, entryId: entry.id, replacesEntryId, outcome: "success", entries: diagnosticEntries([{ raw: entry, meta }]) });
+    if (!ghost) {
+      const selectedIds = new Set(msgIds);
+      for (const staged of freshEntries) {
+        if (staged.meta.tier !== 1 || !staged.meta.ghost || !staged.raw.disabled || !staged.meta.msgIds.some((id) => selectedIds.has(id)))
+          continue;
+        try {
+          await deleteEntry(staged.raw.id, userId);
+          recordDiagnostic(userId, { event: "ghost", chatId, entryId: staged.raw.id, outcome: "removed", reason: "coverage_changed" });
+          const remaining = staged.meta.msgIds.filter((id) => !selectedIds.has(id));
+          if (remaining.length && typeof staged.meta.sceneNumber === "number") {
+            recordFreedGhostNumber(userId, chatId, remaining, staged.meta.sceneNumber);
+          }
+        } catch (err) {
+          warn(`failed to remove replaced ghost ${staged.raw.id}: ${describeError(err)}`);
+        }
+      }
+    }
     invalidateBookCache(userId, chatId);
     if (profile.hideCoveredMessages && !ghost) {
       try {
@@ -16093,7 +16307,7 @@ async function runArc(chatId, profile, settings, userId, selected, opts = {}) {
     return entryId;
   } catch (err) {
     warn(`commitArc failed: ${describeError(err)}`);
-    recordFailure(userId, chatId, "arc", 0, err, { sourceEntryIds: selected.map((e) => e.raw.id), replacesEntryId });
+    recordFailure(userId, chatId, "arc", 0, err, { sourceEntryIds: selected.map((e) => e.raw.id), replacesEntryId }, "save");
     failToast(userId, "arc", err);
     cb?.onStateChange(userId, chatId);
     return null;
@@ -16279,7 +16493,7 @@ async function runVolume(chatId, profile, settings, userId, selected, replacesEn
     return entryId;
   } catch (err) {
     warn(`commitVolume failed: ${describeError(err)}`);
-    recordFailure(userId, chatId, kind, 0, err, { sourceEntryIds: selected.map((e) => e.raw.id), replacesEntryId });
+    recordFailure(userId, chatId, kind, 0, err, { sourceEntryIds: selected.map((e) => e.raw.id), replacesEntryId }, "save");
     failToast(userId, kind, err);
     cb?.onStateChange(userId, chatId);
     return null;
@@ -16396,7 +16610,7 @@ async function acceptPreview(chatId, draftId, profile, userId) {
     if (preview.kind === "chapter") {
       const messages = await spindle.chat.getMessages(chatId);
       const acceptEntries = preview.replacesEntryId ? (await listLmbEntries(chatId, userId, true)).filter((e) => e.raw.id !== preview.replacesEntryId) : await listLmbEntries(chatId, userId, true);
-      const coverage2 = await buildCoverage(chatId, userId, acceptEntries, extraContextActive(profile));
+      const coverage2 = await buildCoverage(chatId, userId, acceptEntries);
       const intent = new Set(preview.sourceMessageIds);
       const window = messages.filter((m) => intent.has(m.id) && !coverage2.coveredBy.has(m.id) && !isExcluded(m));
       const sources2 = previewSources.get(preview);
@@ -16424,11 +16638,12 @@ async function acceptPreview(chatId, draftId, profile, userId) {
       try {
         const entryId = await commitChapter(chatId, profile, userId, window, fakeResult2, firstIdx, lastIdx, messages, true, preview.replacesEntryId);
         dropPendingPreview(userId, chatId, draftId);
+        clearLastFailure(userId, chatId);
         nyaaToast(userId, "success", false);
         cb?.onStateChange(userId, chatId);
         return entryId;
       } catch (err) {
-        recordFailure(userId, chatId, "chapter", 0, err, { sourceMessageIds: preview.sourceMessageIds, replacesEntryId: preview.replacesEntryId });
+        recordFailure(userId, chatId, "chapter", 0, err, { sourceMessageIds: preview.sourceMessageIds, replacesEntryId: preview.replacesEntryId }, "save");
         failToast(userId, "chapter", err);
         cb?.onStateChange(userId, chatId);
         return null;
@@ -16474,7 +16689,7 @@ async function acceptPreview(chatId, draftId, profile, userId) {
       recordFailure(userId, chatId, preview.kind, 0, err, {
         sourceEntryIds: selected.map((e) => e.raw.id),
         replacesEntryId: preview.replacesEntryId
-      });
+      }, "save");
       failToast(userId, preview.kind, err);
       cb?.onStateChange(userId, chatId);
       return null;
@@ -16526,16 +16741,20 @@ async function dryRunArc(chatId, profile, settings, userId) {
   const opener = buildArcHeader(provisionalSceneNumber, chapters.length, totalTurns);
   return assembleArcPrompt(profile, settings.customPresets, chatId, chapters, userId, opener);
 }
-async function dryRunVolume(chatId, profile, settings, userId) {
+async function dryRunVolume(chatId, profile, settings, userId, tier = 3) {
   const entries = await listTimelineEntries(chatId, userId);
   const coverage = await buildCoverage(chatId, userId, entries);
-  const arcs = summaryRuns(coverage.activeEntries, 2)[0]?.entries ?? [];
+  const arcs = summaryRuns(coverage.activeEntries, tier - 1)[0]?.entries ?? [];
   if (arcs.length === 0)
-    throw new Error(t("backend.pipeline.dryRunVolume.noArcsToPressYet"));
+    throw new Error(tier === 3 ? t("backend.pipeline.dryRunVolume.noArcsToPressYet") : t("backend.pipeline.dryRunVolume.noSources", { name: TIER_NAMES[tier - 2] }));
   const totalTurns = arcs.reduce((acc, a) => acc + a.meta.msgIds.length, 0);
-  const provisionalSceneNumber = await nextSceneNumber(chatId, 3, userId);
-  const opener = buildVolumeHeader(provisionalSceneNumber, arcs.length, totalTurns);
-  return assembleVolumePrompt(profile, settings.customPresets, chatId, arcs, userId, opener);
+  const provisionalSceneNumber = await nextSceneNumber(chatId, tier, userId);
+  const opener = tierHeader(tier, provisionalSceneNumber, arcs.length, totalTurns);
+  if (tier > 3) {
+    const config = profile.higherTiers[tier];
+    profile = { ...profile, volumeTargetUnit: config.targetUnit, volumeTargetPercent: config.targetPercent, volumeTargetTokens: config.targetTokens };
+  }
+  return assembleVolumePrompt(profile, settings.customPresets, chatId, arcs, userId, opener, tier);
 }
 async function drainArcBacklog(chatId, profile, settings, userId, automation = false) {
   return drainSummaryBacklog(2, chatId, profile, settings, userId, automation);
@@ -18359,7 +18578,7 @@ async function runCodexAgentInner(opts) {
     throw new CodexContextError(promptTokens, maxInput);
   const frozen = new Set(CODEX_FILE_KEYS.filter((k) => !promptCtx.activeFiles.has(k) || !writable.has(k)));
   const conv = [
-    { role: "system", content: [{ type: "text", text: system, cache_control: { ...CACHE_EPHEMERAL } }] },
+    { role: promptRoleFor(profile, "codex"), content: [{ type: "text", text: system, cache_control: { ...CACHE_EPHEMERAL } }] },
     { role: "user", content: [{ type: "text", text: userText, cache_control: { ...CACHE_EPHEMERAL } }] }
   ];
   const working = structuredClone(opts.bundle);
@@ -19219,7 +19438,7 @@ async function dryRunCodex(chatId, profile, settings, userId) {
   diagnostics.push({ message: t("backend.codex.index.dryRunCodex.samplerParametersBeingSentOnTheWire", { stringify: JSON.stringify(buildCodexSamplerParameters(profile)) }) });
   return {
     messages: [
-      { role: "system", content: system },
+      { role: promptRoleFor(profile, "codex"), content: system },
       { role: "user", content: user }
     ],
     diagnostics
@@ -20293,9 +20512,8 @@ async function buildState(userId, requestedChatId) {
   } else {
     chat = await spindle.chats.getActive(userId).catch(() => null);
   }
-  const [connectionsRaw, regexScriptsRaw, rootCandidatesRaw] = await Promise.all([
+  const [connectionsRaw, rootCandidatesRaw] = await Promise.all([
     listConnections(userId),
-    listRegexScripts(userId),
     listRootCandidates(userId).catch(() => [])
   ]);
   const connections = connectionsRaw.map((c) => ({
@@ -20306,7 +20524,6 @@ async function buildState(userId, requestedChatId) {
     isDefault: c.is_default,
     hasApiKey: c.has_api_key
   }));
-  const regexScripts = regexScriptsRaw.map((s) => ({ id: s.id, name: s.name }));
   const allRootCandidates = rootCandidatesRaw.map((c) => ({
     chatId: c.chatId,
     chatName: c.chatName,
@@ -20344,7 +20561,6 @@ async function buildState(userId, requestedChatId) {
     volumePresets: BUILTIN_VOLUME_PRESETS,
     codexPresets: BUILTIN_CODEX_PRESETS,
     customPresets: settings.customPresets,
-    regexScripts,
     pendingPreviews: [],
     backlogChapters: 0,
     backlogArcs: 0,
@@ -20424,6 +20640,7 @@ async function buildState(userId, requestedChatId) {
   chapters.sort((a, b) => (a.meta.firstMsgIdx ?? 0) - (b.meta.firstMsgIdx ?? 0));
   arcs.sort((a, b) => (a.meta.firstMsgIdx ?? 0) - (b.meta.firstMsgIdx ?? 0));
   volumes.sort((a, b) => (a.meta.firstMsgIdx ?? 0) - (b.meta.firstMsgIdx ?? 0));
+  const stagedIds = new Set(backlogCoverage.activeEntries.filter((e) => e.meta.ghost && e.raw.disabled).flatMap((e) => e.meta.msgIds));
   const messageStubs = messages.map((m) => {
     const covered = coverage.coveredBy.get(m.id) ?? null;
     const hidden = !!(m.extra && m.extra.hidden);
@@ -20438,6 +20655,7 @@ async function buildState(userId, requestedChatId) {
       approxTokens: approximateTokensFromChars(charCount),
       hidden,
       covered: !!covered,
+      staged: stagedIds.has(m.id),
       coveredByEntryId: covered,
       indexInChat: m.index_in_chat,
       excluded
@@ -20895,6 +21113,15 @@ spindle.onFrontendMessage(async (raw, userId) => {
     await ensureUserFolders(userId);
     recordFrontendAction(userId, msg, "started");
     switch (msg.type) {
+      case "regex_scripts_page": {
+        try {
+          const page = await listRegexScriptsPage(userId, msg.offset, msg.query, (progress) => send({ type: "regex_scripts_page", requestId: msg.requestId, progress }, userId), msg.refresh);
+          send({ type: "regex_scripts_page", requestId: msg.requestId, page }, userId);
+        } catch (err) {
+          send({ type: "regex_scripts_page", requestId: msg.requestId, error: describeError(err) }, userId);
+        }
+        break;
+      }
       case "prompt_breakdown":
         send({ type: "prompt_breakdown", requestId: msg.requestId, chatId: msg.chatId, result: await loadPromptBreakdown(msg, userId) }, userId);
         break;
@@ -20947,7 +21174,13 @@ spindle.onFrontendMessage(async (raw, userId) => {
             missing = true;
             return cur;
           }
-          const merged = normalizeProfile({ ...existing, ...incoming, id });
+          const merged = normalizeProfile({
+            ...existing,
+            ...incoming,
+            id,
+            promptRoles: Object.keys(incoming.promptRoles ?? {}).length ? { ...existing.promptRoles, ...incoming.promptRoles } : incoming.promptRoles ?? existing.promptRoles,
+            higherTierPresetKeys: Object.keys(incoming.higherTierPresetKeys ?? {}).length ? { ...existing.higherTierPresetKeys, ...incoming.higherTierPresetKeys } : incoming.higherTierPresetKeys ?? existing.higherTierPresetKeys
+          });
           if (!merged)
             return cur;
           prevHide = existing.hideCoveredMessages;
@@ -20997,12 +21230,25 @@ spindle.onFrontendMessage(async (raw, userId) => {
         break;
       }
       case "create_profile": {
+        let missing = false;
         await mutateSettings(userId, (cur) => {
           const id = `p_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 6)}`;
-          const baseProfile = cur.profiles.find((p) => p.id === cur.activeProfileId) ?? cur.profiles[0];
-          const next = { ...baseProfile, id, name: (msg.name || t("backend.index.next.newProfile")).slice(0, 60) };
+          const name = (msg.name || t("backend.index.next.newProfile")).slice(0, 60);
+          const source = msg.copyFromId ? cur.profiles.find((p) => p.id === msg.copyFromId) : makeDefaultProfile(id, name);
+          if (!source) {
+            missing = true;
+            return cur;
+          }
+          const next = { ...structuredClone(source), id, name };
           return { ...cur, profiles: [...cur.profiles, next], activeProfileId: id };
         });
+        if (missing) {
+          send({ type: "error", text: t("backend.index.messages.profileNoLongerExists", { id: msg.copyFromId }) }, userId);
+          break;
+        }
+        await syncProfileSettings(userId);
+        if (msg.chatId)
+          await cleanupGhostsIfModeOff(userId, msg.chatId, "profile-create");
         await pushState(userId, msg.chatId);
         break;
       }
@@ -21301,8 +21547,11 @@ spindle.onFrontendMessage(async (raw, userId) => {
         if (!profile)
           break;
         try {
-          const result = await dryRunVolume(msg.chatId, profile, cur, userId);
-          send({ type: "dry_run_result", kind: "volume", messages: result.messages, diagnostics: result.diagnostics }, userId);
+          const tier = msg.tier ?? 3;
+          if (!HIGHER_TIERS.includes(tier))
+            throw new Error("Invalid summary tier");
+          const result = await dryRunVolume(msg.chatId, profile, cur, userId, tier);
+          send({ type: "dry_run_result", kind: TIER_KINDS[tier - 1], messages: result.messages, diagnostics: result.diagnostics }, userId);
         } catch (err) {
           const text = describeError(err);
           warn(`dry_run_volume failed: ${text}`);
@@ -21448,6 +21697,9 @@ spindle.onFrontendMessage(async (raw, userId) => {
             }
             if (msg.category === "codex" && p.codexPresetKey === msg.key) {
               return { ...p, codexPresetKey: fallbackCodex };
+            }
+            if (isExtraCategory(msg.category) && presetKeyFor(p, msg.category) === msg.key) {
+              return { ...p, higherTierPresetKeys: { ...p.higherTierPresetKeys, ...presetKeyPatch(msg.category, "").higherTierPresetKeys } };
             }
             return p;
           });

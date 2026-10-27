@@ -61,6 +61,7 @@
 | frozen | 동결 | |
 | lock, locked | 잠금, 잠김 | |
 | recall | 상기 | |
+| constant (activation) | 상시 | 활성화 방식. `Always`(항상)와 구분 |
 | placement | 배치 | |
 | depth | 심도 | 호스트 표기 |
 | dry run | 모의 실행 | 호스트 표기 |

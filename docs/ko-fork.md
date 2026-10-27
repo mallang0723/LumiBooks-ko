@@ -31,7 +31,7 @@
 - **공유되는 것:** 챕터·아크 요약은 호스트의 월드북과 채팅 메타데이터에 있고, 그 표식(`LumiBooks` 이름 접두사, 항목의 `lumibooks` 확장 키, `lumibooks_chat_id`·`lumibooks_book_id` 메타데이터)은 원작과 같습니다. 그래서 요약은 그대로 이어지지만, **원작과 한국어판을 같은 계정에서 동시에 켜면 두 확장이 같은 월드북을 함께 관리하게 됩니다.** 하나만 켜세요.
 - `src/shared.ts`의 `EXTENSION_ID = "lumi_books"`는 바꾸지 않았습니다. 다른 확장이 구독하는 공개 엔드포인트(`lumi_books.codex.<chatId>`, `lumi_books.codex_updated` 등)의 이름이라, 한국어판도 같은 이름으로 내보냅니다.
 - `scripts/test-real-host.ts`, `scripts/vector-host-scenarios.ts`(실제 호스트 대상 개발용 스크립트)는 `"lumi_books"`를 직접 씁니다. 한국어판으로 돌리려면 그 ID를 `lumi_books_ko`로 바꿔야 합니다. 기본 검사(`bun test src`, `build`)와는 무관합니다.
-- **버전: `1.1.1+ko`.** 원작 버전에 semver 빌드 메타데이터를 붙였습니다. Lumiverse는 버전을 비교하지 않고 문자열로만 저장·표시하며, 업데이트 확인은 git 기준입니다.
+- **버전: `1.1.4+ko`.** 원작 버전에 semver 빌드 메타데이터를 붙였습니다. Lumiverse는 버전을 비교하지 않고 문자열로만 저장·표시하며, 업데이트 확인은 git 기준입니다.
 
 ## 원작 따라가기
 

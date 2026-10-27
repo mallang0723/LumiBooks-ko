@@ -6,8 +6,11 @@ import { buildFixture } from "../lessons/fixture";
 import { renderBooksTab, resetBooksTabLocal, setBooksSubtab } from "./books-tab";
 import { renderHomeTab, resetHomeTabLocal } from "./home-tab";
 import { deliverPromptBreakdown } from "../prompt-breakdown";
-import { renderCodexSettings } from "./profile-tab";
+import { renderCodexSettings, renderProfilePicker, renderRegex } from "./profile-tab";
+import { deliverRegexScriptsPage, resetRegexPicker } from "../regex-picker";
 import { renderAboutTab } from "./about-tab";
+import { renderPromptsPane, setPromptsCategory } from "./prompts-tab";
+import { renderTuningTab, resetTuningTabLocal, setTuningSubtab } from "./tuning-tab";
 import { createSummaryTransferPanel } from "../summary-transfer";
 import { makeDefaultProfile } from "../../shared";
 import { deliverCodexFiles, renderCodexTab, resetCodexTabLocal, setCodexSubtab, setCodexExpandedEntity } from "./codex-tab";
@@ -23,6 +26,7 @@ class Element {
   value = "";
   disabled = false;
   checked = false;
+  open = false;
   private text = "";
   private listeners = new Map<string, ((event: { preventDefault(): void }) => void)[]>();
   constructor(readonly tagName: string) {}
@@ -32,7 +36,7 @@ class Element {
   classList = { add: (name: string) => { this.className += ` ${name}`; }, toggle: (_name: string, _force?: boolean) => {} };
   appendChild(child: Element): Element { child.parentElement = this; this.children.push(child); return child; }
   append(...children: Element[]): void { children.forEach((c) => this.appendChild(c)); }
-  replaceChildren(): void { this.children = []; this.text = ""; }
+  replaceChildren(...children: Element[]): void { this.children = []; this.text = ""; this.append(...children); }
   setAttribute(name: string, value: string): void { this.attributes[name] = value; }
   querySelectorAll(selector: string): Element[] {
     const tags = selector.split(",").map((tag) => tag.trim());
@@ -42,6 +46,7 @@ class Element {
     this.listeners.set(name, [...(this.listeners.get(name) ?? []), listener]);
   }
   dispatch(name: string): void { this.listeners.get(name)?.forEach((fn) => fn({ preventDefault() {} })); }
+  focus(): void {}
 }
 
 const walk = (root: Element): Element[] => [root, ...root.children.flatMap(walk)];
@@ -67,6 +72,9 @@ beforeEach(() => {
   resetBooksTabLocal();
 });
 afterEach(() => {
+  resetTuningTabLocal();
+  setPromptsCategory("chapter");
+  resetRegexPicker();
   resetCodexTabLocal();
   resetHomeTabLocal();
   resetBooksTabLocal();
@@ -74,6 +82,103 @@ afterEach(() => {
     if (descriptor) Object.defineProperty(globalThis, key, descriptor);
     else Reflect.deleteProperty(globalThis, key);
   }
+});
+
+test("regex pages load on demand and both selectors preserve off-page selections", () => {
+  const profile = makeDefaultProfile("regex-test");
+  profile.regexOutgoingScriptIds = ["regex-9999"];
+  profile.regexIncomingScriptIds = ["regex-8000"];
+  const patches: any[] = [], sent: any[] = [];
+  const host = new Element("div");
+  renderRegex(host as unknown as HTMLElement, profile, (patch) => patches.push(patch), (message) => sent.push(message));
+  const reply = () => {
+    const request = sent.at(-1);
+    deliverRegexScriptsPage({ type: "regex_scripts_page", requestId: request.requestId, page: {
+      offset: request.offset, limit: 50, total: 10_001,
+      scripts: Array.from({ length: 50 }, (_, i) => ({ id: `regex-${request.offset + i}`, name: `Regex ${request.offset + i}` })),
+    } });
+  };
+  const button = (text: string) => walk(host).find((e) => e.tagName === "button" && (e.attributes["aria-label"] ?? e.textContent) === text)!;
+  const selectors = () => walk(host).filter((e) => e.className === "lmb-multiselect");
+  const select = (group: number, row: number, checked: boolean) => {
+    const box = selectors()[group]!.children[row]!.children[0]!;
+    box.checked = checked; box.dispatch("change");
+  };
+  expect(sent).toHaveLength(1);
+  expect(sent[0].offset).toBe(0);
+  reply();
+  expect(button("Previous").disabled).toBe(true);
+  expect(selectors().map((s) => s.children.length)).toEqual([50, 50]);
+  select(0, 0, true);
+  button("Next").dispatch("click");
+  expect(sent.at(-1).offset).toBe(50);
+  expect(button("Next").disabled).toBe(true);
+  reply();
+  expect(selectors()[0]!.children[0]!.textContent).toBe("Regex 50");
+  select(0, 0, true);
+  select(1, 1, true);
+  expect(patches.at(-2)).toEqual({ regexOutgoingScriptIds: ["regex-9999", "regex-0", "regex-50"] });
+  expect(patches.at(-1)).toEqual({ regexIncomingScriptIds: ["regex-8000", "regex-51"] });
+  button("Previous").dispatch("click"); reply();
+  expect(selectors()[0]!.children[0]!.children[0]!.checked).toBe(true);
+  select(0, 0, false);
+  expect(patches.at(-1)).toEqual({ regexOutgoingScriptIds: ["regex-9999", "regex-50"] });
+  const jump = walk(host).find((e) => e.tagName === "input" && e.attributes["aria-label"] === "Page")!;
+  jump.value = "201"; jump.dispatch("blur");
+  expect(sent.at(-1).offset).toBe(10_000);
+  const request = sent.at(-1);
+  deliverRegexScriptsPage({ type: "regex_scripts_page", requestId: request.requestId, page: { offset: 10_000, limit: 50, total: 10_001, scripts: [{ id: "regex-10000", name: "Last" }] } });
+  expect(button("Next").disabled).toBe(true);
+  expect(selectors().map((s) => s.children.length)).toEqual([1, 1]);
+});
+
+test("regex page responses survive rerenders, reject stale replies and allow retry after failure", () => {
+  const profile = makeDefaultProfile("regex-test"), sent: any[] = [];
+  const first = new Element("div"), current = new Element("div");
+  renderRegex(first as unknown as HTMLElement, profile, () => {}, (message) => sent.push(message));
+  renderRegex(current as unknown as HTMLElement, profile, () => {}, (message) => sent.push(message));
+  expect(sent).toHaveLength(1);
+  const request = sent[0];
+  deliverRegexScriptsPage({ type: "regex_scripts_page", requestId: "stale", page: { scripts: [], offset: 0, limit: 50, total: 0 } });
+  expect(current.textContent).toContain("Loading regex scripts");
+  deliverRegexScriptsPage({ type: "regex_scripts_page", requestId: request.requestId, error: "failed" });
+  expect(current.textContent).toContain("Could not load this page");
+  walk(current).find((e) => e.tagName === "button" && e.textContent === "Refresh")!.dispatch("click");
+  expect(sent).toHaveLength(2);
+  deliverRegexScriptsPage({ type: "regex_scripts_page", requestId: sent[1].requestId, page: { scripts: [], offset: 0, limit: 50, total: 0 } });
+  expect(current.textContent).toContain("No regex scripts");
+});
+
+test("regex search reuses the shared field, debounces requests and keeps selections across queries", async () => {
+  const profile = makeDefaultProfile("regex-search"), sent: any[] = [], patches: any[] = [];
+  profile.regexOutgoingScriptIds = ["off-page"];
+  const host = new Element("div");
+  renderRegex(host as unknown as HTMLElement, profile, (patch) => patches.push(patch), (message) => sent.push(message));
+  const initial = sent[0];
+  const input = walk(host).find((e) => e.className === "lmb-search-input")!;
+  expect(input).toBeDefined();
+  input.value = "R"; input.dispatch("input");
+  input.value = "Rare"; input.dispatch("input");
+  expect(sent).toHaveLength(1);
+  deliverRegexScriptsPage({ type: "regex_scripts_page", requestId: initial.requestId,
+    page: { offset: 0, limit: 50, total: 1, scripts: [{ id: "old", name: "Old response" }] } });
+  expect(host.textContent).not.toContain("Old response");
+  await Bun.sleep(280);
+  expect(sent).toHaveLength(2);
+  expect(sent[1]).toMatchObject({ query: "Rare", offset: 0 });
+  deliverRegexScriptsPage({ type: "regex_scripts_page", requestId: sent[1].requestId, progress: { scanned: 200, total: 10_001 } });
+  expect(host.textContent).toContain("200 of 10,001 checked");
+  deliverRegexScriptsPage({ type: "regex_scripts_page", requestId: initial.requestId, progress: { scanned: 999, total: 999 } });
+  expect(host.textContent).not.toContain("999 of 999");
+  deliverRegexScriptsPage({ type: "regex_scripts_page", requestId: sent[1].requestId,
+    page: { offset: 0, limit: 50, total: 1, scripts: [{ id: "rare", name: "Rare match" }] } });
+  expect(walk(host).find((e) => e.className === "lmb-search-input")).toBe(input);
+  const select = walk(host).find((e) => e.className === "lmb-multiselect")!.children[0]!.children[0]!;
+  select.checked = true; select.dispatch("change");
+  expect(patches.at(-1)).toEqual({ regexOutgoingScriptIds: ["off-page", "rare"] });
+  walk(host).find((e) => e.className === "lmb-search-clear")!.dispatch("click");
+  await Bun.sleep(280);
+  expect(sent.at(-1)).toMatchObject({ query: "", offset: 0 });
 });
 
 function entry(tier: SummaryTier, index: number, active = true, isRoot = false, isGhost = false): ArcView {
@@ -108,6 +213,99 @@ function group(host: Element, title: string): Element {
   expect(heading).toBeDefined();
   return heading!.parentElement!;
 }
+
+test("Compose identifies staged ghosts and keeps them selectable for manual compression", () => {
+  const data = state(), host = new Element("host"), sent: any[] = [];
+  data.messages = data.messages.slice(0, 2).map((m, i) => ({ ...m, covered: false, coveredByEntryId: null, excluded: false, staged: i === 0 }));
+  setBooksSubtab("compose");
+  renderBooksTab(host as any, data, {} as any, (msg) => sent.push(msg));
+  const rows = walk(host).filter((node) => node.className.startsWith("lmb-message-row"));
+  expect(rows).toHaveLength(2);
+  expect(rows[0]!.textContent).toContain("GHOST");
+  expect(rows[1]!.textContent).not.toContain("GHOST");
+  const box = rows[0]!.children.find((node) => node.tagName === "input")!;
+  expect(box.disabled).toBe(false);
+  box.checked = true; box.dispatch("change");
+  walk(host).find((node) => node.tagName === "button" && node.textContent === "Compress")!.dispatch("click");
+  expect(sent).toContainEqual({ type: "create_chapter_range", chatId: data.activeChatId, messageIds: [data.messages[0]!.id] });
+});
+
+test("Home distinguishes save failures from generation retries", () => {
+  const data = state(), host = new Element("host");
+  data.lastFailure = { kind: "chapter", message: "Summary sources changed.", retriedTimes: 0, at: Date.now(), phase: "save" };
+  renderHomeTab(host as any, data, {} as any, () => {});
+  expect(host.textContent).toContain("Summary generated, but saving failed. Summary sources changed.");
+  expect(host.textContent).not.toContain("tried 0x");
+});
+
+test("Prompts groups all summary tiers and saves roles and presets for the selected category", () => {
+  const host = new Element("host"), sent: any[] = [], data = state();
+  setPromptsCategory("chapter");
+  renderPromptsPane(host as unknown as HTMLElement, data, {} as SpindleFrontendContext, message => sent.push(message));
+  const tabs = () => walk(host).filter((node) => node.className === "lmb-subtabs");
+  expect(tabs()[0]!.children.map((node) => node.textContent)).toEqual(["Summaries", "Codex"]);
+  expect(tabs()[1]!.children.map((node) => node.textContent)).toEqual([...TIER_NAMES]);
+  for (const [index, category] of ["chapter", "arc", "volume", "series", "saga", "library", "universe"].entries()) {
+    tabs()[1]!.children[index]!.dispatch("click");
+    const role = walk(host).find((node) => node.attributes["aria-label"] === "Send as:")!;
+    role.value = "assistant"; role.dispatch("change");
+    expect(sent.at(-1)).toMatchObject({ type: "save_profile", profile: { id: data.activeProfile.id, promptRoles: { [category]: "assistant" } } });
+    if (index > 2) {
+      const picker = walk(host).find((node) => node.tagName === "select" && node !== role)!;
+      expect(picker.children[0]!.value).toBe("");
+      picker.value = `${category}_default`; picker.dispatch("change");
+      expect(sent.at(-1).profile.higherTierPresetKeys).toEqual({ [category]: `${category}_default` });
+      walk(host).find((node) => node.tagName === "button" && node.textContent === "Dry run")!.dispatch("click");
+      expect(sent.at(-1)).toMatchObject({ type: "dry_run_volume", tier: index + 1 });
+    }
+  }
+  tabs()[0]!.children[1]!.dispatch("click");
+  const role = walk(host).find((node) => node.attributes["aria-label"] === "Send as:")!;
+  role.value = "user"; role.dispatch("change");
+  expect(sent.at(-1).profile.promptRoles).toEqual({ codex: "user" });
+});
+
+test("Tuning puts the profile picker above navigation, collapses later tiers, and labels summary recall Constant", () => {
+  const host = new Element("host"), data = state();
+  setTuningSubtab("settings");
+  renderTuningTab(host as unknown as HTMLElement, data, {} as SpindleFrontendContext, () => {});
+  expect(host.children[0]!.children[0]!.textContent).toBe("Profile");
+  expect(host.children[1]!.className).toBe("lmb-subtabs");
+  expect(walk(host).some((node) => node.className === "lmb-profile-strip")).toBe(false);
+  const disclosures = walk(host).filter((node) => node.tagName === "details");
+  expect(disclosures.map((node) => node.children[0]!.textContent)).toEqual(["Series Binding", "Saga Binding", "Library Binding", "Universe Binding"]);
+  expect(disclosures.every((node) => !node.open)).toBe(true);
+  disclosures[0]!.open = true; disclosures[0]!.dispatch("toggle");
+  renderTuningTab(host as unknown as HTMLElement, data, {} as SpindleFrontendContext, () => {});
+  const reopened = walk(host).find((node) => node.tagName === "details")!;
+  expect(reopened.open).toBe(true);
+  reopened.open = false; reopened.dispatch("toggle");
+  const recall = walk(host).find((node) => node.tagName === "fieldset" && node.textContent.includes("Summary recall"))!;
+  expect(recall.textContent).toContain("Constant");
+  expect(recall.textContent).not.toContain("Always");
+});
+
+test("profile icon actions create, rename, and explicitly duplicate the selected profile", async () => {
+  const host = new Element("host"), modal = new Element("modal"), data = state(), sent: any[] = [];
+  const ctx = { ui: { showModal: () => ({ root: modal, dismiss() { modal.replaceChildren(); } }) } } as unknown as SpindleFrontendContext;
+  renderProfilePicker(host as unknown as HTMLElement, data, ctx, message => sent.push(message));
+  expect(walk(host).filter(node => node.tagName === "input" && node.value === data.activeProfile.name)).toHaveLength(0);
+  const action = (name: string) => walk(host).find(node => node.attributes["aria-label"] === name)!;
+  action("Duplicate profile").dispatch("click");
+  expect(sent.at(-1)).toMatchObject({ type: "create_profile", copyFromId: data.activeProfile.id, name: `${data.activeProfile.name} copy` });
+  for (const name of ["New", "Rename profile"]) {
+    action(name).dispatch("click");
+    const input = walk(modal).find(node => node.tagName === "input")!;
+    expect(input.value).toBe(name === "New" ? "" : data.activeProfile.name);
+    input.value = "Changed profile";
+    walk(modal).find(node => node.tagName === "button" && node.textContent === "OK")!.dispatch("click");
+    await Promise.resolve();
+    if (name === "New") {
+      expect(sent.at(-1)).toMatchObject({ type: "create_profile", name: "Changed profile" });
+      expect(sent.at(-1).copyFromId).toBeUndefined();
+    } else expect(sent.at(-1).profile).toEqual({ id: data.activeProfile.id, name: "Changed profile" });
+  }
+});
 
 test("Codex settings render the activation controls without secure-context crypto", () => {
   const descriptor = Object.getOwnPropertyDescriptor(globalThis, "crypto")!;

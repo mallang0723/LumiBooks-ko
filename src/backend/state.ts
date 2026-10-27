@@ -1,14 +1,13 @@
 import { summaryBindingRule, countBindingBacklog } from "./binding";
 declare const spindle: import("lumiverse-spindle-types").SpindleAPI;
 
-import type { ChapterView, ArcView, FrontendState, ConnectionOption, MessageStub, RegexScriptOption, RootSourceOption } from "../types";
+import type { ChapterView, ArcView, FrontendState, ConnectionOption, MessageStub, RootSourceOption } from "../types";
 import type { ChatMessage } from "./coverage";
 import { approximateTokensFromChars } from "../shared";
 import { loadSettings } from "./storage";
 import { buildCoverage, computeCoverageStats, countCompressibleEligible, withLiveMessageRanges } from "./coverage";
 import { findBookForChat, listLmbEntries, listRootCandidates, reassertChatBinding } from "./world-book";
 import { listConnections, resolveConnection } from "./summarizer";
-import { listRegexScripts } from "./regex";
 import { extraContextActive, getBusy, getLastFailure, getPendingPreviews } from "./pipeline";
 import { getCodexTokenCounts, getCodexPanelState, getCodexRevision, getCodexStatus } from "./codex/index";
 import { codexUndoInfo } from "./codex/backup";
@@ -61,9 +60,8 @@ export async function buildState(userId: string, requestedChatId?: string | null
     chat = await spindle.chats.getActive(userId).catch(() => null);
   }
 
-  const [connectionsRaw, regexScriptsRaw, rootCandidatesRaw] = await Promise.all([
+  const [connectionsRaw, rootCandidatesRaw] = await Promise.all([
     listConnections(userId),
-    listRegexScripts(userId),
     listRootCandidates(userId).catch(() => []),
   ]);
   const connections: ConnectionOption[] = connectionsRaw.map((c) => ({
@@ -74,7 +72,6 @@ export async function buildState(userId: string, requestedChatId?: string | null
     isDefault: c.is_default,
     hasApiKey: c.has_api_key,
   }));
-  const regexScripts: RegexScriptOption[] = regexScriptsRaw.map((s) => ({ id: s.id, name: s.name }));
   const allRootCandidates: RootSourceOption[] = rootCandidatesRaw.map((c) => ({
     chatId: c.chatId,
     chatName: c.chatName,
@@ -113,7 +110,6 @@ export async function buildState(userId: string, requestedChatId?: string | null
     volumePresets: BUILTIN_VOLUME_PRESETS,
     codexPresets: BUILTIN_CODEX_PRESETS,
     customPresets: settings.customPresets,
-    regexScripts,
     pendingPreviews: [],
     backlogChapters: 0,
     backlogArcs: 0,
@@ -206,6 +202,7 @@ export async function buildState(userId: string, requestedChatId?: string | null
   arcs.sort((a, b) => (a.meta.firstMsgIdx ?? 0) - (b.meta.firstMsgIdx ?? 0));
   volumes.sort((a, b) => (a.meta.firstMsgIdx ?? 0) - (b.meta.firstMsgIdx ?? 0));
 
+  const stagedIds = new Set(backlogCoverage.activeEntries.filter((e) => e.meta.ghost && e.raw.disabled).flatMap((e) => e.meta.msgIds));
   const messageStubs: MessageStub[] = messages.map((m) => {
     const covered = coverage.coveredBy.get(m.id) ?? null;
     const hidden = !!(m.extra && (m.extra as Record<string, unknown>).hidden);
@@ -220,6 +217,7 @@ export async function buildState(userId: string, requestedChatId?: string | null
       approxTokens: approximateTokensFromChars(charCount),
       hidden,
       covered: !!covered,
+      staged: stagedIds.has(m.id),
       coveredByEntryId: covered,
       indexInChat: m.index_in_chat,
       excluded,

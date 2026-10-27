@@ -229,26 +229,9 @@ export const STYLES = `
 
 .lmb-pane { display: flex; flex-direction: column; gap: 14px; }
 
-/* Compact profile context strip shown on Tuning subtabs that aren't Profile:
-   the full picker block would otherwise repeat above every pane. */
-.lmb-profile-strip {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 7px 11px;
-  background: var(--lmb-fill);
-  border: 1px solid var(--lmb-hairline);
-  border-radius: var(--lmb-r);
-  font-size: 11px;
-  color: var(--lmb-ink-dim);
-}
-.lmb-profile-strip b {
-  color: var(--lmb-ink);
-  font-weight: 600;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
+.lmb-profile-picker-row { flex-wrap: wrap; }
+.lmb-profile-picker-row .lmb-grow { flex: 1 1 140px; }
+.lmb-profile-picker-row .lmb-profile-action { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; padding: 0; }
 
 /* ---------------------------------------------------------- section card */
 .lmb-section {
@@ -649,6 +632,13 @@ export const STYLES = `
 /* ---------------------------------------------------------------- fields */
 .lmb-field { display: flex; flex-direction: column; gap: 4px; }
 .lmb-field-row { display: flex; align-items: center; gap: 8px; }
+.lmb-prompt-role-row { flex-wrap: wrap; }
+.lmb-prompt-role-row .lmb-field-label { white-space: nowrap; }
+.lmb-prompt-role-row .lmb-prompt-role { width: 140px; }
+.lmb-summary-tier > summary { cursor: pointer; list-style: none; margin-bottom: 0; }
+.lmb-summary-tier > summary::-webkit-details-marker { display: none; }
+.lmb-summary-tier[open] > summary { margin-bottom: 10px; }
+.lmb-summary-tier[open] > summary .lmb-chevron { transform: rotate(45deg); margin-bottom: 4px; }
 .lmb-grow { flex: 1; min-width: 0; }
 .lmb-field-label {
   font-size: 10px;
@@ -844,6 +834,55 @@ input.lmb-input[type="number"]::-webkit-inner-spin-button { opacity: 0.6; }
   transition: background 200ms var(--lmb-ease);
 }
 .lmb-multiselect-row:hover { background: var(--lmb-frame-faint); }
+
+/* Compact regex browser controls, matching the RisuRealm pager. */
+.lmb-regex-results { display: flex; flex-direction: column; gap: 12px; }
+.lmb-regex-toolbar { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 12px; }
+.lmb-regex-pager {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid var(--lmb-edge);
+  border-radius: 999px;
+  background: var(--lmb-fill);
+  box-shadow: var(--lmb-lift);
+}
+.lmb-regex-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--lmb-ink);
+  cursor: pointer;
+}
+.lmb-regex-arrow:hover:not(:disabled) { background: var(--lmb-fill-hover); color: var(--lmb-gold); }
+.lmb-regex-arrow:disabled, .lmb-regex-page:disabled { opacity: 0.4; cursor: not-allowed; }
+.lmb-regex-page {
+  appearance: textfield;
+  width: 48px;
+  height: 28px;
+  padding: 0 4px;
+  border: 0;
+  border-radius: var(--lmb-r);
+  background: transparent;
+  color: var(--lmb-ink);
+  font: inherit;
+  font-weight: 600;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+.lmb-regex-page::-webkit-inner-spin-button,
+.lmb-regex-page::-webkit-outer-spin-button { appearance: none; margin: 0; }
+.lmb-regex-pager :focus-visible { outline: 2px solid var(--lmb-gold); outline-offset: 1px; }
+.lmb-regex-range { margin-left: auto; }
+.lmb-regex-group-heading { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 2px 12px; }
+.lmb-regex-group-heading .lmb-help { font-weight: 400; letter-spacing: normal; text-transform: none; }
 
 /* ------------------------------------------------------------------ pills */
 /* Pills are STATUS, not controls: no border-box (that's the button costume),
