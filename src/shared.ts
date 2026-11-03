@@ -159,7 +159,7 @@ export interface LMBProfile {
   /** Chapter summaries extra-context mode hands the agent as story-so-far. */
   codexStorySoFarCount: number;
   codexRelationsTable: boolean;
-  codexActivationMode: ActivationMode;
+  codexActivationMode: ActivationMode | "vector_only";
   codexInjectionPosition: "lorebook" | "depth" | "after_history";
   codexInjectionDepth: number;
   codexThorough: boolean;
@@ -469,7 +469,7 @@ export function normalizeProfile(raw: unknown): LMBProfile | null {
     codexLoreLimitPercent: clampInt(v.codexLoreLimitPercent, 1, 100, base.codexLoreLimitPercent),
     codexLoreLimitTokens: clampInt(v.codexLoreLimitTokens, 0, 1000000, base.codexLoreLimitTokens),
     codexStorySoFarCount: clampInt(v.codexStorySoFarCount, 0, 50, base.codexStorySoFarCount),
-    codexActivationMode: normalizeActivationMode(v.codexActivationMode,
+    codexActivationMode: v.codexActivationMode === "vector_only" ? "vector_only" : normalizeActivationMode(v.codexActivationMode,
       (v as { codexForceConstant?: boolean }).codexForceConstant === true ? "always" : "keywords"),
     codexInjectionPosition: v.codexInjectionPosition === "depth" || v.codexInjectionPosition === "after_history" ? v.codexInjectionPosition : "lorebook",
     codexInjectionDepth: clampInt(v.codexInjectionDepth, 0, 10000, base.codexInjectionDepth),
@@ -605,16 +605,18 @@ export function buildVolumeHeader(sceneNumber: number, arcCount: number, turnCou
   return `${ordinal(sceneNumber)} Summary VOLUME Containing ${arcCount} Prior Arc${arcCount === 1 ? "" : "s"} and ${turnCount} Prior Turn${turnCount === 1 ? "" : "s"}`;
 }
 
-export function bookNameFor(chatName: string | null | undefined, chatId: string): string {
+export function bookNameFor(chatName: string | null | undefined, chatId: string, characterName?: string): string {
   const cleanName = (chatName ?? "").trim();
   const suffix = cleanName ? cleanName.slice(0, 60) : chatId.slice(0, 8);
-  return `${WORLD_BOOK_NAME_PREFIX} - ${suffix}`;
+  const character = characterName?.trim().slice(0, 60);
+  return `${WORLD_BOOK_NAME_PREFIX} - ${character ? `${character} - ` : ""}${suffix}`;
 }
 
-/** The codex mirror book: managed wholesale by sync, hence the loud name. */
-export function codexBookNameFor(chatName: string | null | undefined, chatId: string): string {
+/** The Codex has a separate editable lorebook from the summary shelf. */
+export function codexBookNameFor(chatName: string | null | undefined, chatId: string, characterName?: string): string {
   const cleanName = (chatName ?? "").trim();
-  const suffix = cleanName ? cleanName.slice(0, 60) : chatId.slice(0, 8);
+  const character = characterName?.trim().slice(0, 60);
+  const suffix = `${character ? `${character} - ` : ""}${cleanName ? cleanName.slice(0, 60) : chatId.slice(0, 8)}`;
   return tr("shared.codexBookNameFor.codexDoNotEdit", { worldBookNamePrefix: WORLD_BOOK_NAME_PREFIX, suffix: suffix });
 }
 
@@ -630,6 +632,8 @@ export type LessonAnswer = "gold" | "silver" | "skip";
 export type LessonGrade = "gilded" | "silver" | "bronze" | "apprentice";
 
 export interface LessonCourseState {
+  revision?: number;
+  deliveryIds?: string[];
   status: LessonStatus;
   section: number;
   step: number;
@@ -726,6 +730,8 @@ export function normalizeLessonCourse(raw: unknown): LessonCourseState {
     v.grade === "gilded" || v.grade === "silver" || v.grade === "bronze" || v.grade === "apprentice" ? v.grade : null;
   return {
     status,
+    revision: typeof v.revision === "number" && Number.isSafeInteger(v.revision) ? Math.max(0, v.revision) : 0,
+    deliveryIds: Array.isArray(v.deliveryIds) ? v.deliveryIds.filter((id): id is string => typeof id === "string").slice(-128) : [],
     section: clampInt(v.section, 0, 100, 0),
     step: clampInt(v.step, 0, 1000, 0),
     answers: normalizeLessonAnswers(v.answers),

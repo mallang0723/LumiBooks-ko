@@ -706,7 +706,7 @@ export interface DanglingRef {
   file: CodexFileKey;
 }
 
-function collectDangling(bundle: CodexBundle): DanglingRef[] {
+export function collectDangling(bundle: CodexBundle): DanglingRef[] {
   const ids = collectEntityIds(bundle);
   const out: DanglingRef[] = [];
   const check = (ref: string, path: string, file: CodexFileKey): void => {
@@ -748,6 +748,36 @@ function formatDangling(d: DanglingRef): string {
  */
 export function checkIntegrity(bundle: CodexBundle): string[] {
   return collectDangling(bundle).map(formatDangling);
+}
+
+/** Deleted entities stay deleted. Only structural links are removed; prose,
+ * events, and knowledge facts remain. A deletion save can limit cleanup to
+ * the IDs it actually removed, leaving unrelated problems for explicit repair. */
+export function pruneDanglingReferences(bundle: CodexBundle, only?: ReadonlySet<string>): CodexFileKey[] {
+  const ids = collectEntityIds(bundle);
+  const changed = new Set<CodexFileKey>();
+  const missing = (ref: string): boolean => looksLikeEntityRef(ref) && !ids.has(ref) && (!only || only.has(ref));
+  const keep = (ref: string, file: CodexFileKey): boolean => {
+    if (!missing(ref)) return true;
+    changed.add(file);
+    return false;
+  };
+  bundle.relations.relations = bundle.relations.relations.filter(relation => {
+    if (relation.type === "pair") return keep(relation.a, "relations") && keep(relation.b, "relations");
+    relation.members = relation.members.filter(ref => keep(ref, "relations"));
+    if (relation.roles) relation.roles = Object.fromEntries(Object.entries(relation.roles).filter(([ref]) => keep(ref, "relations")));
+    return relation.members.length >= 2;
+  });
+  for (const item of bundle.knowledge.items) {
+    if (item.knownBy) item.knownBy = item.knownBy.filter(ref => keep(ref, "knowledge"));
+    if (item.hiddenFrom) item.hiddenFrom = item.hiddenFrom.filter(ref => keep(ref, "knowledge"));
+    if (item.falseBeliefs) item.falseBeliefs = item.falseBeliefs.filter(belief => keep(belief.who, "knowledge"));
+  }
+  for (const event of bundle.timeline.events) {
+    if (event.participants) event.participants = event.participants.filter(ref => keep(ref, "timeline"));
+    if (event.where && !keep(event.where, "timeline")) delete event.where;
+  }
+  return [...changed];
 }
 
 /**

@@ -15,6 +15,8 @@ const SIG_CAP = 500;
 export interface ConsumedSig {
   id: string;
   sig: string;
+  /** Excluded turns may be removed without invalidating later indexed story. */
+  excluded?: boolean;
 }
 
 export interface CodexRunStats {
@@ -31,6 +33,8 @@ export type CodexFileState = "on" | "noInject" | "frozen";
 
 export interface CodexCursor {
   version: 1;
+  /** Explicit deletion overrides preservation of hand-edited lorebook orphans. */
+  discardedRecords?: string[];
   /** Id of the last consumed chat message, null before the first run. */
   lastMsgId: string | null;
   consumedSigs: ConsumedSig[];
@@ -151,6 +155,8 @@ export function normalizeCursor(raw: Partial<CodexCursor>): CodexCursor {
   }
   return {
     version: 1,
+    ...(Array.isArray(raw.discardedRecords) && raw.discardedRecords.length
+      ? { discardedRecords: [...new Set(raw.discardedRecords.filter((record): record is string => typeof record === "string"))] } : {}),
     lastMsgId: typeof raw.lastMsgId === "string" && raw.lastMsgId ? raw.lastMsgId : null,
     consumedSigs: Array.isArray(raw.consumedSigs)
       ? raw.consumedSigs.filter(
@@ -187,6 +193,24 @@ export async function saveCursor(chatId: string, cursor: CodexCursor, userId: st
     updatedAt: Date.now(),
   };
   await spindle.userStorage.setJson(cursorPath(chatId), trimmed, { indent: 0, userId });
+}
+
+export async function refreshCodexExclusions(chatId: string, userId: string, messages: readonly { id: string; metadata?: Record<string, unknown> }[]): Promise<CodexCursor> {
+  const byId = new Map(messages.map(message => [message.id, message]));
+  return withCursorLock(chatId, userId, async () => {
+    const cursor = await loadCursor(chatId, userId);
+    let changed = false;
+    for (const record of cursor.consumedSigs) {
+      const live = byId.get(record.id);
+      if (!live) continue;
+      const excluded = live.metadata?.lmb_excluded === true;
+      if ((record.excluded === true) === excluded) continue;
+      record.excluded = excluded;
+      changed = true;
+    }
+    if (changed) await saveCursor(chatId, cursor, userId);
+    return cursor;
+  });
 }
 
 export interface LoadedCodex {
@@ -388,7 +412,7 @@ export async function inheritCodex(
     for (const rec of cursor.consumedSigs) {
       const mapped = remapId(rec.id);
       if (!mapped) break;
-      sigs.push({ id: mapped, sig: rec.sig });
+      sigs.push({ ...rec, id: mapped });
     }
     const mappedLast = cursor.lastMsgId ? remapId(cursor.lastMsgId) : null;
     const mappedPrefix = cursor.prefixMsgId ? remapId(cursor.prefixMsgId) : null;

@@ -10,7 +10,7 @@ import { CODEX_ENTRY_EXTENSION_KEY, EXTENSION_KEY, approximateTokensFromChars, p
 import type { ChatMessage } from "../coverage";
 import { buildCoverage, isExcluded, liveEndPosition, sumApproxTokens } from "../coverage";
 import type { CodexCursor, CodexFileState } from "./store";
-import { codexExists, codexPresence, emptyCursor, loadCodex, loadCursor, msgSig, saveCodexFile, saveCursor, withCursorLock } from "./store";
+import { codexExists, codexPresence, emptyCursor, loadCodex, loadCursor, msgSig, saveCodexFile, saveCursor, withCursorLock, refreshCodexExclusions } from "./store";
 import { CODEX_FILE_KEYS, bundleIsEmpty, emptyCodexFile, isCodexFileKey, type CodexBundle, type CodexFileKey, type CodexFileValue } from "./schema";
 import { CodexContextError, CodexValidationError, ToolProtocolError, codexMaxInputTokens, resolveCodexConnection, runCodexAgent } from "./agent";
 import {
@@ -29,7 +29,7 @@ import {
   type CodexRunNotes,
 } from "./prompt";
 import { loadSettings } from "../storage";
-import { syncCodexEntries, wipeCodexEntries } from "./sync";
+import { syncCodexEntries, wipeCodexEntries, readEntryMeta } from "./sync";
 import { snapshotCodexForUndo } from "./backup";
 import {
   AbortedSummarizerError,
@@ -39,7 +39,7 @@ import {
   type DryRunAssembly,
 } from "../summarizer";
 import { abortBusy, appendStreamText, clearBusy, drainChapterBacklog, getBusy, maybeRunArcCheck, registerAborter, setBusy, shortErrorText, updateProgressNumbers } from "../pipeline";
-import { findBookForChat, listAllEntries, listLmbEntries, type LMBEntry } from "../world-book";
+import { findBookForChat, findCodexBookForChat, listAllEntries, listLmbEntries, type LMBEntry } from "../world-book";
 import { publishCodexSnapshot, publishCodexUpdated, publishCodexWiped, type CodexChangeReason } from "../hooks";
 import { forkCodexPending, forkShelfPending } from "../fork";
 import { describeError, warn } from "../runtime";
@@ -191,9 +191,17 @@ interface PlannedRun {
  */
 async function planRun(chatId: string, userId: string, lagUnit: "messages" | "tokens", lagValue: number): Promise<PlannedRun> {
   const messages = await spindle.chat.getMessages(chatId);
-  const cursor = await loadCursor(chatId, userId);
+  const cursor = await refreshCodexExclusions(chatId, userId, messages);
   const byId = new Map(messages.map((m) => [m.id, m] as const));
   const posById = new Map(messages.map((m, i) => [m.id, i] as const));
+
+  const removedExclusions = new Set(cursor.consumedSigs.filter(rec => rec.excluded && !byId.has(rec.id)).map(rec => rec.id));
+  if (removedExclusions.size) {
+    cursor.consumedSigs = cursor.consumedSigs.filter(rec => !removedExclusions.has(rec.id));
+    if (cursor.lastMsgId && removedExclusions.has(cursor.lastMsgId)) {
+      cursor.lastMsgId = cursor.consumedSigs.slice().reverse().find(rec => byId.has(rec.id))?.id ?? cursor.prefixMsgId;
+    }
+  }
 
   // Kept before the rewind slices consumedSigs: used to resolve startPos to a
   // still-live anchor when the chosen anchor id was itself deleted.
@@ -628,7 +636,7 @@ async function runChunk(
   // Consume the full positional range so skipped empty messages don't linger.
   for (let i = plan.startPos; i <= lastIdx; i++) {
     const m = plan.messages[i]!;
-    plan.cursor.consumedSigs.push({ id: m.id, sig: msgSig(m.role, m.content || "") });
+    plan.cursor.consumedSigs.push({ id: m.id, sig: msgSig(m.role, m.content || ""), excluded: isExcluded(m) });
   }
   plan.cursor.lastMsgId = plan.messages[lastIdx]!.id;
   const reconcileUntilPos = plan.cursor.reconcileUntilMsgId
@@ -650,6 +658,10 @@ async function runChunk(
     if (liveCursor) {
       plan.cursor.fileStates = liveCursor.fileStates;
       plan.cursor.frozenAtRuns = liveCursor.frozenAtRuns;
+      const liveExclusions = new Map(liveCursor.consumedSigs.map(rec => [rec.id, rec.excluded]));
+      for (const rec of plan.cursor.consumedSigs) {
+        if (liveExclusions.has(rec.id)) rec.excluded = liveExclusions.get(rec.id);
+      }
     }
     plan.cursor.relationsTableMode = profile.codexRelationsTable;
     plan.cursor.lastRunAt = Date.now();
@@ -1104,7 +1116,7 @@ async function maybeReconcileSweep(chatId: string, profile: LMBProfile, userId: 
 const INJECTION_CACHE_TTL_MS = 60_000;
 const INJECTION_CACHE_CAP = 200;
 const injectionTextCache = new Map<string, { at: number; text: string | null }>();
-const fileTokensCache = new Map<string, { at: number; userId: string; forceConstant: boolean; counts: CodexTokenCounts }>();
+const fileTokensCache = new Map<string, { at: number; userId: string; activationMode: LMBProfile["codexActivationMode"]; counts: CodexTokenCounts }>();
 const tokenCountEpochs = new Map<string, number>();
 
 /** Model changes do not change Codex prose, but they do change its token cost. */
@@ -1144,17 +1156,28 @@ export function invalidateCodexInjectionCache(chatId?: string, contentChanged = 
 export async function getCodexTokenCounts(chatId: string, userId: string, profile: LMBProfile): Promise<CodexTokenCounts> {
   const epoch = tokenCountEpochs.get(userId) ?? 0;
   const cached = fileTokensCache.get(chatId);
-  if (cached && cached.userId === userId && cached.forceConstant === (profile.codexActivationMode === "always") && Date.now() - cached.at < INJECTION_CACHE_TTL_MS) return cached.counts;
+  if (cached && cached.userId === userId && cached.activationMode === profile.codexActivationMode && Date.now() - cached.at < INJECTION_CACHE_TTL_MS) return cached.counts;
   let counts: CodexTokenCounts = { files: {}, constant: 0, approximate: false };
   if ((await codexPresence(chatId, userId)) === "present") {
     const cursor = await loadCursor(chatId, userId);
     const { bundle, problems } = await loadCodex(chatId, userId, { relationsTable: cursor.relationsTableMode ?? profile.codexRelationsTable });
     counts = await measureCodexTokens(bundle, userId, cursor.fileStates, (profile.codexActivationMode === "always"));
+    if (profile.codexActivationMode === "vector_only") counts.constant = 0;
+    const bookId = await findCodexBookForChat(chatId, userId);
+    if (bookId) {
+      counts.constant = 0;
+      for (const entry of await listAllEntries(bookId, userId)) {
+        if (readEntryMeta(entry)?.chatId !== chatId || entry.disabled || !entry.constant) continue;
+        const count = await countCodexText(entry.content, userId);
+        counts.constant += count.tokens;
+        counts.approximate ||= count.approximate;
+      }
+    }
     counts.approximate ||= problems.length > 0;
   }
   // An in-flight count from the previous model must not repopulate the cache.
   if (epoch === (tokenCountEpochs.get(userId) ?? 0)) {
-    fileTokensCache.set(chatId, { at: Date.now(), userId, forceConstant: (profile.codexActivationMode === "always"), counts });
+    fileTokensCache.set(chatId, { at: Date.now(), userId, activationMode: profile.codexActivationMode, counts });
   }
   while (fileTokensCache.size > INJECTION_CACHE_CAP) {
     const oldest = fileTokensCache.keys().next().value as string | undefined;

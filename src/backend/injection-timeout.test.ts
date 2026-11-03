@@ -90,6 +90,7 @@ globalWithSpindle.spindle = {
   },
   onFrontendMessage(_handler: unknown): void {},
   rpcPool: {
+    handle() {},
     sync(..._args: unknown[]): void {},
   },
   log: {
@@ -155,7 +156,7 @@ afterAll(() => {
 });
 
 test("waits for lorebook reads beyond three seconds", async () => {
-  expect(registeredPriority).toBe(90);
+  expect(registeredPriority).toBe(40);
   expect(registeredInterceptor).toBeDefined();
 
   rememberChatUser(chatId, userId);

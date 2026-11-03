@@ -736,6 +736,16 @@ function renderManage(
   const busy = state.busy.some((b) => b.kind === "codex" && b.chatId === chatId);
   const sources = state.codexSources;
 
+  const repair = section(tr("codexRepair.title"));
+  repair.body.appendChild(textNode(tr("codexRepair.help"), "lmb-help"));
+  repair.body.appendChild(makeButton(tr("codexRepair.action"), () => send({ type: "codex_repair_references", chatId }), {
+    disabled: busy || !state.codexExists,
+  }));
+  host.appendChild(repair.wrap);
+  const lorebook = section(tr("codexLorebook.title"));
+  lorebook.body.appendChild(textNode(tr("codexLorebook.help"), "lmb-help"));
+  host.appendChild(lorebook.wrap);
+
   const known = sources.some((s) => s.chatId === local.codexSourceId);
   if (!known) local.codexSourceId = "";
 
