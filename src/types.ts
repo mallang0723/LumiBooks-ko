@@ -1,4 +1,4 @@
-import type { SummaryKind, HigherTier, PromptRole, PresetCategory } from "./shared";
+import type { SummaryKind, HigherTier, PromptRole, PresetCategory, HigherTierSettings, CodexFileKey } from "./shared";
 import type {
   CustomPreset,
   LMBProfile,
@@ -131,6 +131,7 @@ export interface PendingPreview {
 
 export interface FrontendState {
   userId?: string;
+  lumiCacheAvailable: boolean;
   activeChatId: string | null;
   activeChatName: string | null;
   activeCharacterId: string | null;
@@ -188,12 +189,22 @@ export interface FrontendState {
   codexFileTokens: Record<string, number>;
   /** The host could not provide an exact tokenizer, or content was unreadable. */
   codexTokensApproximate: boolean;
+  /** Why the token counts could not be read; the UI shows N/A instead of 0. */
+  codexTokensError: string | null;
+  /** boot changes when the backend restarts. */
+  profileSaveAcks?: { boot: string; sessions: Record<string, number> };
   /** Bumped on every codex mutation; the Codex tab refetches file contents
    * when it moves past the revision its cache was filled from. */
   codexRevision: number;
   /** Lessons from Memoria progress, account-wide. */
   lessons: LessonsState;
 }
+
+/** Nested settings carry only the keys that changed; the backend merges them. */
+export type ProfilePatch = Omit<Partial<LMBProfile>, "codexTokenLimits" | "higherTiers"> & {
+  codexTokenLimits?: Partial<Record<CodexFileKey, number>>;
+  higherTiers?: Partial<Record<HigherTier, Partial<HigherTierSettings>>>;
+};
 
 export type FrontendToBackend =
   | { type: "regex_scripts_page"; requestId: string; offset: number; query?: string; refresh?: boolean }
@@ -204,7 +215,9 @@ export type FrontendToBackend =
   | { type: "ready"; chatId?: string | null }
   | { type: "refresh"; chatId?: string | null }
   | { type: "save_settings"; patch: Partial<LMBSettings>; chatId?: string | null }
-  | { type: "save_profile"; profile: Partial<LMBProfile> & { id: string }; chatId?: string | null }
+  | { type: "save_profile"; profile: ProfilePatch & { id: string }; chatId?: string | null; save?: { session: string; seq: number } }
+  /** codex answers the prompt shown before the Codex course is done. */
+  | { type: "cache_friendly_set"; enabled: boolean; chatId?: string | null; codex?: "off" | "force" }
   | { type: "save_samplers"; profileId: string; samplers: Partial<SamplerSet>; target?: "main" | "codex"; chatId?: string | null }
   | { type: "create_profile"; name: string; copyFromId?: string; chatId?: string | null }
   | { type: "delete_profile"; profileId: string; chatId?: string | null }

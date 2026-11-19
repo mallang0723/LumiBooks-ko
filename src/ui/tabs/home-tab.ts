@@ -6,6 +6,7 @@ import type { SpindleFrontendContext } from "lumiverse-spindle-types";
 import type { ArcView, ChapterView, FrontendState, FrontendToBackend, PendingPreview } from "../../types";
 import { LESSON_CHAT_PREFIX, codexLessonGated } from "../../shared";
 import {
+  checkbox,
   field,
   formatTokens,
   lessonMark,
@@ -20,7 +21,7 @@ import {
   textNode,
 } from "../components";
 import { memoriaSprite, requestLesson } from "../lessons/seal";
-import { requestCodexUpdate } from "../modals";
+import { requestCodexUpdate, showCacheFriendlyCodexModal } from "../modals";
 
 const inflightBusyLabels = new Map<string, HTMLSpanElement>();
 
@@ -647,7 +648,7 @@ function renderBreakdown(state: FrontendState): HTMLElement {
     l.textContent = label;
     const t = document.createElement("span");
     t.className = "lmb-breakdown-tokens";
-    t.textContent = `${approx ? "~" : ""}${formatTokens(tokens)}`;
+    t.textContent = Number.isNaN(tokens) ? tr("ui.tabs.homeTab.renderBreakdown.notAvailable") : `${approx ? "~" : ""}${formatTokens(tokens)}`;
     r.append(swatch, l, t);
     return r;
   };
@@ -675,7 +676,8 @@ function renderBreakdown(state: FrontendState): HTMLElement {
     }
   }
 
-  if (codexTokens > 0) wrap.appendChild(row("codex", tr("ui.tabs.homeTab.renderBreakdown.knowledgeCodexConstantPart"), codexTokens, state.codexTokensApproximate));
+  if (state.codexTokensError) wrap.appendChild(row("codex", tr("ui.tabs.homeTab.renderBreakdown.knowledgeCodexConstantPart"), NaN, false));
+  else if (codexTokens > 0) wrap.appendChild(row("codex", tr("ui.tabs.homeTab.renderBreakdown.knowledgeCodexConstantPart"), codexTokens, state.codexTokensApproximate));
   if (activeVolumes.length) wrap.appendChild(row("volume", tr("ui.tabs.homeTab.renderBreakdown.volumesAndHigher", { length: activeVolumes.length }), volTokens, true));
   if (activeArcs.length) wrap.appendChild(row("arc", tr("ui.tabs.homeTab.renderBreakdown.arcs", { length: activeArcs.length }), arcTokens, true));
   if (activeChapters.length) wrap.appendChild(row("chapter", tr("ui.tabs.homeTab.renderBreakdown.chapters", { length: activeChapters.length }), chapTokens, true));
@@ -725,7 +727,7 @@ function renderOverview(host: HTMLElement, state: FrontendState, send: (m: Front
   if (codexLessonGated(state.lessons)) {
     const locked = statTile("🔒", tr("ui.tabs.homeTab.locked.codex"), tr("ui.tabs.homeTab.locked.takeALesson"),
       tr("ui.tabs.homeTab.locked.theKnowledgeCodexUnlocksAfterMemoriaS"));
-    locked.classList.add("lmb-bible-tile");
+    locked.classList.add("lmb-codex-tile");
     locked.addEventListener("click", () => requestLesson({ course: "codex", mode: "lesson" }));
     tiles.appendChild(lessonMark(locked, "home.tile.codex"));
   } else if (state.activeProfile.codexEnabled || state.codexExists) {
@@ -736,7 +738,7 @@ function renderOverview(host: HTMLElement, state: FrontendState, send: (m: Front
         ? tr("ui.tabs.homeTab.subText.updated", { codexLastRunAt: relativeTime(state.codexLastRunAt) })
         : tr("ui.tabs.homeTab.subText.noCodexYet");
     tiles.appendChild(statTile(value, tr("ui.tabs.homeTab.renderOverview.codex"), subText,
-      tr("ui.tabs.homeTab.renderOverview.messagesTheStoryBibleHasNotRead")));
+      tr("ui.tabs.homeTab.renderOverview.messagesTheCodexHasNotRead")));
   } else {
     tiles.appendChild(statTile("—", tr("ui.tabs.homeTab.renderOverview.codex"), tr("ui.tabs.homeTab.renderOverview.offEnableInTuning")));
   }
@@ -998,7 +1000,45 @@ function renderActions(host: HTMLElement, state: FrontendState, send: (m: Fronte
   }
   sec.body.appendChild(shelfRow);
 
+  if (!chatId.startsWith(LESSON_CHAT_PREFIX)) renderCacheFriendly(sec.body, state, send);
+
   host.appendChild(sec.wrap);
+}
+
+const LUMICACHE_URL = "https://github.com/AMousePad/LumiCache";
+
+function renderCacheFriendly(host: HTMLElement, state: FrontendState, send: (m: FrontendToBackend) => void): void {
+  const on = state.settings.cacheFriendly;
+  const toggle = checkbox({
+    checked: on,
+    disabled: !on && !state.lumiCacheAvailable,
+    label: tr("ui.tabs.homeTab.cacheFriendly.toggle"),
+    hint: tr("ui.tabs.homeTab.cacheFriendly.hint"),
+    onChange: (enabled) => {
+      if (!enabled || !codexLessonGated(state.lessons)) {
+        send({ type: "cache_friendly_set", enabled, chatId: state.activeChatId });
+        return;
+      }
+      // Stays off until a choice turns it on.
+      (toggle.firstElementChild as HTMLInputElement).checked = false;
+      showCacheFriendlyCodexModal((choice) => {
+        if (choice === "lesson") requestLesson({ course: "codex", mode: "lesson" });
+        else send({ type: "cache_friendly_set", enabled: true, chatId: state.activeChatId, codex: choice });
+      });
+    },
+  });
+  host.appendChild(toggle);
+  if (!on && !state.lumiCacheAvailable) {
+    const tip = textNode(`${tr("ui.tabs.homeTab.cacheFriendly.needsLumiCache")} `, "lmb-field-hint");
+    const link = document.createElement("a");
+    link.href = LUMICACHE_URL;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.textContent = tr("ui.tabs.homeTab.cacheFriendly.findHere");
+    tip.appendChild(link);
+    host.appendChild(tip);
+  }
+  if (on && !state.lumiCacheAvailable) host.appendChild(textNode(tr("ui.tabs.homeTab.cacheFriendly.lumiCacheMissing"), "lmb-field-hint"));
 }
 
 function addRow(grid: HTMLElement, label: string, value: string): void {

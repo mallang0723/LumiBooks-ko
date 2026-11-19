@@ -56,7 +56,7 @@ export function requestCodexRebuild(
   const { booksWarning, autoBooks } = codexCatchupWarnings(state);
   showCodexCatchupModal({
     title: tr("ui.modals.requestCodexRebuild.rebuildTheCodex"),
-    lead: tr("ui.modals.requestCodexRebuild.memoriaWillEraseTheStoryBibleAnd", { total: total, passes: passes }),
+    lead: tr("ui.modals.requestCodexRebuild.memoriaWillEraseTheCodexAnd", { total: total, passes: passes }),
     booksWarning,
     autoBooks,
     onPick: (mode) => send({ type: "codex_rebuild", chatId, mode }),
@@ -114,7 +114,7 @@ export function requestCodexTidy(
   const body = document.createElement("div");
   body.className = "lmb-preview-modal__body";
   const lead = document.createElement("p");
-  lead.textContent = tr("ui.modals.requestCodexTidy.currentSelectedContentTokensFrozenFilesAre", { choice: (state.codexTokensApproximate) ? "yes" : "no", toLocaleString: current.toLocaleString() });
+  lead.textContent = tr("ui.modals.requestCodexTidy.currentSelectedContentTokensFrozenFilesAre", { choice: (state.codexTokensApproximate) ? "yes" : "no", toLocaleString: state.codexTokensError ? "N/A" : current.toLocaleString() });
   const unitLabel = document.createElement("label");
   unitLabel.textContent = tr("ui.modals.requestCodexTidy.targetUnit");
   const unit = document.createElement("select");
@@ -358,6 +358,56 @@ export function showCodexToolsHintModal(
   document.body.appendChild(overlay);
 }
 
+export type CacheFriendlyCodexChoice = "off" | "force" | "lesson";
+
+/** Turning Cache Friendly mode on before the Codex course asks what to do with the Codex. */
+export function showCacheFriendlyCodexModal(onPick: (choice: CacheFriendlyCodexChoice) => void): void {
+  if (document.querySelector(".lmb-cache-codex")) return;
+  const overlay = document.createElement("div");
+  overlay.className = "lmb-preview-overlay lmb-cache-codex";
+  const modal = document.createElement("div");
+  modal.className = "lmb-preview-modal";
+  modal.style.width = "min(560px, 100%)";
+  modal.setAttribute("role", "dialog");
+  modal.setAttribute("aria-modal", "true");
+  const close = (): void => {
+    document.removeEventListener("keydown", onKey);
+    overlay.remove();
+  };
+  const onKey = (e: KeyboardEvent): void => {
+    if (e.key === "Escape") close();
+  };
+  document.addEventListener("keydown", onKey);
+
+  const header = document.createElement("div");
+  header.className = "lmb-preview-modal__header";
+  const title = document.createElement("h3");
+  title.textContent = tr("ui.modals.showCacheFriendlyCodexModal.title");
+  modal.setAttribute("aria-label", title.textContent);
+  header.append(title);
+  const body = document.createElement("div");
+  body.className = "lmb-preview-modal__body";
+  const lead = document.createElement("p");
+  lead.textContent = tr("ui.modals.showCacheFriendlyCodexModal.lead");
+  body.append(lead);
+  const pick = (choice: CacheFriendlyCodexChoice) => (): void => {
+    close();
+    onPick(choice);
+  };
+  const footer = document.createElement("div");
+  footer.className = "lmb-preview-modal__footer";
+  footer.append(
+    makeButton(tr("ui.modals.showCacheFriendlyCodexModal.cancel"), close),
+    makeButton(tr("ui.modals.showCacheFriendlyCodexModal.withoutCodex"), pick("off")),
+    makeButton(tr("ui.modals.showCacheFriendlyCodexModal.forceCodex"), pick("force"), { title: tr("ui.modals.showCacheFriendlyCodexModal.forceCodexHint") }),
+    makeButton(tr("ui.modals.showCacheFriendlyCodexModal.tutorialFirst"), pick("lesson"), { primary: true }),
+  );
+  modal.append(header, body, footer);
+  overlay.append(modal);
+  overlay.addEventListener("click", (e) => { if (e.target === overlay) close(); });
+  document.body.append(overlay);
+}
+
 export interface EditEntryFields {
   comment: string;
   content: string;
@@ -402,6 +452,22 @@ export function openEditModal(
     }, { primary: true }),
   );
   form.appendChild(actions);
+}
+
+export async function confirmCacheBreak(ctx: SpindleFrontendContext): Promise<boolean> {
+  const message = tr("ui.modals.cacheBreak.message");
+  try {
+    const r = await ctx.ui.showConfirm({
+      title: tr("ui.modals.cacheBreak.title"),
+      message,
+      variant: "warning",
+      confirmLabel: tr("ui.modals.cacheBreak.confirm"),
+      cancelLabel: tr("ui.modals.r.cancel"),
+    });
+    return !!r.confirmed;
+  } catch {
+    return window.confirm(message);
+  }
 }
 
 export async function confirmDelete(

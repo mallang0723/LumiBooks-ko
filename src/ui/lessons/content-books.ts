@@ -568,7 +568,7 @@ export const COURSE_BOOKS: LessonCourseDef = {
             variant: "tuning",
             patch: (s) => {
               s.activeProfile.windowUnit = "tokens";
-              s.activeProfile.windowValue = 18;
+              s.activeProfile.windowValue = 20;
             },
           },
           prep: () => {
@@ -692,6 +692,7 @@ export const COURSE_BOOKS: LessonCourseDef = {
         {
           kind: "do",
           real: true,
+          requires: (state) => !!state.activeChatId,
           tab: "home",
           anchor: "home.actions.file",
           expect: "create_chapter",

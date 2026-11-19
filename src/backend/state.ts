@@ -15,6 +15,7 @@ import { listCodexChatIds, loadCursor } from "./codex/store";
 import { effectiveProfile, ensureLessons } from "./lessons";
 import { ensureForkAdoption } from "./fork";
 import { describeError, warn } from "./runtime";
+import { lumiCacheAvailable } from "./cache-friendly";
 import { BUILTIN_ARC_PRESETS, BUILTIN_CHAPTER_PRESETS, BUILTIN_CODEX_PRESETS, BUILTIN_VOLUME_PRESETS } from "./presets";
 
 type ChatMessageDTO = ChatMessage;
@@ -78,6 +79,10 @@ export async function buildState(userId: string, requestedChatId?: string | null
     entryCount: c.entryCount,
   }));
   const resolved = await resolveConnection(activeProfile, userId).catch(() => null);
+  const lumiCache = await lumiCacheAvailable().catch((err) => {
+    warn(`LumiCache status read failed: ${describeError(err)}`);
+    return false;
+  });
 
   const baseState: FrontendState = {
     userId,
@@ -133,8 +138,10 @@ export async function buildState(userId: string, requestedChatId?: string | null
     codexRefreshPending: [],
     codexFileTokens: {},
     codexTokensApproximate: true,
+    codexTokensError: null,
     codexRevision: 0,
     lessons,
+    lumiCacheAvailable: lumiCache,
   };
 
   if (!chat) return baseState;
@@ -252,7 +259,12 @@ export async function buildState(userId: string, requestedChatId?: string | null
     ? ((await spindle.chats.get(codexRootOrigin, userId).catch(() => null))?.name?.trim()
       || codexRootOrigin.slice(0, 8))
     : null;
-  const codexCounts = await getCodexTokenCounts(chat.id, userId, codexProfile).catch(() => ({ files: {}, constant: 0, approximate: true }));
+  let codexTokensError: string | null = null;
+  const codexCounts = await getCodexTokenCounts(chat.id, userId, codexProfile).catch((err) => {
+    codexTokensError = describeError(err);
+    warn(`codex token count failed for ${chat.id}: ${codexTokensError}`);
+    return { files: {}, constant: 0, approximate: true };
+  });
   const codexFileTokens = codexCounts.files;
   const codexInjectedTokens = settings.enabled && codexProfile.codexEnabled ? codexCounts.constant : 0;
 
@@ -299,6 +311,7 @@ export async function buildState(userId: string, requestedChatId?: string | null
     codexRefreshPending: codexPanel.refreshPending,
     codexFileTokens,
     codexTokensApproximate: codexCounts.approximate,
+    codexTokensError,
     codexRevision: getCodexRevision(chat.id),
   };
 }

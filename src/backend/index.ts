@@ -5,14 +5,16 @@ import { getSummaryTransfer, runSummaryTransfer } from "./summary-transfer";
 import { TIER_KINDS, HIGHER_TIERS, type HigherTier, type SummaryTier } from "../shared";
 import { isExtraCategory, presetKeyFor, presetKeyPatch } from "../prompts/categories";
 import { createHigherFromEntries, drainHigherBacklog } from "./pipeline";
-import { syncCodexProfiles } from "./codex/sync";
+import { ensureChatEntrySettings, forgetChatEntrySettings } from "./entry-settings";
+import { contextIsFull, releaseContextRelief, relieveContext, rememberContextStats, takeContextStats, type ContextStats } from "./context-relief";
 import { selectedChapterRuns } from "./coverage";
 import { clearCodexStaleFlags } from "./codex/store";
 declare const spindle: import("lumiverse-spindle-types").SpindleAPI;
 
 import type { InterceptorResultDTO, LlmMessageDTO } from "lumiverse-spindle-types";
 import type { FrontendToBackend } from "../types";
-import { CODEX_ENTRY_EXTENSION_KEY, EXTENSION_KEY, makeDefaultProfile, normalizeProfile, normalizeCustomPreset } from "../shared";
+import { mergeProfilePatch } from "../profile-patch";
+import { CACHE_BREAKING_ACTIONS, cacheFriendlyFileLocked, CODEX_ENTRY_EXTENSION_KEY, EXTENSION_KEY, enterCacheFriendly, leaveCacheFriendly, makeDefaultProfile, normalizeProfile, normalizeCustomPreset } from "../shared";
 import {
   debug,
   describeError,
@@ -46,6 +48,7 @@ import {
   findChatIdForBook,
   findCachedChatIdForBook,
   invalidateAllBookCacheEntriesForBook,
+  followChatName,
   reassertChatBinding,
   registerBookAnomalyCallback,
 } from "./world-book";
@@ -95,9 +98,12 @@ import {
   runCodexTidy,
   setCodexFileState,
 } from "./codex/index";
-import { adoptCodexFrom, deleteCodex, loadCodex, loadCursor, readCodexFilesRaw, saveCodexFile, saveCursor, withCursorLock, refreshCodexExclusions } from "./codex/store";
+import { adoptCodexFrom, codexPresence, deleteCodex, loadCodex, loadCursor, readCodexFilesRaw, saveCodexFile, saveCursor, withCursorLock, refreshCodexExclusions } from "./codex/store";
 import { applyCodexBackup, buildCodexBackup, clearCodexUndo, parseCodexBackup, readCodexUndo, snapshotCodexForUndo } from "./codex/backup";
-import { syncCodexEntries, wipeCodexEntries } from "./codex/sync";
+import { codexActivationCuts, readEntryMeta, registerCodexCutWarning, retireCodexChat, syncCodexEntries, wipeCodexEntries } from "./codex/sync";
+import { createCodexCutWarning } from "./codex/cut-warnings";
+import { filedMessageChanged, lumiCacheAvailable, runCacheFriendlyWindow } from "./cache-friendly";
+import { bumpCacheEpoch } from "./hooks";
 import { repairCodexReferences, saveCodexEdit } from "./codex/repair";
 import { registerLumiAgentCodex } from "./codex/lumiagent";
 import { applyLessonDelivery } from "./lessons";
@@ -140,7 +146,12 @@ const pushTimers = new Map<string, ReturnType<typeof setTimeout>>();
 const pendingPushChatIds = new Map<string, string | null>();
 const pendingPushResolvers = new Map<string, Array<() => void>>();
 
+const profileSaveAcks = new Map<string, Map<string, number>>();
+const BOOT_ID = crypto.randomUUID();
+
 async function doPushState(userId: string, chatId?: string | null): Promise<void> {
+  // Read before the state is built, so the settings in it are at least as new as the save it confirms.
+  const saveAcks = { boot: BOOT_ID, sessions: Object.fromEntries(profileSaveAcks.get(userId) ?? []) };
   try {
     if (chatId) {
       const active = await spindle.chats.getActive(userId).catch(() => null);
@@ -151,7 +162,7 @@ async function doPushState(userId: string, chatId?: string | null): Promise<void
       const active = await spindle.chats.getActive(userId).catch(() => null);
       if (active && active.id !== chatId) return;
     }
-    send({ type: "state", state }, userId);
+    send({ type: "state", state: { ...state, profileSaveAcks: saveAcks } }, userId);
     if (state.activeChatId) {
       const status = getSummaryTransfer(userId, state.activeChatId);
       if (status) send({ type: "summary_transfer_status", status }, userId);
@@ -222,6 +233,18 @@ registerCodexCallbacks({
   },
 });
 
+const warnOnNewCodexCuts = createCodexCutWarning((userId) => {
+  void notify(userId, "warn", tr("backend.cacheFriendly.codexPartiallyCut"));
+});
+registerCodexCutWarning(warnOnNewCodexCuts);
+
+async function warnIfFiledMessageChanged(chatId: string, messageId: string | undefined, userId: string, deleted: boolean): Promise<void> {
+  if (!messageId || !(await loadSettings(userId)).cacheFriendly) return;
+  if (await filedMessageChanged(chatId, messageId, userId, deleted)) {
+    await notify(userId, "warn", tr("backend.cacheFriendly.filedMessageChanged"));
+  }
+}
+
 /** Host kills the world-info handler at 10s and discards the whole vote. */
 const CODEX_GATE_TIMEOUT_MS = 9000;
 
@@ -242,11 +265,12 @@ spindle.registerWorldInfoInterceptor(async (ctx) => {
     const userId = ctx.userId ?? resolveUserId(ctx.chatId);
     if (userId) {
       let gateTimer: ReturnType<typeof setTimeout> | undefined;
-      const gate = (async (): Promise<boolean> => {
+      const gate = (async (): Promise<{ off: boolean; cut: string[] }> => {
         const settings = await loadSettings(userId);
         const rawProfile = settings.profiles.find((p) => p.id === settings.activeProfileId) ?? null;
         const profile = rawProfile ? effectiveProfile(rawProfile, await ensureLessons(userId)) : null;
-        return !settings.enabled || !profile || !profile.codexEnabled;
+        if (!settings.enabled || !profile || !profile.codexEnabled) return { off: true, cut: [] };
+        return { off: false, cut: codexActivationCuts(ctx.entries, ctx.messages, (ctx as { activationSettings?: { globalScanDepth: number | null } }).activationSettings?.globalScanDepth ?? null, profile) };
       })();
       gate.catch(() => {});
       const deadline = new Promise<"timeout">((resolve) => {
@@ -256,8 +280,18 @@ spindle.registerWorldInfoInterceptor(async (ctx) => {
         const off = await Promise.race([gate, deadline]);
         if (off === "timeout") {
           warn("world-info codex gate timed out, leaving codex entries active this turn");
-        } else if (off) {
+        } else if (off.off) {
           disabledIds.push(...codexIds);
+        } else {
+          disabledIds.push(...off.cut);
+          if (off.cut.length) {
+            const cutIds = new Set(off.cut);
+            const records = ctx.entries.flatMap(entry => {
+              const meta = cutIds.has(entry.id) ? readEntryMeta(entry) : null;
+              return meta ? [meta.record] : [];
+            });
+            warnOnNewCodexCuts(userId, ctx.chatId, records);
+          }
         }
       } catch (err) {
         warn(`world-info codex gate failed, leaving codex entries active: ${describeError(err)}`);
@@ -282,7 +316,7 @@ spindle.registerInterceptor(async (messages, context) => {
   try {
     const interceptorContext =
       context && typeof context === "object"
-        ? (context as Record<string, unknown>)
+        ? (context as unknown as Record<string, unknown>)
         : null;
     const chatId =
       interceptorContext && typeof interceptorContext["chatId"] === "string"
@@ -342,21 +376,58 @@ spindle.on("MESSAGE_SENT", async (payload: unknown, hostUserId?: string) => {
   if (!userId) return;
   rememberChatUser(p.chatId, userId);
   void recordDiagnostic(userId, { event: "message", chatId: p.chatId, entryId: p.messageId, outcome: "created" });
+  void syncChatEntrySettings(userId, p.chatId);
 });
 
+const onHostEvent = spindle.on as unknown as (event: string, handler: (payload: unknown) => void) => void;
+onHostEvent("GENERATION_IN_PROGRESS", (payload) => {
+  const p = payload as { generationId?: string; contextClipStats?: ContextStats };
+  rememberContextStats(p?.generationId, p?.contextClipStats);
+});
+spindle.on("GENERATION_STOPPED", (payload: { generationId?: string }) => { takeContextStats(payload?.generationId); });
+
 spindle.on("GENERATION_ENDED", async (payload: unknown, hostUserId?: string) => {
-  const p = payload as { chatId?: string; error?: string };
+  const p = payload as { chatId?: string; error?: string; generationId?: string; usage?: { prompt_tokens?: number } };
+  const contextStats = takeContextStats(p?.generationId);
   if (!p?.chatId || p.error) return;
   const userId = hostUserId ?? resolveUserId(p.chatId);
   if (!userId) return;
   rememberChatUser(p.chatId, userId);
   await ensureUserFolders(userId).catch(() => {});
-  const settings = await loadSettings(userId).catch(() => null);
+  let settings = await loadSettings(userId).catch(() => null);
   if (!settings?.enabled) return;
-  const rawProfile = settings.profiles.find((x) => x.id === settings.activeProfileId);
+  try {
+    if (await releaseContextRelief(userId, contextStats?.maxContext)) settings = await loadSettings(userId);
+  } catch (err) {
+    warn(`context relief reset failed: ${describeError(err)}`);
+    void notify(userId, "error", tr("backend.contextRelief.failed", { error: shortErrorText(err) }));
+  }
+  if (contextIsFull(contextStats, p.usage?.prompt_tokens)) {
+    try {
+      const relieved = await relieveContext(userId, (text) => void notify(userId, "warn", text), contextStats?.maxContext ?? null);
+      if (relieved) {
+        settings = relieved;
+        await syncChatEntrySettings(userId, p.chatId);
+        await pushState(userId, p.chatId);
+      }
+    } catch (err) {
+      warn(`context relief failed: ${describeError(err)}`);
+      void notify(userId, "error", tr("backend.contextRelief.failed", { error: shortErrorText(err) }));
+    }
+  }
+  const activeSettings = settings;
+  const rawProfile = activeSettings.profiles.find((x) => x.id === activeSettings.activeProfileId);
   if (!rawProfile) return;
   const profile = effectiveProfile(rawProfile, await ensureLessons(userId));
   await reassertChatBinding(p.chatId, userId).catch(() => {});
+  await syncChatEntrySettings(userId, p.chatId);
+  if (settings.cacheFriendly) {
+    await runCacheFriendlyWindow(p.chatId, profile, settings, userId, (tone, text) => void notify(userId, tone, text)).catch((err) => {
+      warn(`cache friendly window failed: ${describeError(err)}`);
+      void notify(userId, "error", tr("backend.cacheFriendly.windowFailed", { error: shortErrorText(err) }));
+    });
+    return;
+  }
   await maybeRunPipeline(p.chatId, profile, settings, userId).catch((err) => {
     warn(`pipeline failed: ${describeError(err)}`);
   });
@@ -372,8 +443,23 @@ spindle.on("CHAT_SWITCHED", async (payload: unknown, hostUserId?: string) => {
   if (p?.chatId) rememberChatUser(p.chatId, userId);
   invalidateConnectionsCache(userId);
   await pushState(userId, p?.chatId ?? null);
+  await syncChatEntrySettings(userId, p?.chatId);
+  await pushState(userId, p?.chatId ?? null);
   await resumeActiveSummaryBinding(userId, p?.chatId).catch((err) => notify(userId, "error", tr("backend.index.messages.summaryRepairFailed", { describeError: describeError(err) })));
   await pushState(userId, p?.chatId ?? null);
+});
+
+spindle.on("CHAT_DELETED", async (payload: unknown, hostUserId?: string) => {
+  const p = payload as { id?: string };
+  if (!p?.id) return;
+  const userId = hostUserId ?? resolveUserId(p.id);
+  if (!userId) return;
+  forgetChatEntrySettings(userId, p.id);
+  try {
+    if ((await codexPresence(p.id, userId)) !== "absent") await retireCodexChat(p.id, userId);
+  } catch (err) {
+    warn(`retiring deleted chat ${p.id} failed: ${describeError(err)}`);
+  }
 });
 
 spindle.on("MESSAGE_DELETED", async (payload: unknown, hostUserId?: string) => {
@@ -384,7 +470,16 @@ spindle.on("MESSAGE_DELETED", async (payload: unknown, hostUserId?: string) => {
   rememberChatUser(p.chatId, userId);
   void recordDiagnostic(userId, { event: "message", chatId: p.chatId, entryId: p.messageId, outcome: "removed" });
   invalidateBookCache(userId, p.chatId);
+  await warnIfFiledMessageChanged(p.chatId, p.messageId, userId, true).catch((err) => warn(`filed message check failed: ${describeError(err)}`));
   await pushState(userId, p.chatId);
+});
+
+spindle.on("MESSAGE_EDITED", async (payload: unknown, hostUserId?: string) => {
+  const p = payload as { chatId?: string; message?: { id?: string } };
+  if (!p?.chatId) return;
+  const userId = hostUserId ?? resolveUserId(p.chatId);
+  if (!userId) return;
+  await warnIfFiledMessageChanged(p.chatId, p.message?.id, userId, false).catch((err) => warn(`filed message check failed: ${describeError(err)}`));
 });
 
 spindle.on("WORLD_BOOK_ENTRY_DELETED", async (payload: unknown, hostUserId?: string) => {
@@ -521,14 +616,18 @@ export async function retryLastFailure(
 }
 
 
-async function syncProfileSettings(userId: string): Promise<void> {
+async function syncChatEntrySettings(userId: string, chatId: string | null | undefined): Promise<void> {
+  if (!chatId) return;
   try {
-    const failures = await syncCodexProfiles(userId);
-    if (failures.length) await notify(userId, "warn",
-      tr("backend.index.syncProfileSettings.profileSavedButCodexInjectionSettingsCould", { length: failures.length, join: failures.slice(0, 3).map((f) => f.chatId).join(", ") }));
+    const { summaryFailed, codexError } = await ensureChatEntrySettings(userId, chatId);
+    if (summaryFailed) await notify(userId, "warn", tr("backend.entrySettings.summaryFailed", { failed: summaryFailed }));
+    if (codexError) {
+      warn(`Codex settings sync failed for ${chatId}: ${codexError}`);
+      await notify(userId, "warn", tr("backend.entrySettings.codexFailed", { error: codexError }));
+    }
   } catch (err) {
-    warn(`Codex profile sync failed: ${describeError(err)}`);
-    await notify(userId, "warn", tr("backend.index.syncProfileSettings.profileSavedButCodexInjectionSettingsCould2", { describeError: describeError(err) }));
+    warn(`entry settings sync failed for ${chatId}: ${describeError(err)}`);
+    await notify(userId, "error", tr("backend.entrySettings.failed", { error: shortErrorText(err) }));
   }
 }
 
@@ -582,12 +681,46 @@ spindle.onFrontendMessage(async (raw, userId) => {
         await pushState(userId, msg.chatId);
         break;
 
+      case "cache_friendly_set": {
+        const current = await loadSettings(userId);
+        if (msg.enabled === current.cacheFriendly) break;
+        // Before the Codex course, the user picks Codex off or skips the course to force it on.
+        const gated = msg.enabled && codexGated(await ensureLessons(userId));
+        const codexChoice = gated && (msg.codex === "off" || msg.codex === "force") ? msg.codex : null;
+        if (msg.enabled) {
+          if (gated && !codexChoice) {
+            await notify(userId, "warn", tr("backend.cacheFriendly.finishCodexCourse"));
+            break;
+          }
+          if (!(await lumiCacheAvailable())) {
+            await notify(userId, "error", tr("backend.cacheFriendly.needsLumiCache"));
+            break;
+          }
+          if (codexChoice === "force") await skipCourseSeal(userId, "codex");
+        }
+        await mutateSettings(userId, (cur) => msg.enabled
+          ? { ...cur, cacheFriendly: true, cacheFriendlySummaryMode: cur.summaryActivationMode, profiles: cur.profiles.map((p) =>
+            enterCacheFriendly(codexChoice && p.id === cur.activeProfileId ? { ...p, codexEnabled: codexChoice === "force" } : p)) }
+          : { ...cur, cacheFriendly: false, summaryActivationMode: cur.cacheFriendlySummaryMode ?? cur.summaryActivationMode, cacheFriendlySummaryMode: null, profiles: cur.profiles.map(leaveCacheFriendly) });
+        await pushState(userId, msg.chatId);
+        if (msg.enabled) {
+          const after = await loadSettings(userId);
+          const codexOn = after.profiles.find((p) => p.id === after.activeProfileId)?.codexEnabled;
+          await notify(userId, "info", codexOn ? tr("backend.cacheFriendly.enabledCost") : tr("backend.cacheFriendly.enabledNoCodex"));
+        }
+        await syncChatEntrySettings(userId, msg.chatId);
+        if (msg.chatId) await cleanupGhostsIfModeOff(userId, msg.chatId, "cache-friendly-off");
+        await pushState(userId, msg.chatId);
+        break;
+      }
+
       case "save_settings":
         await patchSettings(userId, msg.patch);
-        if ("profiles" in msg.patch || "activeProfileId" in msg.patch) await syncProfileSettings(userId);
-        if ("summaryActivationMode" in msg.patch) {
-          const { failed } = await applySummaryActivation(userId);
-          if (failed) await notify(userId, "warn", tr("backend.index.messages.recallSettingSavedEntryOrBookUpdates", { failed: failed }));
+        if ("profiles" in msg.patch || "activeProfileId" in msg.patch || "summaryActivationMode" in msg.patch) {
+          await syncChatEntrySettings(userId, msg.chatId);
+        }
+        if (msg.patch.followChatNames && msg.chatId) {
+          await followChatName(msg.chatId, userId).catch((err) => notify(userId, "warn", tr("backend.index.messages.followChatNameFailed", { error: shortErrorText(err) })));
         }
         await pushState(userId, msg.chatId);
         break;
@@ -605,26 +738,31 @@ spindle.onFrontendMessage(async (raw, userId) => {
         let nextExtra: boolean | null = null;
         let activeBefore: string | null = null;
         let missing = false;
-        await mutateSettings(userId, (cur) => {
+        const save = msg.save;
+        const ack = () => {
+          if (!save) return;
+          const sessions = profileSaveAcks.get(userId) ?? new Map<string, number>();
+          sessions.set(save.session, Math.max(sessions.get(save.session) ?? 0, save.seq));
+          profileSaveAcks.set(userId, sessions);
+        };
+        try { await mutateSettings(userId, (cur) => {
           activeBefore = cur.activeProfileId;
           const existing = cur.profiles.find((p) => p.id === id);
           if (!existing) {
             missing = true;
             return cur;
           }
-          const merged = normalizeProfile({ ...existing, ...incoming, id,
-            promptRoles: Object.keys(incoming.promptRoles ?? {}).length
-              ? { ...existing.promptRoles, ...incoming.promptRoles } : incoming.promptRoles ?? existing.promptRoles,
-            higherTierPresetKeys: Object.keys(incoming.higherTierPresetKeys ?? {}).length
-              ? { ...existing.higherTierPresetKeys, ...incoming.higherTierPresetKeys } : incoming.higherTierPresetKeys ?? existing.higherTierPresetKeys,
-          });
+          const merged = normalizeProfile({ ...mergeProfilePatch(existing, incoming), id });
           if (!merged) return cur;
           prevHide = existing.hideCoveredMessages;
           nextHide = merged.hideCoveredMessages;
           prevExtra = extraContextActive(existing);
           nextExtra = extraContextActive(merged);
           return { ...cur, profiles: cur.profiles.map((p) => (p.id === id ? merged : p)) };
-        });
+        }); } finally {
+          // Acknowledged even when dropped or failed, so the UI stops overlaying an edit the backend never kept.
+          ack();
+        }
         if (missing) {
           warn(`save_profile dropped: no profile with id "${id}"`);
           send({ type: "error", text: tr("backend.index.messages.profileNoLongerExists", { id: id }) }, userId);
@@ -645,8 +783,9 @@ spindle.onFrontendMessage(async (raw, userId) => {
             warn(`hideCoveredMessages re-sync failed: ${describeError(err)}`);
           }
         }
-        if (id === activeBefore && ["codexActivationMode", "codexInjectionPosition", "codexInjectionDepth"].some((key) => key in incoming)) {
-          await syncProfileSettings(userId);
+        if (id === activeBefore && ["codexActivationMode", "codexInjectionPosition", "codexInjectionDepth", "codexTokenLimits"].some((key) => key in incoming)) {
+          await pushState(userId, msg.chatId);
+          await syncChatEntrySettings(userId, msg.chatId);
         }
         // The effective-mode off transition (extra toggle OR codex disable)
         // must clean up pending ghosts here too, independent of automation.
@@ -688,7 +827,7 @@ spindle.onFrontendMessage(async (raw, userId) => {
           send({ type: "error", text: tr("backend.index.messages.profileNoLongerExists", { id: msg.copyFromId! }) }, userId);
           break;
         }
-        await syncProfileSettings(userId);
+        await syncChatEntrySettings(userId, msg.chatId);
         if (msg.chatId) await cleanupGhostsIfModeOff(userId, msg.chatId, "profile-create");
         await pushState(userId, msg.chatId);
         break;
@@ -710,7 +849,7 @@ spindle.onFrontendMessage(async (raw, userId) => {
         }
         // Deleting the active profile falls back to another one, which may
         // lack effective extra mode: same ghost cleanup as set_active_profile.
-        await syncProfileSettings(userId);
+        await syncChatEntrySettings(userId, msg.chatId);
         if (msg.chatId) {
           await cleanupGhostsIfModeOff(userId, msg.chatId, "profile-delete");
         }
@@ -723,7 +862,7 @@ spindle.onFrontendMessage(async (raw, userId) => {
           if (!cur.profiles.some((p) => p.id === msg.profileId)) return cur;
           return { ...cur, activeProfileId: msg.profileId };
         });
-        await syncProfileSettings(userId);
+        await syncChatEntrySettings(userId, msg.chatId);
         // Switching to a profile without effective extra mode strands any
         // pending ghosts: they belong to the chat, not the profile.
         if (msg.chatId) {
@@ -1040,7 +1179,7 @@ spindle.onFrontendMessage(async (raw, userId) => {
 
       case "set_summary_activation": {
         await patchSettings(userId, { summaryActivationMode: msg.mode });
-        const { updated, failed } = await applySummaryActivation(userId);
+        const { updated, failed } = msg.chatId ? await applySummaryActivation(msg.chatId, userId) : { updated: 0, failed: 0 };
         await notify(userId, failed ? "warn" : "info", failed
           ? tr("backend.index.messages.recallSettingSavedEntryOrBookUpdates", { failed: failed })
           : tr("backend.index.messages.summaryRecallSavedEntriesUpdated", { updated: updated }));
@@ -1510,6 +1649,7 @@ spindle.onFrontendMessage(async (raw, userId) => {
           clearBusy(userId, msg.chatId, "codex");
         }
         send({ type: "codex_files", chatId: msg.chatId, files, savedFile: msg.file, savedSeq: msg.seq, revision: getCodexRevision(msg.chatId) }, userId);
+        if ((await loadSettings(userId)).cacheFriendly) await notify(userId, "warn", tr("backend.cacheFriendly.handEditBreaksCache"));
         await pushState(userId, msg.chatId);
         break;
       }
@@ -1665,6 +1805,9 @@ spindle.onFrontendMessage(async (raw, userId) => {
         let profile: ReturnType<typeof normalizeProfile> = null;
         try {
           const cur = await loadSettings(userId);
+          if (cur.cacheFriendly && cacheFriendlyFileLocked(msg.file)) {
+            throw new Error(tr("backend.cacheFriendly.fileLocked"));
+          }
           profile = cur.profiles.find((p) => p.id === cur.activeProfileId) ?? null;
           await setCodexFileState(msg.chatId, userId, msg.file, msg.state, profile?.codexRelationsTable);
         } catch (err) {
@@ -1761,6 +1904,7 @@ spindle.onFrontendMessage(async (raw, userId) => {
       default:
         debug(userId, `unknown frontend msg type`, (msg as { type?: string }).type);
     }
+    if (CACHE_BREAKING_ACTIONS.has(msg.type) && "chatId" in msg && msg.chatId && (await loadSettings(userId)).cacheFriendly) bumpCacheEpoch(msg.chatId);
     recordFrontendAction(userId, msg, "finished");
   } catch (err) {
     recordFrontendAction(userId, msg, "failed");

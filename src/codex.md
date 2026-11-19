@@ -10,7 +10,7 @@ LumiBooks는 이미 압축으로 이 문제에 어느 정도 맞서고 있어요
 
 ## 코덱스란
 
-코덱스는 채팅을 위한 스토리 바이블이에요. 이야기가 자라는 동안 에이전트가 새 턴을 빠짐없이 읽고, 몇 가지 기록을 갱신해요.
+코덱스는 채팅을 위한 스토리 기록이에요. 이야기가 자라는 동안 에이전트가 새 턴을 빠짐없이 읽고, 몇 가지 기록을 갱신해요.
 
 - **캐릭터, 장소, 사물.** 개체 시트는 계층적 시나리오 작성부터 구조화된 스토리 생성까지, 대부분의 스토리 시스템의 뼈대예요([Dramatron](https://arxiv.org/pdf/2209.14958), [Narrative Planning](https://arxiv.org/pdf/1401.3841), [Decomposed Screenwriting](https://arxiv.org/html/2510.23163v1)).
 - **관계.** 개체 사이의 관계와 그 흐름을 적는 공유 표예요. 내러티브 지식 그래프 연구에 따르면 관계는 고정된 스냅숏이 아니라 변해 가는 모습대로 추적해야 해요([Iyyer et al., NAACL 2016](https://aclanthology.org/N16-1180/), [Narrative Graph](https://www.researchgate.net/publication/370272383_Narrative_Graph_Telling_Evolving_Stories_Based_on_Event-centric_Temporal_Knowledge_Graph), [Relation Clustering](https://www.researchgate.net/publication/346475960_Relation_Clustering_in_Narrative_Knowledge_Graphs)). 일부 모델은 이 표를 관리하기 버거워해서 선택 사항이에요.
@@ -21,7 +21,7 @@ LumiBooks는 이미 압축으로 이 문제에 어느 정도 맞서고 있어요
 
 ## 왜 이 기록들인가요?
 
-모두 검증된 실패 유형이거나, 긴 글의 일관성을 높인다고 밝혀진 장치예요. 스토리 바이블은 쓸모 있고 간결해야 하면서도, 압축 과정에서 사라지기 쉬운 고밀도 정보를 지켜야 해요([Generative Agents](https://arxiv.org/abs/2304.03442), [MemGPT](https://arxiv.org/abs/2310.08560), [MemoryBank, AAAI 2024](https://arxiv.org/abs/2305.10250)).
+모두 검증된 실패 유형이거나, 긴 글의 일관성을 높인다고 밝혀진 장치예요. 코덱스는 쓸모 있고 간결해야 하면서도, 압축 과정에서 사라지기 쉬운 고밀도 정보를 지켜야 해요([Generative Agents](https://arxiv.org/abs/2304.03442), [MemGPT](https://arxiv.org/abs/2310.08560), [MemoryBank, AAAI 2024](https://arxiv.org/abs/2305.10250)).
 
 다른 트래커가 기록하는 것 중 일부는 일부러 뺐어요.
 

@@ -2,6 +2,9 @@ import { t as tr } from "../../i18n";
 import type { LessonCourseDef } from "./lesson-types";
 import { setCodexExpandedEntity, setCodexRelationsView, setCodexSubtab } from "../tabs/codex-tab";
 import { setSettingsView, setTuningSubtab } from "../tabs/tuning-tab";
+import type { FrontendState } from "../../types";
+
+const canUpdateCodex = (state: FrontendState) => !!state.activeChatId && state.activeProfile.codexEnabled;
 
 /** Course 2: The Archivist's Codex. A quick guided walkthrough: the user
  * navigates every pane themselves, tries the unique interactions, and only
@@ -12,7 +15,7 @@ export const COURSE_CODEX: LessonCourseDef = {
   sections: [
     {
       id: "s1",
-      title: tr("ui.lessons.contentCodex.courseCodex.whyAStoryBible"),
+      title: tr("ui.lessons.contentCodex.courseCodex.whyACodex"),
       steps: [
         {
           kind: "say",
@@ -309,7 +312,7 @@ export const COURSE_CODEX: LessonCourseDef = {
           fixture: {
             variant: "codex",
             patch: (s) => {
-              s.activeProfile.codexLagValue = 65;
+              s.activeProfile.codexLagValue = 40;
             },
           },
           prep: () => setTuningSubtab("codex"),
@@ -317,7 +320,7 @@ export const COURSE_CODEX: LessonCourseDef = {
           chip: tr("ui.lessons.contentCodex.courseCodex.codexLag65"),
           text: tr("ui.lessons.contentCodex.courseCodex.youRaiseTheCodexLagFrom6"),
           options: [
-            { text: tr("ui.lessons.contentCodex.courseCodex.theBibleAlwaysRuns65MessagesBehind"), correct: true },
+            { text: tr("ui.lessons.contentCodex.courseCodex.theCodexAlwaysRuns65MessagesBehind"), correct: true },
             { text: tr("ui.lessons.contentCodex.courseCodex.nothingTheLagOnlyAffectsChapters") },
             { text: tr("ui.lessons.contentCodex.courseCodex.theCodexGetsCheaperWithNoDownside") },
             { text: tr("ui.lessons.contentCodex.courseCodex.theAgentRunsMoreOften") },
@@ -405,6 +408,7 @@ export const COURSE_CODEX: LessonCourseDef = {
           kind: "nav",
           real: true,
           optional: true,
+          requires: canUpdateCodex,
           path: ["tab.home"],
           arrive: "home.actions.updatecodex",
           text: tr("ui.lessons.contentCodex.courseCodex.homeHasAnUpdateCodexButtonNow"),
@@ -413,6 +417,7 @@ export const COURSE_CODEX: LessonCourseDef = {
         {
           kind: "do",
           real: true,
+          requires: canUpdateCodex,
           tab: "home",
           anchor: "home.actions.updatecodex",
           expect: "codex_update_now",

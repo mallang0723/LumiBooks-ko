@@ -1,10 +1,14 @@
 import { t as tr } from "../i18n";
 import { LessonOutbox } from "./lesson-outbox";
+import { bindHostUuid, newId } from "./uuid";
 import type { SpindleFrontendContext } from "lumiverse-spindle-types";
-import type { BackendToFrontend, FrontendState, FrontendToBackend } from "../types";
+import type { BackendToFrontend, FrontendState, FrontendToBackend, ProfilePatch } from "../types";
+import type { LMBProfile } from "../shared";
+import { mergeProfilePatch } from "../profile-patch";
 import { ICON_SVG, STYLES } from "./styles";
 import { makeButton, preserveScroll, scrollPaneTop, showToast } from "./components";
-import { closeCodexCatchupModal, showCodexToolsHintModal, showDryRunModal } from "./modals";
+import { closeCodexCatchupModal, confirmCacheBreak, showCodexToolsHintModal, showDryRunModal } from "./modals";
+import { CACHE_BREAKING_ACTIONS } from "../shared";
 import { deliverStreamText, renderHomeTab, resetHomeTabLocal, tryUpdateBusyLabelsInPlace } from "./tabs/home-tab";
 import { deliverPromptBreakdown } from "./prompt-breakdown";
 import { deliverRegexScriptsPage, resetRegexPicker } from "./regex-picker";
@@ -42,6 +46,7 @@ function ensureDecoFonts(): void {
 }
 
 export function setup(ctx: SpindleFrontendContext): () => void {
+  bindHostUuid(ctx);
   let context: { chatId?: string | null; view: UiDiagnostic["view"] } = { view: "startup" };
   const diagnostics = createUiDiagnostics({ send: (message) => ctx.sendToBackend(message), context: () => context });
   setUiDiagnostics(diagnostics);
@@ -107,6 +112,16 @@ function setupApp(ctx: SpindleFrontendContext, diagnostics: UiDiagnostics,
   let disposed = false;
   let loadTimer: ReturnType<typeof setTimeout> | undefined;
   let handshakeRetries = 0;
+  const saveSession = newId();
+  let saveSeq = 0;
+  let pendingProfileSaves: Array<{ seq: number; profile: ProfilePatch & { id: string } }> = [];
+  // State pushed mid-save predates later edits, so unconfirmed edits stay on top until acked.
+  const overlayProfileSaves = (state: FrontendState): FrontendState => {
+    if (!pendingProfileSaves.length) return state;
+    const apply = (profile: LMBProfile) => pendingProfileSaves.reduce(
+      (acc, save) => (save.profile.id === acc.id ? mergeProfilePatch(acc, save.profile) : acc), profile);
+    return { ...state, activeProfile: apply(state.activeProfile), settings: { ...state.settings, profiles: state.settings.profiles.map(apply) } };
+  };
   const tabButtons = new Map<TabKey, HTMLButtonElement>();
   let lessonStorage: Storage | null = null;
   try { lessonStorage = window.localStorage; } catch { /* In-memory retries still work when browser storage is disabled. */ }
@@ -120,6 +135,19 @@ function setupApp(ctx: SpindleFrontendContext, diagnostics: UiDiagnostics,
 
   const send = (msg: FrontendToBackend) => {
     if (lessonOutbox.enqueue(msg)) return;
+    if (lastState?.settings.cacheFriendly && CACHE_BREAKING_ACTIONS.has(msg.type)) {
+      void confirmCacheBreak(ctx).then((confirmed) => { if (confirmed) deliver(msg); });
+      return;
+    }
+    deliver(msg);
+  };
+  const deliver = (msg: FrontendToBackend) => {
+    if (msg.type === "save_profile") {
+      const seq = ++saveSeq;
+      msg = { ...msg, save: { session: saveSession, seq } };
+      pendingProfileSaves.push({ seq, profile: msg.profile });
+      if (lastState) lastState = overlayProfileSaves(lastState);
+    }
     if (msg.type === "save_settings" && typeof msg.patch.localLogsDisabled === "boolean") diagnostics.setEnabled(!msg.patch.localLogsDisabled);
     if (msg.type === "diagnostics_clear") diagnostics.clear();
     else if (msg.type === "diagnostics_export") diagnostics.flush();
@@ -355,7 +383,13 @@ function setupApp(ctx: SpindleFrontendContext, diagnostics: UiDiagnostics,
         showLoadNotice("");
         if (lastState && lastState.activeChatId !== msg.state.activeChatId) closeCodexCatchupModal();
         if (msg.state.userId) lessonOutbox.setUser(msg.state.userId);
-        lastState = { ...msg.state, lessons: lessonOutbox.overlay(msg.state.lessons) };
+        {
+          const acks = msg.state.profileSaveAcks;
+          if (acks && lastState?.profileSaveAcks && acks.boot !== lastState.profileSaveAcks.boot) pendingProfileSaves = [];
+          const acked = acks?.sessions[saveSession] ?? 0;
+          pendingProfileSaves = pendingProfileSaves.filter((save) => save.seq > acked);
+        }
+        lastState = overlayProfileSaves({ ...msg.state, lessons: lessonOutbox.overlay(msg.state.lessons) });
         lessonOutbox.flush();
         transferPanel.setChat(lastState.activeChatId);
         renderActive();

@@ -8,6 +8,7 @@ import { activationFlags } from "../activation";
 import { loadSettings } from "./storage";
 import { withCommitMutex } from "./summary-commit";
 import { describeError, error, warn } from "./runtime";
+import { updateEntriesBatched } from "./entry-batch";
 
 const PAGE_LIMIT = 200;
 const BOOK_INDEX_CACHE_TTL_MS = 4000;
@@ -315,17 +316,23 @@ const NAME_SYNC_TTL_MS = 60_000;
 
 /** Managed book names follow the chat name, so renames (fork-time ones
  * included) propagate to the shelf and codex books. */
-async function syncManagedBookNames(chatId: string, chatName: string | null, shelfBookId: string, userId: string): Promise<void> {
-  await syncManagedBookName(chatId, shelfBookId, await managedBookName(chatId, chatName, userId), userId);
+async function syncManagedBookNames(chatId: string, chatName: string | null, shelfBookId: string | null, userId: string, force = false): Promise<void> {
+  if (shelfBookId) await syncManagedBookName(chatId, shelfBookId, await managedBookName(chatId, chatName, userId), userId, force);
   const codexBookId = await findCodexBookForChat(chatId, userId).catch(() => null);
-  if (codexBookId) await syncManagedBookName(chatId, codexBookId, await managedBookName(chatId, chatName, userId, true), userId);
+  if (codexBookId) await syncManagedBookName(chatId, codexBookId, await managedBookName(chatId, chatName, userId, true), userId, force);
 }
 
-async function syncManagedBookName(chatId: string, bookId: string, name: string, userId: string): Promise<void> {
+export async function followChatName(chatId: string, userId: string): Promise<void> {
+  const chat = await spindle.chats.get(chatId, userId);
+  if (!chat) return;
+  await syncManagedBookNames(chatId, chat.name ?? null, await findBookForChat(chatId, userId), userId, true);
+}
+
+async function syncManagedBookName(chatId: string, bookId: string, name: string, userId: string, force = false): Promise<void> {
   const key = `${cacheKey(userId, chatId)}::${bookId}`;
   if (!(await loadSettings(userId)).followChatNames) { nameSyncAt.delete(key); return; }
   const last = nameSyncAt.get(key);
-  if (last && Date.now() - last < NAME_SYNC_TTL_MS) return;
+  if (!force && last && Date.now() - last < NAME_SYNC_TTL_MS) return;
   if (nameSyncAt.size > 500) nameSyncAt.clear();
   nameSyncAt.set(key, Date.now());
   const book = await spindle.world_books.get(bookId, userId);
@@ -394,29 +401,34 @@ export async function createChapterEntry(
     : spindle.world_books.entries.create(bookId, payload, userId);
 }
 
-export async function applySummaryActivation(userId: string): Promise<{ updated: number; failed: number }> {
-  const books = await listAllBooks(userId);
+const SUMMARY_ACTIVATION_STAMP = "lumibooks_summary_activation";
+
+export async function applySummaryActivation(chatId: string, userId: string): Promise<{ updated: number; failed: number }> {
+  const bookId = await findBookForChat(chatId, userId);
+  if (!bookId) return { updated: 0, failed: 0 };
   let updated = 0;
   let failed = 0;
-  for (const book of books) {
-    const meta = book.metadata as Record<string, unknown> | undefined;
-    if (!meta || typeof meta["lumibooks_chat_id"] !== "string") continue;
-    const chatId = meta["lumibooks_chat_id"] as string;
-    await withCommitMutex(userId, chatId, async () => {
-      const flags = activationFlags((await loadSettings(userId)).summaryActivationMode);
-      const entries = await listAllEntries(book.id, userId);
-      for (const entry of entries) {
-        const ext = (entry.extensions || {}) as Record<string, unknown>;
-        if (!ext[EXTENSION_KEY]) continue;
-        if (entry.constant === flags.constant && (entry.vectorized ?? false) === flags.vectorized) continue;
-        try {
-          await spindle.world_books.entries.update(entry.id, flags, userId);
-          updated++;
-        } catch { failed++; }
-      }
-    }).catch(() => { failed++; });
-    invalidateBookCache(userId, chatId);
-  }
+  await withCommitMutex(userId, chatId, async () => {
+    const mode = (await loadSettings(userId)).summaryActivationMode;
+    const book = await spindle.world_books.get(bookId, userId);
+    if (!book) return;
+    const meta = (book.metadata && typeof book.metadata === "object" ? book.metadata : {}) as Record<string, unknown>;
+    if (meta[SUMMARY_ACTIVATION_STAMP] === mode) return;
+    const flags = activationFlags(mode);
+    const updates = (await listAllEntries(bookId, userId))
+      .filter((entry) => ((entry.extensions || {}) as Record<string, unknown>)[EXTENSION_KEY]
+        && (entry.constant !== flags.constant || (entry.vectorized ?? false) !== flags.vectorized))
+      .map((entry) => ({ id: entry.id, input: flags }));
+    const failures = await updateEntriesBatched(updates, userId);
+    for (const f of failures) warn(`summary activation update failed for entry ${f.id}: ${f.error}`);
+    updated = updates.length - failures.length;
+    failed = failures.length;
+    if (failed === 0) await spindle.world_books.update(bookId, { metadata: { ...meta, [SUMMARY_ACTIVATION_STAMP]: mode } }, userId);
+  }).catch((err) => {
+    warn(`summary activation update failed for chat ${chatId}: ${describeError(err)}`);
+    failed++;
+  });
+  invalidateBookCache(userId, chatId);
   return { updated, failed };
 }
 
