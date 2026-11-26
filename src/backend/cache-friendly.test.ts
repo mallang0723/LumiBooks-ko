@@ -279,12 +279,34 @@ test("the cache mode is published per user, only when it changes", async () => {
   } finally { rpc.sync = original; }
 });
 
-test("LumiCache presence reads its endpoint and surfaces other failures", async () => {
+test.each([
+  ["Korean fork", ["lumicache_ko.status"], ["lumicache_ko.status"], true],
+  ["upstream", ["lumicache.status"], ["lumicache_ko.status", "lumicache.status"], true],
+  ["both", ["lumicache_ko.status", "lumicache.status"], ["lumicache_ko.status"], true],
+  ["neither", [], ["lumicache_ko.status", "lumicache.status"], false],
+] as const)("LumiCache presence detects %s registration", async (_label, registered, expectedReads, available) => {
   const rpc = (globalThis as any).spindle.rpcPool;
-  rpc.read = async () => { throw new Error('Shared RPC endpoint "lumicache.status" is not registered'); };
+  const reads: string[] = [];
+  rpc.read = async (endpoint: string) => {
+    reads.push(endpoint);
+    if (registered.some(name => name === endpoint)) return { version: 1 };
+    throw new Error(`Shared RPC endpoint "${endpoint}" is not registered`);
+  };
+  expect(await lumiCacheAvailable()).toBe(available);
+  expect(reads).toEqual(expectedReads);
+});
+
+test("LumiCache presence is false without RPC read support", async () => {
   expect(await lumiCacheAvailable()).toBe(false);
-  rpc.read = async () => ({ version: 1 });
-  expect(await lumiCacheAvailable()).toBe(true);
-  rpc.read = async () => { throw new Error("worker crashed"); };
+  delete (globalThis as any).spindle.rpcPool;
+  expect(await lumiCacheAvailable()).toBe(false);
+});
+
+test.each(["lumicache_ko.status", "lumicache.status"])("LumiCache presence surfaces failures from %s", async (failingEndpoint) => {
+  const rpc = (globalThis as any).spindle.rpcPool;
+  rpc.read = async (endpoint: string) => {
+    if (endpoint === failingEndpoint) throw new Error("worker crashed");
+    throw new Error(`Shared RPC endpoint "${endpoint}" is not registered`);
+  };
   await expect(lumiCacheAvailable()).rejects.toThrow("worker crashed");
 });

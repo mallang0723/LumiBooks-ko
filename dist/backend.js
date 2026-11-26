@@ -12894,7 +12894,7 @@ function fillPrompt(template, vars) {
 // spindle.json
 var spindle_default = {
   identifier: "lumi_books_ko",
-  version: "1.2.6+ko",
+  version: "1.2.6+ko.1",
   name: "LumiBooks (\uD55C\uAD6D\uC5B4)",
   author: "AMousePad (\uD55C\uAD6D\uC5B4\uD310: mallang0723)",
   github: "https://github.com/mallang0723/LumiBooks-ko",
@@ -21408,18 +21408,20 @@ function createCodexCutWarning(notify) {
 }
 
 // src/backend/cache-friendly.ts
-var LUMICACHE_STATUS = "lumicache.status";
+var LUMICACHE_STATUS_ENDPOINTS = ["lumicache_ko.status", "lumicache.status"];
 async function lumiCacheAvailable() {
   if (!spindle.rpcPool?.read)
     return false;
-  try {
-    await spindle.rpcPool.read(LUMICACHE_STATUS);
-    return true;
-  } catch (err) {
-    if (/not registered/i.test(describeError(err)))
-      return false;
-    throw err;
+  for (const endpoint of LUMICACHE_STATUS_ENDPOINTS) {
+    try {
+      await spindle.rpcPool.read(endpoint);
+      return true;
+    } catch (err) {
+      if (!/not registered/i.test(describeError(err)))
+        throw err;
+    }
   }
+  return false;
 }
 var running = new Set;
 async function bindingCount(chatId, userId) {

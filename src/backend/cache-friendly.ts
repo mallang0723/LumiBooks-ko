@@ -11,17 +11,19 @@ import { drainGhostBacklog, hasPromotableGhost, maybeRunArcCheck, maybeRunPipeli
 import { describeError, warn } from "./runtime";
 import { listLmbEntries } from "./world-book";
 
-const LUMICACHE_STATUS = "lumicache.status";
+const LUMICACHE_STATUS_ENDPOINTS = ["lumicache_ko.status", "lumicache.status"];
 
 export async function lumiCacheAvailable(): Promise<boolean> {
   if (!spindle.rpcPool?.read) return false;
-  try {
-    await spindle.rpcPool.read(LUMICACHE_STATUS);
-    return true;
-  } catch (err) {
-    if (/not registered/i.test(describeError(err))) return false;
-    throw err;
+  for (const endpoint of LUMICACHE_STATUS_ENDPOINTS) {
+    try {
+      await spindle.rpcPool.read(endpoint);
+      return true;
+    } catch (err) {
+      if (!/not registered/i.test(describeError(err))) throw err;
+    }
   }
+  return false;
 }
 
 const running = new Set<string>();
